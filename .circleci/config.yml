@@ -121,12 +121,12 @@ jobs:
             - drush
 
   deploy_to_pantheon:
-    <<: *defaults
+    <<: *defaults      
     steps:
       - add_ssh_keys:
           fingerprints:
             - "56:ac:6d:48:87:c9:04:1a:ff:07:1a:4f:bf:78:85:ce"
-    steps:
+            
       - checkout
 
       # Attach the workspace
