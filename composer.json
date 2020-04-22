@@ -259,7 +259,7 @@
         },
         {
             "type": "path",
-            "url": "core"
+            "url": "web/core"
         },
         {
             "type": "package",
@@ -273,14 +273,6 @@
                     "reference": "origin/master"
                 }
             }
-        },
-        {
-            "type": "path",
-            "url": "composer/Plugin/ProjectMessage"
-        },
-        {
-            "type": "path",
-            "url": "composer/Plugin/VendorHardening"
         },
         {
             "type": "package",
