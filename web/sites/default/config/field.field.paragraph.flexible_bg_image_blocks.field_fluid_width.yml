@@ -1,0 +1,23 @@
+uuid: a3247f98-0d6b-4b33-85bd-0723d974da0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fluid_width
+    - paragraphs.paragraphs_type.flexible_bg_image_blocks
+id: paragraph.flexible_bg_image_blocks.field_fluid_width
+field_name: field_fluid_width
+entity_type: paragraph
+bundle: flexible_bg_image_blocks
+label: 'Fluid width'
+description: 'Check for full width section'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

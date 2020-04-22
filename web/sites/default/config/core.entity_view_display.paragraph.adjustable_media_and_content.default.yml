@@ -1,0 +1,133 @@
+uuid: 3636c993-5e24-45a0-bad0-38ea7cbf30cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.adjustable_media_and_content.field_body_formatted
+    - field.field.paragraph.adjustable_media_and_content.field_display
+    - field.field.paragraph.adjustable_media_and_content.field_image
+    - field.field.paragraph.adjustable_media_and_content.field_video_embed
+    - paragraphs.paragraphs_type.adjustable_media_and_content
+  module:
+    - field_group
+    - options
+    - text
+    - video_embed_field
+third_party_settings:
+  field_group:
+    group_container:
+      children:
+        - group_row
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: container
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Container
+      region: content
+    group_row:
+      children:
+        - group_media_content
+        - group_content_wrap
+      parent_name: group_container
+      weight: 5
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: row
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Row
+      region: content
+    group_media_content:
+      children:
+        - field_image
+        - field_video_embed
+      parent_name: group_row
+      weight: 20
+      format_type: html_element
+      format_settings:
+        label: 'Media Content'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'col-md-7 media-wrap'
+      label: 'Media Content'
+      region: content
+    group_content_wrap:
+      children:
+        - field_body_formatted
+      parent_name: group_row
+      weight: 21
+      format_type: html_element
+      format_settings:
+        label: 'Content Wrap'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'col-md-5 content-wrap'
+      label: 'Content Wrap'
+      region: content
+id: paragraph.adjustable_media_and_content.default
+targetEntityType: paragraph
+bundle: adjustable_media_and_content
+mode: default
+content:
+  field_body_formatted:
+    weight: 22
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_display:
+    type: list_key
+    weight: 0
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    weight: 22
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_video_embed:
+    weight: 23
+    label: hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: false
+    third_party_settings: {  }
+    type: video_embed_field_video
+    region: content
+hidden: {  }

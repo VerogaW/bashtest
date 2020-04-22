@@ -1,0 +1,19 @@
+uuid: 33c1e73d-8bb6-464f-8e45-e3c0b321a0ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_subtitle
+    - paragraphs.paragraphs_type.recent_news_all
+id: paragraph.recent_news_all.field_subtitle
+field_name: field_subtitle
+entity_type: paragraph
+bundle: recent_news_all
+label: 'Sub Headline'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

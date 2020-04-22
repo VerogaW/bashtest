@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+  <style>
+    .icon-positive {
+      fill: #e85c16;
+    }
+    .icon-negative {
+      fill: #fff;
+    }
+  </style>
+  <circle class="icon-positive" cx="7.5" cy="7.5" r="7.5"/>
+  <path class="icon-negative" d="M6.15,11.62A1.35,1.35,0,1,1,7.51,13,1.33,1.33,0,0,1,6.15,11.62ZM6.29,2H8.71L8.36,9.19H6.65Z"/>
+</svg>

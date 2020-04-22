@@ -1,0 +1,23 @@
+uuid: bb5f0258-c8ac-4983-94de-5b8b8c7e90e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.person_carousel
+  module:
+    - link
+id: paragraph.person_carousel.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: person_carousel
+label: 'Call to Action'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

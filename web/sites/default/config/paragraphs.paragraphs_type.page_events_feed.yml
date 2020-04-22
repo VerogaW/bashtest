@@ -1,0 +1,9 @@
+uuid: 43124721-4536-412a-a83b-06ad8e27b3f8
+langcode: en
+status: true
+dependencies: {  }
+id: page_events_feed
+label: 'Page: Events Feed'
+icon_uuid: null
+description: 'Full Page: Events Page Only'
+behavior_plugins: {  }

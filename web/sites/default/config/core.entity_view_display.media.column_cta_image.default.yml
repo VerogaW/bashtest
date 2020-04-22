@@ -1,0 +1,29 @@
+uuid: 7721bf20-6dd7-4f68-9203-e005f2f11b1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.column_cta_image.field_media_image_3
+    - media.type.column_cta_image
+  module:
+    - svg_image
+id: media.column_cta_image.default
+targetEntityType: media
+bundle: column_cta_image
+mode: default
+content:
+  field_media_image_3:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

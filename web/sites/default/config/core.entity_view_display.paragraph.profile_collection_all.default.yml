@@ -1,0 +1,86 @@
+uuid: b6dcc98b-5e73-41d0-9d03-ccbfc8b218d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.profile_collection_all.field_body_unformatted
+    - field.field.paragraph.profile_collection_all.field_link
+    - field.field.paragraph.profile_collection_all.field_story_by
+    - field.field.paragraph.profile_collection_all.field_title
+    - field.field.paragraph.profile_collection_all.field_view_reference
+    - paragraphs.paragraphs_type.profile_collection_all
+  module:
+    - fences
+    - field_group
+    - viewsreference
+third_party_settings:
+  field_group:
+    group_profile_section:
+      children:
+        - group_profile_inner
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: collection-profiles
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Profile Section'
+      region: content
+    group_profile_inner:
+      children:
+        - field_view_reference
+      parent_name: group_profile_section
+      weight: 6
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: collection-profiles__inner
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Profile Inner'
+      region: content
+id: paragraph.profile_collection_all.default
+targetEntityType: paragraph
+bundle: profile_collection_all
+mode: default
+content:
+  field_view_reference:
+    weight: 1
+    label: hidden
+    settings:
+      plugin_types:
+        block: block
+        default: '0'
+        page: '0'
+        attachment: '0'
+        rest_export: '0'
+        entity_browser: '0'
+        feed: '0'
+        embed: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: viewsreference_formatter
+    region: content
+hidden:
+  field_body_unformatted: true
+  field_link: true
+  field_story_by: true
+  field_title: true

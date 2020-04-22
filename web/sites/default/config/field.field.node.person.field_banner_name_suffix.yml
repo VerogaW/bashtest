@@ -1,0 +1,21 @@
+uuid: 60c6e991-848f-4037-8d1b-d8a105f4f93c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_name_suffix
+    - node.type.person
+  module:
+    - options
+id: node.person.field_banner_name_suffix
+field_name: field_banner_name_suffix
+entity_type: node
+bundle: person
+label: 'Banner name suffix'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

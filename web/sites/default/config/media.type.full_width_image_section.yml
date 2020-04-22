@@ -1,0 +1,18 @@
+uuid: 109a35d8-a86f-4377-81d8-006cb1c30beb
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: field_media_image_5
+id: full_width_image_section
+label: 'Full Width Image Section'
+description: 'Use <em>Full Width Image Section</em> for the background image in the "Full Width Image Section" paragraph'
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_image_5
+field_map: {  }

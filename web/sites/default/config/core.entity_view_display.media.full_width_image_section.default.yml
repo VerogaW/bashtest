@@ -1,0 +1,29 @@
+uuid: 99f05123-c4cf-4754-b858-f8e2d010ce23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.full_width_image_section.field_media_image_5
+    - media.type.full_width_image_section
+  module:
+    - svg_image
+id: media.full_width_image_section.default
+targetEntityType: media
+bundle: full_width_image_section
+mode: default
+content:
+  field_media_image_5:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

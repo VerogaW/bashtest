@@ -1,0 +1,49 @@
+uuid: deaa8c2a-136d-4607-bb1a-68cb9d7a74dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - block_class
+    - ctools
+    - menu_block
+    - system
+  theme:
+    - onu
+third_party_settings:
+  block_class:
+    classes: sidebar-menu-block
+id: mainnavigationpushslidemenubottom_2
+theme: onu
+region: sidebar_right
+weight: -19
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Main navigation Interior Page Sidebar'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand: 0
+  parent: 'main:'
+  suggestion: sidebar_menu
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+      page: page
+      person: person
+      program_of_study: program_of_study
+      stories: stories
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/node/11\r\n/news\r\n/events\r\n/node/2000\r\n/node/2021\r\n/node/2019\r\n/node/1638\r\n/node/2013\r\n/node/1630\r\n/node/1623\r\n/node/1931\r\n/node/1639\r\n/node/1616\r\n/node/1612\r\n/node/1626\r\n/node/1617\r\n/node/1618\r\n/node/1610\r\n/node/1632\r\n/node/1614\r\n/node/1621\r\n/node/1608\r\n/node/1642\r\n/node/1641\r\n/node/1640\r\n/node/1637\r\n/node/1636\r\n/node/1635\r\n/node/1634\r\n/node/1633\r\n/node/1631\r\n/node/1607\r\n/node/1609\r\n/node/1611\r\n/node/1589\r\n/node/1629\r\n/node/1628\r\n/node/1627\r\n/node/1622\r\n/node/1615\r\n/node/1613\r\n/node/1606\r\n/node/124\r\n/node/1651\r\n/node/1945\r\n/node/1935\r\n/node/444\r\n/node/454\r\n/node/446\r\n/node/448\r\n/node/428"
+    negate: true
+    context_mapping: {  }

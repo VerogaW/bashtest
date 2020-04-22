@@ -1,0 +1,31 @@
+uuid: b6932fd8-7e62-46cb-b760-4754200fc11d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.course_type.field_font_awesome_icon
+    - taxonomy.vocabulary.course_type
+  module:
+    - text
+id: taxonomy_term.course_type.default
+targetEntityType: taxonomy_term
+bundle: course_type
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_font_awesome_icon:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true

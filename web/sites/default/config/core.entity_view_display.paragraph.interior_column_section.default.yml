@@ -1,0 +1,45 @@
+uuid: e8cd8a9c-b638-44a2-99b5-c57d50a7cd58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.interior_column_section.field_interior_column_section
+    - paragraphs.paragraphs_type.interior_column_section
+  module:
+    - entity_reference_revisions
+    - field_group
+third_party_settings:
+  field_group:
+    group_row:
+      children:
+        - field_interior_column_section
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: row
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: row
+      region: content
+id: paragraph.interior_column_section.default
+targetEntityType: paragraph
+bundle: interior_column_section
+mode: default
+content:
+  field_interior_column_section:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

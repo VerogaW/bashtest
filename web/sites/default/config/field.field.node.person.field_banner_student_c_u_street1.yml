@@ -1,0 +1,19 @@
+uuid: b213b903-37a2-4494-bd74-5d6ca19da971
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_student_c_u_street1
+    - node.type.person
+id: node.person.field_banner_student_c_u_street1
+field_name: field_banner_student_c_u_street1
+entity_type: node
+bundle: person
+label: 'Banner student campus unit street1'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

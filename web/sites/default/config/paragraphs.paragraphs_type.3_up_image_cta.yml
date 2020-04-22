@@ -1,0 +1,9 @@
+uuid: ca7b85a0-7855-4630-a650-f39e2906d0db
+langcode: en
+status: true
+dependencies: {  }
+id: 3_up_image_cta
+label: '3 - UP Image CTA'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

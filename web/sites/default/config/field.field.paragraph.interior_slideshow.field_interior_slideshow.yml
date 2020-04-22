@@ -1,0 +1,52 @@
+uuid: 495c159a-eaec-40dc-8922-6a958cd06942
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_interior_slideshow
+    - paragraphs.paragraphs_type.interior_slideshow
+    - paragraphs.paragraphs_type.interior_slideshow_slide
+  module:
+    - entity_reference_revisions
+id: paragraph.interior_slideshow.field_interior_slideshow
+field_name: field_interior_slideshow
+entity_type: paragraph
+bundle: interior_slideshow
+label: 'Interior Slideshow'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      interior_slideshow_slide: interior_slideshow_slide
+    target_bundles_drag_drop:
+      2_column_cta:
+        weight: 9
+        enabled: false
+      3_column_cta:
+        weight: 10
+        enabled: false
+      4_column_cta:
+        weight: 11
+        enabled: false
+      column_section:
+        weight: 12
+        enabled: false
+      hero_slide:
+        weight: 13
+        enabled: false
+      interior_slideshow:
+        weight: 14
+        enabled: false
+      interior_slideshow_slide:
+        enabled: true
+        weight: 15
+      quick_link:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

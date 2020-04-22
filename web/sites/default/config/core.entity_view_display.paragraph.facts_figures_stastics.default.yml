@@ -1,0 +1,48 @@
+uuid: 8facf656-1ddc-4a11-87f5-df2c2159a461
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.facts_figures_stastics.field_statistic_color
+    - field.field.paragraph.facts_figures_stastics.field_statistic_description
+    - field.field.paragraph.facts_figures_stastics.field_statistic_number
+    - paragraphs.paragraphs_type.facts_figures_stastics
+  module:
+    - fences
+id: paragraph.facts_figures_stastics.default
+targetEntityType: paragraph
+bundle: facts_figures_stastics
+mode: default
+content:
+  field_statistic_description:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: text-black
+        fences_field_item_tag: span
+        fences_field_item_classes: 'item-statistic__item-fact text-style-1 text-black'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+  field_statistic_number:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: span
+        fences_field_item_classes: item-statistic__item-figure
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+hidden:
+  field_statistic_color: true

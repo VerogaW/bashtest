@@ -1,0 +1,192 @@
+uuid: 72cdde48-214a-4ed9-b468-998ae96d2b79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.photo_carousel.field_body_formatted
+    - field.field.paragraph.photo_carousel.field_link
+    - field.field.paragraph.photo_carousel.field_photo_carousel_variation
+    - field.field.paragraph.photo_carousel.field_photo_ref
+    - field.field.paragraph.photo_carousel.field_title
+    - paragraphs.paragraphs_type.photo_carousel
+  module:
+    - entity_reference_revisions
+    - fences
+    - field_group
+    - link
+    - options
+    - text
+third_party_settings:
+  field_group:
+    group_carousel_gallery:
+      children:
+        - group_carousel_gallery_inner
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: carousel-gallery
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Carousel Gallery'
+      region: content
+    group_carousel_gallery_inner:
+      children:
+        - group_carousel_gallery_main
+        - group_carousel_window
+      parent_name: group_carousel_gallery
+      weight: 5
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: carousel-gallery__inner
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Carousel Gallery Inner'
+      region: content
+    group_carousel_gallery_main:
+      children:
+        - group_carousel_gallery_content
+      parent_name: group_carousel_gallery_inner
+      weight: 6
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: carousel-gallery__main
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Carousel Gallery Main'
+      region: content
+    group_carousel_gallery_content:
+      children:
+        - field_title
+        - field_body_formatted
+        - field_link
+      parent_name: group_carousel_gallery_main
+      weight: 7
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: carousel-gallery__content
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Carousel Gallery Content'
+      region: content
+    group_carousel_window:
+      children:
+        - field_photo_ref
+        - field_photo_carousel_variation
+      parent_name: group_carousel_gallery_inner
+      weight: 7
+      format_type: html_element
+      format_settings:
+        label: 'Carousel Window'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'carousel-gallery__window photo-var-[paragraph:field_photo_carousel_variation:value]'
+      label: 'Carousel Window'
+      region: content
+id: paragraph.photo_carousel.default
+targetEntityType: paragraph
+bundle: photo_carousel
+mode: default
+content:
+  field_body_formatted:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: 'text-style-1 text-black'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: text_default
+    region: content
+  field_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: ul
+        fences_field_classes: button-grid
+        fences_field_item_tag: li
+        fences_field_item_classes: button-grid__item
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: link
+    region: content
+  field_photo_carousel_variation:
+    type: list_default
+    weight: 10
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_photo_ref:
+    type: entity_reference_revisions_entity_view
+    weight: 9
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: carousel-gallery__items-wrap--v1
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    region: content
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: h2
+        fences_field_item_classes: 'heading-style-3 text-orange'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+hidden: {  }

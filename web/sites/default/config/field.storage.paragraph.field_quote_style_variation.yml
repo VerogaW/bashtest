@@ -1,0 +1,27 @@
+uuid: 5576cd64-d95c-479f-927e-0a2230b1ee7f
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_quote_style_variation
+field_name: field_quote_style_variation
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: feature-quote
+      label: 'With Image'
+    -
+      value: feature-quote_alt
+      label: 'Without Image'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

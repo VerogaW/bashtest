@@ -1,0 +1,14 @@
+uuid: c3c02b37-f480-4754-858a-3fd906e29305
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.group_content_publisher
+  module:
+    - user
+id: user_remove_role_action.group_content_publisher
+label: 'Remove the Group Content Publisher role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: group_content_publisher

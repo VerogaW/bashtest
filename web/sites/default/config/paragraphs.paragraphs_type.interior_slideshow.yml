@@ -1,0 +1,9 @@
+uuid: 8976988f-fa5c-4b49-8e2e-afd32826c59f
+langcode: en
+status: true
+dependencies: {  }
+id: interior_slideshow
+label: 'Interior Slideshow'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

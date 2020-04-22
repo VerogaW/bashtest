@@ -1,0 +1,22 @@
+uuid: 13583e7a-ec9b-43bf-894a-91f92d383c06
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: programs_of_study
+label: 'Programs of Study'
+type: 'canonical_entities:node'
+pattern: 'academics/[node:title]'
+selection_criteria:
+  450c5f48-b646-4548-a495-54e41bbe401f:
+    id: node_type
+    bundles:
+      program_of_study: program_of_study
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 450c5f48-b646-4548-a495-54e41bbe401f
+selection_logic: and
+weight: -5
+relationships: {  }

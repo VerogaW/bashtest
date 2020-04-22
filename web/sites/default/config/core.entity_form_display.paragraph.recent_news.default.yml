@@ -1,0 +1,47 @@
+uuid: 7d101bf3-f8e8-49ed-9336-e8ff2f665cf9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.recent_news.field_link
+    - field.field.paragraph.recent_news.field_news_style_variation
+    - field.field.paragraph.recent_news.field_subtitle
+    - field.field.paragraph.recent_news.field_view_reference
+    - paragraphs.paragraphs_type.recent_news
+  module:
+    - link_class
+id: paragraph.recent_news.default
+targetEntityType: paragraph
+bundle: recent_news
+mode: default
+content:
+  field_link:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      link_class_mode: force_class
+      link_class_force: button-hollow_black-orange
+      link_class_select: ''
+    third_party_settings: {  }
+    type: link_class_field_widget
+    region: content
+  field_news_style_variation:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_subtitle:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  field_view_reference: true
+  status: true
+  uid: true

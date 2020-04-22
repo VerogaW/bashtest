@@ -1,0 +1,9 @@
+uuid: 21e72c0d-d449-45ea-9d27-ad72e65c3e78
+langcode: en
+status: true
+dependencies: {  }
+id: context_divider
+label: 'Context Divider'
+icon_uuid: null
+description: 'For Landing Pages, Sub-Landing Pages & Interior Pages.'
+behavior_plugins: {  }

@@ -1,0 +1,11 @@
+uuid: dcbfa144-9aa2-4af8-ba6c-226186b3e1a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.hero_banner_image
+id: media.hero_banner_image
+target_entity_type_id: media
+target_bundle: hero_banner_image
+default_langcode: site_default
+language_alterable: false

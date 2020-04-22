@@ -1,0 +1,39 @@
+uuid: 261f66b0-40f2-4d3b-8e61-6bc44adf6e79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.interior_slideshow_slide.field_media_image_4
+    - image.style.thumbnail
+    - media.type.interior_slideshow_slide
+  module:
+    - focal_point
+id: media.interior_slideshow_slide.default
+targetEntityType: media
+bundle: interior_slideshow_slide
+mode: default
+content:
+  field_media_image_4:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings: {  }
+    type: image_focal_point
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  name: true
+  path: true
+  status: true
+  uid: true

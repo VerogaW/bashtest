@@ -1,0 +1,19 @@
+uuid: 040392aa-7cf1-401e-bc98-f8fe134e251c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_photo_caption
+    - paragraphs.paragraphs_type.photo_carousel_slide
+id: paragraph.photo_carousel_slide.field_photo_caption
+field_name: field_photo_caption
+entity_type: paragraph
+bundle: photo_carousel_slide
+label: 'Photo Caption'
+description: 'Limit: 100 characters'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

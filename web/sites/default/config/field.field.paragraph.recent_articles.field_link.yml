@@ -1,0 +1,23 @@
+uuid: 7ba0a32b-7c21-4b7f-b9f5-eaf3e9ef87b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.recent_articles
+  module:
+    - link
+id: paragraph.recent_articles.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: recent_articles
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

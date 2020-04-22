@@ -1,0 +1,19 @@
+uuid: af4c60fe-3af6-41ab-8d80-49039e62f4f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_quote_attribution
+    - paragraphs.paragraphs_type.quote_section
+id: paragraph.quote_section.field_quote_attribution
+field_name: field_quote_attribution
+entity_type: paragraph
+bundle: quote_section
+label: 'Quote Attribution'
+description: 'Limit: 50 characters'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

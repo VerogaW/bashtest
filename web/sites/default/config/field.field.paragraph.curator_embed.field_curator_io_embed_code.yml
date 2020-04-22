@@ -1,0 +1,21 @@
+uuid: 4e8766cf-49b0-44e6-9ec3-346c6ae64cf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_curator_io_embed_code
+    - paragraphs.paragraphs_type.curator_embed
+  module:
+    - text
+id: paragraph.curator_embed.field_curator_io_embed_code
+field_name: field_curator_io_embed_code
+entity_type: paragraph
+bundle: curator_embed
+label: 'Curator.io Embed Code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

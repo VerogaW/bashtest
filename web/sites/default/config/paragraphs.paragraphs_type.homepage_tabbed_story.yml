@@ -1,0 +1,9 @@
+uuid: 069d273f-f38c-42c7-a3b6-a0728b07bf25
+langcode: en
+status: true
+dependencies: {  }
+id: homepage_tabbed_story
+label: 'Homepage Tabbed Story'
+icon_uuid: null
+description: 'Don''t use directly. Referenced via "Homepage Tabbed"'
+behavior_plugins: {  }

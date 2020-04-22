@@ -1,0 +1,39 @@
+uuid: 57389f3a-245b-4984-b434-59138d739860
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.hero_slide_image.field_media_image_2
+    - image.style.thumbnail
+    - media.type.hero_slide_image
+  module:
+    - focal_point
+id: media.hero_slide_image.default
+targetEntityType: media
+bundle: hero_slide_image
+mode: default
+content:
+  field_media_image_2:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings: {  }
+    type: image_focal_point
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  name: true
+  path: true
+  status: true
+  uid: true

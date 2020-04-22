@@ -1,0 +1,11 @@
+uuid: f6b7bb2e-76a0-4b1b-acb2-5a2f4aa57b74
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.event_featured_image
+id: media.event_featured_image
+target_entity_type_id: media
+target_bundle: event_featured_image
+default_langcode: site_default
+language_alterable: false

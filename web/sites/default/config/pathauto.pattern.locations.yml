@@ -1,0 +1,14 @@
+uuid: f6536513-6da9-4c36-8b27-45f65448d767
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: locations
+label: General
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

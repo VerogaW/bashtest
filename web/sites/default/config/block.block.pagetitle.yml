@@ -1,0 +1,27 @@
+uuid: f34a297a-fcb8-4e1e-9bb2-02aff2a4e0b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+  theme:
+    - onu
+id: pagetitle
+theme: onu
+region: content_top
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

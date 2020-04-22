@@ -1,0 +1,39 @@
+.page-node-person {
+  h1.page-title {
+    font-size: 44px;
+    line-height: 60px;
+    font-weight: 500;
+    margin: 0 0 11.5px;
+  }
+  .layout-container {
+    max-width: 98%;
+    padding-top: 50px;
+    .row {
+      max-width: 882px;
+      width: 100%;
+      margin: 0 auto;
+      .node--type-person {
+        .profile-details {
+          .field {
+            display: flex;
+            .field__label {
+              font-weight: normal;
+              flex: 0 0 120px;
+            }
+          }
+        }
+        .box_center {
+          padding: 10px;
+          text-align: center;
+          margin: 20px 0 30px;
+        }
+        a {
+          color: #f37835;
+        }
+        .field--name-field-banner-student-c-u-street1 {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

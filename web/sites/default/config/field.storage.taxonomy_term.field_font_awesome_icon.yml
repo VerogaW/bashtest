@@ -1,0 +1,21 @@
+uuid: 0fdc255d-3d2b-400e-b9c4-3f40dc32f844
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_font_awesome_icon
+field_name: field_font_awesome_icon
+entity_type: taxonomy_term
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

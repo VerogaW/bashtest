@@ -1,0 +1,8 @@
+uuid: db06a143-4a18-49e9-a145-6d883b5b9eea
+langcode: en
+status: true
+dependencies: {  }
+name: 'Course Type'
+vid: course_type
+description: ''
+weight: 0

@@ -1,0 +1,87 @@
+uuid: eda87aeb-7aa3-4ada-ab8d-6a16d1eb1a77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.context_divider.field_title
+    - paragraphs.paragraphs_type.context_divider
+  module:
+    - fences
+    - field_group
+third_party_settings:
+  field_group:
+    group_context_divider:
+      children:
+        - group_context_divider_inner
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: context-divider
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Context Divider'
+      region: content
+    group_context_divider_inner:
+      children:
+        - group_context_divider_main
+      parent_name: group_context_divider
+      weight: 2
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: context-divider__inner
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Context Divider Inner'
+      region: content
+    group_context_divider_main:
+      children:
+        - field_title
+      parent_name: group_context_divider_inner
+      weight: 3
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: context-divider__main
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Context Divider Main'
+      region: content
+id: paragraph.context_divider.default
+targetEntityType: paragraph
+bundle: context_divider
+mode: default
+content:
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: context-base
+        fences_field_item_tag: h2
+        fences_field_item_classes: 'heading-style-2 text-orange'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+hidden: {  }

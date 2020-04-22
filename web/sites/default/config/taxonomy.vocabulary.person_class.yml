@@ -1,0 +1,8 @@
+uuid: 0a34b7c7-5b56-4311-8931-e399af1901c4
+langcode: en
+status: true
+dependencies: {  }
+name: 'Person Class'
+vid: person_class
+description: ''
+weight: 0

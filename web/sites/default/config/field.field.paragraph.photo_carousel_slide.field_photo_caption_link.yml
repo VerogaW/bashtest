@@ -1,0 +1,23 @@
+uuid: 6c5915f6-2010-4e85-ad05-8ab27031906e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_photo_caption_link
+    - paragraphs.paragraphs_type.photo_carousel_slide
+  module:
+    - link
+id: paragraph.photo_carousel_slide.field_photo_caption_link
+field_name: field_photo_caption_link
+entity_type: paragraph
+bundle: photo_carousel_slide
+label: 'Photo Caption Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

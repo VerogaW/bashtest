@@ -1,0 +1,25 @@
+uuid: a8b0c4d9-49c1-4224-9e51-a8225d4a77b0
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.push-navigation-toggle
+  module:
+    - system
+  theme:
+    - onu
+id: onu_pushnavigationtoggle_2
+theme: onu
+region: slide_in_navigation
+weight: -14
+provider: null
+plugin: 'system_menu_block:push-navigation-toggle'
+settings:
+  id: 'system_menu_block:push-navigation-toggle'
+  label: 'Push Navigation Toggle'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

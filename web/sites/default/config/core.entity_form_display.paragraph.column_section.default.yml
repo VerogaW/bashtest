@@ -1,0 +1,38 @@
+uuid: 36d8f713-7363-42d5-814a-efce3d3b815d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.column_section.field_column_section
+    - field.field.paragraph.column_section.field_fluid_width
+    - paragraphs.paragraphs_type.column_section
+  module:
+    - paragraphs
+id: paragraph.column_section.default
+targetEntityType: paragraph
+bundle: column_section
+mode: default
+content:
+  field_column_section:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: 'Column Item'
+      title_plural: Items
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+  field_fluid_width:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

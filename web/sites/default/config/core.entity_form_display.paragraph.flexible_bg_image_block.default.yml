@@ -1,0 +1,65 @@
+uuid: f6e33a04-2c4a-47ec-ad51-b63f7db45aaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.flexible_bg_image_block.field_image
+    - field.field.paragraph.flexible_bg_image_block.field_link
+    - field.field.paragraph.flexible_bg_image_block.field_subtitle
+    - field.field.paragraph.flexible_bg_image_block.field_title
+    - paragraphs.paragraphs_type.flexible_bg_image_block
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+    - link
+id: paragraph.flexible_bg_image_block.default
+targetEntityType: paragraph
+bundle: flexible_bg_image_block
+mode: default
+content:
+  field_image:
+    weight: 0
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: media_entity_browser_flexible_bg
+    type: inline_entity_form_complex
+    region: content
+  field_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_subtitle:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

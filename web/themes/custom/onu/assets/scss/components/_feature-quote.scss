@@ -1,0 +1,232 @@
+.feature-quote {
+  position: relative;
+
+  $_pattern-position: $space-small;
+
+  @include dot-pattern(
+    132px,
+    202px,
+    "cyan",
+    $right: $_pattern-position,
+    $bottom: $_pattern-position
+  );
+
+  $_pattern-size: 80px;
+
+  @include dot-pattern(
+    $_pattern-size,
+    $_pattern-size,
+    "white",
+    $pseudo: "before",
+    $left: $_pattern-position,
+    $bottom: 5px
+  );
+
+  &.feature-quote_alt {
+    @include dot-pattern(
+      90px,
+      112px,
+      "orange",
+      $right: $space-small,
+      $bottom: $space-small,
+      $pseudo: "before"
+    );
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @include breakpoint(large) {
+    height: 700px;
+  }
+}
+
+.feature-quote::after,
+.feature-quote::before {
+  display: none;
+
+  @include breakpoint(large) {
+    display: block;
+  }
+}
+
+.feature-quote::after {
+  z-index: -1;
+}
+
+.feature-quote__image-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 300px;
+
+  @include breakpoint(large) {
+    width: 40%;
+    height: 100%;
+  }
+
+  .feature-quote_alt & {
+    display: none;
+  }
+}
+
+.feature-quote__image {
+  @include object-fit;
+}
+
+.feature-quote__border {
+  position: absolute;
+  width: $space-small;
+  height: $space-small;
+  background-color: $emerald;
+
+  .feature-quote.bor_1 & {
+    display: none;
+  }
+}
+
+$_quote-border-position-mobile: $space-medium;
+$_quote-border-position-desktop: $space-xlarge;
+
+.feature-quote__border_1 {
+  top: $_quote-border-position-mobile;
+  right: $_quote-border-position-mobile;
+  width: 100%;
+  @include breakpoint(large) {
+    top: $_quote-border-position-desktop;
+    right: $_quote-border-position-desktop;
+    z-index: -1;
+  }
+}
+
+.feature-quote__border_2 {
+  top: $_quote-border-position-mobile;
+  right: $_quote-border-position-mobile;
+  bottom: $_quote-border-position-mobile;
+  height: calc(100% - (#{$_quote-border-position-mobile} * 2));
+
+  @include breakpoint(large) {
+    top: $_quote-border-position-desktop;
+    right: $_quote-border-position-desktop;
+    bottom: $_quote-border-position-desktop;
+    height: calc(100% - (#{$_quote-border-position-desktop} * 2));
+  }
+}
+
+.feature-quote__border_3 {
+  right: $_quote-border-position-mobile;
+  bottom: $_quote-border-position-mobile;
+  z-index: 1;
+  width: 100%;
+
+  @include breakpoint(large) {
+    right: $_quote-border-position-desktop;
+    bottom: $_quote-border-position-desktop;
+  }
+}
+
+.feature-quote__quote-outer {
+  @include flex-center;
+  @include flex-grid-row;
+
+  @include breakpoint(large) {
+    @include adhere;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+$_feature-quote__graphic-width: 70px;
+
+.feature-quote__quote-graphic {
+  width: $_feature-quote__graphic-width;
+  height: 50px;
+  margin: $space-large 0;
+  //transform: scaleX(-1) rotate(180deg);
+
+  @include breakpoint(large) {
+    position: absolute;
+    left: -$_feature-quote__graphic-width;
+    margin: auto;
+  }
+
+  .feature-quote_alt & {
+    $_feature-quote__graphic-width-alt: 100px;
+
+    @include breakpoint(large) {
+      left: -$_feature-quote__graphic-width-alt;
+      width: $_feature-quote__graphic-width-alt;
+      height: $space-xlarge;
+    }
+  }
+}
+
+.feature-quote__quote-inner {
+  padding-bottom: $space-xxlarge;
+  @include flex-grid-column(11);
+
+  @include breakpoint(large) {
+    position: relative;
+    padding-bottom: 0;
+    @include flex-grid-size(6);
+    @include grid-column-offset(5);
+  }
+
+  @include breakpoint(xlarge) {
+    @include flex-grid-size(6);
+    @include grid-column-offset(6);
+  }
+
+  .feature-quote_alt & {
+    @include breakpoint(large) {
+      @include flex-grid-size(10);
+      @include grid-column-position(center);
+    }
+  }
+}
+
+.feature-quote__quote {
+  padding-right: $space-small;
+  margin: $space-large 0;
+  border: 0;
+
+  @include breakpoint(medium) {
+    margin: $space-medium 0;
+  }
+}
+
+.feature-quote__quote-text {
+  font-family: $font-brandongrotesque;
+  font-size: rem-calc(30px);
+  font-weight: 700;
+  line-height: (36 / 30);
+  color: $orange;
+
+  @include breakpoint(large) {
+    font-size: rem-calc(44px);
+    line-height: (48 / 44);
+  }
+
+  .feature-quote_alt & {
+    @include heading-style-1;
+    text-transform: none;
+  }
+}
+
+.feature-quote__cite {
+  display: block;
+
+  &::before {
+    content: "—";
+  }
+}
+
+.feature-quote__cite-text {
+  font-weight: 500;
+}
+
+.feature-quote__link {
+  margin-top: $space-medium;
+}

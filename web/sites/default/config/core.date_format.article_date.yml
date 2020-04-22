@@ -1,0 +1,8 @@
+uuid: fade5be1-1b3a-4b9a-b081-c1973fecd236
+langcode: en
+status: true
+dependencies: {  }
+id: article_date
+label: 'Article Date'
+locked: false
+pattern: 'F d, Y'

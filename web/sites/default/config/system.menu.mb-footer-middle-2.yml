@@ -1,0 +1,8 @@
+uuid: 205a0f07-3eff-4fbc-8449-4c56f859642b
+langcode: en
+status: true
+dependencies: {  }
+id: mb-footer-middle-2
+label: 'MB: Footer: Middle 2'
+description: ''
+locked: false

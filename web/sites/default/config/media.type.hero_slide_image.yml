@@ -1,0 +1,18 @@
+uuid: de7e45e6-d79f-4964-9747-349102e1bf73
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: field_media_image_2
+id: hero_slide_image
+label: 'Hero Slide Image'
+description: 'Use <em>Hero Slide Image</em> for the single hero slide image or hero video thumbnail'
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_image_2
+field_map: {  }

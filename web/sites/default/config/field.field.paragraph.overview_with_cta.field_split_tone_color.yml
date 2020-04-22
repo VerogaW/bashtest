@@ -1,0 +1,19 @@
+uuid: 0f3fbbd5-80aa-40e9-8453-177e62371836
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_split_tone_color
+    - paragraphs.paragraphs_type.overview_with_cta
+id: paragraph.overview_with_cta.field_split_tone_color
+field_name: field_split_tone_color
+entity_type: paragraph
+bundle: overview_with_cta
+label: 'Split tone color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,11 @@
+uuid: 44573220-ec22-4826-9478-46dd060796a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.person_employee_unit
+id: taxonomy_term.person_employee_unit
+target_entity_type_id: taxonomy_term
+target_bundle: person_employee_unit
+default_langcode: site_default
+language_alterable: false

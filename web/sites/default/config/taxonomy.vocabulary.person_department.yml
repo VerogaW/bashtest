@@ -1,0 +1,8 @@
+uuid: 0bc5a323-733e-40a6-8deb-7735df8485f7
+langcode: en
+status: true
+dependencies: {  }
+name: 'Person Department'
+vid: person_department
+description: ''
+weight: 0

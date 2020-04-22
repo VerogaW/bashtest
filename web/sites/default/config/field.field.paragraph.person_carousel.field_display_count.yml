@@ -1,0 +1,23 @@
+uuid: cf71f70f-0e03-4e9c-a3e3-156174c8fe4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_display_count
+    - paragraphs.paragraphs_type.person_carousel
+  module:
+    - options
+id: paragraph.person_carousel.field_display_count
+field_name: field_display_count
+entity_type: paragraph
+bundle: person_carousel
+label: 'Display Count'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: '3'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

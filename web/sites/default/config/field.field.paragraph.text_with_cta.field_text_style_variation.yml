@@ -1,0 +1,23 @@
+uuid: b7eaf584-f010-4027-b131-93f54455887f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_style_variation
+    - paragraphs.paragraphs_type.text_with_cta
+  module:
+    - options
+id: paragraph.text_with_cta.field_text_style_variation
+field_name: field_text_style_variation
+entity_type: paragraph
+bundle: text_with_cta
+label: 'Text Style Variation'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: collection-ctas
+default_value_callback: ''
+settings: {  }
+field_type: list_string

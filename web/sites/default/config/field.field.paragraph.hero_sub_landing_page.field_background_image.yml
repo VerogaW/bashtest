@@ -1,0 +1,28 @@
+uuid: 144617dd-7715-44c3-81f0-ebcfb5a528fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_image
+    - media.type.flexible_bg_image_block
+    - paragraphs.paragraphs_type.hero_sub_landing_page
+id: paragraph.hero_sub_landing_page.field_background_image
+field_name: field_background_image
+entity_type: paragraph
+bundle: hero_sub_landing_page
+label: 'Background Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      flexible_bg_image_block: flexible_bg_image_block
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

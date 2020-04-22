@@ -1,0 +1,13 @@
+uuid: 24f33940-90ce-44ff-a67c-9723ab9116e8
+langcode: en
+status: true
+dependencies: {  }
+id: logos
+label: Logos
+description: 'For Partners Logo'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_13
+field_map: {  }

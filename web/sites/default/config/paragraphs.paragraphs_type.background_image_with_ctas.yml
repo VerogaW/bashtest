@@ -1,0 +1,9 @@
+uuid: 5d5769bb-2b9e-445b-865b-5dfa9da15ac7
+langcode: en
+status: true
+dependencies: {  }
+id: background_image_with_ctas
+label: 'Background Image with CTAs'
+icon_uuid: null
+description: "For Landing & Sub-Landing Pages\t\r\n"
+behavior_plugins: {  }

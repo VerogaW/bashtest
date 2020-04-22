@@ -1,0 +1,102 @@
+uuid: cf15cb33-27d5-4653-b467-bb8a9773c535
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.recent_news.field_link
+    - field.field.paragraph.recent_news.field_news_style_variation
+    - field.field.paragraph.recent_news.field_subtitle
+    - field.field.paragraph.recent_news.field_view_reference
+    - paragraphs.paragraphs_type.recent_news
+  module:
+    - fences
+    - field_group
+    - link
+    - viewsreference
+third_party_settings:
+  field_group:
+    group_section_carousel_news:
+      children:
+        - field_subtitle
+        - field_view_reference
+        - field_link
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        label: 'Section-Carousel News'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'carousel-news-feed  [paragraph:field_news_style_variation:value]'
+      label: 'Section-Carousel News'
+      region: content
+id: paragraph.recent_news.default
+targetEntityType: paragraph
+bundle: recent_news
+mode: default
+content:
+  field_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: carousel-news-feed__buttons
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: link
+    region: content
+  field_subtitle:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: h2
+        fences_field_item_classes: 'heading-style-5 text-orange'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+  field_view_reference:
+    weight: 2
+    label: hidden
+    settings:
+      plugin_types:
+        block: block
+        default: 0
+        page: 0
+        attachment: 0
+        rest_export: 0
+        entity_browser: 0
+        feed: 0
+        embed: 0
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: carousel-news-feed__items-wrap
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: viewsreference_formatter
+    region: content
+hidden:
+  field_news_style_variation: true

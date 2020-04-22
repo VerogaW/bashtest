@@ -1,0 +1,29 @@
+uuid: 666ba57d-0444-4946-bf69-a28315d5d69e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:62979d7f-6d0d-49ff-8754-a339a1c73f2d'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - onu
+third_party_settings:
+  block_class:
+    classes: the-footer__logo-wrap
+id: cbfootermiddle
+theme: onu
+region: footer_middle
+weight: -16
+provider: null
+plugin: 'block_content:62979d7f-6d0d-49ff-8754-a339a1c73f2d'
+settings:
+  id: 'block_content:62979d7f-6d0d-49ff-8754-a339a1c73f2d'
+  label: 'CB: Footer Middle'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

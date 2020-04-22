@@ -1,0 +1,9 @@
+uuid: 17933cfa-ff21-45ad-8920-01194ce2fcfb
+langcode: en
+status: true
+dependencies: {  }
+id: 4_up_image_cta_item
+label: '4 Up Image CTA Item'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

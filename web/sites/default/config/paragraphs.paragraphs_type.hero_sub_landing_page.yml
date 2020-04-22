@@ -1,0 +1,9 @@
+uuid: c4361a9e-76f6-4e29-9354-ecf6c2b5954d
+langcode: en
+status: true
+dependencies: {  }
+id: hero_sub_landing_page
+label: 'Hero-Sub Landing Page'
+icon_uuid: null
+description: 'For Sub-Landing Pages'
+behavior_plugins: {  }

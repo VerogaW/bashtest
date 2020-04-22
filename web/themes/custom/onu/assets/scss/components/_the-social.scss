@@ -1,0 +1,78 @@
+$_social-background-color: $orange;
+
+.the-social {
+  position: relative;
+  background-color: $_social-background-color;
+}
+
+.the-social__inner {
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 90px;
+  @include flex-grid-row;
+
+  @include breakpoint(medium) {
+    $_padding: 50px;
+
+    padding-top: $_padding;
+    padding-bottom: $_padding;
+  }
+}
+
+.the-social__text {
+  display: block;
+  padding: 0 $space-medium;
+  font-family: $font-memphis;
+  font-size: rem-calc(24px);
+  line-height: 36px;
+  color: $white;
+  text-align: center;
+  letter-spacing: rem-calc(1px);
+  flex-grow: 1;
+}
+
+.the-social__list {
+  display: flex;
+  margin-top: $space-large;
+  justify-content: center;
+
+  @include flex-grid-column(12);
+  @include breakpoint(large) {
+    margin-top: 0;
+
+    @include flex-grid-size(6);
+  }
+}
+
+.the-social__list-item {
+  $item-padding: $space-small;
+
+  display: inline-block;
+  padding: 0 $item-padding;
+}
+
+.the-social__item-link {
+  $_link-size-mobile: $space-large;
+  $_link-size-desktop: 50px;
+
+  display: block;
+  width: $_link-size-mobile;
+  height: $_link-size-mobile;
+  fill: $_social-background-color;
+  background-color: $white;
+  transition: {
+    property: background-color;
+    duration: $transition-short;
+    timing-function: $ease-default;
+  };
+
+  @include breakpoint(medium) {
+    width: $_link-size-desktop;
+    height: $_link-size-desktop;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $black;
+  }
+}

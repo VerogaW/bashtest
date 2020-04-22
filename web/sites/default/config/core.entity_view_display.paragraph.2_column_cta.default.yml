@@ -1,0 +1,107 @@
+uuid: 9f742682-b7af-4a63-b1d8-8366bc33b9ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.2_column_cta.field_body_formatted
+    - field.field.paragraph.2_column_cta.field_image
+    - field.field.paragraph.2_column_cta.field_link
+    - field.field.paragraph.2_column_cta.field_title
+    - paragraphs.paragraphs_type.2_column_cta
+  module:
+    - field_group
+    - link
+    - linked_field
+    - text
+third_party_settings:
+  field_group:
+    group_cta_wrapper:
+      children:
+        - group_column_content
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: col-md-6
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'CTA Wrapper'
+      region: content
+    group_column_content:
+      children:
+        - field_image
+        - field_title
+        - field_body_formatted
+        - field_link
+      parent_name: group_cta_wrapper
+      weight: 20
+      format_type: html_element
+      format_settings:
+        label: 'Column Content'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: column-content
+      label: 'Column Content'
+      region: content
+id: paragraph.2_column_cta.default
+targetEntityType: paragraph
+bundle: 2_column_cta
+mode: default
+content:
+  field_body_formatted:
+    weight: 23
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_image:
+    weight: 21
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: field
+        destination: field_link
+        advanced: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_link:
+    weight: 24
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_title:
+    weight: 22
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: field
+        destination: field_link
+        advanced: {  }
+    type: string
+    region: content
+hidden: {  }

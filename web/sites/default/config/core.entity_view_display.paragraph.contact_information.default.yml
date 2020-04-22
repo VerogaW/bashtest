@@ -1,0 +1,103 @@
+uuid: b4b9e88f-d3d8-4077-ad5c-9dafd57abf2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_information.field_address
+    - field.field.paragraph.contact_information.field_subtitle
+    - field.field.paragraph.contact_information.field_title
+    - paragraphs.paragraphs_type.contact_information
+  module:
+    - address
+    - fences
+    - field_group
+third_party_settings:
+  field_group:
+    group_section_wrapper:
+      children:
+        - group_contentinner
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: container
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Section Wrapper'
+      region: content
+    group_contentinner:
+      children:
+        - field_title
+        - field_subtitle
+        - field_address
+      parent_name: group_section_wrapper
+      weight: 20
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: contact-information-inner
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Content Inner'
+      region: content
+id: paragraph.contact_information.default
+targetEntityType: paragraph
+bundle: contact_information
+mode: default
+content:
+  field_address:
+    weight: 23
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: text-style-1
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: address_default
+    region: content
+  field_subtitle:
+    weight: 22
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: h4
+        fences_field_item_classes: heading-style-4
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+  field_title:
+    weight: 21
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: h3
+        fences_field_item_classes: 'heading-style-3 text-orange'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+hidden: {  }

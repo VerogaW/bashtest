@@ -1,0 +1,23 @@
+uuid: 2823f275-ce52-4245-bc29-67b9a0a27428
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_event_style_variation
+    - paragraphs.paragraphs_type.events_feed
+  module:
+    - options
+id: paragraph.events_feed.field_event_style_variation
+field_name: field_event_style_variation
+entity_type: paragraph
+bundle: events_feed
+label: 'Event Style Variation'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Dark Variation'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,19 @@
+uuid: 8480c7a3-330f-4a99-9f5c-2dab31fa3ee3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_bu_zip
+    - node.type.person
+id: node.person.field_banner_bu_zip
+field_name: field_banner_bu_zip
+entity_type: node
+bundle: person
+label: 'Banner BU zip'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

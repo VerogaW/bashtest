@@ -1,0 +1,22 @@
+.view-id-map_view.view-display-id-block_1 {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .geolocation-common-map-locations {
+    width: 40%;
+  }
+  .geolocation-common-map-container {
+    width: 60%;
+  }
+
+  .geolocation-common-map-locations,
+  .geolocation-common-map-container {
+    float: left;
+    @media (max-width: 991px) {
+      float: none;
+      width: 100%;
+    }
+  }
+}

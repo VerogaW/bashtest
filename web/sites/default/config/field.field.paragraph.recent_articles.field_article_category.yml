@@ -1,0 +1,29 @@
+uuid: c0708a15-28ef-45a4-8d93-a69006e215af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_article_category
+    - paragraphs.paragraphs_type.recent_articles
+    - taxonomy.vocabulary.article_category
+id: paragraph.recent_articles.field_article_category
+field_name: field_article_category
+entity_type: paragraph
+bundle: recent_articles
+label: 'Article Category'
+description: 'Select which article category to display. If non selected, display most recent Articles'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      article_category: article_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

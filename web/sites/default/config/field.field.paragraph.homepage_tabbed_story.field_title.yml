@@ -1,0 +1,19 @@
+uuid: 1ab33d64-ef7b-4a01-8c2a-146ef15f2223
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.homepage_tabbed_story
+id: paragraph.homepage_tabbed_story.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: homepage_tabbed_story
+label: Headline
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

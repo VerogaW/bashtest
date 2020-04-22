@@ -1,0 +1,23 @@
+uuid: 50b3fac2-0db5-47a7-b2c4-755728e2accc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_call_to_action
+    - paragraphs.paragraphs_type.background_image_with_ctas
+  module:
+    - link
+id: paragraph.background_image_with_ctas.field_call_to_action
+field_name: field_call_to_action
+entity_type: paragraph
+bundle: background_image_with_ctas
+label: 'Call to Action'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

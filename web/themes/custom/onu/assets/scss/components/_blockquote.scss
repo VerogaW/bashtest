@@ -1,0 +1,27 @@
+blockquote {
+  padding-left: 3rem;
+  position: relative;
+  border-left: none;
+  margin-bottom: 20px;
+  &.feature-quote__quote:before {
+    display: none;
+  }
+  &:before {
+    content: "\f10d";
+    font-family: FontAwesome;
+    position: absolute;
+    left: 20px;
+    top: -5px;
+  }
+  //&:after {
+  //  content: "\f10e";
+  //  font-family: FontAwesome;
+  //  right: 0;
+  //  position: absolute;
+  //  bottom: 0;
+  //}
+  p:last-child {
+    margin: 0;
+  }
+}
+

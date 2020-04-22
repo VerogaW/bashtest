@@ -1,0 +1,160 @@
+uuid: c6937d3e-6a40-46b2-9822-f9ec194c803c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quote_section.field_image
+    - field.field.paragraph.quote_section.field_link
+    - field.field.paragraph.quote_section.field_quote
+    - field.field.paragraph.quote_section.field_quote_attribution
+    - field.field.paragraph.quote_section.field_quote_style_variation
+    - field.field.paragraph.quote_section.field_remove_quote_border
+    - field.field.paragraph.quote_section.field_svg_image
+    - paragraphs.paragraphs_type.quote_section
+  module:
+    - fences
+    - field_group
+    - link
+    - media
+third_party_settings:
+  field_group:
+    group_feature_quote_:
+      children:
+        - field_image
+        - group_quote_outer
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        label: 'Feature  Quote '
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'feature-quote [paragraph:field_quote_style_variation:value] bor_[paragraph:field_remove_quote_border:value]'
+      label: 'Feature  Quote '
+      region: content
+    group_quote_inner:
+      children:
+        - field_svg_image
+        - field_quote
+        - field_quote_attribution
+        - field_link
+      parent_name: group_quote_outer
+      weight: 4
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: feature-quote__quote-inner
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Quote Inner'
+      region: content
+    group_quote_outer:
+      children:
+        - group_quote_inner
+      parent_name: group_feature_quote_
+      weight: 3
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: feature-quote__quote-outer
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Quote Outer'
+      region: content
+id: paragraph.quote_section.default
+targetEntityType: paragraph
+bundle: quote_section
+mode: default
+content:
+  field_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: feature-quote__image-wrap
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: media_thumbnail
+    region: content
+  field_link:
+    weight: 9
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_quote:
+    weight: 7
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: blockquote
+        fences_field_classes: feature-quote__quote
+        fences_field_item_tag: span
+        fences_field_item_classes: feature-quote__quote-text
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: basic_string
+    region: content
+  field_quote_attribution:
+    weight: 8
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: cite
+        fences_field_item_classes: 'feature-quote__cite heading-style-7 text-black'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+  field_svg_image:
+    weight: 6
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: feature-quote__quote-graphic
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: media_thumbnail
+    region: content
+hidden:
+  field_quote_style_variation: true
+  field_remove_quote_border: true

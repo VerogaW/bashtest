@@ -1,0 +1,42 @@
+kwall_site_alert_active1: false
+kwall_site_alert_severity1: ''
+kwall_site_alert_dismiss1: true
+kwall_site_alert_message1:
+  value: "<p>This is a test of Alert 1 lorem</p>\r\n"
+  format: full_html
+kwall_site_alert_key1: ')L*i|}IBZfo(V\O='
+kwall_site_alert_active2: false
+kwall_site_alert_severity2: ''
+kwall_site_alert_dismiss2: true
+kwall_site_alert_message2:
+  value: "<p>This is a test of Alert 2 ipsum</p>\r\n"
+  format: full_html
+kwall_site_alert_key2: '2.=*Gpf]4VQT~oj~'
+kwall_site_alert_active3: false
+kwall_site_alert_severity3: ''
+kwall_site_alert_dismiss3: true
+kwall_site_alert_message3:
+  value: "<p>This is a test of Alert 3 kwall</p>\r\n"
+  format: full_html
+kwall_site_alert_key3: 'mUHX9C}MU eD-fPn'
+kwall_site_alert_active4: false
+kwall_site_alert_severity4: alert-info
+kwall_site_alert_dismiss4: true
+kwall_site_alert_message4:
+  value: "<p>alert 4</p>\r\n"
+  format: full_html
+kwall_site_alert_key4: 'S>"Lr=w>^h''NZ.kN'
+kwall_site_alert_active5: false
+kwall_site_alert_severity5: alert-warning
+kwall_site_alert_dismiss5: false
+kwall_site_alert_message5:
+  value: "<p>alert 5</p>\r\n"
+  format: full_html
+kwall_site_alert_key5: 'Bv1#0xGia''%IH^5>'
+_core:
+  default_config_hash: rhu0ADuNhNoOwQ_fYbZ3JZxu_Q23WQBHh4zD-cyjnCs
+kwall_site_alert_link1: 'https://google.com'
+kwall_site_alert_link2: 'https://google.com'
+kwall_site_alert_link3: 'https://google.com'
+kwall_site_alert_link4: 'https://www.youtube.com'
+kwall_site_alert_link5: 'https://www.youtube.com'

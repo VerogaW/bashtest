@@ -1,0 +1,84 @@
+.base-acronym {
+  @include adhere;
+}
+
+.base-acronym__svg {
+  position: absolute;
+  width: 137px;
+  opacity: 0.9;
+
+  @include breakpoint(large) {
+    width: 275px;
+  }
+}
+
+.base-acronym__svg_1 {
+  $_svg-position: -$space-medium;
+
+  top: $_svg-position;
+  left: $_svg-position;
+
+  @include breakpoint(large) {
+    top: auto;
+    bottom: 100px;
+    left: -30px;
+  }
+
+  .base-acronym_alt & {
+    top: -$space-medium;
+    width: 180px;
+
+    @include breakpoint(medium) {
+      top: -30px;
+      width: 250px;
+    }
+  }
+}
+
+.base-acronym__svg_2 {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+
+  @include breakpoint(large) {
+    top: 0;
+    right: auto;
+    left: 50%;
+    transform: translate(-50%, -40%);
+  }
+
+  .base-acronym_alt & {
+    right: -$space-small;
+
+    @include breakpoint(medium) {
+      top: auto;
+      bottom: -$space-large;
+      left: 50%;
+      width: 250px;
+      transform: translate(0);
+    }
+  }
+}
+
+.base-acronym__svg_3 {
+  bottom: -50px;
+  left: $space-xlarge;
+  z-index: 1;
+
+  @include breakpoint(large) {
+    right: $space-xlarge;
+    left: auto;
+  }
+
+  .base-acronym_alt & {
+    width: 100px;
+
+    @include breakpoint(medium) {
+      top: -$space-large;
+      right: $space-xlarge;
+      bottom: auto;
+      left: auto;
+      width: 180px;
+    }
+  }
+}

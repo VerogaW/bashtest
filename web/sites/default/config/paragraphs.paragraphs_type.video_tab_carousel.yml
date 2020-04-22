@@ -1,0 +1,9 @@
+uuid: 7f2a2dfe-b77e-40e0-8540-427b66b03a0b
+langcode: en
+status: true
+dependencies: {  }
+id: video_tab_carousel
+label: 'Video Tab Carousel'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

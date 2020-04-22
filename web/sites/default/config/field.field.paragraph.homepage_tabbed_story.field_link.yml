@@ -1,0 +1,23 @@
+uuid: 84eabfd2-c6ba-44ba-8200-14b6b0aaabef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.homepage_tabbed_story
+  module:
+    - link
+id: paragraph.homepage_tabbed_story.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: homepage_tabbed_story
+label: 'Learn More'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

@@ -1,0 +1,37 @@
+uuid: 7fac2d76-490b-40cb-993d-900aed0d9569
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.logos.field_media_image_13
+    - image.style.thumbnail
+    - media.type.logos
+  module:
+    - svg_image
+id: media.logos.default
+targetEntityType: media
+bundle: logos
+mode: default
+content:
+  field_media_image_13:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  name: true
+  path: true
+  status: true
+  uid: true

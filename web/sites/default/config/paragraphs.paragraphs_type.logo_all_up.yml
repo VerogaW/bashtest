@@ -1,0 +1,9 @@
+uuid: 7f5478a4-ea7f-4ac3-b260-0b441d3b69c5
+langcode: en
+status: true
+dependencies: {  }
+id: logo_all_up
+label: 'Logo All Up'
+icon_uuid: null
+description: "For Landing & Sub-Landing Pages\t\r\n"
+behavior_plugins: {  }

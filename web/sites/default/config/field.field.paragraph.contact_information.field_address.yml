@@ -1,0 +1,33 @@
+uuid: 195cdaae-c21f-416e-b109-927ade0434ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_address
+    - paragraphs.paragraphs_type.contact_information
+  module:
+    - address
+id: paragraph.contact_information.field_address
+field_name: field_address
+entity_type: paragraph
+bundle: contact_information
+label: Address
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+  langcode_override: ''
+  field_overrides:
+    givenName:
+      override: hidden
+    additionalName:
+      override: hidden
+    familyName:
+      override: hidden
+    sortingCode:
+      override: hidden
+  fields: {  }
+field_type: address

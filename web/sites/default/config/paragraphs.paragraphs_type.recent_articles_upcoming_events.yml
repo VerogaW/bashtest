@@ -1,0 +1,9 @@
+uuid: e5bebe3b-d9cb-4c6b-bf0c-5ea3c4223cef
+langcode: en
+status: true
+dependencies: {  }
+id: recent_articles_upcoming_events
+label: 'Recent Articles & Upcoming Events'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

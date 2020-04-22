@@ -1,0 +1,9 @@
+uuid: e16ca1f9-30c5-4cd0-b341-29328b746c48
+langcode: en
+status: true
+dependencies: {  }
+id: text_and_image_block
+label: 'Text and Image Block'
+icon_uuid: null
+description: "For Landing & Sub-Landing Pages\t\r\n"
+behavior_plugins: {  }

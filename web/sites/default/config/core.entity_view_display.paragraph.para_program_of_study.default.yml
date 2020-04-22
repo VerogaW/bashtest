@@ -1,0 +1,147 @@
+uuid: fc34c460-5a0c-4925-9dd5-1c86177fb95f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.para_program_of_study.field_program_filters
+    - field.field.paragraph.para_program_of_study.field_view_reference_pos
+    - paragraphs.paragraphs_type.para_program_of_study
+  module:
+    - block_field
+    - fences
+    - field_group
+    - viewsreference
+third_party_settings:
+  field_group:
+    group_program_filter__main:
+      children:
+        - field_view_reference_pos
+      parent_name: group_filter_inner
+      weight: 2
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: program-filter__main
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Program Filter Main'
+      region: content
+    group_program_filter_gutter:
+      children: {  }
+      parent_name: ''
+      weight: 5
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: program-filter__gutter
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Program Filter Gutter'
+      region: hidden
+    group_program_filter:
+      children: {  }
+      parent_name: ''
+      weight: 4
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: program-filter__navigation
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Program Filter'
+      region: hidden
+    group_filter_inner:
+      children:
+        - field_program_filters
+        - group_program_filter__main
+      parent_name: group_program_filter_outer
+      weight: 3
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: program-filter__inner
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Filter Inner'
+      region: content
+    group_program_filter_outer:
+      children:
+        - group_filter_inner
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: program-filter
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Program Filter Outer'
+      region: content
+id: paragraph.para_program_of_study.default
+targetEntityType: paragraph
+bundle: para_program_of_study
+mode: default
+content:
+  field_program_filters:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: block_field
+    region: content
+  field_view_reference_pos:
+    weight: 2
+    label: hidden
+    settings:
+      plugin_types:
+        block: block
+        default: 0
+        page: 0
+        attachment: 0
+        rest_export: 0
+        entity_browser: 0
+        feed: 0
+        embed: 0
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: program-filter__main-inner_v1
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: viewsreference_formatter
+    region: content
+hidden: {  }

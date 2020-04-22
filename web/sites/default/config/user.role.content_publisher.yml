@@ -1,0 +1,10 @@
+uuid: 04bdf25c-b74f-46c4-8843-6708486cd54b
+langcode: en
+status: true
+dependencies: {  }
+id: content_publisher
+label: 'Content Publisher'
+weight: -3
+is_admin: null
+permissions:
+  - 'use text format full_html'

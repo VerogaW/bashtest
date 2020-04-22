@@ -1,0 +1,23 @@
+uuid: fb8a35a9-358f-474e-b9e5-b920c31580f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_flexible_blocks_display
+    - paragraphs.paragraphs_type.flexible_bg_image_blocks
+  module:
+    - options
+id: paragraph.flexible_bg_image_blocks.field_flexible_blocks_display
+field_name: field_flexible_blocks_display
+entity_type: paragraph
+bundle: flexible_bg_image_blocks
+label: 'Flexible Blocks Display'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: '3'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

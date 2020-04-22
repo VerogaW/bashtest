@@ -1,0 +1,209 @@
+uuid: fcf22453-4923-440b-82f6-462c5d513eb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.background_image_with_ctas.field_background_image
+    - field.field.paragraph.background_image_with_ctas.field_body_unformatted
+    - field.field.paragraph.background_image_with_ctas.field_call_to_action
+    - field.field.paragraph.background_image_with_ctas.field_svg_image
+    - field.field.paragraph.background_image_with_ctas.field_title
+    - paragraphs.paragraphs_type.background_image_with_ctas
+  module:
+    - fences
+    - field_group
+    - link
+    - media
+third_party_settings:
+  field_group:
+    group_section_wrapper:
+      children:
+        - group_image_wrap
+        - group_content_wrap
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: feature-acronym
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Section Wrapper'
+      region: content
+    group_image_wrap:
+      children:
+        - field_background_image
+      parent_name: group_section_wrapper
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: feature-acronym__image-wrap
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Image Wrap'
+      region: content
+    group_content_wrap:
+      children:
+        - group_svg_w
+        - group_content_header
+      parent_name: group_section_wrapper
+      weight: 4
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: feature-acronym__content
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Content Wrap'
+      region: content
+    group_content_header:
+      children:
+        - group_header_inner
+      parent_name: group_content_wrap
+      weight: 3
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: feature-acronym__content-inner
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Content Header'
+      region: content
+    group_header_inner:
+      children:
+        - field_title
+        - field_body_unformatted
+        - field_call_to_action
+      parent_name: group_content_header
+      weight: 20
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: feature-acronym__headline-wrap
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Header Inner'
+      region: content
+    group_svg_w:
+      children:
+        - field_svg_image
+      parent_name: group_content_wrap
+      weight: 2
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: feature-acronym__svg-wrap
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'SVG Wrap'
+      region: content
+id: paragraph.background_image_with_ctas.default
+targetEntityType: paragraph
+bundle: background_image_with_ctas
+mode: default
+content:
+  field_background_image:
+    weight: 4
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: media_thumbnail
+    region: content
+  field_body_unformatted:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: span
+        fences_field_item_classes: 'feature-acronym__text text-style-1 text-black'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: basic_string
+    region: content
+  field_call_to_action:
+    weight: 6
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: button-grid
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: link
+    region: content
+  field_svg_image:
+    weight: 21
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: media_thumbnail
+    region: content
+  field_title:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: h2
+        fences_field_item_classes: 'feature-acronym__headline heading-style-3 text-orange'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+hidden: {  }

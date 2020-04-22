@@ -1,0 +1,30 @@
+uuid: 539a7f86-885e-437d-8271-bc8ba6f757b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.hero_slide_image.field_media_image_2
+    - image.style.hero_slide_image
+    - media.type.hero_slide_image
+  module:
+    - svg_image
+id: media.hero_slide_image.default
+targetEntityType: media
+bundle: hero_slide_image
+mode: default
+content:
+  field_media_image_2:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: hero_slide_image
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

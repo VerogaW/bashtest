@@ -1,0 +1,66 @@
+$colors-list: (
+  1: #f696a1,
+  2: #08bad8,
+  3: #00ab67,
+  4: #fa9d1a,
+);
+
+.item-statistic__item {
+  $item-margin: $space-large;
+
+  margin-top: $item-margin;
+  @include flex-grid-column(12);
+
+  &:first-child {
+    margin-top: 0;
+
+    @include breakpoint(medium) {
+      margin-top: $item-margin;
+    }
+  }
+
+  @each $index, $current-color in $colors-list {
+    &:nth-child(#{$index}) .item-statistic__item-fact {
+      border-bottom: $space-small solid $current-color;
+    }
+  }
+
+  @include breakpoint(medium) {
+    @include flex-grid-size(6);
+  }
+
+  @include breakpoint(large) {
+    @include flex-grid-size(3);
+  }
+
+  // Make Facts Height Equal
+  .paragraph--type--facts-figures-stastics {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+
+    .item-statistic__item-fact {
+      flex-grow: 1;
+    }
+  }
+}
+
+.item-statistic__item-inner, .paragraph--type--facts-figures-stastics {
+  @include breakpoint(medium) {
+    $container-padding: $space-medium;
+
+    padding-right: $container-padding;
+    padding-left: $container-padding;
+  }
+}
+
+.item-statistic__item-figure {
+  display: block;
+  font-family: $font-memphis;
+  font-size: rem-calc(60px);
+  font-weight: 300;
+  line-height: 55px;
+  color: $black;
+  text-transform: uppercase;
+  letter-spacing: rem-calc(3px);
+}

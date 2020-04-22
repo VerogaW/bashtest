@@ -1,0 +1,9 @@
+global-styling:
+  css:
+    theme:
+      css/app.css: {}
+
+js-scripts:
+  js:
+    js/isotope.min.js: {}
+    js/scripts.js: {}

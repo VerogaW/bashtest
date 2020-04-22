@@ -1,0 +1,29 @@
+name: Ohio Northern University
+type: theme
+description: A custom sub-theme built on the KWALL template.
+# logo: 'images/onu-logo--white-118x44.png'
+screenshot: screenshot.png
+
+core: 8.x
+
+base theme: kwall
+
+libraries:
+  - onu/global-styling
+  - onu/typekit
+  - onu/js-scripts
+
+regions:
+  alerts: 'Alerts'
+  header: 'Header'
+  slide_in_navigation: 'Slide In Navigation'
+  hero: 'Hero'
+  content_top: 'Content Top'
+  content: 'Content'
+  sidebar_left: 'Sidebar left'
+  sidebar_right: 'Sidebar right'
+  content_bottom: 'Content Bottom'
+  footer: 'Footer'
+  footer_middle: 'Footer Middle'
+  footer_bottom: 'Footer Bottom'
+  footer_copyright: 'Copyright'

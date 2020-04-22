@@ -1,0 +1,21 @@
+uuid: f1b8f284-862f-4d24-846e-d79ac5f738e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  wysiwyg_template:
+    default_template: ''
+name: Homepage
+type: homepage
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: true

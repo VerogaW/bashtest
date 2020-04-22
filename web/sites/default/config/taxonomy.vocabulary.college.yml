@@ -1,0 +1,8 @@
+uuid: 753bf8d2-ff6c-431f-8dad-3f626e8ef487
+langcode: en
+status: true
+dependencies: {  }
+name: College
+vid: college
+description: 'Used in CT: Academic Fact Sheet'
+weight: 0

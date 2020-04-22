@@ -1,0 +1,82 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+    {% if items %}
+      {% if menu_level == 0 %}
+        <ul{{ attributes.addClass('the-menu__list the-menu__list_bottom') }}>
+      {% else %}
+        <div id="accordion-panel_" role="region" aria-labelledby="accordion-button_" class="the-menu__list-item-content">
+          <ul class="the-menu__content-list">
+      {% endif %}
+
+      {% for item in items %}
+        {% set classes = [
+            item.is_expanded ? 'menu-item--expanded',
+            item.is_collapsed ? 'menu-item--collapsed',
+            item.in_active_trail ? 'menu-item--active-trail',
+        ] %}
+        {% if menu_level == 0 %}
+            <li{{ item.attributes.addClass(classes,'the-menu__list-item the-menu__list-item_bottom') }}>
+        {% else %}
+            <li{{ item.attributes.addClass(classes,'the-menu__content-list-item') }}>
+        {% endif %}
+
+            {% if menu_level == 0 %}
+              <div class="the-menu__list-item-inner">
+                <a href="{{ item.url }}" class="the-menu__list-item-link">{{ item.title }}</a>
+                {% if item.below %}
+                    <button id="accordion-button_" type="button" aria-controls="accordion-panel_" aria-expanded="false" aria-disabled="false" class="the-menu__list-item-button">
+                      <span class="the-menu__discernible-content">Toggle Accordion</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.74 22.99" aria-hidden="true" class="the-menu__list-item-svg">
+                        <use xlink:href="/themes/custom/onu/assets/svgs/icon-chevron.svg#icon"></use>
+                      </svg>
+                    </button>
+                {% endif %}
+              </div>
+            {% else %}
+                <a href="{{ item.url }}" class="the-menu__content-item-link"><span class="the-menu__link-text">{{ item.title }}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.74 22.99" aria-hidden="true" class="the-menu__content-item-svg">
+                      <use xlink:href="/themes/custom/onu/assets/svgs/icon-chevron.svg#icon"></use>
+                    </svg>
+                </a>
+            {% endif %}
+
+            {% if item.below %}
+                {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+            {% endif %}
+            </li>
+        {% endfor %}
+        {% if menu_level == 0 %}
+            </ul>
+        {% else %}
+            </ul></div>
+        {% endif %}
+    {% endif %}
+{% endmacro %}

@@ -1,0 +1,28 @@
+uuid: 4ba7f1eb-f440-45ff-b3b6-103e8a649de5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image
+    - media.type.person_profile_image
+    - node.type.stories
+id: node.stories.field_image
+field_name: field_image
+entity_type: node
+bundle: stories
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      person_profile_image: person_profile_image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

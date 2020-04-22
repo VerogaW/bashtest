@@ -1,0 +1,91 @@
+uuid: d10ed63a-598c-479f-a6fa-11862efcdcf5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.homepage_tabbed.field_background_image
+    - field.field.paragraph.homepage_tabbed.field_tabbed_story_info
+    - paragraphs.paragraphs_type.homepage_tabbed
+  module:
+    - entity_reference_revisions
+    - fences
+    - field_group
+    - media
+third_party_settings:
+  field_group:
+    group_context_tabs:
+      children:
+        - field_background_image
+        - group_context_tabs_inner
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: context-tabs
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Context Tabs'
+      region: content
+    group_context_tabs_inner:
+      children:
+        - field_tabbed_story_info
+      parent_name: group_context_tabs
+      weight: 2
+      format_type: html_element
+      format_settings:
+        label: 'Context Tabs Inner'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: context-tabs__inner
+      label: 'Context Tabs Inner'
+      region: content
+id: paragraph.homepage_tabbed.default
+targetEntityType: paragraph
+bundle: homepage_tabbed
+mode: default
+content:
+  field_background_image:
+    type: media_thumbnail
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    region: content
+  field_tabbed_story_info:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: context-tabs__panel-content-wrap
+        fences_field_item_tag: div
+        fences_field_item_classes: context-tabs__panel-content
+        fences_label_tag: none
+        fences_label_classes: ''
+    region: content
+hidden: {  }

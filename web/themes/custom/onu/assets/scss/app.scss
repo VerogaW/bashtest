@@ -1,0 +1,66 @@
+//@import "node_modules/normalize-scss/sass/normalize/import-now";
+@import 'settings';
+@import 'foundation';
+
+$flex: true;
+@include foundation-everything($flex);
+
+@import "global/variables";
+@import "global/base-reset";
+@import "global/variables";
+@import "global/base-fonts";
+@import "global/mixin-utility";
+@import "global/mixin-typography";
+@import "global/mixin-buttons";
+@import "base/base-typography";
+@import "base/base-lists";
+@import "global/base-grid";
+@import "base/base-buttons";
+@import "components/the-alert";
+@import "components/the-nav";
+
+@import "components/context-divider";
+@import "components/program-filter";
+@import "components/the-social";
+@import "components/the-footer";
+@import "components/collection-statistics";
+@import "components/feature-acronym";
+@import "components/feature-quote";
+@import "components/context-tabs";
+@import "components/collection-events";
+@import "components/collection-ctas";
+@import "components/collection-profiles";
+@import "components/carousel-news-feed";
+@import "components/hero-home";
+@import "components/base-acronym";
+@import "components/hero-level-one";
+@import "components/carousel-gallery";
+@import "components/wysiwyg";
+@import "components/context-image";
+@import "components/hero-level-two";
+@import "components/image-full";
+@import "components/base-breadcrumbs";
+@import "components/hero-level-three";
+@import "components/collection-instagram";
+@import "components/the-main";
+@import "components/accordion-simple";
+@import "components/item-statistic";
+@import "components/accordion-sidebar";
+@import "components/group-statistics";
+@import "components/collection-logos";
+@import "components/feature-video";
+@import "components/video-modal";
+@import "components/resource-link";
+@import "components/overview-with-cta-list";
+@import "components/contact-information";
+@import "components/3-up-image-cta";
+@import "components/4-up-image-cta";
+@import "components/search_google";
+
+@import "overridden/custom_override";
+@import "components/push-navigation";
+@import "components/text-and-image";
+
+@import "pages/person";
+@import "pages/program-of-study";
+@import "components/blockquote";

@@ -1,0 +1,592 @@
+// parent wrapper styles
+// for the nav and the alert
+.the-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.the-nav {
+  position: relative;
+}
+
+.the-nav__overlay {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: $black;
+  opacity: 0.5;
+}
+
+$_nav-border: 1px solid rgba(216, 216, 216, 0.3);
+
+.the-nav__wrap {
+  position: relative;
+  z-index: 1;
+  background-color: $white;
+  border-bottom: $_nav-border;
+}
+
+.the-nav__outer {
+  @include flex-grid-row;
+}
+
+$_nav-menu-height-mobile: 65px;
+
+.the-nav__inner {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: $_nav-menu-height-mobile;
+  @include flex-grid-column(12);
+  @include grid-column-position(center);
+
+  @include breakpoint(large) {
+    height: $space-xxlarge;
+  }
+
+  @include breakpoint(xlarge) {
+    justify-content: space-between;
+  }
+}
+
+.the-nav__button-group {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 65px;
+  height: 100%;
+  border-left: $_nav-border;
+  @include flex-center;
+
+  @include breakpoint(large) {
+    width: 90px;
+  }
+
+  @include breakpoint(xlarge) {
+    position: relative;
+    width: auto;
+    border: 0;
+  }
+}
+
+.the-nav__button {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  @include breakpoint(xlarge) {
+    width: 100px;
+    height: $space-large;
+  }
+}
+
+.the-nav__button_search {
+  display: none;
+
+  @include breakpoint(xlarge) {
+    display: inline-block;
+    margin-right: $space-large;
+    margin-left: $space-large;
+  }
+}
+
+.the-nav__button-icon-menu {
+  display: inline-block;
+  width: $space-medium;
+  height: 12px;
+  vertical-align: middle;
+
+  &::before,
+  &::after {
+    display: block;
+    width: 100%;
+    height: 3px;
+    content: "";
+    background-color: $black;
+    transform-origin: center;
+    @include base-transition($property: (transform, background-color));
+  }
+
+  &::before {
+    transform: scaleX(0.6) translateX(-7px);
+  }
+
+  &::after {
+    margin-top: 6px;
+  }
+
+  .the-nav__button:hover &::after,
+  .the-nav__button:hover &::before {
+    background-color: $nav-button-hover;
+  }
+
+  .expanded &::before {
+    background-color: $orange;
+    transform: scaleX(1) translateY(4.5px) rotate(0.125turn);
+  }
+
+  .expanded &::after {
+    background-color: $orange;
+    transform: translateY(-4.5px) rotate(-0.125turn);
+  }
+}
+
+.the-nav__button-text {
+  display: none;
+
+  @include breakpoint(xlarge) {
+    display: inline-block;
+    margin-left: $space-small;
+    @include base-transition($property: color);
+
+    .expanded & {
+      color: $orange;
+    }
+
+    .the-nav__button:hover & {
+      color: $nav-button-hover;
+    }
+  }
+}
+
+.the-nav__button-icon-search {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  width: $space-medium;
+  height: 3px;
+  opacity: 0;
+  transform: translateY(-50%);
+  @include base-transition($property: opacity);
+
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: $orange;
+    transform-origin: center;
+    @include base-transition($property: background-color);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  .expanded & {
+    opacity: 1;
+  }
+
+  .the-nav__button:hover &::after,
+  .the-nav__button:hover &::before {
+    background-color: $nav-button-hover;
+  }
+}
+
+.the-nav__button-svg {
+  $_svg-size: 15px;
+
+  display: inline-block;
+  width: $_svg-size;
+  height: $_svg-size;
+  vertical-align: middle;
+  opacity: 1;
+  @include base-transition($property: opacity);
+
+  .expanded & {
+    opacity: 0;
+  }
+
+  .the-nav__button:hover & {
+    fill: $nav-button-hover;
+  }
+}
+
+.the-nav__nav-list {
+  display: none;
+  margin-left: 0;
+  @include breakpoint(xlarge) {
+    display: block;
+  }
+}
+
+.the-nav__nav-list-item {
+  display: inline-block;
+  margin-left: $space-medium;
+}
+
+.the-nav__nav-item-link {
+  @include base-transition($property: color);
+
+  &:hover {
+    color: $nav-button-hover;
+  }
+}
+
+.the-nav__logo-link {
+  display: inline-block;
+  width: 220px;
+  fill: $orange;
+
+  @include breakpoint(medium) {
+    width: 300px;
+  }
+
+  @include breakpoint(large) {
+    width: 400px;
+  }
+
+  @include breakpoint(xlarge) {
+    width: 450px;
+    height: 30px;
+  }
+}
+
+// Search related styles
+.base-search, .google-cse.search-block-form {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: $_nav-menu-height-mobile;
+  background-color: $white;
+  @include flex-center;
+
+  @include breakpoint(large) {
+    height: $space-xxlarge;
+  }
+
+  .the-menu & {
+    position: relative;
+
+    @include breakpoint(xlarge) {
+      display: none;
+    }
+  }
+
+  .region-content-bottom & {
+    position: relative;
+  }
+}
+
+.base-search__outer, .google-cse.search-block-form form {
+  @include flex-grid-row;
+
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.base-search__inner, .form-inner_wrapper {
+  position: relative;
+  height: 100%;
+  @include flex-grid-column(12);
+}
+
+.base-search__input-label {
+  display: block;
+  height: 100%;
+  background-color: $white;
+}
+
+.form-item-query {
+  margin: 0;
+  label {
+    display: none;
+  }
+}
+
+.base-search__input, .google-cse.search-block-form .form-search {
+  width: 100%;
+  height: 100%;
+  font-family: $font-memphis;
+  font-size: rem-calc(24px);
+  font-weight: 300;
+  color: $black;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  border: 0;
+  background: none !important;
+
+
+  @include breakpoint(large) {
+    font-size: rem-calc(30px);
+  }
+
+  &::placeholder {
+    color: $black;
+  }
+  .region-content-bottom & {
+    border-bottom: 1px solid #f1f1f1;
+  }
+}
+
+.base-search__submit-button, .google-cse.search-block-form .form-submit {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 0;
+}
+.google-cse.search-block-form .form-submit {
+  z-index: 2;
+  opacity: 0;
+}
+
+.the-nav__discernible-content,
+.base-search__discernible-content {
+  @include discernible-content;
+}
+
+.base-search__submit-button-svg {
+  $_svg-size: 25px;
+
+  width: $_svg-size;
+  height: $_svg-size;
+  fill: $black;
+  @include base-transition($property: fill, $duration: $transition-medium);
+
+  .base-search__submit-button:hover &, #search-block-form #edit-actions:hover & {
+    fill: $gray-hover-state;
+  }
+
+  .base-search__outer:focus-within & {
+    fill: $orange;
+  }
+}
+
+// Menu related styles
+.the-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: $black;
+
+  @include breakpoint(large) {
+    width: 40%;
+  }
+
+  @include breakpoint(xlarge) {
+    width: 30%;
+  }
+}
+
+.the-menu__outer {
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+
+$_menu-inner-padding: 25px;
+
+.the-menu__inner {
+  position: relative;
+  padding: $space-large $_menu-inner-padding;
+
+  @include breakpoint(medium) {
+    padding: $space-xlarge;
+  }
+}
+
+.the-menu__list_top {
+  margin-top: $space-medium;
+  margin-left: 0;
+}
+
+.the-menu__list-item_top {
+  display: inline-block;
+  margin-right: $space-medium;
+}
+
+.the-menu__item-link {
+  outline: none;
+  @include base-transition($property: color);
+
+  &:hover,
+  &:focus {
+    color: $gray-hover-state;
+  }
+}
+
+.the-menu__list_middle {
+  margin-top: $space-large;
+  margin-left: 0;
+
+  @include breakpoint(xlarge) {
+    display: none;
+  }
+}
+
+.the-menu__list-item_middle {
+  display: inline-block;
+  margin-right: $space-medium;
+  text-transform: uppercase;
+}
+
+.the-menu__list_bottom {
+  margin-top: $space-large;
+  margin-left: 0;
+}
+
+.the-menu__list-item_bottom {
+  padding-top: 5px;
+  border-bottom: 2px solid #333;
+}
+
+@mixin nav-button-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.the-menu__list-item-inner {
+  @include nav-button-flex;
+}
+
+.the-menu__list-item-link {
+  font-family: $font-brandongrotesque;
+  font-size: rem-calc(24px);
+  font-weight: 500;
+  color: $white;
+  line-height: 60px;
+  @include base-transition($property: color);
+
+  &:hover {
+    color: $gray-hover-state;
+  }
+}
+
+.the-menu__list-item-content {
+  margin: {
+    right: 25px;
+    left: $space-small;
+  }
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+
+  ul {
+    padding: {
+      top: $space-small;
+      bottom: $space-medium;
+    }
+  }
+}
+
+.the-menu__content-list-item {
+  margin-top: $space-medium;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.the-menu__list-item-button {
+  $_button-size: 60px;
+
+  width: $_button-size;
+  height: $_button-size;
+  @include base-transition($property: color);
+
+  &:hover {
+    color: $gray-hover-state;
+  }
+
+  &:focus {
+    color: $orange;
+  }
+}
+
+.the-menu__discernible-content {
+  @include discernible-content;
+}
+
+.the-menu__list-item-svg {
+  $_svg-size: 15px;
+
+  display: inline-block;
+  width: $_svg-size;
+  height: $_svg-size;
+  vertical-align: middle;
+  fill: $white;
+  transform: rotate(90deg);
+  @include base-transition($property: (transform, fill), $duration: $transition-medium);
+
+  .expanded & {
+    transform: rotate(270deg);
+  }
+
+  @include breakpoint(large) {
+    .the-menu__list-item-button:hover & {
+      fill: $orange;
+    }
+  }
+}
+
+.the-menu__content-item-link {
+  display: block;
+  font-family: $font-brandongrotesque;
+  font-size: rem-calc(16px);
+  font-weight: 400;
+  color: $white;
+  @include nav-button-flex;
+  @include base-transition($property: color);
+
+  &:hover {
+    color: $gray-hover-state;
+  }
+}
+
+.the-menu__link-text {
+  padding-right: $space-medium;
+}
+
+.the-menu__content-item-svg {
+  $_svg-size: 10px;
+
+  display: inline-block;
+  width: $_svg-size;
+  height: $_svg-size;
+  align-self: center;
+  fill: $orange;
+}
+
+.the-menu__gradient {
+  position: absolute;
+  right: 18px;
+  bottom: 0;
+  left: 0;
+  height: 160px;
+  pointer-events: none;
+  background-image: linear-gradient(0deg, $black 10%, rgba(36, 38, 39, 0) 80%);
+}
+
+
+// Overriding Css: Because Bootstrap css causing some issues.
+.the-menu__list_top {
+  .the-menu__item-link {
+    color: $white;
+    &:hover,
+    &:focus {
+      color: $gray-hover-state;
+    }
+  }
+}

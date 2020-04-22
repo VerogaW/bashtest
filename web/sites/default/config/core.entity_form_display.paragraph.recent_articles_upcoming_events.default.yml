@@ -1,0 +1,71 @@
+uuid: a67ca916-142f-4b34-8c35-09b98ffa005c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.recent_articles_upcoming_events.field_article_category
+    - field.field.paragraph.recent_articles_upcoming_events.field_event_category
+    - field.field.paragraph.recent_articles_upcoming_events.field_link
+    - field.field.paragraph.recent_articles_upcoming_events.field_link_2
+    - field.field.paragraph.recent_articles_upcoming_events.field_title
+    - field.field.paragraph.recent_articles_upcoming_events.field_title_2
+    - field.field.paragraph.recent_articles_upcoming_events.field_view_reference
+    - field.field.paragraph.recent_articles_upcoming_events.field_view_reference_2
+    - paragraphs.paragraphs_type.recent_articles_upcoming_events
+  module:
+    - link
+id: paragraph.recent_articles_upcoming_events.default
+targetEntityType: paragraph
+bundle: recent_articles_upcoming_events
+mode: default
+content:
+  field_article_category:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_event_category:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_link_2:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_title_2:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  field_view_reference: true
+  field_view_reference_2: true
+  status: true
+  uid: true

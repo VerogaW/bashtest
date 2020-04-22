@@ -1,0 +1,91 @@
+uuid: 30d7fad4-75a8-48cb-8cc2-5b7290e6c085
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.upcoming_events.field_event_category
+    - field.field.paragraph.upcoming_events.field_link
+    - field.field.paragraph.upcoming_events.field_title
+    - field.field.paragraph.upcoming_events.field_view_reference
+    - paragraphs.paragraphs_type.upcoming_events
+  module:
+    - field_group
+    - link
+    - viewsreference
+third_party_settings:
+  field_group:
+    group_event_view:
+      children:
+        - group_column_content
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        label: Wrapper
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: col-md-4
+      label: Wrapper
+      region: content
+    group_column_content:
+      children:
+        - field_title
+        - field_view_reference
+        - field_link
+      parent_name: group_event_view
+      weight: 2
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: column-content
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Column Content'
+      region: content
+id: paragraph.upcoming_events.default
+targetEntityType: paragraph
+bundle: upcoming_events
+mode: default
+content:
+  field_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_view_reference:
+    weight: 2
+    label: hidden
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    type: viewsreference_formatter
+    region: content
+hidden:
+  field_event_category: true

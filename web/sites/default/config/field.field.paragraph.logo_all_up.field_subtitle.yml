@@ -1,0 +1,19 @@
+uuid: db095174-37da-4243-8bd6-6a8f728c7ee1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_subtitle
+    - paragraphs.paragraphs_type.logo_all_up
+id: paragraph.logo_all_up.field_subtitle
+field_name: field_subtitle
+entity_type: paragraph
+bundle: logo_all_up
+label: 'Sub Headline'
+description: '50 Characters'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,29 @@
+uuid: cab223b7-0c2a-4fc8-a87b-65d2272aba7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_event_category
+    - paragraphs.paragraphs_type.recent_articles_upcoming_events
+    - taxonomy.vocabulary.event_category
+id: paragraph.recent_articles_upcoming_events.field_event_category
+field_name: field_event_category
+entity_type: paragraph
+bundle: recent_articles_upcoming_events
+label: 'Event Category'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      event_category: event_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

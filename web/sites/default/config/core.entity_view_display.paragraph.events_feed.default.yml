@@ -1,0 +1,163 @@
+uuid: ed8aa426-792c-4e6d-ac9c-231f53163c43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.events_feed.field_event_style_variation
+    - field.field.paragraph.events_feed.field_link
+    - field.field.paragraph.events_feed.field_subtitle
+    - field.field.paragraph.events_feed.field_view_reference
+    - field.field.paragraph.events_feed.field_view_reference_2
+    - paragraphs.paragraphs_type.events_feed
+  module:
+    - fences
+    - field_group
+    - link
+    - viewsreference
+third_party_settings:
+  field_group:
+    group_event_wrapper:
+      children:
+        - field_subtitle
+        - group_events_inner
+        - group_events_link
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        label: 'Event Wrapper'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'collection-events [paragraph:field_event_style_variation:value]'
+      label: 'Event Wrapper'
+      region: content
+    group_events_inner:
+      children:
+        - field_view_reference_2
+        - field_view_reference
+      parent_name: group_event_wrapper
+      weight: 2
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: collection-events__inner
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Events Inner'
+      region: content
+    group_events_link:
+      children:
+        - field_link
+      parent_name: group_event_wrapper
+      weight: 3
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: 'collection-events__inner collection-events__ctas'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Events Link'
+      region: content
+id: paragraph.events_feed.default
+targetEntityType: paragraph
+bundle: events_feed
+mode: default
+content:
+  field_link:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: link
+    region: content
+  field_subtitle:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: h2
+        fences_field_item_classes: 'collection-events__heading heading-style-5 text-white'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+  field_view_reference:
+    weight: 7
+    label: hidden
+    settings:
+      plugin_types:
+        block: block
+        default: 0
+        page: 0
+        attachment: 0
+        rest_export: 0
+        entity_browser: 0
+        feed: 0
+        embed: 0
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: collection-events__list
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: viewsreference_formatter
+    region: content
+  field_view_reference_2:
+    weight: 6
+    label: hidden
+    settings:
+      plugin_types:
+        block: block
+        default: 0
+        page: 0
+        attachment: 0
+        rest_export: 0
+        entity_browser: 0
+        feed: 0
+        embed: 0
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: collection-events__main
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: viewsreference_formatter
+    region: content
+hidden:
+  field_event_style_variation: true

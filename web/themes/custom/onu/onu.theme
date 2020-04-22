@@ -1,0 +1,335 @@
+<?php
+
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+use Drupal\views\ViewExecutable;
+
+/**
+ * @param $variables
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function onu_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+        $content_type = $node->bundle();
+        $suggestions[] = 'page__'.$content_type;
+    }
+}
+
+/*
+ * Implement hook_preprocess_field
+ */
+// Append classes to img tag
+function onu_preprocess_field(&$vars)
+{
+    // List of image fields where we need custom class
+    $fields = ['field_image', 'field_background_image'];
+    $fieldName = $vars['element']['#field_name'];
+    $bundle = $vars['element']['#bundle'];
+    if (in_array($fieldName, $fields)) {
+        if ($vars['entity_type'] == 'paragraph') {
+            $class = getImageClass($fieldName, $bundle);
+            if ($class) {
+                foreach ($vars['items'] as $key => $item) {
+                    $vars['items'][$key]['content']['#item_attributes']['class'][] = $class;
+                }
+            }
+        }
+    }
+
+    // Create tabs for Home tabbed
+    if ($fieldName == 'field_tabbed_story_info' && $bundle == 'homepage_tabbed') {
+        $tabHtml = '';
+        if (isset($vars['items'])) {
+            foreach ($vars['items'] as $key => $item) {
+                $storyTitle = $vars['items'][$key]['content']['#paragraph']->get('field_story_link')->value;
+                if ($storyTitle) {
+                    $tabKey = $key + 1;
+                    if ($tabKey == 1) {
+                        $tabHtml .= '<div class="context-tabs__tablist-item"><button id="tab_' . $tabKey . '" tabindex="0" aria-selected="true" aria-controls="tab-panel_' . $tabKey . '" role="tab" class="context-tabs__item-button heading-style-6 active"><span>' . $storyTitle . '</span></button></div>';
+                    } else {
+                        $tabHtml .= '<div class="context-tabs__tablist-item"><button id="tab_' . $tabKey . '" tabindex="-1" aria-selected="false" aria-controls="tab-panel_' . $tabKey . '" role="tab" class="context-tabs__item-button heading-style-6"><span>' . $storyTitle . '</span></button></div>';
+                    }
+
+                }
+            }
+        }
+        if ($tabHtml) {
+            $tabHtml = '<div aria-orientation="vertical" role="tablist" class="context-tabs__tablist">' . $tabHtml;
+            $tabHtml .= '</div>';
+            $vars['homeStoryTabs'] = $tabHtml;
+        }
+    } else if ($bundle == "facts_figures_stastics" && $fieldName == "field_statistic_description") {
+        $color_val = $vars["element"]["#object"]->field_statistic_color->getValue();
+        $vars['border_color'] = '';
+        if ($color_val) {
+            $col_part = explode(' ', $color_val[0]['value']);
+            $vars['border_color'] = hex2rgb($col_part[0], isset($col_part[1]) ? $col_part[1] : 1);
+        }
+    } else if ($bundle = 'overview_with_cta' && $fieldName == 'field_split_tone_color') {
+        $split_tone_color_div = '';
+//        if (isset($vars['items'])) {
+//            foreach ($vars['items'] as $key => $item) {
+//                $col_part = explode(' ', $item['content']['#context']['value']);
+//                $hexcol = hex2rgb($col_part[0],$col_part[1]);
+//
+//            }
+//        }
+//
+        $vars['split_tone_color_div'] = Drupal\Core\Render\Markup::create('<div class="split-color-tone-source" data-elementdiv="context-divider_navy" data-tone1="' . $vars['items'][0]['content']['#context']['value'] . '" data-styleproperty="background-color"></div><div class="split-color-tone-source" data-elementdiv="context-divider.context-divider_navy" data-tone2="' . $vars['items'][1]['content']['#context']['value'] . '"></div>');
+    } else if ($vars['element']['#bundle'] == 'accordion') {
+        $vars['para_id'] = $vars['element']['#object']->get('id')->value;
+    } else if ($vars['element']['#bundle'] == 'accordion_item') {
+        $vars['para_delta'] = $vars['element']['#object']->get('id')->value;
+        $vars['para_id'] = $vars['element']['#object']->get('parent_id')->value;
+    } else if ($vars['element']['#bundle'] == 'featured_video' && $fieldName == 'field_link') {
+        $vars['video_raw_title'] = $vars['element']['#object']->get('field_link')->title;
+        $videoURL = $vars['element']['#object']->get('field_link')->uri;
+        if (strpos($videoURL, 'youtube') > 0 || strpos($videoURL, 'youtu.be') > 0) {
+          $vars['video_raw_uri'] = getYoutubeEmbedUrl($videoURL);
+        }else {
+          $vars['video_raw_uri'] = $videoURL;
+        }
+    }
+}
+
+// Helper Functions
+function getImageClass($field, $bundle)
+{
+    $classList = [
+        'field_image' => [
+            'quote_section' => 'feature-quote__image',
+            'homepage_tabbed_story' => 'context-tabs__image',
+            'text_and_image_block' => 'context-image__image'
+        ],
+        'field_background_image' => [
+            'homepage_tabbed' => 'context-tabs__background-image',
+            'text_and_image_block' => 'context-image__backrgound-image'
+        ],
+    ];
+
+    if (isset($classList[$field][$bundle])) {
+        return $classList[$field][$bundle];
+    } else {
+        return '';
+    }
+}
+
+function hex2rgb($colour, $op = 1)
+{
+    if ($colour[0] == '#') {
+        $colour = substr($colour, 1);
+    }
+    if (strlen($colour) == 6) {
+        list($r, $g, $b) = array($colour[0] . $colour[1], $colour[2] . $colour[3], $colour[4] . $colour[5]);
+    } elseif (strlen($colour) == 3) {
+        list($r, $g, $b) = array($colour[0] . $colour[0], $colour[1] . $colour[1], $colour[2] . $colour[2]);
+    } else {
+        return false;
+    }
+    $r = hexdec($r);
+    $g = hexdec($g);
+    $b = hexdec($b);
+    return implode(',', array($r, $g, $b, $op));
+}
+
+/*
+ * Implements template_preprocess_views_view_field()
+ */
+function onu_preprocess_views_view_field(&$variables)
+{
+    $view = $variables['view'];
+    if ($view->id() == 'hero_banner' && $view->current_display == 'block_2') {
+
+        $variation = 'hero-home'; // Default Value
+        if ($view->field['field_home_variation']->original_value) {
+            $variation = $view->field['field_home_variation']->original_value->__toString();
+        }
+        if ($variables['field']->options['id'] == 'field_home_variation') {
+            $variables['output'] = '';
+        } else if ($variation == 'hero-home' && ($variables['field']->options['id'] == 'nothing_1' || $variables['field']->options['id'] == 'nothing_2')) {
+            $variables['output'] = '';
+        } else if ($variation == 'hero-home hero-home_alt' && ($variables['field']->options['id'] == 'nothing' || $variables['field']->options['id'] == 'nothing_2')) {
+            $variables['output'] = '';
+        } else if ($variation == 'hero-home hero-home_alt hero-home_alt-variation' && ($variables['field']->options['id'] == 'nothing' || $variables['field']->options['id'] == 'nothing_1')) {
+            $variables['output'] = '';
+        }
+
+        if ($variables['output'] != "") {
+            $output = $variables['output']->__toString();
+            $markup = str_replace('<div src="', '<video src="', $output);
+            $markup = str_replace('hero-home__video"></div>', 'hero-home__video"></video>', $markup);
+            $variables['output'] = Drupal\Core\Render\Markup::create($markup);
+        }
+    }
+}
+
+/*
+ * Implements template_preprocess_page()
+ */
+function onu_preprocess_page(&$variables)
+{
+    if (isset($variables['page']) && isset($variables['node'])) {
+        $node = $variables['node'];
+        if (in_array($node->getType(), array('homepage', 'landing_page', 'sub_landing_page'))) {
+            // Put Logic  Here
+            if (isset($variables['page']['content']['onu_content'])) {
+                unset($variables['page']['content']['onu_content']);
+            }
+            if (isset($variables['page']['content']['system_main'])) {
+                unset($variables['page']['content']['system_main']);
+            }
+        }
+    }
+}
+
+/*
+ * Implements template_preprocess_views_view()
+ */
+//function template_preprocess_views_view(&$variables)
+//{
+//    $view = $variables['view'];
+//    $id = $view->storage->id();
+//    $block_entity = Drupal\block_content\Entity\BlockContent::load('program_of_study_filters');// BLOCK_ID
+//    $block_view = \Drupal::entityTypeManager()->getViewBuilder('block_content')->view($block_entity, 'DISPLAY_VIEW_NAME');
+//    if ($block_view) {
+//        $variables['program_filters_block'] = $block_view;
+//    }
+//
+//
+//
+//}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function onu_preprocess_block(&$variables) {
+    $variables['content']['#attributes']['block'] = isset($variables['attributes']['id'])?$variables['attributes']['id']:'';
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function onu_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+    // Remove the block and replace dashes with underscores in the block ID to
+    // use for the hook name.
+    if (isset($variables['attributes']['block'])) {
+        $hook = str_replace(array('block-', '-'), array('', '_'), $variables['attributes']['block']);
+        $suggestions[] = $variables['theme_hook_original'] . '__' . $hook;
+    }
+}
+
+/*
+ * Implement hook_preprocess_field
+ */
+function onu_preprocess_region(&$vars){
+    if($vars['region'] == 'slide_in_navigation') {
+        if(isset($vars['elements']['searchform'])) {
+            $vars['searchform'] = render($vars['elements']['searchform']);
+            // $vars['searchform'] =  Drupal\Core\Render\Markup::create(str_replace('id="edit-actions">','id="edit-actions"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" class="base-search__submit-button-svg"><use xlink:href="/svgs/icon-search.svg#search"></use></svg>',$vars['searchform']->__toString()));
+
+            unset($vars['elements']['searchform']);
+            $vars['content'] = Drupal\Core\Render\Markup::create(str_replace($vars['searchform']->__toString(),'', $vars['content']->__toString()));
+        }
+    }
+}
+
+function onu_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+    if($form_id == 'search_block_form') {
+        $form['keys']['#attributes']['placeholder'][] = t('Search Term');
+        // $form['sa']['#value']->string = 'S';
+    }
+}
+
+/**
+ * @param $url
+ *
+ * @return string
+ *
+ * Get Youtube Embed URL instead of Short or Watch URL
+ */
+function getYoutubeEmbedUrl($url)
+{
+  $shortUrlRegex = '/youtu.be\/([a-zA-Z0-9_-]+)\??/i';
+  $longUrlRegex = '/youtube.com\/((?:embed)|(?:watch))((?:\?v\=)|(?:\/))([a-zA-Z0-9_-]+)/i';
+
+  if (preg_match($longUrlRegex, $url, $matches)) {
+    $youtube_id = $matches[count($matches) - 1];
+  }
+
+  if (preg_match($shortUrlRegex, $url, $matches)) {
+    $youtube_id = $matches[count($matches) - 1];
+  }
+  return 'https://www.youtube.com/embed/' . $youtube_id ;
+}
+
+/**
+ * Implements hook_preprocess_node()
+ */
+function onu_preprocess_node(&$variables) {
+  $node = $variables["node"];
+
+  if ($node->bundle() == 'person') {
+
+    $titles = [
+      'field_banner_last_name' => t('Name'),
+      'field_banner_academic_title' => t('Title'),
+      'field_banner_student_major' => t('Major'),
+      'field_banner_student_class' => t('Year'),
+      'field_banner_onu_email_address' => t('Email'),
+      'field_banner_bu_phone' => t('Phone'),
+      'field_banner_bu_street2' => t('Office'),
+      'field_banner_bu_street3' => t('Address'),
+      'field_banner_student_c_u_street1' => t('Campus Address'),
+    ];
+    foreach ($titles as $field => $title) {
+      $variables["content"][$field]["#title"] = $title . ':';
+    }
+
+    if (!empty($variables["content"]["field_banner_last_name"][0])) {
+      if (!empty($node->field_banner_nickname->value)) {
+        $name = $node->field_banner_nickname->value . ' ' . $variables["content"]["field_banner_last_name"][0]["#context"]["value"];
+      }
+      else {
+        $name = $node->field_banner_first_name->value . ' ' . $variables["content"]["field_banner_last_name"][0]["#context"]["value"];
+      }
+      $variables["content"]["field_banner_last_name"][0]["#context"]["value"] = $name;
+    }
+
+    if (!empty($variables["content"]["field_banner_bu_street3"][0])) {
+      $full_zip = $node->field_banner_bu_zip->value;
+      $zip = preg_replace("/^(\d{5})-(\d{4})$/", "$1", $full_zip);
+
+      $address = [
+        $variables["content"]["field_banner_bu_street3"][0]["#context"]["value"],
+        isset($node->field_banner_bu_city->value) ? $node->field_banner_bu_city->value : '',
+        isset($node->field_banner_bu_state->value) ? $node->field_banner_bu_state->value : '',
+        $zip,
+      ];
+      $address = array_filter($address);
+      $variables["content"]["field_banner_bu_street3"][0]["#context"]["value"] = implode(', ', $address);
+    }
+
+    if (!empty($variables["content"]["field_banner_student_c_u_street1"][0]) && !empty($node->field_banner_student_c_u_csz->value)) {
+      $variables["content"]["field_banner_student_c_u_street1"][0]["#template"] = '{{ value|raw }}';
+      $variables["content"]["field_banner_student_c_u_street1"][0]["#context"]["value"] .= '<br/>' . $node->field_banner_student_c_u_csz->value;
+    }
+
+    $variables["content"]["nav"] = [
+      '#type' => 'inline_template',
+      '#template' => '{{ value|raw }}',
+      '#context' => [
+        'value' => '<div class="box_center"><a class="back" href="/">Back One Page</a> or <a href="/directory">Start New Search</a></div>'
+      ],
+      '#weight' => 50,
+    ];
+
+  }
+
+}

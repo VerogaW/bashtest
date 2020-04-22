@@ -1,0 +1,75 @@
+uuid: 723bf4a4-fce5-44f0-915e-dbd35ad17afb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.interior_slideshow_slide.field_body_formatted
+    - field.field.paragraph.interior_slideshow_slide.field_image
+    - field.field.paragraph.interior_slideshow_slide.field_title
+    - field.field.paragraph.interior_slideshow_slide.field_video_embed
+    - paragraphs.paragraphs_type.interior_slideshow_slide
+  module:
+    - field_group
+    - text
+    - video_embed_field
+third_party_settings:
+  field_group:
+    group_slide_content:
+      children:
+        - field_title
+        - field_body_formatted
+      parent_name: ''
+      weight: 3
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: slide-content
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Slide Content'
+      region: content
+id: paragraph.interior_slideshow_slide.default
+targetEntityType: paragraph
+bundle: interior_slideshow_slide
+mode: default
+content:
+  field_body_formatted:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_title:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_video_embed:
+    weight: 2
+    label: hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: true
+    third_party_settings: {  }
+    type: video_embed_field_video
+    region: content
+hidden: {  }

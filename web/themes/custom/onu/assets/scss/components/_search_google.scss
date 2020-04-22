@@ -1,0 +1,22 @@
+#google-cse-results {
+  .gsc-control-cse {
+    background: none;
+    border: none;
+    padding: 0;
+
+    .gsc-resultsHeader {
+      tbody {
+        border: none;
+      }
+    }
+
+    .gsc-results {
+      margin: 0;
+
+      .gsc-result, .gsc-result:hover {
+        background: none;
+        border: none;
+      }
+    }
+  }
+}

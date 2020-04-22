@@ -1,0 +1,29 @@
+uuid: 8342ec99-ad12-448c-b08c-1fb071b29d17
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_story_by
+    - node.type.person
+    - taxonomy.vocabulary.story_hero
+id: node.person.field_story_by
+field_name: field_story_by
+entity_type: node
+bundle: person
+label: 'Person Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      story_hero: story_hero
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

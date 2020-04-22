@@ -1,0 +1,19 @@
+uuid: feae3e96-2133-4692-a09e-8fc01f802fb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_migration_url
+    - node.type.article
+id: node.article.field_migration_url
+field_name: field_migration_url
+entity_type: node
+bundle: article
+label: 'Migration Url'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,11 @@
+uuid: e6c9e5c4-e29c-4171-827d-c0a7858e0e5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.majors_minors
+id: taxonomy_term.majors_minors
+target_entity_type_id: taxonomy_term
+target_bundle: majors_minors
+default_langcode: site_default
+language_alterable: false

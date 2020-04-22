@@ -1,0 +1,34 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      assets/css/custom-module-theme.css: {}
+
+global-scripts:
+  version: 1.x
+  js:
+    assets/js/custom-module.js: {}
+
+global-header:
+  version: 1.x
+  header: true
+  js:
+    //d16ahjtmf9d1au.cloudfront.net/inject.bundle.js:
+      type: external
+      minified: true
+      attributes:
+        async: true
+        data-id: aAcJ6bZV2rg7
+        data-token: aAcJ6bZV2rg7
+
+advance-link:
+  version: 1.x
+  css:
+    theme:
+      assets/css/advance-link.css: {}
+  js:
+    assets/js/advance-link.js: {}
+
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

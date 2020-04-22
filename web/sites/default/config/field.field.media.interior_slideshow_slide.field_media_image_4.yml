@@ -1,0 +1,38 @@
+uuid: aec5a5df-ae4e-477a-a162-751821142a4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_image_4
+    - media.type.interior_slideshow_slide
+  module:
+    - image
+id: media.interior_slideshow_slide.field_media_image_4
+field_name: field_media_image_4
+entity_type: media
+bundle: interior_slideshow_slide
+label: Image
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_extensions: 'png gif jpg jpeg'
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  max_resolution: ''
+  min_resolution: ''
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

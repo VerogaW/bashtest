@@ -1,0 +1,82 @@
+uuid: ea3583f3-dba2-4691-a538-0ee1f67825d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero_slide.field_image
+    - field.field.paragraph.hero_slide.field_links_limit_2
+    - field.field.paragraph.hero_slide.field_mp4
+    - field.field.paragraph.hero_slide.field_subtitle
+    - field.field.paragraph.hero_slide.field_title
+    - field.field.paragraph.hero_slide.field_webm
+    - paragraphs.paragraphs_type.hero_slide
+  module:
+    - entity_browser_entity_form
+    - file
+    - inline_entity_form
+    - link
+id: paragraph.hero_slide.default
+targetEntityType: paragraph
+bundle: hero_slide
+mode: default
+content:
+  field_image:
+    weight: 2
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: media_entity_browser
+    type: inline_entity_form_complex
+    region: content
+  field_links_limit_2:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_mp4:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_subtitle:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_webm:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

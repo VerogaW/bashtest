@@ -1,0 +1,8 @@
+uuid: 418de8c2-c9ba-421d-b5b6-7e531cb9ee91
+langcode: en
+status: true
+dependencies: {  }
+name: 'Story Hero'
+vid: story_hero
+description: ''
+weight: 0

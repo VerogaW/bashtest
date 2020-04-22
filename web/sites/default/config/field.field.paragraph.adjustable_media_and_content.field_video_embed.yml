@@ -1,0 +1,25 @@
+uuid: 451c0f7f-9bbb-4774-bde8-ded9c8271316
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video_embed
+    - paragraphs.paragraphs_type.adjustable_media_and_content
+  module:
+    - video_embed_field
+id: paragraph.adjustable_media_and_content.field_video_embed
+field_name: field_video_embed
+entity_type: paragraph
+bundle: adjustable_media_and_content
+label: 'Video Embed'
+description: 'Paste a Youtube or Vimeo embed url'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    vimeo: '0'
+    youtube: '0'
+    youtube_playlist: '0'
+field_type: video_embed_field

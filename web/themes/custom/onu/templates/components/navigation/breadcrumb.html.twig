@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+{% if breadcrumb %}
+  <section class="base-breadcrumbs" role="navigation" aria-labelledby="system-breadcrumb">
+    <h2 id="system-breadcrumb" class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
+    <ol class="base-breadcrumbs__list">
+    {% for item in breadcrumb %}
+      <li class="base-breadcrumbs__list-item current">
+        {% if item.url %}
+          <a href="{{ item.url }}" class="base-breadcrumbs__item-link heading-style-7">{{ item.text }}</a>
+        {% else %}
+          {{ item.text }}
+        {% endif %}
+      </li>
+    {% endfor %}
+    {#
+      Once the breadcrumb loop completes, we add the current page title.
+      This variable is created in kwall.theme.
+    #}
+    <li class="base-breadcrumbs__list-item"> <span class="base-breadcrumbs__item-link heading-style-7">{{ current_page_title }}</span></li>
+    </ol>
+  </section>
+{% endif %}

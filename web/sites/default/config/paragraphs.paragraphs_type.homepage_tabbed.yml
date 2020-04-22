@@ -1,0 +1,9 @@
+uuid: 5fc087cb-9426-4a48-a788-ce6d7438d4ff
+langcode: en
+status: true
+dependencies: {  }
+id: homepage_tabbed
+label: 'Homepage Tabbed'
+icon_uuid: null
+description: 'For Home Page'
+behavior_plugins: {  }

@@ -1,0 +1,19 @@
+uuid: 4fc31f81-c2b0-463c-91c9-ea8f4359abfa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body_unformatted
+    - paragraphs.paragraphs_type.text_with_cta
+id: paragraph.text_with_cta.field_body_unformatted
+field_name: field_body_unformatted
+entity_type: paragraph
+bundle: text_with_cta
+label: Body
+description: 'Limit: 75 characters'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

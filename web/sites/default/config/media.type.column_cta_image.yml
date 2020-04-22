@@ -1,0 +1,18 @@
+uuid: d83bec06-8e02-4b5d-9468-bfedb48dc95a
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: field_media_image_3
+id: column_cta_image
+label: 'Column CTA Image'
+description: 'Used for CTA column images'
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_image_3
+field_map: {  }

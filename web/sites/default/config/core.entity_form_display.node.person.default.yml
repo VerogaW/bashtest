@@ -1,0 +1,643 @@
+uuid: 386d0284-6665-4359-9315-314f250bfbdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.person.body
+    - field.field.node.person.field_address_text
+    - field.field.node.person.field_awards
+    - field.field.node.person.field_banner_academic_title
+    - field.field.node.person.field_banner_affiliation
+    - field.field.node.person.field_banner_bu_city
+    - field.field.node.person.field_banner_bu_phone
+    - field.field.node.person.field_banner_bu_state
+    - field.field.node.person.field_banner_bu_street1
+    - field.field.node.person.field_banner_bu_street2
+    - field.field.node.person.field_banner_bu_street3
+    - field.field.node.person.field_banner_bu_zip
+    - field.field.node.person.field_banner_employee_org
+    - field.field.node.person.field_banner_employee_unit
+    - field.field.node.person.field_banner_first_name
+    - field.field.node.person.field_banner_last_name
+    - field.field.node.person.field_banner_name_prefix
+    - field.field.node.person.field_banner_name_suffix
+    - field.field.node.person.field_banner_nickname
+    - field.field.node.person.field_banner_onu_email_address
+    - field.field.node.person.field_banner_student_c_u_csz
+    - field.field.node.person.field_banner_student_c_u_street1
+    - field.field.node.person.field_banner_student_class
+    - field.field.node.person.field_banner_student_major
+    - field.field.node.person.field_banner_udc_id
+    - field.field.node.person.field_biography
+    - field.field.node.person.field_campus_address
+    - field.field.node.person.field_city_state_zip
+    - field.field.node.person.field_department
+    - field.field.node.person.field_department_ref
+    - field.field.node.person.field_education_0
+    - field.field.node.person.field_email
+    - field.field.node.person.field_employment_start_dat
+    - field.field.node.person.field_expertise
+    - field.field.node.person.field_fax
+    - field.field.node.person.field_file_attachments
+    - field.field.node.person.field_first_name
+    - field.field.node.person.field_grouping
+    - field.field.node.person.field_job_title
+    - field.field.node.person.field_last_name
+    - field.field.node.person.field_media
+    - field.field.node.person.field_meta_tags
+    - field.field.node.person.field_name
+    - field.field.node.person.field_office
+    - field.field.node.person.field_personal_website
+    - field.field.node.person.field_professional_experience
+    - field.field.node.person.field_research_interests_0
+    - field.field.node.person.field_section_title
+    - field.field.node.person.field_selected_professional_serv
+    - field.field.node.person.field_selected_publications
+    - field.field.node.person.field_sort
+    - field.field.node.person.field_special_keywords
+    - field.field.node.person.field_story_by
+    - field.field.node.person.field_teaching_interests
+    - field.field.node.person.field_telephone
+    - field.field.node.person.field_telephone_number
+    - field.field.node.person.field_upload_image
+    - field.field.node.person.field_upload_images
+    - node.type.person
+  module:
+    - content_moderation
+    - field_group
+    - link
+    - media_library
+    - metatag
+    - path
+    - telephone
+    - text
+third_party_settings:
+  field_group:
+    group_contact_information:
+      children:
+        - field_job_title
+        - field_department
+        - field_department_ref
+        - field_office
+        - field_address_text
+        - field_city_state_zip
+        - field_email
+        - field_telephone
+        - field_personal_website
+        - field_fax
+      parent_name: ''
+      weight: 1
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+        open: false
+      label: 'Contact Information'
+      region: content
+    group_academic_information:
+      children:
+        - field_biography
+        - field_upload_image
+        - field_professional_experience
+        - field_education_0
+        - field_teaching_interests
+        - field_awards
+        - field_research_interests_0
+        - field_selected_publications
+        - field_selected_professional_serv
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+        open: false
+      label: 'Academic Information'
+      region: content
+    group_banner_data:
+      children:
+        - field_banner_affiliation
+        - field_banner_employee_org
+        - field_banner_name_prefix
+        - field_banner_first_name
+        - field_banner_last_name
+        - field_banner_name_suffix
+        - field_banner_nickname
+        - field_banner_academic_title
+        - field_banner_bu_street1
+        - field_banner_bu_street2
+        - field_banner_bu_street3
+        - field_banner_bu_city
+        - field_banner_bu_state
+        - field_banner_bu_zip
+        - field_banner_bu_phone
+        - field_banner_student_c_u_street1
+        - field_banner_student_c_u_csz
+        - field_banner_udc_id
+        - field_banner_employee_unit
+        - field_banner_student_class
+        - field_banner_student_major
+        - field_banner_onu_email_address
+      parent_name: ''
+      weight: 0
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+        effect: none
+        formatter: closed
+        open: false
+      label: 'Banner Data'
+      region: content
+id: node.person.default
+targetEntityType: node
+bundle: person
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 22
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_address_text:
+    weight: 24
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_awards:
+    weight: 22
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_banner_academic_title:
+    weight: 38
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_banner_affiliation:
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_banner_bu_city:
+    weight: 42
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_banner_bu_phone:
+    weight: 45
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_banner_bu_state:
+    weight: 43
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_banner_bu_street1:
+    weight: 39
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_banner_bu_street2:
+    weight: 40
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_banner_bu_street3:
+    weight: 41
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_banner_bu_zip:
+    weight: 44
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_banner_employee_org:
+    weight: 32
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_banner_employee_unit:
+    weight: 49
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_banner_first_name:
+    weight: 34
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_banner_last_name:
+    weight: 35
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_banner_name_prefix:
+    weight: 33
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_banner_name_suffix:
+    weight: 36
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_banner_nickname:
+    weight: 37
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_banner_onu_email_address:
+    weight: 52
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_banner_student_c_u_csz:
+    weight: 47
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_banner_student_c_u_street1:
+    weight: 46
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_banner_student_class:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_banner_student_major:
+    weight: 51
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_banner_udc_id:
+    weight: 48
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_biography:
+    weight: 17
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_campus_address:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_city_state_zip:
+    weight: 25
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_department:
+    weight: 21
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_department_ref:
+    weight: 22
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_education_0:
+    weight: 20
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_email:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_employment_start_dat:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_expertise:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_fax:
+    weight: 29
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_file_attachments:
+    type: media_library_widget
+    weight: 9
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_grouping:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_job_title:
+    weight: 20
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_media:
+    type: entity_reference_autocomplete
+    weight: 23
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_meta_tags:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_office:
+    weight: 23
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_personal_website:
+    weight: 28
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_professional_experience:
+    weight: 19
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_research_interests_0:
+    weight: 23
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_selected_professional_serv:
+    weight: 25
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_selected_publications:
+    weight: 24
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_sort:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_special_keywords:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_story_by:
+    type: entity_reference_autocomplete
+    weight: 6
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_teaching_interests:
+    weight: 21
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_telephone:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_telephone_number:
+    type: telephone_default
+    weight: 24
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_upload_image:
+    type: media_library_widget
+    weight: 18
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_upload_images:
+    type: media_library_widget
+    weight: 3
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 4
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 19
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 21
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 17
+    region: content
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_first_name: true
+  field_last_name: true
+  field_name: true
+  field_section_title: true
+  title: true

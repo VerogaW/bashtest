@@ -1,0 +1,29 @@
+uuid: f3d601b2-e075-49b5-9955-297270ee736a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_event_category
+    - paragraphs.paragraphs_type.upcoming_events
+    - taxonomy.vocabulary.event_category
+id: paragraph.upcoming_events.field_event_category
+field_name: field_event_category
+entity_type: paragraph
+bundle: upcoming_events
+label: 'Event Category'
+description: 'Select which event category to display. If non selected, display upcoming events'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      event_category: event_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

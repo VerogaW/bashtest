@@ -1,0 +1,21 @@
+uuid: 62cf0086-260c-4173-a64f-09cd05140328
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body_formatted
+    - paragraphs.paragraphs_type.2_column_cta
+  module:
+    - text
+id: paragraph.2_column_cta.field_body_formatted
+field_name: field_body_formatted
+entity_type: paragraph
+bundle: 2_column_cta
+label: 'Body - formatted'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

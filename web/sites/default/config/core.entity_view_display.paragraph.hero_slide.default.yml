@@ -1,0 +1,72 @@
+uuid: 375675ff-1064-496f-9c2b-539980a2ca9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero_slide.field_image
+    - field.field.paragraph.hero_slide.field_links_limit_2
+    - field.field.paragraph.hero_slide.field_mp4
+    - field.field.paragraph.hero_slide.field_subtitle
+    - field.field.paragraph.hero_slide.field_title
+    - field.field.paragraph.hero_slide.field_webm
+    - paragraphs.paragraphs_type.hero_slide
+  module:
+    - file
+    - link
+id: paragraph.hero_slide.default
+targetEntityType: paragraph
+bundle: hero_slide
+mode: default
+content:
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_links_limit_2:
+    weight: 7
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_mp4:
+    type: file_url_plain
+    weight: 4
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_subtitle:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_webm:
+    type: file_url_plain
+    weight: 5
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

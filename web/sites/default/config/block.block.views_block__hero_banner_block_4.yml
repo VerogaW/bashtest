@@ -1,0 +1,25 @@
+uuid: 882b29e4-f82c-4b0c-b093-37d32c25c116
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.hero_banner
+  module:
+    - views
+  theme:
+    - kwall
+id: views_block__hero_banner_block_4
+theme: kwall
+region: hero
+weight: -12
+provider: null
+plugin: 'views_block:hero_banner-block_4'
+settings:
+  id: 'views_block:hero_banner-block_4'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility: {  }

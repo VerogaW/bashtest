@@ -1,0 +1,9 @@
+uuid: 39414580-13f9-40fa-8522-af5e1ecd2002
+langcode: en
+status: true
+dependencies: {  }
+id: flexible_bg_image_block
+label: 'Flexible BG Image Block'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

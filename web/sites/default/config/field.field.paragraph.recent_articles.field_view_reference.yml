@@ -1,0 +1,67 @@
+uuid: efd92447-dfda-4c2c-bbe2-729ad7b99d38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_view_reference
+    - paragraphs.paragraphs_type.recent_articles
+    - views.view.article_view
+  module:
+    - viewsreference
+id: paragraph.recent_articles.field_view_reference
+field_name: field_view_reference
+entity_type: paragraph
+bundle: recent_articles
+label: 'View Reference'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    options:
+      argument: '16'
+    display_id: block_2
+    data: 'a:5:{s:5:"pager";N;s:8:"argument";s:2:"16";s:5:"limit";N;s:6:"offset";N;s:5:"title";N;}'
+    target_uuid: 82b7dc3e-7ee7-4c10-a2d9-e04f32b700c1
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    block: block
+    default: 0
+    page: 0
+    entity_browser: 0
+    feed: 0
+  preselect_views:
+    article_view: article_view
+    block_content: 0
+    comment: 0
+    comments_recent: 0
+    content: 0
+    content_recent: 0
+    default_hero_section: 0
+    event_view: 0
+    feeds_feed: 0
+    files: 0
+    file_entity_browser: 0
+    frontpage: 0
+    group_members: 0
+    group_nodes: 0
+    hero_banner: 0
+    media: 0
+    moderated_content: 0
+    taxonomy_term: 0
+    user_admin_people: 0
+    watchdog: 0
+    who_s_new: 0
+    who_s_online: 0
+  enabled_settings:
+    argument: argument
+    pager: 0
+    limit: 0
+    offset: 0
+    title: 0
+field_type: viewsreference

@@ -1,0 +1,46 @@
+uuid: 010f3f09-6ba1-4408-af26-f8f6993c332b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero_interior_page.field_background_image
+    - field.field.paragraph.hero_interior_page.field_title
+    - paragraphs.paragraphs_type.hero_interior_page
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+id: paragraph.hero_interior_page.default
+targetEntityType: paragraph
+bundle: hero_interior_page
+mode: default
+content:
+  field_background_image:
+    weight: 1
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: media_entity_browser
+    type: inline_entity_form_complex
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

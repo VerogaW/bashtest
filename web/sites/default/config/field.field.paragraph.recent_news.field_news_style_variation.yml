@@ -1,0 +1,21 @@
+uuid: 79950f03-6737-4bae-b920-bdcd6f846a41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_news_style_variation
+    - paragraphs.paragraphs_type.recent_news
+  module:
+    - options
+id: paragraph.recent_news.field_news_style_variation
+field_name: field_news_style_variation
+entity_type: paragraph
+bundle: recent_news
+label: 'News Style Variation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

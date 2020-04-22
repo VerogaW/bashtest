@@ -1,0 +1,10 @@
+uuid: 7b72588b-65e8-43a2-969f-9003a9b03253
+langcode: en
+status: true
+dependencies: {  }
+id: group_content_editor
+label: 'Group Content Editor'
+weight: -4
+is_admin: null
+permissions:
+  - 'use text format full_html'

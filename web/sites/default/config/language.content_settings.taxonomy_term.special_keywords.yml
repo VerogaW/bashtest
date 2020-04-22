@@ -1,0 +1,11 @@
+uuid: 3774186e-5f3c-4ca9-b6dc-2e1ff642eb90
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.special_keywords
+id: taxonomy_term.special_keywords
+target_entity_type_id: taxonomy_term
+target_bundle: special_keywords
+default_langcode: site_default
+language_alterable: false

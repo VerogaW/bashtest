@@ -1,0 +1,19 @@
+uuid: b61c3e78-e1b4-480b-88ce-6123c03ee64d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_department
+    - node.type.person
+id: node.person.field_department
+field_name: field_department
+entity_type: node
+bundle: person
+label: Department
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

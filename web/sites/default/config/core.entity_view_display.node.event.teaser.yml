@@ -1,0 +1,71 @@
+uuid: 02f6bfff-cdd3-4ce3-9ede-a5f01c824d99
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.body
+    - field.field.node.event.feeds_item
+    - field.field.node.event.field_address
+    - field.field.node.event.field_all_day_event
+    - field.field.node.event.field_embedded_video
+    - field.field.node.event.field_end_date
+    - field.field.node.event.field_event_audience
+    - field.field.node.event.field_event_category
+    - field.field.node.event.field_event_contact_e_mail
+    - field.field.node.event.field_event_contact_name
+    - field.field.node.event.field_event_contact_phone_number
+    - field.field.node.event.field_event_featured_image
+    - field.field.node.event.field_event_legacy_nid
+    - field.field.node.event.field_event_legacy_url
+    - field.field.node.event.field_event_teaser_image
+    - field.field.node.event.field_featured
+    - field.field.node.event.field_file_attachments
+    - field.field.node.event.field_geolocation
+    - field.field.node.event.field_meta_tags
+    - field.field.node.event.field_section_title
+    - field.field.node.event.field_start_date
+    - node.type.event
+  module:
+    - text
+    - user
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  feeds_item: true
+  field_address: true
+  field_all_day_event: true
+  field_embedded_video: true
+  field_end_date: true
+  field_event_audience: true
+  field_event_category: true
+  field_event_contact_e_mail: true
+  field_event_contact_name: true
+  field_event_contact_phone_number: true
+  field_event_featured_image: true
+  field_event_legacy_nid: true
+  field_event_legacy_url: true
+  field_event_teaser_image: true
+  field_featured: true
+  field_file_attachments: true
+  field_geolocation: true
+  field_meta_tags: true
+  field_section_title: true
+  field_start_date: true
+  langcode: true

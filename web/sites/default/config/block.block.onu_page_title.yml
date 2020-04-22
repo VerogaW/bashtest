@@ -1,0 +1,40 @@
+uuid: b91ea657-e40d-486d-9bb3-1fc70e2ae960
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+  theme:
+    - onu
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: onu_page_title
+theme: onu
+region: content
+weight: -15
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/events\r\n/news\r\n/academics\r\n/academics/graduate\r\n/academics/undergraduate\r\n/academics/certificate\r\n/directory\r\n/directory/a\r\n/directory/b\r\n/directory/c\r\n/directory/d\r\n/directory/e\r\n/directory/f\r\n/directory/g\r\n/directory/h\r\n/directory/i\r\n/directory/j\r\n/directory/k\r\n/directory/l\r\n/directory/m\r\n/directory/n\r\n/directory/o\r\n/directory/p\r\n/directory/q\r\n/directory/r\r\n/directory/s\r\n/directory/t\r\n/directory/u\r\n/directory/v\r\n/directory/w\r\n/directory/x\r\n/directory/y\r\n/directory/z"
+    negate: true
+    context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+      homepage: homepage
+      landing_page: landing_page
+      page: page
+      program_of_study: program_of_study
+      sub_landing_page: sub_landing_page
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

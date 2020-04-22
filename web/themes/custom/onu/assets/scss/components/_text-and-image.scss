@@ -1,0 +1,18 @@
+.paragraph--type--text-and-image-block {
+  .field--name-field-image {
+    display: none;
+  }
+  &.processed {
+    .field--name-field-image {
+      display: block;
+    }
+  }
+  &.image-right {
+    @include breakpoint(large) {
+      .field--name-field-image {
+        order: 2;
+      }
+    }
+  }
+
+}

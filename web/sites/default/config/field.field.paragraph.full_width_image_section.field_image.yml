@@ -1,0 +1,28 @@
+uuid: ad9322ec-9fd8-4d6a-89ae-69fae7df3c51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image
+    - media.type.full_width_image_section
+    - paragraphs.paragraphs_type.full_width_image_section
+id: paragraph.full_width_image_section.field_image
+field_name: field_image
+entity_type: paragraph
+bundle: full_width_image_section
+label: Image
+description: '<em>Use Media Type:</em> "Full Width Image Section"'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      full_width_image_section: full_width_image_section
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

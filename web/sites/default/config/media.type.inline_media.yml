@@ -1,0 +1,18 @@
+uuid: 727ede44-2857-4a66-a3be-b5870b641b6f
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: field_media_image_10
+id: inline_media
+label: 'Inline Media'
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_image_10
+field_map: {  }

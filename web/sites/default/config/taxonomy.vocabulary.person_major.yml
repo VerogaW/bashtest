@@ -1,0 +1,8 @@
+uuid: 1a6cd40e-2159-411c-b48d-a351c3c65cab
+langcode: en
+status: true
+dependencies: {  }
+name: 'Person Major'
+vid: person_major
+description: ''
+weight: 0

@@ -1,0 +1,27 @@
+uuid: 0f359a21-54c8-42f5-9aff-0e6b3a750d02
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.slide-menu-top
+  module:
+    - menu_block
+  theme:
+    - onu
+id: slidemenutoppushslidemenutop
+theme: onu
+region: slide_in_navigation
+weight: -17
+provider: null
+plugin: 'menu_block:slide-menu-top'
+settings:
+  id: 'menu_block:slide-menu-top'
+  label: 'Slide Menu Top (Push - Slide Menu Top)'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand: 0
+  parent: 'slide-menu-top:'
+  suggestion: slide_menu_top
+visibility: {  }

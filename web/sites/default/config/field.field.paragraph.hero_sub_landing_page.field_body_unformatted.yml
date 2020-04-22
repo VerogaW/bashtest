@@ -1,0 +1,19 @@
+uuid: 8ba5a5d5-aa63-4275-b614-56e78287a2fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body_unformatted
+    - paragraphs.paragraphs_type.hero_sub_landing_page
+id: paragraph.hero_sub_landing_page.field_body_unformatted
+field_name: field_body_unformatted
+entity_type: paragraph
+bundle: hero_sub_landing_page
+label: Body
+description: 'Limit: 125 characters'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

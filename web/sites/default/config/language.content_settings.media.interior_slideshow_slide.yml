@@ -1,0 +1,11 @@
+uuid: 60bb6f60-ea19-44fa-b686-9b308655edd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.interior_slideshow_slide
+id: media.interior_slideshow_slide
+target_entity_type_id: media
+target_bundle: interior_slideshow_slide
+default_langcode: site_default
+language_alterable: false

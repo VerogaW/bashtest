@@ -1,0 +1,20 @@
+uuid: adef2db9-541e-449d-8b9c-9d68106ddad9
+langcode: en
+status: true
+dependencies:
+  module:
+    - kwall_site_alert
+  theme:
+    - kwall
+id: kwall_sitealert
+theme: kwall
+region: alerts
+weight: 0
+provider: null
+plugin: kwall_site_alert_block
+settings:
+  id: kwall_site_alert_block
+  label: 'Site Alert'
+  provider: kwall_site_alert
+  label_display: '0'
+visibility: {  }

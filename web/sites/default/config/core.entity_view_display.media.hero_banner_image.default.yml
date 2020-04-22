@@ -1,0 +1,28 @@
+uuid: 5b7ce442-12fa-42f8-af78-0612a5201476
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.hero_banner_image.field_media_image_1
+    - media.type.hero_banner_image
+  module:
+    - image
+id: media.hero_banner_image.default
+targetEntityType: media
+bundle: hero_banner_image
+mode: default
+content:
+  field_media_image_1:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+    type: image_url
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

@@ -1,0 +1,19 @@
+uuid: 4270e8fd-3630-4a9a-bc11-070a2af891f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_statistic_description
+    - paragraphs.paragraphs_type.facts_figures_stastics
+id: paragraph.facts_figures_stastics.field_statistic_description
+field_name: field_statistic_description
+entity_type: paragraph
+bundle: facts_figures_stastics
+label: 'Statistic Description'
+description: 'Limit: 125 characters'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

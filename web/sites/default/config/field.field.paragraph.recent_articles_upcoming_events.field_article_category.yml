@@ -1,0 +1,29 @@
+uuid: 8c80cd05-0175-41c1-9ee3-11dc408c4692
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_article_category
+    - paragraphs.paragraphs_type.recent_articles_upcoming_events
+    - taxonomy.vocabulary.article_category
+id: paragraph.recent_articles_upcoming_events.field_article_category
+field_name: field_article_category
+entity_type: paragraph
+bundle: recent_articles_upcoming_events
+label: 'Article Category'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      article_category: article_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

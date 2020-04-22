@@ -1,0 +1,42 @@
+uuid: c42da30f-0fa2-4037-a70f-5157ab9c2033
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.sub_landing_page.body
+    - field.field.node.sub_landing_page.field_content_bottom
+    - field.field.node.sub_landing_page.field_hero_content
+    - field.field.node.sub_landing_page.field_meta_tags
+    - node.type.sub_landing_page
+  module:
+    - metatag
+    - text
+    - user
+id: node.sub_landing_page.default
+targetEntityType: node
+bundle: sub_landing_page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_meta_tags:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_content_bottom: true
+  field_hero_content: true
+  langcode: true

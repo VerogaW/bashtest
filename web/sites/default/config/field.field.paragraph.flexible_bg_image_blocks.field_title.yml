@@ -1,0 +1,19 @@
+uuid: a5852e9b-ab9f-46fe-80b1-9154550d54cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.flexible_bg_image_blocks
+id: paragraph.flexible_bg_image_blocks.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: flexible_bg_image_blocks
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,25 @@
+uuid: 9789804c-6bed-4d7f-abb7-2b09ac751c58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video_embed
+    - paragraphs.paragraphs_type.video_tab_item
+  module:
+    - video_embed_field
+id: paragraph.video_tab_item.field_video_embed
+field_name: field_video_embed
+entity_type: paragraph
+bundle: video_tab_item
+label: 'Video Embed'
+description: 'URL must be embed link. Youtube Example: https://www.youtube.com/watch?v=NpEaa2P7qZI | Vimeo Example: https://vimeo.com/87110435'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    youtube: '0'
+    vimeo: '0'
+    youtube_playlist: '0'
+field_type: video_embed_field

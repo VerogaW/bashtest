@@ -1,0 +1,9 @@
+uuid: 15c989a2-9280-427c-bc72-4a4910b326c7
+langcode: en
+status: true
+dependencies: {  }
+id: adjustable_media_and_content
+label: 'Adjustable Media and Content'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

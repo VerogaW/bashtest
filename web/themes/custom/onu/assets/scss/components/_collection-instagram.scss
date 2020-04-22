@@ -1,0 +1,133 @@
+.collection-instagram {
+  position: relative;
+  padding: $space-xxlarge 0;
+
+  $_line-position-mobile: 25px;
+  $_lin-position-desktop: 70px;
+
+  &::before {
+    position: absolute;
+    top: $_line-position-mobile;
+    right: 0;
+    left: $_line-position-mobile;
+    z-index: -1;
+    height: 425px;
+    content: "";
+    background-color: $white;
+    border: $space-small solid $gray;
+    border-right: 0;
+  }
+
+  @include breakpoint(large) {
+    &::before {
+      top: $_lin-position-desktop;
+      left: $_lin-position-desktop;
+    }
+
+    &::after {
+      position: absolute;
+      top: 100px;
+      right: 0;
+      width: 260px;
+      height: 140px;
+      content: "";
+      background: {
+        image: url("#{$svg-path}/pattern-plus-gray.svg");
+        size: 85px 54px;
+      }
+    }
+  }
+}
+
+.collection-instagram__headline-outer {
+  @include flex-grid-row;
+}
+
+.collection-instagram__list {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+.collection-instagram__headline-inner {
+  text-align: center;
+  @include flex-grid-column(12);
+
+  @include breakpoint(medium) {
+    @include flex-grid-size(10);
+    @include grid-column-position(center);
+  }
+
+  @include breakpoint(large) {
+    margin-top: $space-large;
+  }
+}
+
+.collection-instagram__list-item, .collection-instagram__list .crt-widget-grid .crt-grid-post {
+  margin-top: $space-medium;
+  @include flex-grid-column(12);
+
+  @include breakpoint(medium) {
+    margin-top: $space-large;
+    @include flex-grid-size(4);
+  }
+}
+
+.collection-instagram__list .crt-widget-grid {
+  &.crt-grid-col2 {
+    .crt-grid-post {
+      width: 50%;
+    }
+  }
+  &.crt-grid-col3 {
+    .crt-grid-post {
+      width: 33.33%
+    }
+  }
+  &.crt-grid-col4 {
+    .crt-grid-post {
+      width: 33.33%
+    }
+  }
+}
+
+.collection-instagram__image-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+.collection-instagram__image {
+  transition: transform $transition-short ease-in-out;
+  @include object-fit;
+
+  .collection-instagram__image-link:hover & {
+    transform: scale(1.1);
+  }
+}
+
+.collection-instagram__cta-wrap {
+  $_cta-padding: 20px;
+
+  padding: {
+    right: $_cta-padding;
+    left: $_cta-padding;
+  }
+  margin-top: $space-large;
+  @include flex-center;
+}
+
+
+// Curator Override Css
+.collection-instagram__list {
+  .crt-widget.crt-widget-branded .crt-logo {
+    display: none;
+  }
+
+  .crt-widget.crt-widget-branded {
+    padding: 0;
+  }
+}

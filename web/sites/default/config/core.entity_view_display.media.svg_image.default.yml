@@ -1,0 +1,46 @@
+uuid: c0556372-abb2-44c9-a7d2-8b548e1c6c60
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.svg_image.field_media_image_12
+    - image.style.thumbnail
+    - media.type.svg_image
+  module:
+    - svg_image
+    - user
+id: media.svg_image.default
+targetEntityType: media
+bundle: svg_image
+mode: default
+content:
+  created:
+    label: hidden
+    type: timestamp
+    weight: 0
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  thumbnail:
+    type: image
+    weight: 5
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    region: content
+    third_party_settings: {  }
+  uid:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_media_image_12: true
+  langcode: true
+  name: true

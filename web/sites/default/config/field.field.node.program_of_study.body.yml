@@ -1,0 +1,22 @@
+uuid: cc55c89a-6a2f-4d9e-8f95-2173b8730691
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.program_of_study
+  module:
+    - text
+id: node.program_of_study.body
+field_name: body
+entity_type: node
+bundle: program_of_study
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

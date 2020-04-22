@@ -1,0 +1,74 @@
+.feature-video__inner {
+  position: relative;
+
+  $_position: $space-small;
+
+  @include breakpoint(medium) {
+    @include dot-pattern(
+      114px,
+      228px,
+      "white",
+      $top: $_position,
+      $right: $_position
+    );
+  }
+
+  @include breakpoint(large) {
+    @include dot-pattern(
+      107px,
+      222px,
+      "white",
+      $pseudo: "before",
+      $left: $_position,
+      $bottom: $_position
+    );
+  }
+}
+
+.feature-video__image-wrap {
+  position: relative;
+  width: 100%;
+  height: 580px;
+
+  @include breakpoint(large) {
+    height: 768px;
+  }
+
+
+  .feature-video__image, img {
+    @include object-fit;
+  }
+}
+
+.feature-video__content-outer {
+  @include adhere;
+  top: auto;
+  bottom: $space-medium;
+  @include flex-grid-row;
+  align-items: flex-end;
+
+  @include breakpoint(medium) {
+    top: $space-xlarge;
+    bottom: auto;
+    left: 50%;
+    align-items: flex-start;
+    transform: translateX(-50%);
+  }
+}
+
+.feature-video__content-inner {
+  @include flex-grid-column(12);
+
+  @include breakpoint(medium) {
+    @include flex-grid-column(6);
+  }
+}
+
+.feature-video__content-wrap {
+  padding: 30px $space-medium;
+  background-color: $white;
+
+  @include breakpoint(large) {
+    padding: $space-xlarge 70px;
+  }
+}

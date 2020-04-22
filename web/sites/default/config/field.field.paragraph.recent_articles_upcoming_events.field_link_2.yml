@@ -1,0 +1,23 @@
+uuid: 230546e0-07ae-4aa6-8476-ce68fe3ff442
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link_2
+    - paragraphs.paragraphs_type.recent_articles_upcoming_events
+  module:
+    - link
+id: paragraph.recent_articles_upcoming_events.field_link_2
+field_name: field_link_2
+entity_type: paragraph
+bundle: recent_articles_upcoming_events
+label: 'Event More Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

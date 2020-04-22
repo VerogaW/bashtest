@@ -1,0 +1,8 @@
+.group-statistics {
+  margin-top: 50px;
+  margin-bottom: $space-xxlarge;
+}
+
+.group-statistics__list {
+  @include flex-grid-row;
+}

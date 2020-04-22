@@ -1,0 +1,44 @@
+uuid: 9b9ccdb6-5c1b-4421-8e7a-db5643eebd9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.upcoming_events.field_event_category
+    - field.field.paragraph.upcoming_events.field_link
+    - field.field.paragraph.upcoming_events.field_title
+    - field.field.paragraph.upcoming_events.field_view_reference
+    - paragraphs.paragraphs_type.upcoming_events
+  module:
+    - link
+id: paragraph.upcoming_events.default
+targetEntityType: paragraph
+bundle: upcoming_events
+mode: default
+content:
+  field_event_category:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  field_view_reference: true
+  status: true
+  uid: true

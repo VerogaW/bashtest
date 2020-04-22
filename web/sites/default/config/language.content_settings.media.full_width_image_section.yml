@@ -1,0 +1,11 @@
+uuid: 8ce7f30c-aebf-435c-a72d-c524f848f1bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.full_width_image_section
+id: media.full_width_image_section
+target_entity_type_id: media
+target_bundle: full_width_image_section
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,19 @@
+uuid: 827b5063-3bee-414a-8eef-92f7763d7688
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.featured_video
+id: paragraph.featured_video.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: featured_video
+label: Headline
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

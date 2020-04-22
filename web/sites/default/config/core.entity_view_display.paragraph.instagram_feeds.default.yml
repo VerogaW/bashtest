@@ -1,0 +1,160 @@
+uuid: b5c56d1b-7018-4273-9dc4-ed81da99ccc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.instagram_feeds.field_body_unformatted
+    - field.field.paragraph.instagram_feeds.field_curator_code
+    - field.field.paragraph.instagram_feeds.field_link
+    - field.field.paragraph.instagram_feeds.field_title
+    - paragraphs.paragraphs_type.instagram_feeds
+  module:
+    - fences
+    - field_group
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_section_wrapper:
+      children:
+        - group_headline_outer
+        - field_curator_code
+        - field_link
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: collection-instagram
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Section Wrapper'
+      region: content
+    group_headline_outer:
+      children:
+        - group_headline_inner
+      parent_name: group_section_wrapper
+      weight: 4
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: collection-instagram__headline-outer
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Headline Outer'
+      region: content
+    group_headline_inner:
+      children:
+        - group_context_base
+      parent_name: group_headline_outer
+      weight: 5
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: collection-instagram__headline-inner
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Headline Inner'
+      region: content
+    group_context_base:
+      children:
+        - field_title
+        - field_body_unformatted
+      parent_name: group_headline_inner
+      weight: 6
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: context-base
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Context Base'
+      region: content
+id: paragraph.instagram_feeds.default
+targetEntityType: paragraph
+bundle: instagram_feeds
+mode: default
+content:
+  field_body_unformatted:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: p
+        fences_field_item_classes: 'text-style-1 text-black'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: basic_string
+    region: content
+  field_curator_code:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: collection-instagram__list
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: text_default
+    region: content
+  field_link:
+    weight: 6
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: collection-instagram__cta-wrap
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: link
+    region: content
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: h2
+        fences_field_item_classes: 'heading-style-2 text-orange'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+hidden: {  }

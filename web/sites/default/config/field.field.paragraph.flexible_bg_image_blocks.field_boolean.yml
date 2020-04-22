@@ -1,0 +1,23 @@
+uuid: ed8067c1-5c7a-4d4a-a337-172f24dcba67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_boolean
+    - paragraphs.paragraphs_type.flexible_bg_image_blocks
+id: paragraph.flexible_bg_image_blocks.field_boolean
+field_name: field_boolean
+entity_type: paragraph
+bundle: flexible_bg_image_blocks
+label: 'No Gutter'
+description: 'Remove padding between blocks'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

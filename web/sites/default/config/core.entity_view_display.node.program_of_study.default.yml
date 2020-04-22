@@ -1,0 +1,92 @@
+uuid: f65f2fc3-0af5-4a23-9f8c-b00922209dc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.program_of_study.body
+    - field.field.node.program_of_study.field_area_of_interest
+    - field.field.node.program_of_study.field_college
+    - field.field.node.program_of_study.field_content_bottom
+    - field.field.node.program_of_study.field_content_bottom_body
+    - field.field.node.program_of_study.field_hero_content
+    - field.field.node.program_of_study.field_type_of_offering
+    - node.type.program_of_study
+  module:
+    - fences
+    - field_group
+    - options
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_program_filters:
+      children:
+        - field_type_of_offering
+        - field_college
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: 'row program-filters-wrapper'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Program Filters'
+      region: content
+id: node.program_of_study.default
+targetEntityType: node
+bundle: program_of_study
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_college:
+    type: entity_reference_label
+    weight: 4
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: 'mb-3  program-filters col-md-4 col-sm-12'
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: 'text-orange mb-1'
+  field_type_of_offering:
+    type: list_default
+    weight: 3
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: 'mb-3 program-filters col-md-4 col-sm-12'
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: 'text-orange mb-1 '
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_area_of_interest: true
+  field_content_bottom: true
+  field_content_bottom_body: true
+  field_hero_content: true
+  langcode: true

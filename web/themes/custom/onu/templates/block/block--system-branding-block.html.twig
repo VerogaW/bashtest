@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Theme override for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ */
+#}
+
+<div class="the-nav__button-group">
+    <button class="the-nav__button" aria-haspopup="true"><span class="the-nav__discernible-content">Toggle Menu</span>
+        <span class="the-nav__button-icon-menu"></span> <span class="the-nav__button-text heading-style-7 text-black">
+                  Menu
+                </span></button>
+    <button class="the-nav__button the-nav__button_search" aria-haspopup="true"><span
+                class="the-nav__button-icon-search"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" class="the-nav__button-svg">
+            <use xlink:href="/themes/custom/onu/assets/svgs/icon-search.svg#search"></use>
+        </svg>
+        <span class="the-nav__button-text heading-style-7 text-black">
+                  Search
+                </span>
+    </button>
+</div>
+
+{% block content %}
+    {% if site_logo %}
+        <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="the-nav__logo-link">
+            <img src="{{ site_logo }}" alt="{{ 'Home'|t }}"/>
+        </a>
+    {% endif %}
+    {% if site_name %}
+        <div class="site-name">
+            <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
+        </div>
+    {% endif %}
+    {% if site_slogan %}
+        <div class="site-slogan">{{ site_slogan }}</div>
+    {% endif %}
+{% endblock %}

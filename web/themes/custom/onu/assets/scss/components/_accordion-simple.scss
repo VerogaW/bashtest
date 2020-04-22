@@ -1,0 +1,96 @@
+.accordion-simple {
+  margin: $space-xxlarge 0;
+}
+
+.accordion-simple__list {
+  @include flex-grid-row;
+}
+
+.accordion-simple__list-item {
+  @include flex-grid-column(12);
+
+  &::after {
+    display: block;
+    width: 100%;
+    content: "";
+    border-bottom: 1px solid $gray-accordion;
+  }
+
+  @include breakpoint(large) {
+   // @include flex-grid-size(7);
+  }
+}
+
+.accordion-simple__list-item-button {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: $space-medium 0;
+  outline: none;
+  align-items: center;
+  @include base-transition($property: color);
+
+  &:hover,
+  &:focus {
+    color: $orange-hover-state;
+  }
+}
+
+.accordion-simple__list-item-content {
+  margin-top: 0;
+  margin-bottom: $space-large;
+  ul {
+    list-style: disc;
+    li {
+      display: list-item;
+    }
+  }
+}
+
+// Base accordion icon styles
+$_base-accordion-icon-group-size: 16px;
+
+.base-accordion__icon-group {
+  position: absolute;
+  right: 0;
+  display: block;
+  width: $_base-accordion-icon-group-size;
+  height: $_base-accordion-icon-group-size;
+}
+
+$_base-accordion-icon-size: 1px;
+
+.base-accordion__icon {
+  position: absolute;
+  background-color: $gray-darker;
+
+  .accordion-simple__list-item-button:hover &,
+  .accordion-sidebar__list-item-button:hover & {
+    @include base-transition($property: background-color);
+    background-color: $orange-hover-state;
+  }
+
+  .active .accordion-sidebar__list-item-button & {
+    background-color: $white;
+  }
+}
+
+.base-accordion__icon_vertical {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: $_base-accordion-icon-size;
+  transform: scaleY(0) translateX(-50%);
+  @include base-transition($property: transform);
+
+  .collapsed & {
+    transform: scaleY(1) translateX(-50%);
+  }
+}
+
+.base-accordion__icon_horizontal {
+  top: 7px;
+  right: 0;
+  left: 0;
+  height: $_base-accordion-icon-size;
+}

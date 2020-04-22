@@ -1,0 +1,18 @@
+uuid: 6cea5ffd-e074-4f85-8c7a-9e6821d81454
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: field_media_image_9
+id: article_featured_image
+label: 'Article Featured Image'
+description: 'Use <em>Article Featured Image</em> for view page news center thumbnail image and single article featured image'
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_image_9
+field_map: {  }

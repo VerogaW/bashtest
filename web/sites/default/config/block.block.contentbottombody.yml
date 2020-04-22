@@ -1,0 +1,36 @@
+uuid: 4c585a3f-8e59-499e-a4f1-f464d66117f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools_block
+    - node
+  theme:
+    - onu
+id: contentbottombody
+theme: onu
+region: content_bottom
+weight: -17
+provider: null
+plugin: 'entity_field:node:field_content_bottom_body'
+settings:
+  id: 'entity_field:node:field_content_bottom_body'
+  label: 'Content Bottom-Body'
+  provider: ctools_block
+  label_display: '0'
+  formatter:
+    label: hidden
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      program_of_study: program_of_study
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

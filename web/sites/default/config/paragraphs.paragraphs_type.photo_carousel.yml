@@ -1,0 +1,9 @@
+uuid: bac9786a-99d4-4f77-9bb9-672b3a3ec31c
+langcode: en
+status: true
+dependencies: {  }
+id: photo_carousel
+label: 'Photo Carousel'
+icon_uuid: null
+description: "For Interior Pages\t\r\n"
+behavior_plugins: {  }

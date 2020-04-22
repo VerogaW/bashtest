@@ -1,0 +1,263 @@
+uuid: 9dc7b4ff-8f72-4092-a6ba-a92df341a1c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.person.body
+    - field.field.node.person.field_address_text
+    - field.field.node.person.field_awards
+    - field.field.node.person.field_banner_academic_title
+    - field.field.node.person.field_banner_affiliation
+    - field.field.node.person.field_banner_bu_city
+    - field.field.node.person.field_banner_bu_phone
+    - field.field.node.person.field_banner_bu_state
+    - field.field.node.person.field_banner_bu_street1
+    - field.field.node.person.field_banner_bu_street2
+    - field.field.node.person.field_banner_bu_street3
+    - field.field.node.person.field_banner_bu_zip
+    - field.field.node.person.field_banner_employee_org
+    - field.field.node.person.field_banner_employee_unit
+    - field.field.node.person.field_banner_first_name
+    - field.field.node.person.field_banner_last_name
+    - field.field.node.person.field_banner_name_prefix
+    - field.field.node.person.field_banner_name_suffix
+    - field.field.node.person.field_banner_nickname
+    - field.field.node.person.field_banner_onu_email_address
+    - field.field.node.person.field_banner_student_c_u_csz
+    - field.field.node.person.field_banner_student_c_u_street1
+    - field.field.node.person.field_banner_student_class
+    - field.field.node.person.field_banner_student_major
+    - field.field.node.person.field_banner_udc_id
+    - field.field.node.person.field_biography
+    - field.field.node.person.field_campus_address
+    - field.field.node.person.field_city_state_zip
+    - field.field.node.person.field_department
+    - field.field.node.person.field_department_ref
+    - field.field.node.person.field_education_0
+    - field.field.node.person.field_email
+    - field.field.node.person.field_employment_start_dat
+    - field.field.node.person.field_expertise
+    - field.field.node.person.field_fax
+    - field.field.node.person.field_file_attachments
+    - field.field.node.person.field_first_name
+    - field.field.node.person.field_grouping
+    - field.field.node.person.field_job_title
+    - field.field.node.person.field_last_name
+    - field.field.node.person.field_media
+    - field.field.node.person.field_meta_tags
+    - field.field.node.person.field_name
+    - field.field.node.person.field_office
+    - field.field.node.person.field_personal_website
+    - field.field.node.person.field_professional_experience
+    - field.field.node.person.field_research_interests_0
+    - field.field.node.person.field_section_title
+    - field.field.node.person.field_selected_professional_serv
+    - field.field.node.person.field_selected_publications
+    - field.field.node.person.field_sort
+    - field.field.node.person.field_special_keywords
+    - field.field.node.person.field_story_by
+    - field.field.node.person.field_teaching_interests
+    - field.field.node.person.field_telephone
+    - field.field.node.person.field_telephone_number
+    - field.field.node.person.field_upload_image
+    - field.field.node.person.field_upload_images
+    - node.type.person
+  module:
+    - fences
+    - field_group
+    - user
+third_party_settings:
+  field_group:
+    group_profile_details:
+      children:
+        - field_banner_last_name
+        - field_banner_academic_title
+        - field_banner_student_major
+        - field_banner_student_class
+        - field_banner_onu_email_address
+        - field_banner_bu_phone
+        - field_banner_bu_street2
+        - field_banner_bu_street3
+        - field_banner_student_c_u_street1
+      parent_name: group_row
+      weight: 2
+      format_type: html_element
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'col-md-9 profile-details'
+      label: 'Profile Details'
+      region: content
+    group_row:
+      children:
+        - group_profile_details
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: row
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Row
+      region: content
+id: node.person.default
+targetEntityType: node
+bundle: person
+mode: default
+content:
+  field_banner_academic_title:
+    type: string
+    weight: 36
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_banner_bu_phone:
+    type: string
+    weight: 40
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_banner_bu_street2:
+    type: string
+    weight: 41
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_banner_bu_street3:
+    type: string
+    weight: 42
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_banner_last_name:
+    type: string
+    weight: 35
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_banner_onu_email_address:
+    weight: 39
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: content
+  field_banner_student_c_u_street1:
+    type: string
+    weight: 43
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_banner_student_class:
+    type: entity_reference_label
+    weight: 38
+    region: content
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+  field_banner_student_major:
+    type: entity_reference_label
+    weight: 37
+    region: content
+    label: above
+    settings:
+      link: false
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+  title_field:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  content_moderation_control: true
+  field_address_text: true
+  field_awards: true
+  field_banner_affiliation: true
+  field_banner_bu_city: true
+  field_banner_bu_state: true
+  field_banner_bu_street1: true
+  field_banner_bu_zip: true
+  field_banner_employee_org: true
+  field_banner_employee_unit: true
+  field_banner_first_name: true
+  field_banner_name_prefix: true
+  field_banner_name_suffix: true
+  field_banner_nickname: true
+  field_banner_student_c_u_csz: true
+  field_banner_udc_id: true
+  field_biography: true
+  field_campus_address: true
+  field_city_state_zip: true
+  field_department: true
+  field_department_ref: true
+  field_education_0: true
+  field_email: true
+  field_employment_start_dat: true
+  field_expertise: true
+  field_fax: true
+  field_file_attachments: true
+  field_first_name: true
+  field_grouping: true
+  field_job_title: true
+  field_last_name: true
+  field_media: true
+  field_meta_tags: true
+  field_name: true
+  field_office: true
+  field_personal_website: true
+  field_professional_experience: true
+  field_research_interests_0: true
+  field_section_title: true
+  field_selected_professional_serv: true
+  field_selected_publications: true
+  field_sort: true
+  field_special_keywords: true
+  field_story_by: true
+  field_teaching_interests: true
+  field_telephone: true
+  field_telephone_number: true
+  field_upload_image: true
+  field_upload_images: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

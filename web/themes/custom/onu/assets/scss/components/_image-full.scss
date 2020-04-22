@@ -1,0 +1,30 @@
+.image-full {
+  @include flex-grid-row;
+
+  .base-acronym {
+    display: none;
+  }
+}
+.image-full.br-let-1 {
+  .base-acronym {
+    display: block;
+  }
+}
+
+.image-full__inner {
+  @include flex-grid-column(12, 0);
+
+  @include breakpoint(medium) {
+    @include flex-grid-column(12);
+  }
+}
+
+.image-full__image-wrap {
+  position: relative;
+  height: 550px;
+  margin: $space-xlarge 0;
+}
+
+.image-full__image {
+  @include object-fit;
+}

@@ -1,0 +1,29 @@
+uuid: 655c9d1f-1a1b-433c-a54d-9e8d6711f816
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_employee_unit
+    - node.type.person
+    - taxonomy.vocabulary.person_employee_unit
+id: node.person.field_banner_employee_unit
+field_name: field_banner_employee_unit
+entity_type: node
+bundle: person
+label: 'Banner employee unit'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      person_employee_unit: person_employee_unit
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

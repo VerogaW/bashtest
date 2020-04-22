@@ -1,0 +1,56 @@
+uuid: 4aa299a1-a928-4bc5-a4d6-1018c3ff6cc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.photo_carousel_slide.field_image
+    - field.field.paragraph.photo_carousel_slide.field_photo_caption
+    - field.field.paragraph.photo_carousel_slide.field_photo_caption_link
+    - paragraphs.paragraphs_type.photo_carousel_slide
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+    - link
+id: paragraph.photo_carousel_slide.default
+targetEntityType: paragraph
+bundle: photo_carousel_slide
+mode: default
+content:
+  field_image:
+    weight: 2
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: media_entity_browser
+    type: inline_entity_form_complex
+    region: content
+  field_photo_caption:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_photo_caption_link:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

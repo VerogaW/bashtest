@@ -1,0 +1,27 @@
+uuid: e77fb5d6-b507-4dd0-800a-95131b8e1bde
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_t_image_block_variation
+field_name: field_t_image_block_variation
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Dark Variation'
+      label: 'Dark Variation'
+    -
+      value: 'Light Variation'
+      label: 'Light Variation'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

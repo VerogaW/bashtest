@@ -1,0 +1,25 @@
+uuid: 7dd46ab5-75bd-4cdd-9f74-92e7d77ee632
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video_embed
+    - paragraphs.paragraphs_type.interior_slideshow_slide
+  module:
+    - video_embed_field
+id: paragraph.interior_slideshow_slide.field_video_embed
+field_name: field_video_embed
+entity_type: paragraph
+bundle: interior_slideshow_slide
+label: 'Video Slide'
+description: 'Upload a Youtube or Vimeo embed url. Video will not display if Image field is in use.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    vimeo: '0'
+    youtube: '0'
+    youtube_playlist: '0'
+field_type: video_embed_field

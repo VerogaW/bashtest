@@ -1,0 +1,45 @@
+.hero-level-three {
+  position: relative;
+  height: 300px;
+  text-align: center;
+  @include flex-center;
+
+  background: {
+    repeat: no-repeat;
+    image: url("#{$svg-path}/stroke-gray.svg");
+    size: cover;
+    position-y: 30%;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 70px;
+    content: "";
+    background-color: $orange;
+  }
+
+  $_adjusted_height: calc(100% - #{$space-medium});
+
+  @include dot-pattern(
+    44px,
+    $_adjusted_height,
+    "white",
+    $top: 50%,
+    $right: $space-small,
+    $bottom: $space-small
+  );
+
+  &::after {
+    z-index: 0;
+    transform: translateY(-50%);
+    background-image: url("#{$svg-path}/dot-black.svg");
+  }
+}
+
+.hero-level-three__heading {
+  position: relative;
+  z-index: 1;
+}

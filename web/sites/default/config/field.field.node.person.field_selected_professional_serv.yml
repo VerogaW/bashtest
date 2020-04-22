@@ -1,0 +1,21 @@
+uuid: a43fed44-7e47-4d6b-956f-902d165d67ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_selected_professional_serv
+    - node.type.person
+  module:
+    - text
+id: node.person.field_selected_professional_serv
+field_name: field_selected_professional_serv
+entity_type: node
+bundle: person
+label: 'Selected Professional Service'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

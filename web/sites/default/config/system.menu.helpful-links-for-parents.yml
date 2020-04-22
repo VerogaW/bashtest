@@ -1,0 +1,8 @@
+uuid: 57ad6e52-003b-44f3-9a08-4b75ee1b15b8
+langcode: en
+status: true
+dependencies: {  }
+id: helpful-links-for-parents
+label: 'Helpful links for parents'
+description: 'Menu for the controllers page'
+locked: false

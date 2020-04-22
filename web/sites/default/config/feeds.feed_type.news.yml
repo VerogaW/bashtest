@@ -1,0 +1,214 @@
+uuid: 4101a737-333b-48a0-8af0-1e7c73e57176
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.article.status
+    - field.field.node.article.body
+    - field.field.node.article.field_article_date
+    - field.field.node.article.field_article_images
+    - field.field.node.article.field_college
+    - field.field.node.article.field_majors_minors
+    - field.field.node.article.field_media
+    - field.field.node.article.field_migration_id
+    - field.field.node.article.field_migration_url
+    - field.field.node.article.field_special_keywords
+    - node.type.article
+  module:
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      4aa9f881-e292-4553-825a-eae490919556:
+        separator: ','
+        limit: null
+        plugin: explode
+        source: college
+        weight: 0
+        uuid: 4aa9f881-e292-4553-825a-eae490919556
+      f8ee11f4-7125-419c-ad2b-96766ad655b6:
+        separator: ','
+        limit: null
+        plugin: explode
+        source: majors_minors
+        weight: 0
+        uuid: f8ee11f4-7125-419c-ad2b-96766ad655b6
+      d1b8edd6-3c34-467d-91bb-7b88f5b431f2:
+        separator: ','
+        limit: null
+        plugin: explode
+        source: special_keywords
+        weight: 0
+        uuid: d1b8edd6-3c34-467d-91bb-7b88f5b431f2
+      2360f772-116d-4dee-9b74-8747ad49ea40:
+        plugin: newslargephoto
+        source: large_photo
+        weight: 0
+        uuid: 2360f772-116d-4dee-9b74-8747ad49ea40
+      8bb96332-8c0d-4930-a66a-42878510a5f0:
+        plugin: newsimages
+        source: image
+        weight: 0
+        uuid: 8bb96332-8c0d-4930-a66a-42878510a5f0
+      15ea9062-dc5f-49a7-ad12-5c7012d184c6:
+        separator: ','
+        limit: null
+        plugin: explode
+        source: image
+        weight: 1
+        uuid: 15ea9062-dc5f-49a7-ad12-5c7012d184c6
+      ccc91b00-a4e6-47eb-af30-88199ac75fad:
+        find: ' '
+        replace: T
+        case_sensitive: false
+        whole: false
+        plugin: find_replace
+        source: post_date
+        weight: 0
+        word_boundaries: false
+        uuid: ccc91b00-a4e6-47eb-af30-88199ac75fad
+label: News
+id: news
+description: 'Import News from Drupal 7 To Drupal 8'
+import_period: 10800
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  update_existing: 2
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: article
+custom_sources:
+  title:
+    label: Title
+    value: Title
+    machine_name: title
+  content_id:
+    label: 'Content ID'
+    value: 'Content ID'
+    machine_name: content_id
+  content_url:
+    label: 'Content URL'
+    value: 'Content URL'
+    machine_name: content_url
+  body:
+    label: Body
+    value: Body
+    machine_name: body
+  college:
+    label: College
+    value: College
+    machine_name: college
+  majors_minors:
+    label: Majors/Minors
+    value: Majors/Minors
+    machine_name: majors_minors
+  special_keywords:
+    label: 'Special Keywords'
+    value: 'Special Keywords'
+    machine_name: special_keywords
+  large_photo:
+    label: 'Large Photo'
+    value: 'Large Photo'
+    machine_name: large_photo
+  published_status:
+    label: 'Published status'
+    value: 'Published status'
+    machine_name: published_status
+  teaser:
+    label: Teaser
+    value: Teaser
+    machine_name: teaser
+  image:
+    label: Image
+    value: Image
+    machine_name: image
+  post_date:
+    label: 'Post date'
+    value: 'Post date'
+    machine_name: post_date
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    unique: {  }
+  -
+    target: field_migration_id
+    map:
+      value: content_id
+    unique:
+      value: '1'
+  -
+    target: field_migration_url
+    map:
+      value: content_url
+    unique: {  }
+  -
+    target: body
+    map:
+      value: body
+      summary: teaser
+    settings:
+      format: full_html
+  -
+    target: field_college
+    map:
+      target_id: college
+    settings:
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_majors_minors
+    map:
+      target_id: majors_minors
+    settings:
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_special_keywords
+    map:
+      target_id: special_keywords
+    settings:
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_media
+    map:
+      target_id: large_photo
+    settings:
+      reference_by: name
+      autocreate: false
+  -
+    target: status
+    map:
+      value: published_status
+  -
+    target: field_article_images
+    map:
+      target_id: image
+    settings:
+      reference_by: name
+      autocreate: false
+  -
+    target: field_article_date
+    map:
+      value: post_date
+    settings:
+      timezone: __SITE__

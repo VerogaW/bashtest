@@ -1,0 +1,27 @@
+uuid: 668feb84-8434-463c-8788-7067e6156c4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quick_link_minimal.field_links
+    - paragraphs.paragraphs_type.quick_link_minimal
+  module:
+    - link
+id: paragraph.quick_link_minimal.default
+targetEntityType: paragraph
+bundle: quick_link_minimal
+mode: default
+content:
+  field_links:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden: {  }

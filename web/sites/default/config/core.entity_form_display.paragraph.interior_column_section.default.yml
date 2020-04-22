@@ -1,0 +1,30 @@
+uuid: e47e7ac4-d0c2-4869-b031-d303f40d6c46
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.interior_column_section.field_interior_column_section
+    - paragraphs.paragraphs_type.interior_column_section
+  module:
+    - paragraphs
+id: paragraph.interior_column_section.default
+targetEntityType: paragraph
+bundle: interior_column_section
+mode: default
+content:
+  field_interior_column_section:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

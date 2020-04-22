@@ -1,0 +1,23 @@
+uuid: fddc4f3e-a70b-4da6-afcf-50a1cb28757f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_related_links
+    - paragraphs.paragraphs_type.text_with_cta
+  module:
+    - link
+id: paragraph.text_with_cta.field_related_links
+field_name: field_related_links
+entity_type: paragraph
+bundle: text_with_cta
+label: 'Related Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

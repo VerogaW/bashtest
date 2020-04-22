@@ -1,0 +1,28 @@
+uuid: e8aa9592-da32-4baf-8e37-b224206177ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image
+    - media.type.flexible_bg_image_block
+    - paragraphs.paragraphs_type.flexible_bg_image_block
+id: paragraph.flexible_bg_image_block.field_image
+field_name: field_image
+entity_type: paragraph
+bundle: flexible_bg_image_block
+label: Image
+description: '<em>Use Media Type:</em> "Flexible BG Image Block"'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      flexible_bg_image_block: flexible_bg_image_block
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

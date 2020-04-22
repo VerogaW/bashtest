@@ -1,0 +1,28 @@
+uuid: 5dfca5c0-cb07-46f2-a5a5-aaaa8c0e64fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_image
+    - media.type.flexible_bg_image_block
+    - paragraphs.paragraphs_type.background_image_with_ctas
+id: paragraph.background_image_with_ctas.field_background_image
+field_name: field_background_image
+entity_type: paragraph
+bundle: background_image_with_ctas
+label: 'Background Photo'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      flexible_bg_image_block: flexible_bg_image_block
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

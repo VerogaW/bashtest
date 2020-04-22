@@ -1,0 +1,9 @@
+uuid: 8ae17c59-1af4-45c9-a7b7-10969d3e143d
+langcode: en
+status: true
+dependencies: {  }
+id: para_program_of_study
+label: 'Para: Program of Study'
+icon_uuid: null
+description: 'For Landing & Sub-Landing Page'
+behavior_plugins: {  }

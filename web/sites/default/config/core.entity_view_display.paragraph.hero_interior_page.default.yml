@@ -1,0 +1,33 @@
+uuid: 435b49e5-d36d-4107-bda3-e462981bb033
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero_interior_page.field_background_image
+    - field.field.paragraph.hero_interior_page.field_title
+    - paragraphs.paragraphs_type.hero_interior_page
+  module:
+    - media
+id: paragraph.hero_interior_page.default
+targetEntityType: paragraph
+bundle: hero_interior_page
+mode: default
+content:
+  field_background_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: media_thumbnail
+    region: content
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

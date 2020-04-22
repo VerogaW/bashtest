@@ -1,0 +1,59 @@
+uuid: 3a5b0927-9b29-4dde-b35a-d25dbcd33a4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.accordion.field_accordion_items
+    - field.field.paragraph.accordion.field_boolean
+    - field.field.paragraph.accordion.field_title
+    - field.field.paragraph.accordion.field_toggle_all
+    - paragraphs.paragraphs_type.accordion
+  module:
+    - entity_reference_revisions
+    - fences
+    - field_group
+third_party_settings:
+  field_group:
+    group_section_wrapper:
+      children:
+        - field_accordion_items
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: accordion-simple
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Section Wrapper'
+      region: content
+id: paragraph.accordion.default
+targetEntityType: paragraph
+bundle: accordion
+mode: default
+content:
+  field_accordion_items:
+    type: entity_reference_revisions_entity_view
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: ul
+        fences_field_classes: 'accordion-simple__list accordion'
+        fences_field_item_tag: li
+        fences_field_item_classes: accordion-simple__list-item
+        fences_label_tag: none
+        fences_label_classes: ''
+    region: content
+hidden:
+  field_boolean: true
+  field_title: true
+  field_toggle_all: true

@@ -1,0 +1,29 @@
+uuid: db4ccf3f-a0da-413d-885c-86c5990e1562
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_majors_minors
+    - node.type.stories
+    - taxonomy.vocabulary.majors_minors
+id: node.stories.field_majors_minors
+field_name: field_majors_minors
+entity_type: node
+bundle: stories
+label: Majors/Minors
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      majors_minors: majors_minors
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,197 @@
+uuid: 3509560b-731d-4923-b0bf-517a5044a852
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.logo_all_up.field_body_unformatted
+    - field.field.paragraph.logo_all_up.field_link
+    - field.field.paragraph.logo_all_up.field_logo_images
+    - field.field.paragraph.logo_all_up.field_subtitle
+    - field.field.paragraph.logo_all_up.field_title
+    - paragraphs.paragraphs_type.logo_all_up
+  module:
+    - fences
+    - field_group
+    - link
+third_party_settings:
+  field_group:
+    group_section_wrapper:
+      children:
+        - group_outer_wrapper
+        - group_content_wrap
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: collection-logos
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Section Wrapper'
+      region: content
+    group_outer_wrapper:
+      children:
+        - group_o
+      parent_name: group_section_wrapper
+      weight: 6
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: collection-logos__headline-outer
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Outer Wrapper'
+      region: content
+    group_o:
+      children:
+        - field_title
+      parent_name: group_outer_wrapper
+      weight: 7
+      format_type: html_element
+      format_settings:
+        label: 'Inner Wrapper'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: collection-logos__headline-inner
+      label: 'Inner Wrapper'
+      region: content
+    group_content_wrap:
+      children:
+        - group_content_wrap_inner
+        - field_logo_images
+      parent_name: group_section_wrapper
+      weight: 7
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: collection-logos__inner
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Content Wrap'
+      region: content
+    group_content_wrap_inner:
+      children:
+        - field_subtitle
+        - field_body_unformatted
+        - field_link
+      parent_name: group_content_wrap
+      weight: 20
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: collection-logos__headline-wrap
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Content Wrap Inner'
+      region: content
+id: paragraph.logo_all_up.default
+targetEntityType: paragraph
+bundle: logo_all_up
+mode: default
+content:
+  field_body_unformatted:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: p
+        fences_field_item_classes: 'collection-logos__text text-style-1'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: basic_string
+    region: content
+  field_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: collection-logos__cta-wrap
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: link
+    region: content
+  field_logo_images:
+    type: entity_reference_entity_view
+    weight: 21
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings:
+      fences:
+        fences_field_tag: ul
+        fences_field_classes: collection-logos__list
+        fences_field_item_tag: li
+        fences_field_item_classes: collection-logos__list-item
+        fences_label_tag: none
+        fences_label_classes: ''
+    region: content
+  field_subtitle:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: h2
+        fences_field_item_classes: 'collection-logos__headline heading-style-3 text-orange'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: context-base
+        fences_field_item_tag: h2
+        fences_field_item_classes: 'heading-style-2 text-orange'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+hidden: {  }

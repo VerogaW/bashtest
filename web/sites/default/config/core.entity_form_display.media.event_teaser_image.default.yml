@@ -1,0 +1,39 @@
+uuid: f86e1b89-5b99-46e8-b37c-915ed144b5f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.event_teaser_image.field_media_image_7
+    - image.style.thumbnail
+    - media.type.event_teaser_image
+  module:
+    - focal_point
+id: media.event_teaser_image.default
+targetEntityType: media
+bundle: event_teaser_image
+mode: default
+content:
+  field_media_image_7:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings: {  }
+    type: image_focal_point
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  name: true
+  path: true
+  status: true
+  uid: true

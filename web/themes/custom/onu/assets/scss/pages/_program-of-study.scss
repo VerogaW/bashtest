@@ -1,0 +1,23 @@
+.page-node-type-program-of-study {
+  .program-filters-wrapper {
+    margin-bottom: 10px;
+
+    .program-filters {
+      background: $gray-dark;
+      max-width: calc(33.33% - 30px);
+      padding: 10px 15px;
+      margin: 0 15px;
+
+      > a {
+        &:after {
+          content: ",";
+          padding-right: 1px;
+        }
+
+        &:last-child:after {
+          content: none;
+        }
+      }
+    }
+  }
+}

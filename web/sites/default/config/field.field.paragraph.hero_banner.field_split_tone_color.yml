@@ -1,0 +1,19 @@
+uuid: ec6f463d-7b90-457d-94a0-70d0a9231bcd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_split_tone_color
+    - paragraphs.paragraphs_type.hero_banner
+id: paragraph.hero_banner.field_split_tone_color
+field_name: field_split_tone_color
+entity_type: paragraph
+bundle: hero_banner
+label: 'Split tone color'
+description: 'Hexa Value + Opacity: FFFF00 0.1'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

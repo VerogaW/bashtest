@@ -1,0 +1,44 @@
+uuid: 7ab2c249-ca44-4f28-b549-538f0875f814
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.recent_articles.field_article_category
+    - field.field.paragraph.recent_articles.field_link
+    - field.field.paragraph.recent_articles.field_title
+    - field.field.paragraph.recent_articles.field_view_reference
+    - paragraphs.paragraphs_type.recent_articles
+  module:
+    - link
+id: paragraph.recent_articles.default
+targetEntityType: paragraph
+bundle: recent_articles
+mode: default
+content:
+  field_article_category:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  field_view_reference: true
+  status: true
+  uid: true

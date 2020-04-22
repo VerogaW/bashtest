@@ -1,0 +1,8 @@
+uuid: 915004c1-3651-49b5-9524-1c21128e6efa
+langcode: en
+status: true
+dependencies: {  }
+name: 'Banner Affiliation'
+vid: banner_affiliation
+description: ''
+weight: 0

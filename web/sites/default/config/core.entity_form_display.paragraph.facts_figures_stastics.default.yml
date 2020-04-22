@@ -1,0 +1,42 @@
+uuid: bdde1fdb-498e-4257-a1e1-560c414586c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.facts_figures_stastics.field_statistic_color
+    - field.field.paragraph.facts_figures_stastics.field_statistic_description
+    - field.field.paragraph.facts_figures_stastics.field_statistic_number
+    - paragraphs.paragraphs_type.facts_figures_stastics
+id: paragraph.facts_figures_stastics.default
+targetEntityType: paragraph
+bundle: facts_figures_stastics
+mode: default
+content:
+  field_statistic_color:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_statistic_description:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_statistic_number:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

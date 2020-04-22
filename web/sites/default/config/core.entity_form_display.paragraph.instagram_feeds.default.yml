@@ -1,0 +1,57 @@
+uuid: ae5e3e4e-5cdd-49d6-8508-d4a71bfb8cc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.instagram_feeds.field_body_unformatted
+    - field.field.paragraph.instagram_feeds.field_curator_code
+    - field.field.paragraph.instagram_feeds.field_link
+    - field.field.paragraph.instagram_feeds.field_title
+    - paragraphs.paragraphs_type.instagram_feeds
+  module:
+    - link_class
+    - text
+id: paragraph.instagram_feeds.default
+targetEntityType: paragraph
+bundle: instagram_feeds
+mode: default
+content:
+  field_body_unformatted:
+    weight: 1
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_curator_code:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      link_class_mode: force_class
+      link_class_force: 'collection-instagram__cta button-hollow_black-orange'
+      link_class_select: ''
+    third_party_settings: {  }
+    type: link_class_field_widget
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

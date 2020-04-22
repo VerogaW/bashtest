@@ -1,0 +1,19 @@
+uuid: 731732b4-1933-4bdd-9f3a-9ec1c02b2c6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body_unformatted
+    - paragraphs.paragraphs_type.person_carousel
+id: paragraph.person_carousel.field_body_unformatted
+field_name: field_body_unformatted
+entity_type: paragraph
+bundle: person_carousel
+label: Body
+description: 'Limit: 175 characters'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

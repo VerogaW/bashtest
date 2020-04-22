@@ -1,0 +1,26 @@
+uuid: 53679be5-483a-4055-8e82-0dbb92422595
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_program_filters
+    - paragraphs.paragraphs_type.para_program_of_study
+  module:
+    - block_field
+id: paragraph.para_program_of_study.field_program_filters
+field_name: field_program_filters
+entity_type: paragraph
+bundle: para_program_of_study
+label: 'Program Filters'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    plugin_id: program_of_study_filters
+    settings: {  }
+default_value_callback: ''
+settings:
+  plugin_ids:
+    program_of_study_filters: program_of_study_filters
+field_type: block_field

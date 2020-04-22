@@ -1,0 +1,29 @@
+uuid: 80435dd7-20f8-411a-909c-c4aada8b8e54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_student_class
+    - node.type.person
+    - taxonomy.vocabulary.person_class
+id: node.person.field_banner_student_class
+field_name: field_banner_student_class
+entity_type: node
+bundle: person
+label: 'Banner student class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      person_class: person_class
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

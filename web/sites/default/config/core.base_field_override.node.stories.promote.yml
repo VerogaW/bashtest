@@ -1,0 +1,22 @@
+uuid: ca7f447b-0907-4d00-84a7-c74386dfce32
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.stories
+id: node.stories.promote
+field_name: promote
+entity_type: node
+bundle: stories
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

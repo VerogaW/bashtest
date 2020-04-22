@@ -1,0 +1,23 @@
+uuid: b1d77cf0-a533-4938-a06a-4dae6c65805c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_links_limit_2
+    - paragraphs.paragraphs_type.hero_banner
+  module:
+    - link
+id: paragraph.hero_banner.field_links_limit_2
+field_name: field_links_limit_2
+entity_type: paragraph
+bundle: hero_banner
+label: 'Call to Action'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

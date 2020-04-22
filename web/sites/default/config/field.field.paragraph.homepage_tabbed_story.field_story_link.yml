@@ -1,0 +1,19 @@
+uuid: 78c52036-473c-4727-9a18-dd1a716b875a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_story_link
+    - paragraphs.paragraphs_type.homepage_tabbed_story
+id: paragraph.homepage_tabbed_story.field_story_link
+field_name: field_story_link
+entity_type: paragraph
+bundle: homepage_tabbed_story
+label: 'Story Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

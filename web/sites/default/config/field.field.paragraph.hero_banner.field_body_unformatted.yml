@@ -1,0 +1,19 @@
+uuid: ecadab21-eddb-440f-a2fb-1c06cfb84e68
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body_unformatted
+    - paragraphs.paragraphs_type.hero_banner
+id: paragraph.hero_banner.field_body_unformatted
+field_name: field_body_unformatted
+entity_type: paragraph
+bundle: hero_banner
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

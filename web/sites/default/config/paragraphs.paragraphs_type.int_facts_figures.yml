@@ -1,0 +1,9 @@
+uuid: 901181d3-8e6e-48f9-8275-2a1907254421
+langcode: en
+status: true
+dependencies: {  }
+id: int_facts_figures
+label: 'Int: Facts & Figure'
+icon_uuid: null
+description: "For Interior Pages Only\t"
+behavior_plugins: {  }

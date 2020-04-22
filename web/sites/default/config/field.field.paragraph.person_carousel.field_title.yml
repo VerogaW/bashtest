@@ -1,0 +1,19 @@
+uuid: 36b060ff-3eeb-480f-b29c-a78e8aedc284
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.person_carousel
+id: paragraph.person_carousel.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: person_carousel
+label: Headline
+description: '25 characters'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,56 @@
+uuid: 162f493f-b483-43a4-92b0-9a49b8a556a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.3_up_image_cta_item.field_cta_image
+    - field.field.paragraph.3_up_image_cta_item.field_link
+    - field.field.paragraph.3_up_image_cta_item.field_title
+    - image.style.3_up_image_700x500
+    - paragraphs.paragraphs_type.3_up_image_cta_item
+  module:
+    - fences
+    - link
+    - media
+id: paragraph.3_up_image_cta_item.default
+targetEntityType: paragraph
+bundle: 3_up_image_cta_item
+mode: default
+content:
+  field_cta_image:
+    type: media_thumbnail
+    weight: 0
+    label: hidden
+    settings:
+      image_style: 3_up_image_700x500
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    region: content
+  field_link:
+    type: link
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+hidden:
+  field_title: true

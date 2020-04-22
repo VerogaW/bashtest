@@ -1,0 +1,41 @@
+uuid: 41b22449-2f9c-40bd-b2a0-08996d891683
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.program_of_study.body
+    - field.field.node.program_of_study.field_area_of_interest
+    - field.field.node.program_of_study.field_college
+    - field.field.node.program_of_study.field_content_bottom
+    - field.field.node.program_of_study.field_content_bottom_body
+    - field.field.node.program_of_study.field_type_of_offering
+    - node.type.program_of_study
+  module:
+    - text
+    - user
+id: node.program_of_study.teaser
+targetEntityType: node
+bundle: program_of_study
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_area_of_interest: true
+  field_college: true
+  field_content_bottom: true
+  field_content_bottom_body: true
+  field_type_of_offering: true
+  langcode: true

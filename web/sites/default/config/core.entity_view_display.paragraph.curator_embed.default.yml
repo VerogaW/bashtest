@@ -1,0 +1,61 @@
+uuid: b590a8ed-1748-469c-acd3-50f8d78fea2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.curator_embed.field_curator_io_embed_code
+    - field.field.paragraph.curator_embed.field_title
+    - paragraphs.paragraphs_type.curator_embed
+  module:
+    - fences
+    - field_group
+    - text
+third_party_settings:
+  field_group:
+    group_se:
+      children:
+        - field_title
+        - field_curator_io_embed_code
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: container
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Section Wrapper'
+      region: content
+id: paragraph.curator_embed.default
+targetEntityType: paragraph
+bundle: curator_embed
+mode: default
+content:
+  field_curator_io_embed_code:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: row
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: text_default
+    region: content
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

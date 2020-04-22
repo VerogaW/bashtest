@@ -1,0 +1,70 @@
+uuid: f1ea7742-daa1-4d91-8eb2-7ef532fca58b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.4_up_image_cta.field_4_up_cta_items
+    - field.field.paragraph.4_up_image_cta.field_title
+    - paragraphs.paragraphs_type.4_up_image_cta
+  module:
+    - entity_reference_revisions
+    - fences
+    - field_group
+third_party_settings:
+  field_group:
+    group_se:
+      children:
+        - field_title
+        - field_4_up_cta_items
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: container
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Section Wrapper'
+      region: content
+id: paragraph.4_up_image_cta.default
+targetEntityType: paragraph
+bundle: 4_up_image_cta
+mode: default
+content:
+  field_4_up_cta_items:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: 'row d-flex flex-wrap flex-row'
+        fences_field_item_tag: div
+        fences_field_item_classes: 'col-sm-12 col-md-6 col-lg-3 mb-4 mb-lg-0'
+        fences_label_tag: none
+        fences_label_classes: ''
+    region: content
+  field_title:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: h2
+        fences_field_classes: 'heading-style-2 text-orange'
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+hidden: {  }

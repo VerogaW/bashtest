@@ -1,0 +1,9 @@
+uuid: 846fbaa2-36be-4f9b-becf-a78cbea1dba5
+langcode: en
+status: true
+dependencies: {  }
+id: facts_figures
+label: 'Facts & Figures'
+icon_uuid: null
+description: 'For Landing & Sub-Landing Pages'
+behavior_plugins: {  }

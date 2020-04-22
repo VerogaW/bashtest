@@ -1,0 +1,23 @@
+uuid: 57a40fc8-9d7a-47c3-ba98-e9fc36c032c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_parallax_speed
+    - paragraphs.paragraphs_type.full_width_image_section
+  module:
+    - options
+id: paragraph.full_width_image_section.field_parallax_speed
+field_name: field_parallax_speed
+entity_type: paragraph
+bundle: full_width_image_section
+label: 'Parallax Speed'
+description: 'Speed will only work if combined parallax effect is active'
+required: false
+translatable: false
+default_value:
+  -
+    value: '5'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

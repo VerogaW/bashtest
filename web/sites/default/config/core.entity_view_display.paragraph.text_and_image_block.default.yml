@@ -1,0 +1,165 @@
+uuid: 8254689e-6585-42d9-b48a-2f7d1f1958e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_and_image_block.field_background_image
+    - field.field.paragraph.text_and_image_block.field_body_unformatted
+    - field.field.paragraph.text_and_image_block.field_image
+    - field.field.paragraph.text_and_image_block.field_link
+    - field.field.paragraph.text_and_image_block.field_t_image_block_variation
+    - field.field.paragraph.text_and_image_block.field_title
+    - paragraphs.paragraphs_type.text_and_image_block
+  module:
+    - fences
+    - field_group
+    - link
+    - media
+third_party_settings:
+  field_group:
+    group_section_wrapper:
+      children:
+        - field_background_image
+        - group_wrapper_inner
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        label: 'Section Wrapper'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'context-image [paragraph:field_t_image_block_variation:value]'
+      label: 'Section Wrapper'
+      region: content
+    group_wrapper_inner:
+      children:
+        - field_image
+        - group_headline_wrapper
+      parent_name: group_section_wrapper
+      weight: 4
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: context-image__inner
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Wrapper Inner'
+      region: content
+    group_headline_wrapper:
+      children:
+        - field_title
+        - field_body_unformatted
+        - field_link
+      parent_name: group_wrapper_inner
+      weight: 7
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: context-image__headline-wrap
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Headline Wrapper'
+      region: content
+id: paragraph.text_and_image_block.default
+targetEntityType: paragraph
+bundle: text_and_image_block
+mode: default
+content:
+  field_background_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: media_thumbnail
+    region: content
+  field_body_unformatted:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: span
+        fences_field_item_classes: 'context-image__text text-style-1'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: basic_string
+    region: content
+  field_image:
+    weight: 6
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: context-image__image-outer
+        fences_field_item_tag: div
+        fences_field_item_classes: context-image__image-inner
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: media_thumbnail
+    region: content
+  field_link:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: context-image__cta-wrap
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: link
+    region: content
+  field_title:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: h2
+        fences_field_item_classes: 'context-image__headline heading-style-3 text-orange'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+hidden:
+  field_t_image_block_variation: true

@@ -1,0 +1,79 @@
+uuid: a93008e4-13f4-4114-bfce-605d89821eac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_view_reference
+    - paragraphs.paragraphs_type.recent_news_all
+    - views.view.carousels
+  module:
+    - viewsreference
+id: paragraph.recent_news_all.field_view_reference
+field_name: field_view_reference
+entity_type: paragraph
+bundle: recent_news_all
+label: 'View Reference'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    display_id: block_8
+    data: 'a:5:{s:8:"argument";N;s:5:"title";N;s:5:"pager";N;s:5:"limit";N;s:6:"offset";N;}'
+    target_uuid: 97a3587c-dbd1-4007-b690-b7222c0f270d
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    block: block
+    default: 0
+    page: 0
+    attachment: 0
+    rest_export: 0
+    entity_browser: 0
+    feed: 0
+    embed: 0
+  preselect_views:
+    carousels: carousels
+    academics: 0
+    academic_filter_taxonomy_terms: 0
+    article_view: 0
+    block_content: 0
+    comment: 0
+    comments_recent: 0
+    content: 0
+    content_recent: 0
+    directory: 0
+    events_calendar: 0
+    event_view: 0
+    feeds_feed: 0
+    files: 0
+    file_entity_browser: 0
+    frontpage: 0
+    group_members: 0
+    group_nodes: 0
+    hero_banner: 0
+    locations: 0
+    map_view: 0
+    media: 0
+    media_entity_browser: 0
+    media_library: 0
+    moderated_content: 0
+    program_of_study: 0
+    redirect: 0
+    taxonomy_term: 0
+    user_admin_people: 0
+    watchdog: 0
+    webform_submissions: 0
+    who_s_new: 0
+    who_s_online: 0
+  enabled_settings:
+    argument: 0
+    title: 0
+    pager: 0
+    limit: 0
+    offset: 0
+field_type: viewsreference

@@ -1,0 +1,7 @@
+status: '1'
+pattern: "<?php\r\nif (!empty($entity->field_banner_nickname->value)) {\r\n      $name = $entity->field_banner_nickname->value;\r\n    }\r\n    else {\r\n      $name = $entity->field_banner_first_name->value;\r\n    }\r\nreturn $name . ' ' . $entity->field_banner_last_name->value;\r\n?>"
+php: 1
+escape: 0
+dependencies:
+  config:
+    - node.type.person

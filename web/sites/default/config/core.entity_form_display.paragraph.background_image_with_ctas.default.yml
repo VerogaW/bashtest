@@ -1,0 +1,87 @@
+uuid: 8affd20b-3b69-40eb-b045-5d45ae378f85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.background_image_with_ctas.field_background_image
+    - field.field.paragraph.background_image_with_ctas.field_body_unformatted
+    - field.field.paragraph.background_image_with_ctas.field_call_to_action
+    - field.field.paragraph.background_image_with_ctas.field_svg_image
+    - field.field.paragraph.background_image_with_ctas.field_title
+    - paragraphs.paragraphs_type.background_image_with_ctas
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+    - link_class
+id: paragraph.background_image_with_ctas.default
+targetEntityType: paragraph
+bundle: background_image_with_ctas
+mode: default
+content:
+  field_background_image:
+    weight: 0
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: media_entity_browser
+    type: inline_entity_form_complex
+    region: content
+  field_body_unformatted:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_call_to_action:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      link_class_mode: force_class
+      link_class_force: 'feature-acronym__cta button-hollow_black-orange'
+      link_class_select: ''
+    third_party_settings: {  }
+    type: link_class_field_widget
+    region: content
+  field_svg_image:
+    weight: 4
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: media_entity_browser
+    type: inline_entity_form_complex
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

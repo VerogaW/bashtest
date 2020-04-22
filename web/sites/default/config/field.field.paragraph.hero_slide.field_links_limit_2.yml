@@ -1,0 +1,23 @@
+uuid: b13a41f8-46ed-4209-9f90-1d49260534bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_links_limit_2
+    - paragraphs.paragraphs_type.hero_slide
+  module:
+    - link
+id: paragraph.hero_slide.field_links_limit_2
+field_name: field_links_limit_2
+entity_type: paragraph
+bundle: hero_slide
+label: Links
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

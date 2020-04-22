@@ -1,0 +1,29 @@
+uuid: 57e8f866-22cc-49ea-8dff-72f12be46c95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_story_by
+    - paragraphs.paragraphs_type.profile_collection_all
+    - taxonomy.vocabulary.story_hero
+id: paragraph.profile_collection_all.field_story_by
+field_name: field_story_by
+entity_type: paragraph
+bundle: profile_collection_all
+label: 'Story By'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      story_hero: story_hero
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

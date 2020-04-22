@@ -1,0 +1,19 @@
+uuid: fb89d59b-977c-4a95-a942-21128bba2553
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_solid_color
+    - paragraphs.paragraphs_type.hero_sub_landing_page
+id: paragraph.hero_sub_landing_page.field_solid_color
+field_name: field_solid_color
+entity_type: paragraph
+bundle: hero_sub_landing_page
+label: 'Background Color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

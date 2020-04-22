@@ -1,0 +1,29 @@
+uuid: 3d047310-5518-4d94-99fb-58dd60452c66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_special_keywords
+    - node.type.person
+    - taxonomy.vocabulary.special_keywords
+id: node.person.field_special_keywords
+field_name: field_special_keywords
+entity_type: node
+bundle: person
+label: 'Special Keywords'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      special_keywords: special_keywords
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

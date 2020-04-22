@@ -1,0 +1,9 @@
+uuid: e3545df0-3662-4c16-99b4-6d061564493a
+langcode: en
+status: true
+dependencies: {  }
+id: branded_image
+label: 'Branded Image'
+icon_uuid: null
+description: 'For Interior Pages Only'
+behavior_plugins: {  }

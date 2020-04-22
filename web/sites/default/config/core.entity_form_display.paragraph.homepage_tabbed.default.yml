@@ -1,0 +1,51 @@
+uuid: 808c3de0-842e-4ec6-8dc8-b76c0853713f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.homepage_tabbed.field_background_image
+    - field.field.paragraph.homepage_tabbed.field_tabbed_story_info
+    - paragraphs.paragraphs_type.homepage_tabbed
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+    - paragraphs
+id: paragraph.homepage_tabbed.default
+targetEntityType: paragraph
+bundle: homepage_tabbed
+mode: default
+content:
+  field_background_image:
+    type: inline_entity_form_complex
+    weight: 0
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: media_entity_browser
+    region: content
+  field_tabbed_story_info:
+    type: entity_reference_paragraphs
+    weight: 6
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

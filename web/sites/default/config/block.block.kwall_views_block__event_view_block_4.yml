@@ -1,0 +1,30 @@
+uuid: c51bbb73-eff5-4977-9907-a14ddb605c2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.event_view
+  module:
+    - system
+    - views
+  theme:
+    - kwall
+id: kwall_views_block__event_view_block_4
+theme: kwall
+region: content_top
+weight: 0
+provider: null
+plugin: 'views_block:event_view-block_4'
+settings:
+  id: 'views_block:event_view-block_4'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /events
+    negate: false
+    context_mapping: {  }

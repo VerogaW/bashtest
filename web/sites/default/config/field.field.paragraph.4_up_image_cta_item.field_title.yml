@@ -1,0 +1,19 @@
+uuid: b012b6bf-835f-4841-ac66-394972b43f4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.4_up_image_cta_item
+id: paragraph.4_up_image_cta_item.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: 4_up_image_cta_item
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

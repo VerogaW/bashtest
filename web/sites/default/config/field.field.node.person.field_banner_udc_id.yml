@@ -1,0 +1,19 @@
+uuid: 28891739-c064-4322-bb25-c874755a54ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_udc_id
+    - node.type.person
+id: node.person.field_banner_udc_id
+field_name: field_banner_udc_id
+entity_type: node
+bundle: person
+label: 'Banner UDC_ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

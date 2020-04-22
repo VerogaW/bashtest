@@ -1,0 +1,14 @@
+uuid: 9a5772ae-bc56-4788-a4b0-dee519aecb61
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.group_content_editor
+  module:
+    - user
+id: user_add_role_action.group_content_editor
+label: 'Add the Group Content Editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: group_content_editor

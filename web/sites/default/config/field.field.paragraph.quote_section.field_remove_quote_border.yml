@@ -1,0 +1,23 @@
+uuid: 8f4d9421-a9b5-483d-b44a-5ff7d231fb6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_remove_quote_border
+    - paragraphs.paragraphs_type.quote_section
+id: paragraph.quote_section.field_remove_quote_border
+field_name: field_remove_quote_border
+entity_type: paragraph
+bundle: quote_section
+label: 'Remove Quote Border'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,28 @@
+uuid: 949d22f7-f6dd-415d-a52a-0ae11bf40cca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image
+    - media.type.interior_slideshow_slide
+    - paragraphs.paragraphs_type.interior_slideshow_slide
+id: paragraph.interior_slideshow_slide.field_image
+field_name: field_image
+entity_type: paragraph
+bundle: interior_slideshow_slide
+label: Image
+description: '<em>Use Media Type:</em> "Interior Slideshow Slide"'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      interior_slideshow_slide: interior_slideshow_slide
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

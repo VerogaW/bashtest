@@ -1,0 +1,29 @@
+uuid: f9c80418-c429-4eb2-85eb-011760f2d304
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.event_featured_image.field_media_image_8
+    - media.type.event_featured_image
+  module:
+    - svg_image
+id: media.event_featured_image.default
+targetEntityType: media
+bundle: event_featured_image
+mode: default
+content:
+  field_media_image_8:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

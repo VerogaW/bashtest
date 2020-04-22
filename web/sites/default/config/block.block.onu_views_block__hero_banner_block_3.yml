@@ -1,0 +1,25 @@
+uuid: e3b8f975-e060-4667-b2f8-1d7573e284a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.hero_banner
+  module:
+    - views
+  theme:
+    - onu
+id: onu_views_block__hero_banner_block_3
+theme: onu
+region: hero
+weight: -11
+provider: null
+plugin: 'views_block:hero_banner-block_3'
+settings:
+  id: 'views_block:hero_banner-block_3'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility: {  }

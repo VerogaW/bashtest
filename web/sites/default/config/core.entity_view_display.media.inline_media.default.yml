@@ -1,0 +1,30 @@
+uuid: 8e0ac946-7e61-4c37-b846-06ff29c32f23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.inline_media.field_media_image_10
+    - image.style.inline_media
+    - media.type.inline_media
+  module:
+    - svg_image
+id: media.inline_media.default
+targetEntityType: media
+bundle: inline_media
+mode: default
+content:
+  field_media_image_10:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: inline_media
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

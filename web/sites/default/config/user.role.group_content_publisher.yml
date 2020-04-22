@@ -1,0 +1,10 @@
+uuid: f1414139-97ec-4d61-b21f-65ad7574f48f
+langcode: en
+status: true
+dependencies: {  }
+id: group_content_publisher
+label: 'Group Content Publisher'
+weight: -2
+is_admin: null
+permissions:
+  - 'use text format full_html'

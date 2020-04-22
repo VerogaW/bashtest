@@ -1,0 +1,9 @@
+uuid: 779218f4-3bdb-4717-abf8-fb018108f9c4
+langcode: en
+status: true
+dependencies: {  }
+id: dynamic_text_block
+label: 'Dynamic Text Block'
+icon_uuid: null
+description: "For Interior Pages Only\r\n"
+behavior_plugins: {  }

@@ -1,0 +1,37 @@
+uuid: cdbfeafb-0ec5-4c04-a9b5-aaaaa28429d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_entity_browser
+  module:
+    - views
+name: media_entity_browser_flexible_bg
+label: 'Media Entity Browser Flexible BG'
+display: modal
+display_configuration:
+  width: '1240'
+  height: '800'
+  link_text: 'Select entities'
+  auto_open: true
+selection_display: multi_step_display
+selection_display_configuration:
+  entity_type: media
+  display: rendered_entity
+  display_settings:
+    view_mode: default
+  select_text: 'Use selected'
+  selection_hidden: false
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  9d26a755-1917-4726-a107-b51eab301c9f:
+    settings:
+      view: media_entity_browser
+      view_display: entity_browser_flexible_bg
+      submit_text: 'Select entities'
+      auto_select: true
+    uuid: 9d26a755-1917-4726-a107-b51eab301c9f
+    weight: 1
+    label: 'Select Media'
+    id: view

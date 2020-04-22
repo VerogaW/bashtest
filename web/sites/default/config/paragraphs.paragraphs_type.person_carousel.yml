@@ -1,0 +1,9 @@
+uuid: c680a867-2567-4cb5-a39f-ca1d1ec6bd3f
+langcode: en
+status: true
+dependencies: {  }
+id: person_carousel
+label: 'Profile Collection'
+icon_uuid: null
+description: "For Landing & Sub-Landing Pages\t"
+behavior_plugins: {  }

@@ -1,0 +1,39 @@
+uuid: 5af54d03-6cfd-44df-bbe9-e9f598266f86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.3_up_image_cta.field_cta_items
+    - field.field.paragraph.3_up_image_cta.field_title
+    - paragraphs.paragraphs_type.3_up_image_cta
+  module:
+    - paragraphs
+id: paragraph.3_up_image_cta.default
+targetEntityType: paragraph
+bundle: 3_up_image_cta
+mode: default
+content:
+  field_cta_items:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

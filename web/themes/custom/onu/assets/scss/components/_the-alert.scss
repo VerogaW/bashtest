@@ -1,0 +1,177 @@
+.the-alert {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  height: 0;
+  overflow: hidden;
+}
+
+.the-alert__outer {
+  $_padding-mobile: $space-medium;
+  $_padding-desktop: 8px;
+
+  padding-top: $_padding-mobile;
+  padding-bottom: $_padding-mobile;
+  background-color: $navy;
+
+  @include breakpoint(large) {
+    padding-top: $_padding-desktop;
+    padding-bottom: $_padding-desktop;
+  }
+
+  .alert {
+    position: relative;
+    padding: 0;
+    margin-bottom: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+  }
+}
+
+.the-alert__inner {
+  position: relative;
+  @include flex-grid-row;
+  .slick-arrow {
+    position: absolute;
+    right: 0;
+    height: 22px;
+    line-height: 22px;
+    color: #fff;
+    &.alert-prev {
+      right: 75px;
+    }
+    &.alert-next {
+      right: 55px;
+    }
+  }
+}
+
+.the-alert__cta-wrap,
+.the-alert__text-wrap {
+  @include flex-grid-column(12);
+}
+
+.the-alert__text-wrap {
+  @include breakpoint(xlarge) {
+    display: flex;
+    align-items: center;
+    @include flex-grid-size(10);
+  }
+  p {
+    line-height: 1;
+    display: inline;
+  }
+}
+
+.the-alert__cta-wrap {
+  @include breakpoint(large) {
+    @include flex-grid-column(2);
+  }
+}
+
+$_alert-button-padding: $space-medium;
+
+.the-alert__text {
+  position: relative;
+  display: block;
+  padding-right: 25px;
+
+  @include breakpoint(medium) {
+    display: inline-block;
+  }
+
+  @include breakpoint(xlarge) {
+    padding-right: $space-large;
+    padding-left: 25px;
+
+    &::before {
+      $_alert-icon-size: 15px;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: $_alert-icon-size;
+      height: $_alert-icon-size;
+      content: url("#{$svg-path}/icon-alert.svg");
+    }
+  }
+}
+
+.the-alert__button {
+  $_button-size: 15px;
+
+  position: absolute;
+  top: 0;
+  right: $_alert-button-padding;
+  width: $_button-size;
+  height: $_button-size;
+  fill: $white;
+  @include base-transition($property: fill);
+
+  color: $white;
+  font-size: 25px;
+  line-height: 22px;
+  height: auto;
+  width: auto;
+  opacity: 1;
+  text-shadow: none;
+
+  &:hover {
+    color: $orange;
+    opacity: 1;
+    text-shadow: none;
+  }
+
+  @include breakpoint(xlarge) {
+    top: 50%;
+    transform: translateY(-50%);
+
+    top: -3px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: none;
+  }
+
+  &:hover,
+  &:focus {
+    fill: $orange;
+  }
+}
+
+.the-alert__button-svg {
+  $_svg-size: 100%;
+
+  display: inline-block;
+  width: $_svg-size;
+  height: $_svg-size;
+}
+
+.the-alert__link-wrap {
+  margin-top: 25px;
+  line-height: 1;
+
+  @include breakpoint(xlarge) {
+    margin-top: 0;
+  }
+}
+
+.the-alert__link {
+  text-decoration: underline;
+  color: $white;
+  @include base-transition($property: color);
+
+  &:hover {
+    color: $orange;
+    text-decoration: underline;
+  }
+}
+
+.alert-arrow {
+  .slick-arrow {
+    color: #fff;
+  }
+}

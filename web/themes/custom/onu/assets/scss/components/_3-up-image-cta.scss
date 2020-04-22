@@ -1,0 +1,56 @@
+.paragraph--type--3-up-image-cta {
+  padding: 50px 0;
+  position: relative;
+  .field--name-field-title {
+    margin-bottom: 15px;
+  }
+  .field--name-field-cta-items {
+    .field--name-field-cta-image {
+
+     + a {
+        width: 100%;
+        margin-top: 38px;
+        color: $orange;
+        &:hover  {
+          color: $white
+        }
+      }
+    }
+  }
+  h4.field--name-field-title {
+    font-size: 2rem;
+    padding: 20px 0;
+    text-transform: uppercase;
+  }
+
+
+  &-item {
+    position: relative;
+  }
+
+  .field--name-field-cta-items {
+    .field--name-field-cta-image {
+      img {
+        width: 100%;
+      }
+    }
+
+    .field--name-field-title {
+      position: absolute;
+      bottom: 20px;
+      z-index: 1;
+      text-align: center;
+      background-color: rgba(232, 92, 22, 0.9);
+      margin: 0 15px;
+      font-size: 15px;
+      color: $white;
+      text-transform: uppercase;
+      width: calc(100% - 30px);
+      a {
+        color: $white;
+        display: block;
+        padding: 10px;
+      }
+    }
+  }
+}

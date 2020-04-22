@@ -1,0 +1,9 @@
+uuid: a232b92c-68ac-49bc-b64d-f0c2d0abc799
+langcode: en
+status: true
+dependencies: {  }
+id: flexible_bg_image_blocks
+label: 'Flexible BG Image Blocks'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,30 @@
+uuid: abf98363-cd0d-4cce-a93b-40af548e56bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.video_tab_carousel.field_video_tab_carousel
+    - paragraphs.paragraphs_type.video_tab_carousel
+  module:
+    - paragraphs
+id: paragraph.video_tab_carousel.default
+targetEntityType: paragraph
+bundle: video_tab_carousel
+mode: default
+content:
+  field_video_tab_carousel:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: 'Video Tab Item'
+      title_plural: 'Video Tab Items'
+      edit_mode: closed
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

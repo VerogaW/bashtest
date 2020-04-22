@@ -1,0 +1,136 @@
+uuid: 1b2e9f83-9d3b-4c79-89de-fa580e9457ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_content
+    - node.type.homepage
+    - paragraphs.paragraphs_type.hero_slideshow
+  module:
+    - entity_reference_revisions
+id: node.homepage.field_hero_content
+field_name: field_hero_content
+entity_type: node
+bundle: homepage
+label: 'Hero Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      hero_slideshow: hero_slideshow
+    target_bundles_drag_drop:
+      2_column_cta:
+        weight: 37
+        enabled: false
+      3_column_cta:
+        weight: 38
+        enabled: false
+      4_column_cta:
+        weight: 39
+        enabled: false
+      accordion:
+        weight: 40
+        enabled: false
+      accordion_item:
+        weight: 41
+        enabled: false
+      adjustable_media_and_content:
+        weight: 42
+        enabled: false
+      column_section:
+        weight: 43
+        enabled: false
+      events_feed:
+        weight: 44
+        enabled: false
+      facts_figures:
+        weight: 45
+        enabled: false
+      facts_figures_stastics:
+        weight: 46
+        enabled: false
+      flexible_bg_image_block:
+        weight: 47
+        enabled: false
+      flexible_bg_image_blocks:
+        weight: 48
+        enabled: false
+      flexible_cta_block:
+        weight: 49
+        enabled: false
+      flexible_cta_blocks:
+        weight: 50
+        enabled: false
+      full_width_image_section:
+        weight: 51
+        enabled: false
+      hero_banner:
+        weight: 52
+        enabled: false
+      hero_interior_page:
+        weight: 53
+        enabled: false
+      hero_slide:
+        weight: 54
+        enabled: false
+      hero_slideshow:
+        enabled: true
+        weight: 55
+      hero_sub_landing_page:
+        weight: 56
+        enabled: false
+      homepage_tabbed:
+        weight: 57
+        enabled: false
+      interior_column_section:
+        weight: 58
+        enabled: false
+      interior_slideshow:
+        weight: 59
+        enabled: false
+      interior_slideshow_slide:
+        weight: 60
+        enabled: false
+      person_carousel:
+        weight: 61
+        enabled: false
+      quick_link:
+        weight: 62
+        enabled: false
+      quick_link_minimal:
+        weight: 63
+        enabled: false
+      quote_section:
+        weight: 64
+        enabled: false
+      recent_articles:
+        weight: 65
+        enabled: false
+      recent_articles_upcoming_events:
+        weight: 66
+        enabled: false
+      recent_news:
+        weight: 67
+        enabled: false
+      upcoming_events:
+        weight: 68
+        enabled: false
+      video_embed:
+        weight: 69
+        enabled: false
+      video_tab_carousel:
+        weight: 70
+        enabled: false
+      video_tab_item:
+        weight: 71
+        enabled: false
+      wysiwyg:
+        weight: 72
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,170 @@
+diff --git a/src/Plugin/Field/FieldFormatter/ViewsReferenceFieldFormatter.php b/src/Plugin/Field/FieldFormatter/ViewsReferenceFieldFormatter.php
+--- a/src/Plugin/Field/FieldFormatter/ViewsReferenceFieldFormatter.php
++++ b/src/Plugin/Field/FieldFormatter/ViewsReferenceFieldFormatter.php
+@@ -88,6 +88,7 @@
+       $view->element['#viewsreference'] = [
+         'data' => $data,
+         'enabled_settings' => array_filter($this->getFieldSetting('enabled_settings')),
++        'entity' => $items->getEntity(),
+       ];
+
+       $view->preExecute();
+diff --git a/src/Plugin/ViewsReferenceSetting/ViewsReferenceArgument.php b/src/Plugin/ViewsReferenceSetting/ViewsReferenceArgument.php
+--- a/src/Plugin/ViewsReferenceSetting/ViewsReferenceArgument.php
++++ b/src/Plugin/ViewsReferenceSetting/ViewsReferenceArgument.php
+@@ -2,6 +2,7 @@
+
+ namespace Drupal\viewsreference\Plugin\ViewsReferenceSetting;
+
++use Drupal\Core\Entity\EntityInterface;
+ use Drupal\Component\Plugin\PluginBase;
+ use Drupal\Core\StringTranslation\StringTranslationTrait;
+ use Drupal\views\ViewExecutable;
+@@ -30,19 +31,25 @@
+   /**
+    * {@inheritdoc}
+    */
+-  public function alterView(ViewExecutable $view, $value) {
++  public function alterView(ViewExecutable $view, $value, EntityInterface $entity) {
+     if (!empty($value)) {
+       $arguments = [$value];
+       if (preg_match('/\//', $value)) {
+         $arguments = explode('/', $value);
+       }
+
+-      $node = \Drupal::routeMatch()->getParameter('node');
++      $replacements = [];
++      $replacements[$entity->getEntityTypeId()] = $entity;
++      if (!array_key_exists('node', $replacements)) {
++        $node = \Drupal::routeMatch()->getParameter('node');
++        $replacements['node'] = $node;
++      }
++
+       $token_service = \Drupal::token();
+       if (is_array($arguments)) {
+         foreach ($arguments as $index => $argument) {
+           if (!empty($token_service->scan($argument))) {
+-            $arguments[$index] = $token_service->replace($argument, ['node' => $node]);
++            $arguments[$index] = $token_service->replace($argument, $replacements);
+           }
+         }
+       }
+diff --git a/src/Plugin/ViewsReferenceSetting/ViewsReferenceLimit.php b/src/Plugin/ViewsReferenceSetting/ViewsReferenceLimit.php
+--- a/src/Plugin/ViewsReferenceSetting/ViewsReferenceLimit.php
++++ b/src/Plugin/ViewsReferenceSetting/ViewsReferenceLimit.php
+@@ -2,6 +2,7 @@
+
+ namespace Drupal\viewsreference\Plugin\ViewsReferenceSetting;
+
++use Drupal\Core\Entity\EntityInterface;
+ use Drupal\Component\Plugin\PluginBase;
+ use Drupal\Core\StringTranslation\StringTranslationTrait;
+ use Drupal\views\ViewExecutable;
+@@ -32,7 +33,7 @@
+   /**
+    * {@inheritdoc}
+    */
+-  public function alterView(ViewExecutable $view, $value) {
++  public function alterView(ViewExecutable $view, $value, EntityInterface $entity) {
+     if (!empty($value)) {
+       $view->setItemsPerPage($value);
+     }
+diff --git a/src/Plugin/ViewsReferenceSetting/ViewsReferenceOffset.php b/src/Plugin/ViewsReferenceSetting/ViewsReferenceOffset.php
+--- a/src/Plugin/ViewsReferenceSetting/ViewsReferenceOffset.php
++++ b/src/Plugin/ViewsReferenceSetting/ViewsReferenceOffset.php
+@@ -2,6 +2,7 @@
+
+ namespace Drupal\viewsreference\Plugin\ViewsReferenceSetting;
+
++use Drupal\Core\Entity\EntityInterface;
+ use Drupal\Component\Plugin\PluginBase;
+ use Drupal\Core\StringTranslation\StringTranslationTrait;
+ use Drupal\views\ViewExecutable;
+@@ -32,7 +33,7 @@
+   /**
+    * {@inheritdoc}
+    */
+-  public function alterView(ViewExecutable $view, $value) {
++  public function alterView(ViewExecutable $view, $value, EntityInterface $entity) {
+     if (!empty($value)) {
+       $view->setOffset($value);
+     }
+diff --git a/src/Plugin/ViewsReferenceSetting/ViewsReferencePager.php b/src/Plugin/ViewsReferenceSetting/ViewsReferencePager.php
+--- a/src/Plugin/ViewsReferenceSetting/ViewsReferencePager.php
++++ b/src/Plugin/ViewsReferenceSetting/ViewsReferencePager.php
+@@ -2,6 +2,7 @@
+
+ namespace Drupal\viewsreference\Plugin\ViewsReferenceSetting;
+
++use Drupal\Core\Entity\EntityInterface;
+ use Drupal\Component\Plugin\PluginBase;
+ use Drupal\Core\StringTranslation\StringTranslationTrait;
+ use Drupal\views\ViewExecutable;
+@@ -36,7 +37,7 @@
+   /**
+    * {@inheritdoc}
+    */
+-  public function alterView(ViewExecutable $view, $value) {
++  public function alterView(ViewExecutable $view, $value, EntityInterface $entity) {
+     if (!empty($value)) {
+       $pager = $view->display_handler->getOption('pager');
+       $pager['type'] = $value;
+diff --git a/src/Plugin/ViewsReferenceSetting/ViewsReferenceTitle.php b/src/Plugin/ViewsReferenceSetting/ViewsReferenceTitle.php
+--- a/src/Plugin/ViewsReferenceSetting/ViewsReferenceTitle.php
++++ b/src/Plugin/ViewsReferenceSetting/ViewsReferenceTitle.php
+@@ -2,6 +2,7 @@
+
+ namespace Drupal\viewsreference\Plugin\ViewsReferenceSetting;
+
++use Drupal\Core\Entity\EntityInterface;
+ use Drupal\Component\Plugin\PluginBase;
+ use Drupal\Core\StringTranslation\StringTranslationTrait;
+ use Drupal\views\ViewExecutable;
+@@ -31,7 +32,7 @@
+   /**
+    * {@inheritdoc}
+    */
+-  public function alterView(ViewExecutable $view, $value) {
++  public function alterView(ViewExecutable $view, $value, EntityInterface $entity) {
+     if (empty($value)) {
+       $view->display_handler->setOption('title', '');
+     }
+diff --git a/src/Plugin/ViewsReferenceSettingInterface.php b/src/Plugin/ViewsReferenceSettingInterface.php
+--- a/src/Plugin/ViewsReferenceSettingInterface.php
++++ b/src/Plugin/ViewsReferenceSettingInterface.php
+@@ -2,6 +2,7 @@
+
+ namespace Drupal\viewsreference\Plugin;
+
++use Drupal\Core\Entity\EntityInterface;
+ use Drupal\Component\Plugin\PluginInspectionInterface;
+ use Drupal\views\ViewExecutable;
+
+@@ -26,6 +27,6 @@
+    * @param mixed $value
+    *   The field value.
+    */
+-  public function alterView(ViewExecutable $view, $value);
++  public function alterView(ViewExecutable $view, $value, EntityInterface $entity);
+
+ }
+diff --git a/viewsreference.module b/viewsreference.module
+--- a/viewsreference.module
++++ b/viewsreference.module
+@@ -66,6 +66,7 @@
+   }
+
+   // Let all settings plugins alter the view.
++  $entity = $view->element['#viewsreference']['entity'];
+   $viewsreference_plugin_manager = \Drupal::service('plugin.manager.viewsreference.setting');
+   $plugin_definitions = $viewsreference_plugin_manager->getDefinitions();
+   foreach ($view->element['#viewsreference']['enabled_settings'] as $enabled_setting) {
+@@ -74,7 +75,7 @@
+       /** @var \Drupal\viewsreference\Plugin\ViewsReferenceSettingInterface $plugin_instance */
+       $plugin_instance = $viewsreference_plugin_manager->createInstance($plugin_definition['id']);
+       $value = isset($view->element['#viewsreference']['data'][$plugin_definition['id']]) ? $view->element['#viewsreference']['data'][$plugin_definition['id']] : $plugin_definition['default_value'];
+-      $plugin_instance->alterView($view, $value);
++      $plugin_instance->alterView($view, $value, $entity);
+     }
+   }
+ }

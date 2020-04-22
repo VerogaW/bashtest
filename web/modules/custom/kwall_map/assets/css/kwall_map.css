@@ -1,0 +1,28 @@
+.view-id-map_view.view-display-id-block_1:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.view-id-map_view.view-display-id-block_1 .geolocation-common-map-locations {
+  width: 40%;
+}
+
+.view-id-map_view.view-display-id-block_1 .geolocation-common-map-container {
+  width: 60%;
+}
+
+.view-id-map_view.view-display-id-block_1 .geolocation-common-map-locations,
+.view-id-map_view.view-display-id-block_1 .geolocation-common-map-container {
+  float: left;
+}
+
+@media (max-width: 991px) {
+  .view-id-map_view.view-display-id-block_1 .geolocation-common-map-locations,
+  .view-id-map_view.view-display-id-block_1 .geolocation-common-map-container {
+    float: none;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=kwall_map.css.map */

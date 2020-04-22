@@ -1,0 +1,30 @@
+uuid: 2e41d919-2fe0-4e0e-9334-a64fb3404ba3
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.article_view
+  module:
+    - system
+    - views
+  theme:
+    - kwall
+id: kwall_views_block__article_view_block_1
+theme: kwall
+region: content_top
+weight: -9
+provider: null
+plugin: 'views_block:article_view-block_1'
+settings:
+  id: 'views_block:article_view-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/news\r\n/news?*"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,189 @@
+uuid: ffc43cf5-bd5d-472e-9f07-c707eacded7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.person_carousel.field_body_unformatted
+    - field.field.paragraph.person_carousel.field_boolean
+    - field.field.paragraph.person_carousel.field_display_count
+    - field.field.paragraph.person_carousel.field_fluid_width
+    - field.field.paragraph.person_carousel.field_hide_overflow
+    - field.field.paragraph.person_carousel.field_link
+    - field.field.paragraph.person_carousel.field_s_ref1
+    - field.field.paragraph.person_carousel.field_s_ref2
+    - field.field.paragraph.person_carousel.field_s_ref3
+    - field.field.paragraph.person_carousel.field_scroll_count
+    - field.field.paragraph.person_carousel.field_story_by
+    - field.field.paragraph.person_carousel.field_title
+    - field.field.paragraph.person_carousel.field_view_reference
+    - paragraphs.paragraphs_type.person_carousel
+  module:
+    - fences
+    - field_group
+    - link
+    - viewsreference
+third_party_settings:
+  field_group:
+    group_row:
+      children:
+        - field_view_reference
+      parent_name: group_profile_section
+      weight: 22
+      format_type: html_element
+      format_settings:
+        label: 'Profile Inner'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: collection-profiles__inner
+      label: 'Profile Inner'
+      region: content
+    group_column_content:
+      children:
+        - field_title
+        - field_body_unformatted
+      parent_name: group_profile_inner_2
+      weight: 9
+      format_type: html_element
+      format_settings:
+        label: 'Profile Inner Base'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: collection-profiles__context
+      label: 'Profile Inner Base'
+      region: content
+    group_profile_section:
+      children:
+        - group_profile_inner_2
+        - group_row
+        - field_link
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: collection-profiles
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Profile Section'
+      region: content
+    group_profile_inner_2:
+      children:
+        - group_column_content
+      parent_name: group_profile_section
+      weight: 21
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: collection-profiles__inner
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Profile Inner 2'
+      region: content
+id: paragraph.person_carousel.default
+targetEntityType: paragraph
+bundle: person_carousel
+mode: default
+content:
+  field_body_unformatted:
+    weight: 11
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: p
+        fences_field_item_classes: 'text-style-1 text-black'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: basic_string
+    region: content
+  field_link:
+    weight: 23
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: 'collection-profiles__cta-wrap collection-profiles__inner'
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: link
+    region: content
+  field_title:
+    weight: 10
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: h2
+        fences_field_item_classes: 'heading-style-2 text-orange'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+  field_view_reference:
+    weight: 3
+    label: hidden
+    settings:
+      plugin_types:
+        block: block
+        default: 0
+        page: 0
+        attachment: 0
+        rest_export: 0
+        entity_browser: 0
+        feed: 0
+        embed: 0
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: viewsreference_formatter
+    region: content
+hidden:
+  field_boolean: true
+  field_display_count: true
+  field_fluid_width: true
+  field_hide_overflow: true
+  field_s_ref1: true
+  field_s_ref2: true
+  field_s_ref3: true
+  field_scroll_count: true
+  field_story_by: true

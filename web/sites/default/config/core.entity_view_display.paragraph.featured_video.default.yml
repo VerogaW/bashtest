@@ -1,0 +1,180 @@
+uuid: 15d2c890-b40d-46b7-a16c-e42b0ff3bd22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.featured_video.field_background_image
+    - field.field.paragraph.featured_video.field_body_unformatted
+    - field.field.paragraph.featured_video.field_link
+    - field.field.paragraph.featured_video.field_title
+    - paragraphs.paragraphs_type.featured_video
+  module:
+    - fences
+    - field_group
+    - link
+    - media
+third_party_settings:
+  field_group:
+    group_section_wrapper:
+      children:
+        - group_section_wrapper_inner
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: feature-video
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Section Wrapper'
+      region: content
+    group_section_wrapper_inner:
+      children:
+        - field_background_image
+        - group_content_outer
+      parent_name: group_section_wrapper
+      weight: 5
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: feature-video__inner
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Section Wrapper Inner'
+      region: content
+    group_content_outer:
+      children:
+        - group_content_inner
+      parent_name: group_section_wrapper_inner
+      weight: 4
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: feature-video__content-outer
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Content Outer'
+      region: content
+    group_content_inner:
+      children:
+        - group_content_wrap
+      parent_name: group_content_outer
+      weight: 5
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: feature-video__content-inner
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Content Inner'
+      region: content
+    group_content_wrap:
+      children:
+        - field_title
+        - field_body_unformatted
+        - field_link
+      parent_name: group_content_inner
+      weight: 6
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: feature-video__content-wrap
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Content Wrap'
+      region: content
+id: paragraph.featured_video.default
+targetEntityType: paragraph
+bundle: featured_video
+mode: default
+content:
+  field_background_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: feature-video__image-wrap
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: media_thumbnail
+    region: content
+  field_body_unformatted:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: p
+        fences_field_item_classes: 'feature-video__text text-style-1 text-black'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: basic_string
+    region: content
+  field_link:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: video-modal__button
+        fences_field_item_tag: none
+        fences_field_item_classes: video-modal__button-text
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: link
+    region: content
+  field_title:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: h2
+        fences_field_item_classes: 'feature-video__heading heading-style-3 text-orange'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+hidden: {  }

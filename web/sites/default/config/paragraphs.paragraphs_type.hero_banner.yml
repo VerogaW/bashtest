@@ -1,0 +1,9 @@
+uuid: 8efdbf6d-af96-4cb2-80ce-d3644334258b
+langcode: en
+status: true
+dependencies: {  }
+id: hero_banner
+label: 'Hero-Landing Page'
+icon_uuid: null
+description: 'For Landing Pages'
+behavior_plugins: {  }

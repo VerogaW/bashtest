@@ -1,0 +1,26 @@
+uuid: fca62129-5b50-4b97-ab8b-dacb21ee5b69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parent_program
+    - node.type.course
+id: node.course.field_parent_program
+field_name: field_parent_program
+entity_type: node
+bundle: course
+label: 'Parent Program'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles: {  }
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

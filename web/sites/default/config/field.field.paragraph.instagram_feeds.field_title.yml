@@ -1,0 +1,19 @@
+uuid: 184d4d06-c5c1-432e-9433-49498385e7c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.instagram_feeds
+id: paragraph.instagram_feeds.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: instagram_feeds
+label: Headline
+description: '50'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

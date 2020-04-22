@@ -1,0 +1,41 @@
+uuid: 21068b38-2649-4d50-aa3e-879cccc9ccc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.logos.field_media_image_13
+    - media.type.logos
+  module:
+    - fences
+    - svg_image
+id: media.logos.default
+targetEntityType: media
+bundle: logos
+mode: default
+content:
+  field_media_image_13:
+    weight: 0
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+      svg_render_as_image: '1'
+      svg_attributes:
+        width: ''
+        height: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: image
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

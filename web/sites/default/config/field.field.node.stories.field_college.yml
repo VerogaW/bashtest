@@ -1,0 +1,29 @@
+uuid: c9d9e575-3b4b-4551-9988-bb7cef8e2e8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_college
+    - node.type.stories
+    - taxonomy.vocabulary.college
+id: node.stories.field_college
+field_name: field_college
+entity_type: node
+bundle: stories
+label: College
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      college: college
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

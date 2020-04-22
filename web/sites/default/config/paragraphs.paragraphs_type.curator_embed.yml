@@ -1,0 +1,9 @@
+uuid: c547e413-893d-4e62-8fa0-6032a20ba576
+langcode: en
+status: true
+dependencies: {  }
+id: curator_embed
+label: 'Social Media Carousel'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

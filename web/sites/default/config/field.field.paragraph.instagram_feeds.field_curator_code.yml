@@ -1,0 +1,21 @@
+uuid: e3f54cfc-ae1d-456c-af90-3bcbdd7e2fe3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_curator_code
+    - paragraphs.paragraphs_type.instagram_feeds
+  module:
+    - text
+id: paragraph.instagram_feeds.field_curator_code
+field_name: field_curator_code
+entity_type: paragraph
+bundle: instagram_feeds
+label: 'Curator Code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

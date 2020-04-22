@@ -1,0 +1,19 @@
+uuid: b68008e3-2d7e-4a32-9b68-0c999c87a870
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_research_interests_0
+field_name: field_research_interests_0
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

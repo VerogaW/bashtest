@@ -1,0 +1,113 @@
+.context-image {
+  position: relative;
+  padding-top: $space-medium;
+  padding-bottom: $space-xlarge;
+
+  @include breakpoint(large) {
+    $_padding-desktop: $space-xxlarge;
+
+    padding-top: $_padding-desktop;
+    padding-bottom: $_padding-desktop;
+  }
+}
+
+.context-image__cta-wrap {
+  @include flex-center;
+
+  @include breakpoint(large) {
+    justify-content: left;
+  }
+}
+
+.context-image__backrgound-image {
+  @include object-fit;
+  .context-image.Light.Variation & {
+    display: none;
+  }
+}
+
+.context-image__inner {
+  @include flex-grid-row;
+}
+
+.context-image__image-outer {
+  position: relative;
+  @include flex-grid-column(12);
+
+  @include breakpoint(large) {
+    @include flex-grid-size(6);
+
+    &::after {
+      position: absolute;
+      bottom: -40px;
+      left: -120px;
+      width: 260px;
+      height: 140px;
+      content: "";
+      background: {
+        image: url("#{$svg-path}/pattern-plus-cyan.svg");
+        size: 85px 54px;
+      }
+    }
+  }
+}
+
+.context-image__image-inner {
+  $_image-height-mobile: 275px;
+  $_image-height-tablet: 450px;
+  $_image-height-desktop: 575px;
+  $_image-padding-mobile: 15px;
+
+  position: relative;
+  width: 100%;
+  height: $_image-height-mobile;
+
+  @include breakpoint(medium) {
+    height: $_image-height-tablet;
+  }
+
+  @include breakpoint(large) {
+    width: 100%;
+    height: $_image-height-desktop;
+  }
+}
+
+.context-image__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font-family: "object-fit:cover", "object-fit: cover;";
+}
+
+.context-image__headline-wrap {
+  @include flex-grid-column(12);
+
+  @include breakpoint(large) {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include flex-grid-size(5);
+    @include grid-column-offset(1);
+  }
+}
+
+.context-image__headline {
+  margin-top: $space-medium;
+}
+
+.context-image__text {
+  display: block;
+  position: relative;
+}
+
+.context-image__cta {
+  position: relative;
+  z-index: 1;
+  margin-top: 25px;
+
+  &.button-hollow_black-orange::before {
+    background-color: transparent;
+  }
+}

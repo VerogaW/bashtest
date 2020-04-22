@@ -1,0 +1,19 @@
+uuid: ce65b536-0d80-48a4-9bde-fb8984b7e9af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_office
+    - node.type.person
+id: node.person.field_office
+field_name: field_office
+entity_type: node
+bundle: person
+label: Office
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

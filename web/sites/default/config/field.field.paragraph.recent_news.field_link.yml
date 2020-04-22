@@ -1,0 +1,23 @@
+uuid: 42f105c0-a1f8-49b7-a8db-646a3fa673e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.recent_news
+  module:
+    - link
+id: paragraph.recent_news.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: recent_news
+label: 'Call to Action'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

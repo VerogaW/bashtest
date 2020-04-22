@@ -1,0 +1,11 @@
+uuid: 5528eed0-df58-4d75-b9cd-4682e89a9217
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.person_major
+id: taxonomy_term.person_major
+target_entity_type_id: taxonomy_term
+target_bundle: person_major
+default_langcode: site_default
+language_alterable: false

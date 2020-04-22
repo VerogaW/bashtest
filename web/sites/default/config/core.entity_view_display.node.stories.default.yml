@@ -1,0 +1,59 @@
+uuid: d3ea58ae-0683-45de-876a-2fa2fefff348
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.stories.body
+    - field.field.node.stories.field_college
+    - field.field.node.stories.field_event_audience
+    - field.field.node.stories.field_image
+    - field.field.node.stories.field_majors_minors
+    - field.field.node.stories.field_story_by
+    - field.field.node.stories.field_story_summary
+    - image.style.stories_340x315
+    - node.type.stories
+  module:
+    - fences
+    - media
+    - text
+    - user
+id: node.stories.default
+targetEntityType: node
+bundle: stories
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    type: media_thumbnail
+    weight: 1
+    label: hidden
+    settings:
+      image_style: stories_340x315
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: pull-left
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_college: true
+  field_event_audience: true
+  field_majors_minors: true
+  field_story_by: true
+  field_story_summary: true
+  langcode: true

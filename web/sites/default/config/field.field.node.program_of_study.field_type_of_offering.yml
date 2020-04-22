@@ -1,0 +1,21 @@
+uuid: 90b57b95-2bfd-4cb1-a86a-119e0d91c71c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_of_offering
+    - node.type.program_of_study
+  module:
+    - options
+id: node.program_of_study.field_type_of_offering
+field_name: field_type_of_offering
+entity_type: node
+bundle: program_of_study
+label: 'Type of Offering'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

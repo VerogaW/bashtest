@@ -1,0 +1,19 @@
+uuid: 99a3a2f3-fc44-47f1-b41f-f2bb44b2a568
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.overview_with_cta
+id: paragraph.overview_with_cta.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: overview_with_cta
+label: Headline
+description: 'Limit: 50 Characters'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

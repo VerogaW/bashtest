@@ -1,0 +1,166 @@
+uuid: 79293928-b39f-48a6-8fd4-c55bd5f5a8f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_int_statistics
+    - paragraphs.paragraphs_type.facts_figures_stastics
+    - paragraphs.paragraphs_type.int_facts_figures
+  module:
+    - entity_reference_revisions
+id: paragraph.int_facts_figures.field_int_statistics
+field_name: field_int_statistics
+entity_type: paragraph
+bundle: int_facts_figures
+label: 'Int Statistics'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      facts_figures_stastics: facts_figures_stastics
+    target_bundles_drag_drop:
+      facts_figures:
+        weight: 47
+        enabled: false
+      2_column_cta:
+        weight: 48
+        enabled: false
+      3_column_cta:
+        weight: 49
+        enabled: false
+      4_column_cta:
+        weight: 50
+        enabled: false
+      accordion:
+        weight: 51
+        enabled: false
+      accordion_item:
+        weight: 52
+        enabled: false
+      adjustable_media_and_content:
+        weight: 53
+        enabled: false
+      background_image_with_ctas:
+        weight: 54
+        enabled: false
+      column_section:
+        weight: 55
+        enabled: false
+      dynamic_text_block:
+        weight: 56
+        enabled: false
+      events_feed:
+        weight: 57
+        enabled: false
+      facts_figures_stastics:
+        enabled: true
+        weight: 58
+      featured_video:
+        weight: 59
+        enabled: false
+      flexible_bg_image_block:
+        weight: 60
+        enabled: false
+      flexible_bg_image_blocks:
+        weight: 61
+        enabled: false
+      flexible_cta_block:
+        weight: 62
+        enabled: false
+      flexible_cta_blocks:
+        weight: 63
+        enabled: false
+      full_width_image_section:
+        weight: 64
+        enabled: false
+      hero_banner:
+        weight: 65
+        enabled: false
+      hero_interior_page:
+        weight: 66
+        enabled: false
+      hero_slide:
+        weight: 67
+        enabled: false
+      hero_slideshow:
+        weight: 68
+        enabled: false
+      hero_sub_landing_page:
+        weight: 69
+        enabled: false
+      homepage_tabbed:
+        weight: 70
+        enabled: false
+      homepage_tabbed_story:
+        weight: 71
+        enabled: false
+      instagram_feeds:
+        weight: 72
+        enabled: false
+      int_facts_figures:
+        weight: 73
+        enabled: false
+      interior_column_section:
+        weight: 74
+        enabled: false
+      interior_slideshow:
+        weight: 75
+        enabled: false
+      interior_slideshow_slide:
+        weight: 76
+        enabled: false
+      logo_all_up:
+        weight: 77
+        enabled: false
+      overview_with_cta:
+        weight: 78
+        enabled: false
+      person_carousel:
+        weight: 79
+        enabled: false
+      quick_link:
+        weight: 80
+        enabled: false
+      quick_link_minimal:
+        weight: 81
+        enabled: false
+      quote_section:
+        weight: 82
+        enabled: false
+      recent_articles:
+        weight: 83
+        enabled: false
+      recent_articles_upcoming_events:
+        weight: 84
+        enabled: false
+      recent_news:
+        weight: 85
+        enabled: false
+      text_and_image_block:
+        weight: 86
+        enabled: false
+      text_with_cta:
+        weight: 87
+        enabled: false
+      upcoming_events:
+        weight: 88
+        enabled: false
+      video_embed:
+        weight: 89
+        enabled: false
+      video_tab_carousel:
+        weight: 90
+        enabled: false
+      video_tab_item:
+        weight: 91
+        enabled: false
+      wysiwyg:
+        weight: 92
+        enabled: false
+field_type: entity_reference_revisions

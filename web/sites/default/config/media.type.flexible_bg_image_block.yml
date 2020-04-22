@@ -1,0 +1,18 @@
+uuid: 662b1698-ceef-40f8-b61f-01d4136acdb2
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: field_media_image_11
+id: flexible_bg_image_block
+label: 'Flexible BG Image Block'
+description: 'Use <em>Flexible BG Image Block</em> for the background image in the "Flexible BG Image Block" paragraph'
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_image_11
+field_map: {  }

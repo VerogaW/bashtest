@@ -1,0 +1,28 @@
+uuid: b7aeb4a4-3c9d-40c3-b482-7f02a7eb6ab9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_s_ref1
+    - node.type.stories
+    - paragraphs.paragraphs_type.person_carousel
+id: paragraph.person_carousel.field_s_ref1
+field_name: field_s_ref1
+entity_type: paragraph
+bundle: person_carousel
+label: 'Story Reference 1'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      stories: stories
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

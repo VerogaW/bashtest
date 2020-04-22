@@ -1,0 +1,8 @@
+uuid: f85b3dd2-6174-4006-8d21-4683312a1027
+langcode: en
+status: true
+dependencies: {  }
+name: 'Special Keywords'
+vid: special_keywords
+description: 'Use only for news and special pages'
+weight: 0

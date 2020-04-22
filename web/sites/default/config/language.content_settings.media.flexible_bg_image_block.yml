@@ -1,0 +1,11 @@
+uuid: 69a875b5-3c20-42fa-8169-c4bd1da1d6a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.flexible_bg_image_block
+id: media.flexible_bg_image_block
+target_entity_type_id: media
+target_bundle: flexible_bg_image_block
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,17 @@
+uuid: 0d93fab3-4fdb-4765-94fe-bded912105d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 3_up_image_700x500
+label: '3 - UP Image (700x500)'
+effects:
+  39e9bd55-20d7-4a75-a73d-940e50ba1082:
+    uuid: 39e9bd55-20d7-4a75-a73d-940e50ba1082
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 700
+      height: 500
+      crop_type: focal_point

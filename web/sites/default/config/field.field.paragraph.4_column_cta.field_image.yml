@@ -1,0 +1,28 @@
+uuid: 245a5b79-ba27-47b5-a1f4-74a8f935ba1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image
+    - media.type.column_cta_image
+    - paragraphs.paragraphs_type.4_column_cta
+id: paragraph.4_column_cta.field_image
+field_name: field_image
+entity_type: paragraph
+bundle: 4_column_cta
+label: Image
+description: '<em>Use Media Type:</em> "Column CTA Image"'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      column_cta_image: column_cta_image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

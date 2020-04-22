@@ -1,0 +1,17 @@
+# custom module admin settings page
+custom_module.settings:
+  path: '/admin/config/custom-module-settings'
+  defaults:
+    _controller: '\Drupal\custom_module\Controller\CustomModuleSettings::content'
+    _title: 'Custom Module Settings'
+  requirements:
+    _permission: 'access content'
+
+# custom module page display
+custom_module.content:
+  path: '/custom-module'
+  defaults:
+    _controller: '\Drupal\custom_module\Controller\CustomModule::content'
+    _title: 'Custom Module Page'
+  requirements:
+    _permission: 'access content'

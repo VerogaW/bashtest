@@ -1,0 +1,21 @@
+uuid: c14c7ea6-3504-488b-a486-b9fedee5e25c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_awards
+    - node.type.person
+  module:
+    - text
+id: node.person.field_awards
+field_name: field_awards
+entity_type: node
+bundle: person
+label: Awards
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

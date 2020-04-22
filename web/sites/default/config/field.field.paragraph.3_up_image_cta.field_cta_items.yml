@@ -1,0 +1,196 @@
+uuid: a37cae14-a5b6-461e-8a61-ee1ba7dfdae2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_items
+    - paragraphs.paragraphs_type.3_up_image_cta
+    - paragraphs.paragraphs_type.3_up_image_cta_item
+  module:
+    - entity_reference_revisions
+id: paragraph.3_up_image_cta.field_cta_items
+field_name: field_cta_items
+entity_type: paragraph
+bundle: 3_up_image_cta
+label: 'CTA Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      3_up_image_cta_item: 3_up_image_cta_item
+    target_bundles_drag_drop:
+      2_column_cta:
+        weight: 57
+        enabled: false
+      3_column_cta:
+        weight: 58
+        enabled: false
+      3_up_image_cta:
+        weight: 59
+        enabled: false
+      3_up_image_cta_item:
+        enabled: true
+        weight: 60
+      4_column_cta:
+        weight: 61
+        enabled: false
+      accordion:
+        weight: 62
+        enabled: false
+      accordion_item:
+        weight: 63
+        enabled: false
+      adjustable_media_and_content:
+        weight: 64
+        enabled: false
+      background_image_with_ctas:
+        weight: 65
+        enabled: false
+      branded_image:
+        weight: 66
+        enabled: false
+      column_section:
+        weight: 67
+        enabled: false
+      context_divider:
+        weight: 68
+        enabled: false
+      dynamic_text_block:
+        weight: 69
+        enabled: false
+      events_feed:
+        weight: 70
+        enabled: false
+      facts_figures:
+        weight: 71
+        enabled: false
+      facts_figures_stastics:
+        weight: 72
+        enabled: false
+      featured_video:
+        weight: 73
+        enabled: false
+      flexible_bg_image_block:
+        weight: 74
+        enabled: false
+      flexible_bg_image_blocks:
+        weight: 75
+        enabled: false
+      flexible_cta_block:
+        weight: 76
+        enabled: false
+      flexible_cta_blocks:
+        weight: 77
+        enabled: false
+      full_width_image_section:
+        weight: 78
+        enabled: false
+      hero_banner:
+        weight: 79
+        enabled: false
+      hero_interior_page:
+        weight: 80
+        enabled: false
+      hero_slide:
+        weight: 81
+        enabled: false
+      hero_slideshow:
+        weight: 82
+        enabled: false
+      hero_sub_landing_page:
+        weight: 83
+        enabled: false
+      homepage_tabbed:
+        weight: 84
+        enabled: false
+      homepage_tabbed_story:
+        weight: 85
+        enabled: false
+      instagram_feeds:
+        weight: 86
+        enabled: false
+      int_facts_figures:
+        weight: 87
+        enabled: false
+      interior_column_section:
+        weight: 88
+        enabled: false
+      interior_slideshow:
+        weight: 89
+        enabled: false
+      interior_slideshow_slide:
+        weight: 90
+        enabled: false
+      logo_all_up:
+        weight: 91
+        enabled: false
+      overview_with_cta:
+        weight: 92
+        enabled: false
+      page_events_feed:
+        weight: 93
+        enabled: false
+      para_program_of_study:
+        weight: 94
+        enabled: false
+      person_carousel:
+        weight: 95
+        enabled: false
+      photo_carousel:
+        weight: 96
+        enabled: false
+      photo_carousel_slide:
+        weight: 97
+        enabled: false
+      profile_collection_all:
+        weight: 98
+        enabled: false
+      quick_link:
+        weight: 99
+        enabled: false
+      quick_link_minimal:
+        weight: 100
+        enabled: false
+      quote_section:
+        weight: 101
+        enabled: false
+      recent_articles:
+        weight: 102
+        enabled: false
+      recent_articles_upcoming_events:
+        weight: 103
+        enabled: false
+      recent_news:
+        weight: 104
+        enabled: false
+      recent_news_all:
+        weight: 105
+        enabled: false
+      text_and_image_block:
+        weight: 106
+        enabled: false
+      text_with_cta:
+        weight: 107
+        enabled: false
+      upcoming_events:
+        weight: 108
+        enabled: false
+      video_embed:
+        weight: 109
+        enabled: false
+      video_tab_carousel:
+        weight: 110
+        enabled: false
+      video_tab_item:
+        weight: 111
+        enabled: false
+      wysiwyg:
+        weight: 112
+        enabled: false
+field_type: entity_reference_revisions

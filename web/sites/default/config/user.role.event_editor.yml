@@ -1,0 +1,10 @@
+uuid: 0ab93c48-060e-40ff-879c-2188ba523742
+langcode: en
+status: true
+dependencies: {  }
+id: event_editor
+label: 'Event Editor'
+weight: -7
+is_admin: null
+permissions:
+  - 'use text format full_html'

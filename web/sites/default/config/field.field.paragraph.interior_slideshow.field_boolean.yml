@@ -1,0 +1,23 @@
+uuid: 9d345b61-a4ab-4c0d-afd0-c609319d23b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_boolean
+    - paragraphs.paragraphs_type.interior_slideshow
+id: paragraph.interior_slideshow.field_boolean
+field_name: field_boolean
+entity_type: paragraph
+bundle: interior_slideshow
+label: Autoplay
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

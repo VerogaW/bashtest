@@ -1,0 +1,9 @@
+<?php
+
+/*
+ * implementes hook_page_attachments()
+ * To attach custom css for the admin
+ * */
+function kwalladmincustomcode_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'kwalladmincustomcode/kwalladmincustom';
+}

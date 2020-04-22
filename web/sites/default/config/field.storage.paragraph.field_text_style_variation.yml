@@ -1,0 +1,27 @@
+uuid: 3f5fdb92-a88a-4924-8c53-06c2fb9031f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_text_style_variation
+field_name: field_text_style_variation
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: collection-ctas
+      label: 'Light Variation'
+    -
+      value: 'collection-ctas collection-ctas_alt'
+      label: 'Dark Variation'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

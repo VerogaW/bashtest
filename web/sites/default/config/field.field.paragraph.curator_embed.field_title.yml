@@ -1,0 +1,19 @@
+uuid: fd704d0c-95b2-4103-8add-f0785f91e174
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.curator_embed
+id: paragraph.curator_embed.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: curator_embed
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

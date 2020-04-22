@@ -1,0 +1,9 @@
+uuid: 020d8dcf-cd0b-43e1-aa3b-cc59ba63aba4
+langcode: en
+status: true
+dependencies: {  }
+id: recent_news_all
+label: 'Page: News Feed All'
+icon_uuid: null
+description: 'Full Page: News Page Only'
+behavior_plugins: {  }

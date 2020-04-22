@@ -1,0 +1,8 @@
+uuid: a2c9ca76-1ce4-4b38-87ef-596f15e204ac
+langcode: en
+status: true
+dependencies: {  }
+name: Majors/Minors
+vid: majors_minors
+description: ''
+weight: 0

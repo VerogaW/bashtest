@@ -1,0 +1,386 @@
+.hero-home_alt .base-acronym {
+  display: none;
+}
+
+.hero-home {
+  position: relative;
+  height: 660px;
+  @include flex-center;
+
+  @include dot-pattern(
+    61px,
+    112px,
+    "white",
+    $pseudo: "before",
+    $top: 15px,
+    $right: $space-small,
+  );
+  @include dot-pattern(
+    125px,
+    80px,
+    "white",
+    $pseudo: "after",
+    $left: $space-small,
+    $bottom: $space-small,
+  );
+}
+
+.hero-home.hero-home_alt::after,
+.hero-home.hero-home_alt::before {
+  display: none;
+}
+
+$_toggle-video: medium;
+
+.hero-home__image_video {
+  display: block;
+
+  @include breakpoint($_toggle-video) {
+    display: none;
+    .hero-home_alt &, .hero-home_alt-variation & {
+      display: block;
+    }
+  }
+}
+
+.hero-home__video-wrap {
+  display: none;
+
+  @include breakpoint($_toggle-video) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+.hero-home__video,
+.hero-home__image {
+  @include object-fit;
+}
+
+.hero-home__overlay {
+  $_default-background-color: rgba(0, 0, 0, 0.45);
+
+  background-color: $_default-background-color;
+  @include adhere;
+
+  .hero-home_alt & {
+    background-color: transparent;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75) 10%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  .hero-home_alt-variation & {
+    background-color: $_default-background-color;
+    background-image: none;
+  }
+}
+
+.hero-home__svg {
+  display: none;
+
+  .hero-home_alt-variation & {
+    position: absolute;
+    top: -25px;
+    display: block;
+    height: 100px;
+    fill: $white;
+    transform: rotate(-90deg);
+
+    @include breakpoint(medium) {
+      top: auto;
+      right: 44px;
+      transform: rotate(0);
+    }
+  }
+}
+
+$_hero-home-border-breakpoint: medium;
+
+.hero-home__border {
+  display: none;
+
+  .hero-home_alt-variation & {
+    position: absolute;
+    bottom: $space-medium;
+    display: block;
+
+    @include breakpoint($_hero-home-border-breakpoint) {
+      $_border-position: 50px;
+
+      top: $_border-position;
+      right: $_border-position;
+      bottom: $_border-position;
+      left: $_border-position;
+      border: 1px solid $orange;
+      border-left: 0;
+    }
+  }
+}
+
+.hero-home__link {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 1;
+  width: 200px;
+  cursor: pointer;
+  transform: translateX(-50%);
+
+  @include breakpoint($_hero-home-border-breakpoint) {
+    left: 0;
+    width: 43px;
+    height: 100%;
+    transform: translateX(-21px);
+  }
+}
+
+.hero-home__link-svg {
+  height: 100%;
+  fill: $white;
+  @include base-transition($property: fill);
+
+  .hero-home__link:hover & {
+    fill: $orange;
+  }
+}
+
+.hero-home__link-svg_mobile {
+  display: block;
+
+  @include breakpoint($_hero-home-border-breakpoint) {
+    display: none;
+  }
+}
+
+.hero-home__link-svg_desktop {
+  display: none;
+
+  @include breakpoint($_hero-home-border-breakpoint) {
+    display: block;
+  }
+}
+
+$_hero-home-alt-graphic-size: 100px;
+
+.hero-home__content {
+  width: 100%;
+  text-align: center;
+  @include flex-grid-column(12);
+
+  .hero-home_alt & {
+    position: relative;
+    max-width: 1200px;
+    text-align: left;
+
+    @include dot-pattern(
+      $_hero-home-alt-graphic-size,
+      220px,
+      "white",
+      $top: 50%,
+      $pseudo: "before",
+    );
+  }
+}
+
+.hero-home__content-inner {
+  .hero-home_alt & {
+    @include breakpoint(medium) {
+      padding-left: 30px;
+    }
+
+    @include breakpoint(large) {
+      padding-left: 0;
+    }
+  }
+}
+
+.hero-home_alt .hero-home__content::before {
+  transform: translate(-102px, -50%);
+
+  @include breakpoint(medium) {
+    width: 120px;
+  }
+
+  @include breakpoint(large) {
+    width: $_hero-home-alt-graphic-size;
+    transform: translate(-120%, -50%);
+  }
+}
+
+.hero-home_alt.hero-home_alt-variation .hero-home__content {
+  text-align: center;
+}
+
+.hero-home_alt.hero-home_alt-variation .hero-home__content::before {
+  display: none;
+}
+
+.hero-home__heading-wrap {
+  .hero-home_alt-variation & {
+    padding: $space-large 0;
+    background-color: rgba($black, 0.7);
+
+    @include breakpoint(medium) {
+      display: inline-block;
+      padding: $space-large 100px;
+    }
+  }
+}
+
+.hero-home__kicker {
+  display: none;
+
+  .hero-home_alt & {
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    @include heading-style-3;
+  }
+}
+
+.hero-home__heading {
+  display: inline-block;
+  @include heading-style-1;
+
+  .hero-home_alt-variation & {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      content: "";
+      background-color: $orange;
+    }
+  }
+}
+
+.hero-home__list {
+  margin-top: $space-small;
+
+  .hero-home_alt-variation & {
+    margin-top: $space-large;
+  }
+}
+
+.hero-home__list-item {
+  @include breakpoint(medium) {
+    .hero-home_alt-variation & {
+      margin: $space-medium 30px 0;
+    }
+  }
+
+  @include breakpoint(large) {
+    margin: $space-medium 45px 0;
+
+    .hero-home_alt & {
+      margin: $space-medium $space-medium 0;
+    }
+  }
+}
+
+.hero-home__item-link {
+  position: relative;
+  @include button-solid($white, $black, $white, $orange);
+
+  .hero-home_alt & {
+    @include button-solid($white, $orange, $white, $black);
+  }
+
+  @include breakpoint(medium) {
+    min-width: 220px;
+  }
+}
+
+.hero-home__icon-wrap {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+
+  &.hero-home__icon-wrap_left {
+    left: 0;
+  }
+
+  &.hero-home__icon-wrap_right {
+    right: 0;
+  }
+
+  .hero-home_alt & {
+    display: none;
+  }
+}
+
+.hero-home__icon {
+  position: absolute;
+  background-color: $cyan;
+  @include base-transition($property: transform);
+}
+
+$_hero-home-breakpoint: large;
+$_hero-home-side-position-mobile: 8px;
+$_hero-home-side-position-desktop: 15px;
+$_hero-home-middel-position-mobile: $_hero-home-side-position-desktop;
+$_hero-home-middel-position-desktop: 60%;
+
+.hero-home__icon_side {
+  width: 2px;
+  height: 100%;
+  transform: scaleY(1.2);
+
+  .hero-home__icon-wrap_left & {
+    left: -$_hero-home-side-position-mobile;
+
+    @include breakpoint($_hero-home-breakpoint) {
+      left: -$_hero-home-side-position-desktop;
+    }
+  }
+
+  .hero-home__icon-wrap_right & {
+    right: -$_hero-home-side-position-mobile;
+
+    @include breakpoint($_hero-home-breakpoint) {
+      right: -$_hero-home-side-position-desktop;
+    }
+  }
+
+  .hero-home__item-link:focus &,
+  .hero-home__item-link:hover & {
+    transform: scaleY(1.4);
+  }
+}
+
+.hero-home__icon_middle {
+  top: 50%;
+  width: 30px;
+  height: 2px;
+
+  .hero-home__icon-wrap_left & {
+    left: 0;
+    transform: translateX(-$_hero-home-middel-position-mobile);
+
+    @include breakpoint($_hero-home-breakpoint) {
+      transform: translateX(-$_hero-home-middel-position-desktop);
+    }
+  }
+
+  .hero-home__icon-wrap_right & {
+    right: 0;
+    transform: translateX($_hero-home-middel-position-mobile);
+
+    @include breakpoint($_hero-home-breakpoint) {
+      transform: translateX($_hero-home-middel-position-desktop);
+    }
+  }
+
+  @include breakpoint($_hero-home-breakpoint) {
+    width: 50px;
+  }
+}

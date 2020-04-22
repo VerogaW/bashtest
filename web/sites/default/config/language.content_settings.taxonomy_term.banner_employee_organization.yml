@@ -1,0 +1,11 @@
+uuid: c762ac5a-7cbe-464b-a426-40ea49182185
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.banner_employee_organization
+id: taxonomy_term.banner_employee_organization
+target_entity_type_id: taxonomy_term
+target_bundle: banner_employee_organization
+default_langcode: site_default
+language_alterable: false

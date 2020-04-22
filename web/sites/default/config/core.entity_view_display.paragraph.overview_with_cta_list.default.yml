@@ -1,0 +1,214 @@
+uuid: 9f4074ac-a47a-4292-acaa-5467717b961c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.overview_with_cta_list.field_body_unformatted
+    - field.field.paragraph.overview_with_cta_list.field_call_to_action
+    - field.field.paragraph.overview_with_cta_list.field_list_items
+    - field.field.paragraph.overview_with_cta_list.field_title
+    - paragraphs.paragraphs_type.overview_with_cta_list
+  module:
+    - fences
+    - field_group
+    - link
+third_party_settings:
+  field_group:
+    group_wrapper:
+      children: {  }
+      parent_name: ''
+      weight: 3
+      format_type: html_element
+      format_settings:
+        label: 'Section Wrapper'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'container border-field'
+      label: 'Section Wrapper'
+      region: hidden
+    group_content_outer:
+      children:
+        - group_container_1
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      format_settings:
+        label: 'Content Outer'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: list-items-wrapper
+      label: 'Content Outer'
+      region: content
+    group_list_item_content_inner:
+      children:
+        - field_list_items
+      parent_name: group_container_1
+      weight: 2
+      format_type: html_element
+      format_settings:
+        label: 'List Items'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: list-items-inner
+      label: 'List Items'
+      region: content
+    group_content_wrapper:
+      children:
+        - group_content_inner
+      parent_name: group_container
+      weight: 1
+      format_type: html_element
+      format_settings:
+        label: 'Content Wrapper'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: content-wrapper
+      label: 'Content Wrapper'
+      region: content
+    group_content_inner:
+      children:
+        - field_title
+        - field_body_unformatted
+        - field_call_to_action
+      parent_name: group_content_wrapper
+      weight: 20
+      format_type: html_element
+      format_settings:
+        label: 'Content Inner'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'content-inner offset-md-2 col-sm-12 col-md-8 text-center'
+      label: 'Content Inner'
+      region: content
+    group_container:
+      children:
+        - group_content_wrapper
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: container
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Container
+      region: content
+    group_container_1:
+      children:
+        - group_list_item_content_inner
+      parent_name: group_content_outer
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: container
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Container
+      region: content
+id: paragraph.overview_with_cta_list.default
+targetEntityType: paragraph
+bundle: overview_with_cta_list
+mode: default
+content:
+  field_body_unformatted:
+    weight: 22
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: text-style-1
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: basic_string
+    region: content
+  field_call_to_action:
+    weight: 23
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_list_items:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: row
+        fences_field_item_tag: div
+        fences_field_item_classes: 'col-md-4 col-sm-6'
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: link
+    region: content
+  field_title:
+    weight: 21
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: h3
+        fences_field_item_classes: 'heading-style-3 text-orange'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+hidden: {  }

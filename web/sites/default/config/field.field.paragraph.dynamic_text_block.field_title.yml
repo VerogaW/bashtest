@@ -1,0 +1,19 @@
+uuid: 396fd876-d5e6-45e4-a3a5-0d2e0be23ec4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.dynamic_text_block
+id: paragraph.dynamic_text_block.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: dynamic_text_block
+label: Headline
+description: 'Limit: 50 Characters'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

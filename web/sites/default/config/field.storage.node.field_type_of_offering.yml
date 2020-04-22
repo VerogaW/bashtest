@@ -1,0 +1,39 @@
+uuid: b47be507-87bc-4939-87d7-ca73d988a7ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_type_of_offering
+field_name: field_type_of_offering
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Major
+      label: Major
+    -
+      value: Minor
+      label: Minor
+    -
+      value: 'Preprofessional Program'
+      label: 'Preprofessional Program'
+    -
+      value: Concentration
+      label: Concentration
+    -
+      value: 'Graduate Program'
+      label: 'Graduate Program'
+    -
+      value: Pathway
+      label: Pathway
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

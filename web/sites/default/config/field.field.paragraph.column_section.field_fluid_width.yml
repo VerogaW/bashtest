@@ -1,0 +1,23 @@
+uuid: f6a82c11-ddbb-4d79-b038-73f7258840aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fluid_width
+    - paragraphs.paragraphs_type.column_section
+id: paragraph.column_section.field_fluid_width
+field_name: field_fluid_width
+entity_type: paragraph
+bundle: column_section
+label: 'Fluid width'
+description: 'Check for full width section'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

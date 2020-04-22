@@ -1,0 +1,9 @@
+uuid: 24bbe9ed-2a36-4233-820a-b14a8b31ae9b
+langcode: en
+status: true
+dependencies: {  }
+id: events_feed
+label: 'Events Feed'
+icon_uuid: null
+description: 'For Landing & Sub-Landing Pages'
+behavior_plugins: {  }

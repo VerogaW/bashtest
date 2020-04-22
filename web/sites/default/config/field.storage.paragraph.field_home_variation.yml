@@ -1,0 +1,30 @@
+uuid: 9c91ac0d-86fd-4d21-b158-756851e1fa63
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_home_variation
+field_name: field_home_variation
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: hero-home
+      label: 'Variation 1'
+    -
+      value: 'hero-home hero-home_alt'
+      label: 'Variation 2'
+    -
+      value: 'hero-home hero-home_alt hero-home_alt-variation'
+      label: 'Variation 3'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

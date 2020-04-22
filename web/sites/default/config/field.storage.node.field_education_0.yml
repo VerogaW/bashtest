@@ -1,0 +1,19 @@
+uuid: 4bdbc135-f5d6-4eeb-8e53-8140b75d5665
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_education_0
+field_name: field_education_0
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

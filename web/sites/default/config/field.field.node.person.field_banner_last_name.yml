@@ -1,0 +1,19 @@
+uuid: 66ab4a21-2d1f-464e-bd92-91e707e5bd73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_last_name
+    - node.type.person
+id: node.person.field_banner_last_name
+field_name: field_banner_last_name
+entity_type: node
+bundle: person
+label: 'Banner last name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

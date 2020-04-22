@@ -1,0 +1,20 @@
+uuid: 89b337e4-ea5d-4103-bd72-0ced78355c37
+langcode: en
+status: true
+dependencies:
+  module:
+    - tb_megamenu
+  theme:
+    - onu
+id: onu_mainnavigation_4
+theme: onu
+region: header
+weight: -15
+provider: null
+plugin: 'tb_megamenu_menu_block:main'
+settings:
+  id: 'tb_megamenu_menu_block:main'
+  label: 'Main navigation'
+  provider: tb_megamenu
+  label_display: '0'
+visibility: {  }

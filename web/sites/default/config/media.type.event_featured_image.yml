@@ -1,0 +1,18 @@
+uuid: 29893523-493e-4ad2-a7d2-764569c6c4fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: field_media_image_8
+id: event_featured_image
+label: 'Event Featured Image'
+description: 'Use <em>Event Featured Image</em> for single events banner image'
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_image_8
+field_map: {  }

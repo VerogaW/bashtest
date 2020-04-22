@@ -1,0 +1,10 @@
+uuid: ca244f4f-8b99-43cc-9949-4cfe851ec47d
+langcode: en
+status: true
+dependencies: {  }
+id: article_editor
+label: 'Article Editor'
+weight: -8
+is_admin: null
+permissions:
+  - 'use text format full_html'

@@ -1,0 +1,37 @@
+uuid: 61e7fd8d-6782-4b0b-b479-bf7d72d4735b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.sub_landing_page.body
+    - field.field.node.sub_landing_page.field_content_bottom
+    - field.field.node.sub_landing_page.field_hero_content
+    - field.field.node.sub_landing_page.field_meta_tags
+    - node.type.sub_landing_page
+  module:
+    - text
+    - user
+id: node.sub_landing_page.teaser
+targetEntityType: node
+bundle: sub_landing_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_content_bottom: true
+  field_hero_content: true
+  field_meta_tags: true
+  langcode: true

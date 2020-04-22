@@ -1,0 +1,85 @@
+uuid: 48215bac-3827-451d-91bd-9ea0db1f36d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.page_events_feed.field_view_reference
+    - field.field.paragraph.page_events_feed.field_view_reference_2
+    - paragraphs.paragraphs_type.page_events_feed
+  module:
+    - fences
+    - field_group
+    - viewsreference
+third_party_settings:
+  field_group:
+    group_events_inner:
+      children:
+        - field_view_reference
+        - field_view_reference_2
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: collection-events__inner
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Events Inner'
+      region: content
+id: paragraph.page_events_feed.default
+targetEntityType: paragraph
+bundle: page_events_feed
+mode: default
+content:
+  field_view_reference:
+    weight: 2
+    label: hidden
+    settings:
+      plugin_types:
+        block: block
+        default: '0'
+        page: '0'
+        attachment: '0'
+        rest_export: '0'
+        entity_browser: '0'
+        feed: '0'
+        embed: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: collection-events__list
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: viewsreference_formatter
+    region: content
+  field_view_reference_2:
+    weight: 3
+    label: hidden
+    settings:
+      plugin_types:
+        block: block
+        default: '0'
+        page: '0'
+        attachment: '0'
+        rest_export: '0'
+        entity_browser: '0'
+        feed: '0'
+        embed: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: collection-events__main
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: viewsreference_formatter
+    region: content
+hidden: {  }

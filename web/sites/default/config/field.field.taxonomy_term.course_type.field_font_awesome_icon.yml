@@ -1,0 +1,19 @@
+uuid: 4de9f4e4-1342-4b37-8fc2-713feaa026e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_font_awesome_icon
+    - taxonomy.vocabulary.course_type
+id: taxonomy_term.course_type.field_font_awesome_icon
+field_name: field_font_awesome_icon
+entity_type: taxonomy_term
+bundle: course_type
+label: 'Font Awesome Icon'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

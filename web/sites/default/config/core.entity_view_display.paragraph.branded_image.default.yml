@@ -1,0 +1,109 @@
+uuid: 846f1025-9ccd-4764-9a46-a80518e41ea7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.branded_image.field_background_image
+    - field.field.paragraph.branded_image.field_show_branded_letters
+    - paragraphs.paragraphs_type.branded_image
+  module:
+    - fences
+    - field_group
+    - media
+third_party_settings:
+  field_group:
+    group_section_wrapper:
+      children:
+        - group_image_inner
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        label: 'Section Wrapper'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'image-full br-let-[paragraph:field_show_branded_letters:value]'
+      label: 'Section Wrapper'
+      region: content
+    group_image_inner:
+      children:
+        - group_image_wrap
+      parent_name: group_section_wrapper
+      weight: 20
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: image-full__inner
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Image Inner'
+      region: content
+    group_image_wrap:
+      children:
+        - field_background_image
+        - field_show_branded_letters
+      parent_name: group_image_inner
+      weight: 20
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: image-full__image-wrap
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Image Wrap'
+      region: content
+id: paragraph.branded_image.default
+targetEntityType: paragraph
+bundle: branded_image
+mode: default
+content:
+  field_background_image:
+    weight: 21
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: image-full__inner
+        fences_field_item_tag: none
+        fences_field_item_classes: image-full__image-wrap
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: media_thumbnail
+    region: content
+  field_show_branded_letters:
+    weight: 22
+    label: hidden
+    settings:
+      format: default
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: boolean
+    region: content
+hidden: {  }

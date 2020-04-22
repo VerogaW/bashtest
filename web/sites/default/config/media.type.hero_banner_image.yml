@@ -1,0 +1,18 @@
+uuid: 0e5d1e9e-4efe-48d6-a955-4f951d156ead
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: field_media_image_1
+id: hero_banner_image
+label: 'Hero Banner Image'
+description: 'Use <em>Hero Banner Image</em> as the default single node hero header image'
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_image_1
+field_map: {  }

@@ -1,0 +1,13 @@
+uuid: cb7b95c1-b6ab-4d46-8d02-4cf9b5110bff
+langcode: en
+status: true
+dependencies: {  }
+id: svg_image
+label: 'SVG Image'
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_12
+field_map: {  }

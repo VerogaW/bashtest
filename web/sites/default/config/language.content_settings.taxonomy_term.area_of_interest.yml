@@ -1,0 +1,11 @@
+uuid: 8a91b84d-8d01-4a64-bbff-d505992ea547
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.area_of_interest
+id: taxonomy_term.area_of_interest
+target_entity_type_id: taxonomy_term
+target_bundle: area_of_interest
+default_langcode: site_default
+language_alterable: false

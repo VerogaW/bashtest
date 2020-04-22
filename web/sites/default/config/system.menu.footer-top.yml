@@ -1,0 +1,8 @@
+uuid: 5cc0a227-de6c-4ec8-a658-03e9f9bb067c
+langcode: en
+status: true
+dependencies: {  }
+id: footer-top
+label: 'MB: Footer: Middle 1'
+description: ''
+locked: false

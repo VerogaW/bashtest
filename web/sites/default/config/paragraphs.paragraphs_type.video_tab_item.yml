@@ -1,0 +1,9 @@
+uuid: fc852707-5a90-4b79-8455-738220c69772
+langcode: en
+status: true
+dependencies: {  }
+id: video_tab_item
+label: 'Video Tab Item'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

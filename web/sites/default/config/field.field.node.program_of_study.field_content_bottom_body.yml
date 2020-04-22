@@ -1,0 +1,21 @@
+uuid: 6cdfbf8c-f6a5-46c3-824e-f7e3b421752f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_bottom_body
+    - node.type.program_of_study
+  module:
+    - text
+id: node.program_of_study.field_content_bottom_body
+field_name: field_content_bottom_body
+entity_type: node
+bundle: program_of_study
+label: 'Content Bottom-Body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

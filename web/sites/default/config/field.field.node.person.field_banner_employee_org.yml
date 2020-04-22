@@ -1,0 +1,29 @@
+uuid: c76c0c3a-deda-474b-b01e-e1021cf1b77b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_employee_org
+    - node.type.person
+    - taxonomy.vocabulary.banner_employee_organization
+id: node.person.field_banner_employee_org
+field_name: field_banner_employee_org
+entity_type: node
+bundle: person
+label: 'Banner employee organization'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      banner_employee_organization: banner_employee_organization
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

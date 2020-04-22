@@ -1,0 +1,23 @@
+uuid: 1fa9d5de-fb4a-443c-b7e2-ff4684ad58cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.upcoming_events
+  module:
+    - link
+id: paragraph.upcoming_events.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: upcoming_events
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

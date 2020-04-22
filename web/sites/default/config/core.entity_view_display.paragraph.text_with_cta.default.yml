@@ -1,0 +1,109 @@
+uuid: d38f6d60-9fb4-43dc-ab58-6b10757c63a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_with_cta.field_body_unformatted
+    - field.field.paragraph.text_with_cta.field_related_links
+    - field.field.paragraph.text_with_cta.field_text_style_variation
+    - field.field.paragraph.text_with_cta.field_title
+    - paragraphs.paragraphs_type.text_with_cta
+  module:
+    - fences
+    - field_group
+    - link
+third_party_settings:
+  field_group:
+    group_section_wrapper:
+      children:
+        - group_headline_wrap
+        - field_related_links
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: 'collection-ctas [paragraph:field_text_style_variation:value]'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Section Wrapper'
+      region: content
+    group_headline_wrap:
+      children:
+        - field_title
+        - field_body_unformatted
+      parent_name: group_section_wrapper
+      weight: 20
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: collection-ctas__heading-wrap
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Headline Wrap'
+      region: content
+id: paragraph.text_with_cta.default
+targetEntityType: paragraph
+bundle: text_with_cta
+mode: default
+content:
+  field_body_unformatted:
+    weight: 22
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: p
+        fences_field_item_classes: 'collection-ctas__text text-black text-style-1'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: basic_string
+    region: content
+  field_related_links:
+    weight: 21
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: link
+    region: content
+  field_title:
+    weight: 21
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: h2
+        fences_field_item_classes: 'collection-ctas__heading heading-style-2 text-orange'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+hidden:
+  field_text_style_variation: true

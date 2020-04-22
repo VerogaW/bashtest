@@ -1,0 +1,23 @@
+uuid: c73b1a6b-d4f7-4087-aad5-9bf977613f7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_boolean
+    - paragraphs.paragraphs_type.person_carousel
+id: paragraph.person_carousel.field_boolean
+field_name: field_boolean
+entity_type: paragraph
+bundle: person_carousel
+label: Autoplay
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

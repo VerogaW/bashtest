@@ -1,0 +1,200 @@
+uuid: 3ee09351-3a37-4176-80dd-74fd0beb55bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.recent_articles_upcoming_events.field_article_category
+    - field.field.paragraph.recent_articles_upcoming_events.field_event_category
+    - field.field.paragraph.recent_articles_upcoming_events.field_link
+    - field.field.paragraph.recent_articles_upcoming_events.field_link_2
+    - field.field.paragraph.recent_articles_upcoming_events.field_title
+    - field.field.paragraph.recent_articles_upcoming_events.field_title_2
+    - field.field.paragraph.recent_articles_upcoming_events.field_view_reference
+    - field.field.paragraph.recent_articles_upcoming_events.field_view_reference_2
+    - paragraphs.paragraphs_type.recent_articles_upcoming_events
+  module:
+    - field_group
+    - link
+    - viewsreference
+third_party_settings:
+  field_group:
+    group_article_wrap:
+      children:
+        - group_c
+      parent_name: group_row
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: col-md-8
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'News Wrap'
+      region: content
+    group_news_wrap:
+      children:
+        - group_column_content
+      parent_name: group_row
+      weight: 2
+      format_type: html_element
+      format_settings:
+        label: 'Events Wrap'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: col-md-4
+      label: 'Events Wrap'
+      region: content
+    group_c:
+      children:
+        - field_title
+        - field_view_reference
+        - field_link
+      parent_name: group_article_wrap
+      weight: 10
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Column Content'
+      region: content
+    group_column_content:
+      children:
+        - field_title_2
+        - field_view_reference_2
+        - field_link_2
+      parent_name: group_news_wrap
+      weight: 21
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Column Content'
+      region: content
+    group_row:
+      children:
+        - group_article_wrap
+        - group_news_wrap
+      parent_name: group_container
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: row
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Row
+      region: content
+    group_container:
+      children:
+        - group_row
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: container
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Container
+      region: content
+id: paragraph.recent_articles_upcoming_events.default
+targetEntityType: paragraph
+bundle: recent_articles_upcoming_events
+mode: default
+content:
+  field_link:
+    weight: 7
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_link_2:
+    weight: 8
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_title:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_title_2:
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_view_reference:
+    weight: 6
+    label: hidden
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    type: viewsreference_formatter
+    region: content
+  field_view_reference_2:
+    weight: 7
+    label: hidden
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    type: viewsreference_formatter
+    region: content
+hidden:
+  field_article_category: true
+  field_event_category: true

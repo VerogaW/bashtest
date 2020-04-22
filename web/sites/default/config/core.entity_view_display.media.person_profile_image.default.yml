@@ -1,0 +1,30 @@
+uuid: 0d82f892-bb46-499a-aa04-5c2f1ef24d52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.person_profile_image.field_media_image_6
+    - image.style.person_profile_image
+    - media.type.person_profile_image
+  module:
+    - svg_image
+id: media.person_profile_image.default
+targetEntityType: media
+bundle: person_profile_image
+mode: default
+content:
+  field_media_image_6:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: person_profile_image
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

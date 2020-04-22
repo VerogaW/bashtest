@@ -1,0 +1,14 @@
+uuid: 0d859844-b242-45cf-88aa-ea2e47eff361
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.group_content_publisher
+  module:
+    - user
+id: user_add_role_action.group_content_publisher
+label: 'Add the Group Content Publisher role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: group_content_publisher

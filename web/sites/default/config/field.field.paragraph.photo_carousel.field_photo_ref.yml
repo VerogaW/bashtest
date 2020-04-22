@@ -1,0 +1,175 @@
+uuid: 352df181-139b-4405-9f99-5638ce00c521
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_photo_ref
+    - paragraphs.paragraphs_type.photo_carousel
+    - paragraphs.paragraphs_type.photo_carousel_slide
+  module:
+    - entity_reference_revisions
+id: paragraph.photo_carousel.field_photo_ref
+field_name: field_photo_ref
+entity_type: paragraph
+bundle: photo_carousel
+label: 'Photo Ref'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      photo_carousel_slide: photo_carousel_slide
+    target_bundles_drag_drop:
+      2_column_cta:
+        weight: 50
+        enabled: false
+      3_column_cta:
+        weight: 51
+        enabled: false
+      4_column_cta:
+        weight: 52
+        enabled: false
+      accordion:
+        weight: 53
+        enabled: false
+      accordion_item:
+        weight: 54
+        enabled: false
+      adjustable_media_and_content:
+        weight: 55
+        enabled: false
+      background_image_with_ctas:
+        weight: 56
+        enabled: false
+      branded_image:
+        weight: 57
+        enabled: false
+      column_section:
+        weight: 58
+        enabled: false
+      dynamic_text_block:
+        weight: 59
+        enabled: false
+      events_feed:
+        weight: 60
+        enabled: false
+      facts_figures:
+        weight: 61
+        enabled: false
+      facts_figures_stastics:
+        weight: 62
+        enabled: false
+      featured_video:
+        weight: 63
+        enabled: false
+      flexible_bg_image_block:
+        weight: 64
+        enabled: false
+      flexible_bg_image_blocks:
+        weight: 65
+        enabled: false
+      flexible_cta_block:
+        weight: 66
+        enabled: false
+      flexible_cta_blocks:
+        weight: 67
+        enabled: false
+      full_width_image_section:
+        weight: 68
+        enabled: false
+      hero_banner:
+        weight: 69
+        enabled: false
+      hero_interior_page:
+        weight: 70
+        enabled: false
+      hero_slide:
+        weight: 71
+        enabled: false
+      hero_slideshow:
+        weight: 72
+        enabled: false
+      hero_sub_landing_page:
+        weight: 73
+        enabled: false
+      homepage_tabbed:
+        weight: 74
+        enabled: false
+      homepage_tabbed_story:
+        weight: 75
+        enabled: false
+      instagram_feeds:
+        weight: 76
+        enabled: false
+      int_facts_figures:
+        weight: 77
+        enabled: false
+      interior_column_section:
+        weight: 78
+        enabled: false
+      interior_slideshow:
+        weight: 79
+        enabled: false
+      interior_slideshow_slide:
+        weight: 80
+        enabled: false
+      logo_all_up:
+        weight: 81
+        enabled: false
+      overview_with_cta:
+        weight: 82
+        enabled: false
+      person_carousel:
+        weight: 83
+        enabled: false
+      photo_carousel:
+        weight: 84
+        enabled: false
+      photo_carousel_slide:
+        enabled: true
+        weight: 85
+      quick_link:
+        weight: 86
+        enabled: false
+      quick_link_minimal:
+        weight: 87
+        enabled: false
+      quote_section:
+        weight: 88
+        enabled: false
+      recent_articles:
+        weight: 89
+        enabled: false
+      recent_articles_upcoming_events:
+        weight: 90
+        enabled: false
+      recent_news:
+        weight: 91
+        enabled: false
+      text_and_image_block:
+        weight: 92
+        enabled: false
+      text_with_cta:
+        weight: 93
+        enabled: false
+      upcoming_events:
+        weight: 94
+        enabled: false
+      video_embed:
+        weight: 95
+        enabled: false
+      video_tab_carousel:
+        weight: 96
+        enabled: false
+      video_tab_item:
+        weight: 97
+        enabled: false
+      wysiwyg:
+        weight: 98
+        enabled: false
+field_type: entity_reference_revisions

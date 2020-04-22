@@ -1,0 +1,79 @@
+uuid: b84ed639-8bdc-4f98-9601-7dd62b8d21f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.photo_carousel_slide.field_image
+    - field.field.paragraph.photo_carousel_slide.field_photo_caption
+    - field.field.paragraph.photo_carousel_slide.field_photo_caption_link
+    - paragraphs.paragraphs_type.photo_carousel_slide
+  module:
+    - fences
+    - field_group
+    - linked_field
+    - media
+third_party_settings:
+  field_group:
+    group_carousel_image_wrap:
+      children:
+        - field_photo_caption
+        - field_image
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        label: 'Carousel Image Wrap'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: carousel-gallery__image-wrap
+      label: 'Carousel Image Wrap'
+      region: content
+id: paragraph.photo_carousel_slide.default
+targetEntityType: paragraph
+bundle: photo_carousel_slide
+mode: default
+content:
+  field_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: media_thumbnail
+    region: content
+  field_photo_caption:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: carousel-gallery__image-overlay
+        fences_field_item_tag: p
+        fences_field_item_classes: carousel-gallery__caption
+        fences_label_tag: none
+        fences_label_classes: ''
+      linked_field:
+        linked: '1'
+        type: field
+        destination: field_photo_caption_link
+        advanced: {  }
+    type: string
+    region: content
+hidden:
+  field_photo_caption_link: true

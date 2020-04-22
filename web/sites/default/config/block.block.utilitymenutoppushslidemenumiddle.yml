@@ -1,0 +1,33 @@
+uuid: 3bf589b8-249a-4b8b-b74d-a75eaa5d0c1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility-menu
+  module:
+    - menu_block
+    - system
+  theme:
+    - onu
+id: utilitymenutoppushslidemenumiddle
+theme: onu
+region: slide_in_navigation
+weight: -16
+provider: null
+plugin: 'menu_block:utility-menu'
+settings:
+  id: 'menu_block:utility-menu'
+  label: 'Utility Menu Top (Push - Slide Menu Middle)'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 2
+  expand: 0
+  parent: 'utility-menu:'
+  suggestion: utility_menu
+visibility:
+  request_path:
+    id: request_path
+    pages: '/*'
+    negate: false
+    context_mapping: {  }

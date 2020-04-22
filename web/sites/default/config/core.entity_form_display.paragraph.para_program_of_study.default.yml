@@ -1,0 +1,38 @@
+uuid: d6069162-6758-45f8-925f-698ca0872507
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.para_program_of_study.field_program_filters
+    - field.field.paragraph.para_program_of_study.field_view_reference_pos
+    - paragraphs.paragraphs_type.para_program_of_study
+  module:
+    - block_field
+    - viewsreference
+id: paragraph.para_program_of_study.default
+targetEntityType: paragraph
+bundle: para_program_of_study
+mode: default
+content:
+  field_program_filters:
+    weight: 1
+    settings:
+      plugin_id: ''
+      settings: {  }
+      configuration_form: full
+    third_party_settings: {  }
+    type: block_field_default
+    region: content
+  field_view_reference_pos:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: viewsreference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

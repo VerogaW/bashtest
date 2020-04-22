@@ -1,0 +1,19 @@
+uuid: 6adf6854-94a9-4d9b-9070-94b506f78082
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_student_c_u_csz
+    - node.type.person
+id: node.person.field_banner_student_c_u_csz
+field_name: field_banner_student_c_u_csz
+entity_type: node
+bundle: person
+label: 'Banner student campus unit csz'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

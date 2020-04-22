@@ -1,0 +1,21 @@
+uuid: 6e0a123e-1130-45cd-a3e1-8739409ad675
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  wysiwyg_template:
+    default_template: ''
+name: 'Program of Study'
+type: program_of_study
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: true

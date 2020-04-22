@@ -1,0 +1,30 @@
+.paragraph--type--quick-link {
+  h2 {
+    font-family: $font-memphis;
+    font-weight: 700;
+    font-size: rem-calc(18);
+    text-transform: uppercase;
+    color: $orange;
+    padding: 20px 0;
+    padding-bottom: 0;
+  }
+
+  .field--name-field-links {
+    padding-top: 30px;
+
+    .field__item {
+      a {
+        @include button-text($black, $orange);
+        //padding-left: 0;
+        //font-family: $font-brandontext;
+        //font-size: rem-calc(18px);
+        //font-weight: 700;
+        //line-height: (24 / 18);
+        //text-decoration: underline;
+        //&:hover {
+        //  color: $orange-hover-state;
+        //}
+      }
+    }
+  }
+}

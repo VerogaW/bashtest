@@ -1,0 +1,45 @@
+uuid: 836c489e-bc9f-454b-acb7-d154a48a0715
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - ctools_block
+    - system
+  theme:
+    - onu
+id: onu_sidebarcontent
+theme: onu
+region: sidebar_right
+weight: -18
+provider: null
+plugin: 'entity_field:node:field_sidebar_content'
+settings:
+  id: 'entity_field:node:field_sidebar_content'
+  label: RESOURCES
+  provider: ctools_block
+  label_display: '0'
+  formatter:
+    label: above
+    type: entity_reference_revisions_entity_view
+    settings:
+      view_mode: default
+    third_party_settings: {  }
+    weight: 0
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/76
+    negate: true
+    context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      homepage: homepage
+      landing_page: landing_page
+      sub_landing_page: sub_landing_page
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

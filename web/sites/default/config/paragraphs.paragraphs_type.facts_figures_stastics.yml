@@ -1,0 +1,9 @@
+uuid: 97215ddf-929a-46dd-8536-de2e4d473a10
+langcode: en
+status: true
+dependencies: {  }
+id: facts_figures_stastics
+label: 'Facts & Figures-Statistics'
+icon_uuid: null
+description: "Don't use directly. Referenced via \"Facts & Figures\"\t"
+behavior_plugins: {  }

@@ -1,0 +1,30 @@
+uuid: 75d5c360-ea5c-4da8-ab9e-b420812d8966
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.article_view
+  module:
+    - system
+    - views
+  theme:
+    - onu
+id: onu_views_block__article_view_block_4
+theme: onu
+region: content_top
+weight: -12
+provider: null
+plugin: 'views_block:article_view-block_4'
+settings:
+  id: 'views_block:article_view-block_4'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/news\r\n/news?*"
+    negate: false
+    context_mapping: {  }

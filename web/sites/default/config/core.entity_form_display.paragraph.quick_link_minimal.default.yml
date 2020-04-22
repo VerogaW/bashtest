@@ -1,0 +1,26 @@
+uuid: fd6fc2da-5240-4166-8be1-f4c4b1da36c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quick_link_minimal.field_links
+    - paragraphs.paragraphs_type.quick_link_minimal
+  module:
+    - link
+id: paragraph.quick_link_minimal.default
+targetEntityType: paragraph
+bundle: quick_link_minimal
+mode: default
+content:
+  field_links:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

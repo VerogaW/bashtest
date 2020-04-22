@@ -1,0 +1,17 @@
+uuid: e8baa89a-d42c-41c1-af77-34e0c8bee1e1
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: stories_340x315
+label: 'Stories (340x315)'
+effects:
+  dddd1acc-1ea8-47a2-be24-c717eee9c570:
+    uuid: dddd1acc-1ea8-47a2-be24-c717eee9c570
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 340
+      height: 315
+      crop_type: focal_point

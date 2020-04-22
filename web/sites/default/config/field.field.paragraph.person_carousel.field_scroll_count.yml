@@ -1,0 +1,23 @@
+uuid: 437cd034-1ad1-40f4-ba01-f33505c42c3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_scroll_count
+    - paragraphs.paragraphs_type.person_carousel
+  module:
+    - options
+id: paragraph.person_carousel.field_scroll_count
+field_name: field_scroll_count
+entity_type: paragraph
+bundle: person_carousel
+label: 'Scroll Count'
+description: 'Select how many items to scroll at a time'
+required: true
+translatable: false
+default_value:
+  -
+    value: '1'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

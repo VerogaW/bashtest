@@ -1,0 +1,38 @@
+uuid: 63d2a84b-52b1-43cd-b09e-2a4e63b0bb33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.interior_slideshow.field_boolean
+    - field.field.paragraph.interior_slideshow.field_interior_slideshow
+    - paragraphs.paragraphs_type.interior_slideshow
+  module:
+    - paragraphs
+id: paragraph.interior_slideshow.default
+targetEntityType: paragraph
+bundle: interior_slideshow
+mode: default
+content:
+  field_boolean:
+    weight: 0
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_interior_slideshow:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Slide
+      title_plural: Slides
+      edit_mode: closed
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,15 @@
+diff --git a/fences.fences.yml b/fences.fences.yml
+index 76dc5cf..20d9f10 100644
+--- a/fences.fences.yml
++++ b/fences.fences.yml
+@@ -110,6 +110,10 @@ ins:
+   label: Insertion
+   group: Phrasing
+   description: An Addition To The Document
++li:
++  label: List item
++  group: List
++  description: List item
+ kbd:
+   label: Keyboard
+   group: Phrasing

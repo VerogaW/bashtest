@@ -1,0 +1,9 @@
+uuid: 922bbaf5-0cd6-4ebb-ae84-803b58a14ead
+langcode: en
+status: true
+dependencies: {  }
+id: quote_section
+label: 'Quote Section'
+icon_uuid: null
+description: 'For Landing & Sub-Landing Pages'
+behavior_plugins: {  }

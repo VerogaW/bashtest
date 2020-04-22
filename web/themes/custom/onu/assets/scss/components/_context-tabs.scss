@@ -1,0 +1,169 @@
+.context-tabs {
+  position: relative;
+  overflow: hidden;
+}
+
+.context-tabs__inner {
+  position: relative;
+  padding-top: $space-xlarge;
+  padding-bottom: $space-medium;
+  overflow: hidden;
+  @include flex-grid-row;
+
+  @include breakpoint(large) {
+    padding-top: $space-xxlarge;
+    padding-bottom: $space-xxlarge;
+    overflow: visible;
+  }
+
+  @include dot-pattern(276px, 160px, "cyan", $right: -50px, $bottom: 0);
+}
+
+.context-tabs__inner::after {
+  display: none;
+
+  @include breakpoint(large) {
+    display: block;
+  }
+}
+
+.context-tabs__background-image {
+  @include object-fit;
+}
+
+.context-tabs__tablist {
+  @include flex-grid-column(12);
+
+  @include breakpoint(large) {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    z-index: 1;
+  }
+}
+
+.context-tabs__panel-content-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.context-tabs__panel-content {
+  width: 100%;
+}
+
+.context-tabs__item-button {
+  position: relative;
+  margin-top: $space-small;
+  outline: none;
+  @include base-transition($property: color);
+  @include line-detail($right: -74px, $bottom: 10px, $width: 64px);
+
+  &:hover {
+    color: #9b9b9b;
+  }
+
+  &.active {
+    color: $orange;
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.context-tabs-fade-enter-active {
+  transition: opacity 0.5s $ease-default;
+}
+
+.context-tabs-fade-enter,
+.context-tabs-fade-leave-to {
+  opacity: 0;
+}
+
+.context-tabs-fade-leave-active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: opacity 0.25s $ease-default;
+}
+
+.context-tabs__panel-inner {
+  @include flex-grid-row;
+}
+
+.context-tabs__headline-wrap {
+  order: 1;
+  @include flex-grid-column(12);
+
+  @include breakpoint(large) {
+    padding-top: 140px;
+    @include flex-grid-size(5);
+  }
+}
+
+.context-tabs__headline {
+  margin-top: 30px;
+}
+
+.context-tabs__text {
+  display: block;
+}
+
+.context-tabs__cta {
+  position: relative;
+  z-index: 1;
+  margin-top: 25px;
+}
+
+.context-tabs__image-outer {
+  position: relative;
+  margin-top: 30px;
+  @include flex-grid-column(12);
+
+  @include breakpoint(large) {
+    margin-top: 0;
+    order: 2;
+    @include flex-grid-size(6);
+    @include grid-column-offset(1);
+  }
+}
+
+.context-tabs__image-inner {
+  $_image-height-mobile: 275px;
+  $_image-height-tablet: 320px;
+  $_image-height-desktop: 575px;
+  $_image-padding-mobile: 15px;
+
+  position: relative;
+  width: 100%;
+  height: $_image-height-mobile;
+
+  @include breakpoint(medium) {
+    height: $_image-height-tablet;
+  }
+
+  @include breakpoint(large) {
+    width: 100%;
+    height: $_image-height-desktop;
+  }
+}
+
+.context-tabs__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font-family: "object-fit:cover", "object-fit: cover;";
+}
+
+.image-content__cta-wrap {
+  @include breakpoint(medium) {
+    display: inline-block;
+  }
+}
+
+.image-content__cta {
+  &.button-hollow_black-orange::before {
+    background-color: transparent;
+  }
+}

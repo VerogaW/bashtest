@@ -1,0 +1,24 @@
+uuid: df1c8daf-9efc-4bf5-a2a9-837a105cb8c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.context_divider.field_title
+    - paragraphs.paragraphs_type.context_divider
+id: paragraph.context_divider.default
+targetEntityType: paragraph
+bundle: context_divider
+mode: default
+content:
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

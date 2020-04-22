@@ -1,0 +1,27 @@
+uuid: e502fac7-ee29-4561-9db1-fb45a8056b4b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - onu
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: onu_content
+theme: onu
+region: content
+weight: -12
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "locations/sub-landing-page\r\n/node/81"
+    negate: true
+    context_mapping: {  }

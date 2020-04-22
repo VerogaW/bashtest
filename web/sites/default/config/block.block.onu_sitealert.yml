@@ -1,0 +1,20 @@
+uuid: 2ca90143-612a-47ac-87c5-10f7652398a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - kwall_site_alert
+  theme:
+    - onu
+id: onu_sitealert
+theme: onu
+region: alerts
+weight: 0
+provider: null
+plugin: kwall_site_alert_block
+settings:
+  id: kwall_site_alert_block
+  label: 'Site Alert'
+  provider: kwall_site_alert
+  label_display: '0'
+visibility: {  }

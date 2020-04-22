@@ -1,0 +1,273 @@
+uuid: 456da490-af21-4505-a201-970cc913df1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.body
+    - field.field.node.event.feeds_item
+    - field.field.node.event.field_address
+    - field.field.node.event.field_all_day_event
+    - field.field.node.event.field_college
+    - field.field.node.event.field_embedded_video
+    - field.field.node.event.field_end_date
+    - field.field.node.event.field_event_audience
+    - field.field.node.event.field_event_category
+    - field.field.node.event.field_event_contact_e_mail
+    - field.field.node.event.field_event_contact_name
+    - field.field.node.event.field_event_contact_phone_number
+    - field.field.node.event.field_event_featured_image
+    - field.field.node.event.field_event_legacy_nid
+    - field.field.node.event.field_event_legacy_url
+    - field.field.node.event.field_event_teaser_image
+    - field.field.node.event.field_featured
+    - field.field.node.event.field_file_attachments
+    - field.field.node.event.field_geolocation
+    - field.field.node.event.field_majors_minors
+    - field.field.node.event.field_meta_tags
+    - field.field.node.event.field_section_title
+    - field.field.node.event.field_start_date
+    - node.type.event
+  module:
+    - datetime
+    - fences
+    - field_group
+    - text
+    - user
+    - video_embed_field
+third_party_settings:
+  field_group:
+    group_event_details:
+      children:
+        - field_start_date
+        - field_end_date
+        - field_event_contact_name
+        - field_event_contact_phone_number
+        - field_event_contact_e_mail
+        - group_event_caegory
+        - group_event_audience
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: mb-4
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Event Details'
+      region: content
+    group_event_caegory:
+      children:
+        - field_event_category
+      parent_name: group_event_details
+      weight: 7
+      format_type: html_element
+      format_settings:
+        label: 'Event Category'
+        element: div
+        show_label: true
+        label_element: div
+        label_element_classes: field__label
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'event--category d-flex flex-row field--label-inline mb-1'
+      label: 'Event Category'
+      region: content
+    group_event_audience:
+      children:
+        - field_event_audience
+      parent_name: group_event_details
+      weight: 8
+      format_type: html_element
+      format_settings:
+        label: 'Event Audience'
+        element: div
+        show_label: true
+        label_element: div
+        label_element_classes: field__label
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'event--audience d-flex flex-row field--label-inline  mb-1'
+      label: 'Event Audience'
+      region: content
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: mb-4
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    region: content
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_embedded_video:
+    weight: 3
+    label: hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: true
+    third_party_settings: {  }
+    type: video_embed_field_video
+    region: content
+  field_end_date:
+    type: datetime_custom
+    weight: 3
+    region: content
+    label: inline
+    settings:
+      timezone_override: ''
+      date_format: 'l, F j, Y - g:i a'
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: mb-1
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+  field_event_audience:
+    weight: 9
+    label: hidden
+    settings:
+      link: true
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: mb-1
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: entity_reference_label
+    region: content
+  field_event_category:
+    type: entity_reference_label
+    weight: 8
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+  field_event_contact_e_mail:
+    weight: 6
+    label: inline
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: mb-1
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: basic_string
+    region: content
+  field_event_contact_name:
+    weight: 4
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: mb-1
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: string
+    region: content
+  field_event_contact_phone_number:
+    weight: 5
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: mb-1
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: string
+    region: content
+  field_event_featured_image:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: mb-4
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+  field_start_date:
+    type: datetime_custom
+    weight: 2
+    region: content
+    label: inline
+    settings:
+      timezone_override: ''
+      date_format: 'l, F j, Y - g:i a'
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: mb-1
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+hidden:
+  feeds_item: true
+  field_address: true
+  field_all_day_event: true
+  field_college: true
+  field_event_legacy_nid: true
+  field_event_legacy_url: true
+  field_event_teaser_image: true
+  field_featured: true
+  field_file_attachments: true
+  field_geolocation: true
+  field_majors_minors: true
+  field_meta_tags: true
+  field_section_title: true
+  langcode: true
+  links: true

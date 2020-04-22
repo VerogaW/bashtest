@@ -1,0 +1,263 @@
+uuid: b63dd61c-69d4-4c2f-9fd7-329aae67b46c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.event.status
+    - core.base_field_override.node.event.title
+    - field.field.node.event.body
+    - field.field.node.event.field_address
+    - field.field.node.event.field_end_date
+    - field.field.node.event.field_event_audience
+    - field.field.node.event.field_event_category
+    - field.field.node.event.field_event_contact_e_mail
+    - field.field.node.event.field_event_contact_name
+    - field.field.node.event.field_event_contact_phone_number
+    - field.field.node.event.field_event_featured_image
+    - field.field.node.event.field_event_legacy_nid
+    - field.field.node.event.field_event_legacy_url
+    - field.field.node.event.field_featured
+    - field.field.node.event.field_start_date
+    - node.type.event
+  module:
+    - custom_module
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      c6868d19-4433-4e4b-b84d-b48f9a2bbff4:
+        find: ' '
+        replace: T
+        case_sensitive: false
+        whole: false
+        plugin: find_replace
+        source: start_date
+        weight: 0
+        word_boundaries: false
+        uuid: c6868d19-4433-4e4b-b84d-b48f9a2bbff4
+      554b1132-439d-4a54-af4b-98b4eba56222:
+        find: ' '
+        replace: T
+        case_sensitive: false
+        whole: false
+        plugin: find_replace
+        source: end_date
+        weight: 0
+        word_boundaries: false
+        uuid: 554b1132-439d-4a54-af4b-98b4eba56222
+      d5591ce1-e99e-4adb-a36f-b9d710850c21:
+        plugin: eventmedia
+        source: upload_images
+        weight: 0
+        uuid: d5591ce1-e99e-4adb-a36f-b9d710850c21
+      7aca0670-8d94-4d6d-a8a4-9c8da7d1269e:
+        separator: ','
+        limit: null
+        plugin: explode
+        source: upload_images
+        weight: 1
+        uuid: 7aca0670-8d94-4d6d-a8a4-9c8da7d1269e
+      21163767-3423-4f6a-9fe0-90012d1690ae:
+        separator: ','
+        limit: null
+        plugin: explode
+        source: event_category
+        weight: 0
+        uuid: 21163767-3423-4f6a-9fe0-90012d1690ae
+      89df3644-c78a-4ae2-a565-12e059ecb6c2:
+        separator: ','
+        limit: null
+        plugin: explode
+        source: event_audience
+        weight: 0
+        uuid: 89df3644-c78a-4ae2-a565-12e059ecb6c2
+label: Events
+id: events
+description: 'Import Events from Drupal 7 To Drupal 8'
+import_period: 10800
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  update_existing: 2
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: event
+custom_sources:
+  title:
+    label: Title
+    value: Title
+    machine_name: title
+  body:
+    label: Body
+    value: Body
+    machine_name: body
+  content_id:
+    label: 'Content ID'
+    value: 'Content ID'
+    machine_name: content_id
+  content_url:
+    label: 'Content URL'
+    value: 'Content URL'
+    machine_name: content_url
+  event_contact_name:
+    label: 'Event Contact Name'
+    value: 'Event Contact Name'
+    machine_name: event_contact_name
+  event_contact_phone:
+    label: 'Event Contact Phone #'
+    value: 'Event Contact Phone #'
+    machine_name: event_contact_phone
+  event_contact_e_mail:
+    label: 'Event Contact E-mail'
+    value: 'Event Contact E-mail'
+    machine_name: event_contact_e_mail
+  event_audience:
+    label: 'Event Audience'
+    value: 'Event Audience'
+    machine_name: event_audience
+  start_date:
+    label: 'Start Date'
+    value: 'Start Date'
+    machine_name: start_date
+  end_date:
+    label: 'End Date'
+    value: 'End Date'
+    machine_name: end_date
+  event_category:
+    label: 'Event Category'
+    value: 'Event Category'
+    machine_name: event_category
+  featured:
+    label: Featured
+    value: Featured
+    machine_name: featured
+  upload_images:
+    label: 'Upload Images'
+    value: 'Upload Images'
+    machine_name: upload_images
+  event_country:
+    label: 'Event Country'
+    value: 'Event Country'
+    machine_name: event_country
+  event_location:
+    label: 'Event Location'
+    value: 'Event Location'
+    machine_name: event_location
+  published_status:
+    label: 'Published status'
+    value: 'Published status'
+    machine_name: published_status
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    unique: {  }
+  -
+    target: body
+    map:
+      value: body
+      summary: ''
+    settings:
+      format: full_html
+  -
+    target: field_event_legacy_nid
+    map:
+      value: content_id
+    unique:
+      value: '1'
+  -
+    target: field_event_legacy_url
+    map:
+      value: content_url
+    unique: {  }
+  -
+    target: field_event_contact_name
+    map:
+      value: event_contact_name
+    unique: {  }
+  -
+    target: field_event_contact_phone_number
+    map:
+      value: event_contact_phone
+    unique: {  }
+  -
+    target: field_event_contact_e_mail
+    map:
+      value: event_contact_e_mail
+    unique: {  }
+    settings:
+      defuse: false
+  -
+    target: field_event_audience
+    map:
+      target_id: event_audience
+    settings:
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_start_date
+    map:
+      value: start_date
+    settings:
+      timezone: __SITE__
+  -
+    target: field_end_date
+    map:
+      value: end_date
+    settings:
+      timezone: __SITE__
+  -
+    target: field_event_category
+    map:
+      target_id: event_category
+    settings:
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_featured
+    map:
+      value: featured
+  -
+    target: field_event_featured_image
+    map:
+      target_id: upload_images
+    settings:
+      reference_by: name
+      autocreate: '1'
+  -
+    target: field_address
+    map:
+      langcode: ''
+      country_code: event_country
+      administrative_area: ''
+      locality: ''
+      dependent_locality: ''
+      postal_code: ''
+      sorting_code: ''
+      address_line1: event_location
+      address_line2: ''
+      organization: ''
+      given_name: ''
+      additional_name: ''
+      family_name: ''
+  -
+    target: status
+    map:
+      value: published_status

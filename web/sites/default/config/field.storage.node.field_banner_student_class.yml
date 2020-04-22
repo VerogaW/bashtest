@@ -1,0 +1,20 @@
+uuid: 8975a98b-46ea-42d7-a42d-15f48fc3f478
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_banner_student_class
+field_name: field_banner_student_class
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,9 @@
+uuid: 574257c3-e00d-4544-b82c-a0ba08d80c0b
+langcode: en
+status: true
+dependencies: {  }
+id: quick_link
+label: 'Resource Links'
+icon_uuid: null
+description: "For Landing Pages, Sub-Landing Pages & Interior Pages.\t"
+behavior_plugins: {  }

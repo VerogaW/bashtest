@@ -1,0 +1,41 @@
+uuid: bf55b2a1-554f-41d8-b384-5f893bfe7035
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.recent_news_all.field_subtitle
+    - field.field.paragraph.recent_news_all.field_view_reference
+    - paragraphs.paragraphs_type.recent_news_all
+  module:
+    - fences
+    - viewsreference
+id: paragraph.recent_news_all.default
+targetEntityType: paragraph
+bundle: recent_news_all
+mode: default
+content:
+  field_view_reference:
+    weight: 0
+    label: hidden
+    settings:
+      plugin_types:
+        block: block
+        default: 0
+        page: 0
+        attachment: 0
+        rest_export: 0
+        entity_browser: 0
+        feed: 0
+        embed: 0
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: 'carousel-news-feed__items-wrap carousel-news-feed__items-wrap-all'
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: viewsreference_formatter
+    region: content
+hidden:
+  field_subtitle: true

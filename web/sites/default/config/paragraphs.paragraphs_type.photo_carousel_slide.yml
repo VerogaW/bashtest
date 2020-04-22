@@ -1,0 +1,9 @@
+uuid: f4cac056-12dc-446b-8524-a6fac956e040
+langcode: en
+status: true
+dependencies: {  }
+id: photo_carousel_slide
+label: 'Photo Carousel Slide'
+icon_uuid: null
+description: "Don't use directly. Referenced via \"Photo Carousel\"\t\r\n"
+behavior_plugins: {  }

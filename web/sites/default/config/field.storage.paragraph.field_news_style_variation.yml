@@ -1,0 +1,27 @@
+uuid: 8a47c9a8-4616-4b30-ae85-8cfbbf6ac228
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_news_style_variation
+field_name: field_news_style_variation
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: carousel-news-feed
+      label: 'Light Variation'
+    -
+      value: carousel-news-feed_alt
+      label: 'Dark Variation'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

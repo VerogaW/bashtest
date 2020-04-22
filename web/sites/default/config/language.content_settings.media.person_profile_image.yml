@@ -1,0 +1,11 @@
+uuid: 42c4305f-0f9f-4034-b198-1da11057e5d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.person_profile_image
+id: media.person_profile_image
+target_entity_type_id: media
+target_bundle: person_profile_image
+default_langcode: site_default
+language_alterable: false

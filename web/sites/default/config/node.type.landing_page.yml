@@ -1,0 +1,21 @@
+uuid: 30a50a95-c028-46dd-936e-a2fc70a7cd9a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  wysiwyg_template:
+    default_template: ''
+name: 'Landing Page'
+type: landing_page
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

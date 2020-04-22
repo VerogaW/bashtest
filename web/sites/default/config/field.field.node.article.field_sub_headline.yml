@@ -1,0 +1,19 @@
+uuid: 1802c566-0348-46d4-b71d-e5c7ded7ceae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sub_headline
+    - node.type.article
+id: node.article.field_sub_headline
+field_name: field_sub_headline
+entity_type: node
+bundle: article
+label: Sub-headline
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

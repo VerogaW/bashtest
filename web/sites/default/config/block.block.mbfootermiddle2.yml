@@ -1,0 +1,31 @@
+uuid: 85183c19-7f20-4459-83d8-9d673dc32701
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.mb-footer-middle-2
+  module:
+    - block_class
+    - menu_block
+  theme:
+    - onu
+third_party_settings:
+  block_class:
+    classes: the-footer__list-primary
+id: mbfootermiddle2
+theme: onu
+region: footer_middle
+weight: 0
+provider: null
+plugin: 'menu_block:mb-footer-middle-2'
+settings:
+  id: 'menu_block:mb-footer-middle-2'
+  label: 'MB: Footer: Middle 2'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand: 0
+  parent: 'mb-footer-middle-2:'
+  suggestion: mb_footer_middle_2
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: e9f1cd44-3d85-4882-abb8-6593c5f15ce8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs
+id: paragraph.field_s_ref3
+field_name: field_s_ref3
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

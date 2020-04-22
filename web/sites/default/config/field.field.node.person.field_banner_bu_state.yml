@@ -1,0 +1,19 @@
+uuid: 9f21e3d2-8607-4ad3-a8b4-af2a328f7550
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_bu_state
+    - node.type.person
+id: node.person.field_banner_bu_state
+field_name: field_banner_bu_state
+entity_type: node
+bundle: person
+label: 'Banner BU state'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

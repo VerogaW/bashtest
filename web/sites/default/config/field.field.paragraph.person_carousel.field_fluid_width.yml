@@ -1,0 +1,23 @@
+uuid: 6dc3947a-bfaa-44fa-8085-f8a0c00f2cee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fluid_width
+    - paragraphs.paragraphs_type.person_carousel
+id: paragraph.person_carousel.field_fluid_width
+field_name: field_fluid_width
+entity_type: paragraph
+bundle: person_carousel
+label: 'Fluid width'
+description: 'Check for full width section'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

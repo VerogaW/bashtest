@@ -1,0 +1,9 @@
+uuid: 981e579c-2a89-4a3c-84ed-6023913fd05b
+langcode: en
+status: true
+dependencies: {  }
+id: recent_news
+label: 'News Feed'
+icon_uuid: null
+description: "For Landing & Sub-Landing Pages\t"
+behavior_plugins: {  }

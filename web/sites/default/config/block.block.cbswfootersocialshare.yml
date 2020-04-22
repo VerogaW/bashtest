@@ -1,0 +1,29 @@
+uuid: 403a292c-ca08-4b7e-adce-cbc22e0d1853
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0489677f-cc31-4eec-98bc-5a704829b955'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - onu
+third_party_settings:
+  block_class:
+    classes: the-social
+id: cbswfootersocialshare
+theme: onu
+region: footer
+weight: -17
+provider: null
+plugin: 'block_content:0489677f-cc31-4eec-98bc-5a704829b955'
+settings:
+  id: 'block_content:0489677f-cc31-4eec-98bc-5a704829b955'
+  label: 'CB: SW-Footer: Social Share'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

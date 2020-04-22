@@ -1,0 +1,19 @@
+uuid: e8e6efa2-05d2-4170-9e0f-667e168e7a2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_nickname
+    - node.type.person
+id: node.person.field_banner_nickname
+field_name: field_banner_nickname
+entity_type: node
+bundle: person
+label: 'Banner nickname'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

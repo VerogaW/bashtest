@@ -1,0 +1,9 @@
+uuid: 2e22330c-0643-49db-8165-014bba9a5451
+langcode: en
+status: true
+dependencies: {  }
+id: text_with_cta
+label: 'Text with CTA'
+icon_uuid: null
+description: "For Landing & Sub-Landing Pages\t\r\n"
+behavior_plugins: {  }

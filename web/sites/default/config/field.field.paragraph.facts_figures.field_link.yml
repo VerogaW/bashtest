@@ -1,0 +1,23 @@
+uuid: 48d8100c-d6bb-4385-a4ef-d01ab1847dd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.facts_figures
+  module:
+    - link
+id: paragraph.facts_figures.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: facts_figures
+label: 'Call To Action'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

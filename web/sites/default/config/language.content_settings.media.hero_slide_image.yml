@@ -1,0 +1,11 @@
+uuid: f29debf5-88d3-4328-a8dd-e1c8905164d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.hero_slide_image
+id: media.hero_slide_image
+target_entity_type_id: media
+target_bundle: hero_slide_image
+default_langcode: site_default
+language_alterable: false

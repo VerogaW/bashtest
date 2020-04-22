@@ -1,0 +1,9 @@
+uuid: c634af7a-33ca-4124-8c91-1b6bca8856d3
+langcode: en
+status: true
+dependencies: {  }
+id: profile_collection_all
+label: 'Page: Profile Collection All'
+icon_uuid: null
+description: 'Full Page: Profile Page Only'
+behavior_plugins: {  }

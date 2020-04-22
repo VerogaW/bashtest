@@ -1,0 +1,21 @@
+uuid: 9e07e6ba-8d11-4efd-b37c-203d1186332e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_selected_publications
+    - node.type.person
+  module:
+    - text
+id: node.person.field_selected_publications
+field_name: field_selected_publications
+entity_type: node
+bundle: person
+label: 'Selected Publications'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

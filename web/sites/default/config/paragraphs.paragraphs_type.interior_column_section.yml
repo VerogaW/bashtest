@@ -1,0 +1,9 @@
+uuid: edc5e329-aab5-48da-80d1-19a75416fd5a
+langcode: en
+status: true
+dependencies: {  }
+id: interior_column_section
+label: 'Interior Column Section'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

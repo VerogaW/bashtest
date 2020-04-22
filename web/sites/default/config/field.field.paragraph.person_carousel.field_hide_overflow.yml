@@ -1,0 +1,23 @@
+uuid: ee637239-cc7a-4c56-8d33-8351450e2b62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hide_overflow
+    - paragraphs.paragraphs_type.person_carousel
+id: paragraph.person_carousel.field_hide_overflow
+field_name: field_hide_overflow
+entity_type: paragraph
+bundle: person_carousel
+label: 'Hide Overflow'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,9 @@
+uuid: 2e0bda92-e3f3-4b25-8ec1-1f8cfef11932
+langcode: en
+status: true
+dependencies: {  }
+id: recent_articles
+label: 'Recent Articles'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

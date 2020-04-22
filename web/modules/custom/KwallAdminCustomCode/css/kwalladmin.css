@@ -1,0 +1,5 @@
+/* Css For Backend */
+
+.field--name-field-home-variation select option[value='_none'],.field--name-field-home-variation .form-radios > div:first-child {
+    display: none;
+}

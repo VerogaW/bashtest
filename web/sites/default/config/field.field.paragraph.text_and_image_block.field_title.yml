@@ -1,0 +1,19 @@
+uuid: c60da6f7-ece8-4617-8a04-492594d1eb01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.text_and_image_block
+id: paragraph.text_and_image_block.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: text_and_image_block
+label: Headline
+description: 'Limit: 50 characters'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

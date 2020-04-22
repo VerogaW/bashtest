@@ -1,0 +1,19 @@
+uuid: f165a4b8-0a6b-4026-8ca0-2b0b24512565
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body_unformatted
+    - paragraphs.paragraphs_type.profile_collection_all
+id: paragraph.profile_collection_all.field_body_unformatted
+field_name: field_body_unformatted
+entity_type: paragraph
+bundle: profile_collection_all
+label: Body
+description: 'Limit: 175 characters'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

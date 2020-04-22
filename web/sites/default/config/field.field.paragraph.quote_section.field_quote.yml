@@ -1,0 +1,19 @@
+uuid: 7a0519e2-d715-46b0-847b-226d6409b602
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_quote
+    - paragraphs.paragraphs_type.quote_section
+id: paragraph.quote_section.field_quote
+field_name: field_quote
+entity_type: paragraph
+bundle: quote_section
+label: Quote
+description: 'Limit: 115 characters'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,43 @@
+uuid: 9b9014f0-3d6e-4a87-b664-e67ff4ed48f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_information.field_address
+    - field.field.paragraph.contact_information.field_subtitle
+    - field.field.paragraph.contact_information.field_title
+    - paragraphs.paragraphs_type.contact_information
+  module:
+    - address
+id: paragraph.contact_information.default
+targetEntityType: paragraph
+bundle: contact_information
+mode: default
+content:
+  field_address:
+    weight: 2
+    settings:
+      default_country: null
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_subtitle:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

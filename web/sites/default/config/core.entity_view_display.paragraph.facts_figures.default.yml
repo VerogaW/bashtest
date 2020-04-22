@@ -1,0 +1,204 @@
+uuid: 19622aff-3232-4386-814c-4f3f31f32704
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.facts_figures.field_body_unformatted
+    - field.field.paragraph.facts_figures.field_link
+    - field.field.paragraph.facts_figures.field_statistics
+    - field.field.paragraph.facts_figures.field_svg_image
+    - field.field.paragraph.facts_figures.field_title
+    - paragraphs.paragraphs_type.facts_figures
+  module:
+    - entity_reference_revisions
+    - fences
+    - field_group
+    - link
+    - media
+third_party_settings:
+  field_group:
+    group_facts:
+      children:
+        - group_facts_container
+      parent_name: group_statistics
+      weight: 1
+      format_type: html_element
+      format_settings:
+        label: Facts
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: collection-statistics__intro-outer
+      label: Facts
+      region: content
+    group_facts_container:
+      children:
+        - field_svg_image
+        - group_facts_intro
+      parent_name: group_facts
+      weight: 20
+      format_type: html_element
+      format_settings:
+        label: 'Facts Container'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: collection-statistics__intro-inner
+      label: 'Facts Container'
+      region: content
+    group_statistics:
+      children:
+        - group_facts
+        - field_statistics
+        - field_link
+      parent_name: group_section_wrapper
+      weight: 1
+      format_type: html_element
+      format_settings:
+        label: 'Collection Statistics'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: collection-statistics__inner
+      label: 'Collection Statistics'
+      region: content
+    group_facts_intro:
+      children:
+        - field_title
+        - field_body_unformatted
+      parent_name: group_facts_container
+      weight: 24
+      format_type: html_element
+      format_settings:
+        label: 'Facts Intro'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: context-base
+      label: 'Facts Intro'
+      region: content
+    group_section_wrapper:
+      children:
+        - group_statistics
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        label: 'Section Wrapper'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: collection-statistics
+      label: 'Section Wrapper'
+      region: content
+id: paragraph.facts_figures.default
+targetEntityType: paragraph
+bundle: facts_figures
+mode: default
+content:
+  field_body_unformatted:
+    weight: 22
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: p
+        fences_field_item_classes: 'text-center text-black text-style-1'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: basic_string
+    region: content
+  field_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: collection-statistics__cta-wrap
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: link
+    region: content
+  field_statistics:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: ul
+        fences_field_classes: collection-statistics__list
+        fences_field_item_tag: li
+        fences_field_item_classes: 'item-statistic item-statistic__item'
+        fences_label_tag: none
+        fences_label_classes: ''
+    region: content
+  field_svg_image:
+    weight: 23
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: collection-statistics__statistic-graphic
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: media_thumbnail
+    region: content
+  field_title:
+    weight: 21
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: 'text-orange heading-style-2 text-center'
+        fences_field_item_tag: h2
+        fences_field_item_classes: 'heading-style-2 text-orange'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+hidden: {  }

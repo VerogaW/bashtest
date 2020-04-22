@@ -1,0 +1,9 @@
+uuid: 0f530810-ff42-44a1-8acf-caa483e7cd92
+langcode: en
+status: true
+dependencies: {  }
+id: hero_program_of_study
+label: 'Hero - Program of Study'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

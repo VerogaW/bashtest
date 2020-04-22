@@ -1,0 +1,39 @@
+uuid: 0d6ce236-b8d4-427b-a030-08f0ac6a10ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.flexible_bg_image_block.field_media_image_11
+    - image.style.thumbnail
+    - media.type.flexible_bg_image_block
+  module:
+    - focal_point
+id: media.flexible_bg_image_block.default
+targetEntityType: media
+bundle: flexible_bg_image_block
+mode: default
+content:
+  field_media_image_11:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings: {  }
+    type: image_focal_point
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  name: true
+  path: true
+  status: true
+  uid: true

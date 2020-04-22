@@ -1,0 +1,42 @@
+uuid: f27e6e99-749a-489c-9129-2b617206e57b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_banner_name_prefix
+field_name: field_banner_name_prefix
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Mr.
+      label: Mr.
+    -
+      value: Mrs.
+      label: Mrs.
+    -
+      value: Miss
+      label: Miss
+    -
+      value: Ms.
+      label: Ms.
+    -
+      value: Mx.
+      label: Mx.
+    -
+      value: Dr.
+      label: Dr.
+    -
+      value: Sir
+      label: Sir
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

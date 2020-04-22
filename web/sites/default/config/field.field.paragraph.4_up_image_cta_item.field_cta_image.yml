@@ -1,0 +1,28 @@
+uuid: 1463df64-744d-42b8-a4a1-61b62a6f04af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_image
+    - media.type.column_cta_image
+    - paragraphs.paragraphs_type.4_up_image_cta_item
+id: paragraph.4_up_image_cta_item.field_cta_image
+field_name: field_cta_image
+entity_type: paragraph
+bundle: 4_up_image_cta_item
+label: 'CTA Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      column_cta_image: column_cta_image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

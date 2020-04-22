@@ -1,0 +1,23 @@
+uuid: 99f4c957-04be-438e-9e88-a236b55d3c66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_list_items
+    - paragraphs.paragraphs_type.overview_with_cta_list
+  module:
+    - link
+id: paragraph.overview_with_cta_list.field_list_items
+field_name: field_list_items
+entity_type: paragraph
+bundle: overview_with_cta_list
+label: 'List Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

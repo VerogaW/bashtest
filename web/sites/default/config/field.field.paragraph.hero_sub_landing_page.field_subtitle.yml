@@ -1,0 +1,19 @@
+uuid: 1d43f4f4-6d35-4009-9049-d0e869130f88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_subtitle
+    - paragraphs.paragraphs_type.hero_sub_landing_page
+id: paragraph.hero_sub_landing_page.field_subtitle
+field_name: field_subtitle
+entity_type: paragraph
+bundle: hero_sub_landing_page
+label: 'Sub Headline'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

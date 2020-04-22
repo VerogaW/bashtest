@@ -1,0 +1,28 @@
+uuid: d8469c0c-96cd-44e8-abb9-0497d9c3a7b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_svg_image
+    - media.type.svg_image
+    - paragraphs.paragraphs_type.facts_figures
+id: paragraph.facts_figures.field_svg_image
+field_name: field_svg_image
+entity_type: paragraph
+bundle: facts_figures
+label: 'SVG Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      svg_image: svg_image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

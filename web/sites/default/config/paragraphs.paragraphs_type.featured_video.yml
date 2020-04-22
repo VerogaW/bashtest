@@ -1,0 +1,9 @@
+uuid: 049e3831-a36e-4f38-9a51-62e4d80ed7dd
+langcode: en
+status: true
+dependencies: {  }
+id: featured_video
+label: 'Featured Video'
+icon_uuid: null
+description: "For Landing & Sub-Landing Pages\t\r\n"
+behavior_plugins: {  }

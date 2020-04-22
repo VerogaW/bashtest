@@ -1,0 +1,11 @@
+uuid: 94c7a65a-9b8b-49a1-9674-58136d9e27b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.person_class
+id: taxonomy_term.person_class
+target_entity_type_id: taxonomy_term
+target_bundle: person_class
+default_langcode: site_default
+language_alterable: false

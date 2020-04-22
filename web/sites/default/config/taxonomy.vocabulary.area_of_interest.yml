@@ -1,0 +1,8 @@
+uuid: 541f5053-7e8b-452e-9e39-c24a3a2861eb
+langcode: en
+status: true
+dependencies: {  }
+name: 'Area of Interest'
+vid: area_of_interest
+description: 'Used in CT: Academic Fact Sheet'
+weight: 0

@@ -1,0 +1,9 @@
+kwalladmincustom:
+  js:
+    js/kwalladmin.js: {}
+  css:
+    theme:
+      css/kwalladmin.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

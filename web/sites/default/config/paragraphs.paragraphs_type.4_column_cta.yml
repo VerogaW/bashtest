@@ -1,0 +1,9 @@
+uuid: 7b1c3638-7b5f-4ec0-af43-1b4745f2bdec
+langcode: en
+status: true
+dependencies: {  }
+id: 4_column_cta
+label: '4 Column CTA'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

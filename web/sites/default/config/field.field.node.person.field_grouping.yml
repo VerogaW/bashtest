@@ -1,0 +1,19 @@
+uuid: 19c46a28-4ae6-4b66-b7d5-15f7f8ab2596
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grouping
+    - node.type.person
+id: node.person.field_grouping
+field_name: field_grouping
+entity_type: node
+bundle: person
+label: Grouping
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

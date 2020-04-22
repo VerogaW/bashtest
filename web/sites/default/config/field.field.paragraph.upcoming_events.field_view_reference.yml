@@ -1,0 +1,65 @@
+uuid: 9951a75b-c9dc-407a-97a5-7fb4fb5edf83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_view_reference
+    - paragraphs.paragraphs_type.upcoming_events
+    - views.view.event_view
+  module:
+    - viewsreference
+id: paragraph.upcoming_events.field_view_reference
+field_name: field_view_reference
+entity_type: paragraph
+bundle: upcoming_events
+label: 'View Reference'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    display_id: block_1
+    data: 'a:5:{s:5:"pager";N;s:8:"argument";N;s:5:"limit";N;s:6:"offset";N;s:5:"title";N;}'
+    target_uuid: 334ad9ba-142e-44d9-8ae8-6f2d7b1df3c6
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    block: block
+    default: 0
+    page: 0
+    entity_browser: 0
+    feed: 0
+  preselect_views:
+    event_view: event_view
+    article_view: 0
+    block_content: 0
+    comment: 0
+    comments_recent: 0
+    content: 0
+    content_recent: 0
+    default_hero_section: 0
+    feeds_feed: 0
+    files: 0
+    file_entity_browser: 0
+    frontpage: 0
+    group_members: 0
+    group_nodes: 0
+    hero_banner: 0
+    media: 0
+    moderated_content: 0
+    taxonomy_term: 0
+    user_admin_people: 0
+    watchdog: 0
+    who_s_new: 0
+    who_s_online: 0
+  enabled_settings:
+    argument: argument
+    pager: 0
+    limit: 0
+    offset: 0
+    title: 0
+field_type: viewsreference

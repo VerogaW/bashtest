@@ -1,0 +1,28 @@
+uuid: d555f3e9-e8cf-4e37-a759-4522449bf860
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image
+    - media.type.hero_slide_image
+    - paragraphs.paragraphs_type.hero_slide
+id: paragraph.hero_slide.field_image
+field_name: field_image
+entity_type: paragraph
+bundle: hero_slide
+label: Image
+description: '<em>Use Media Type:</em> "Hero Slide Image"'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      hero_slide_image: hero_slide_image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,35 @@
+uuid: c1d2824e-60bf-447a-ba31-956b951d372d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.event_teaser_image.field_media_image_7
+    - image.style.medium
+    - media.type.event_teaser_image
+  module:
+    - svg_image
+id: media.event_teaser_image.media_library
+targetEntityType: media
+bundle: event_teaser_image
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+      svg_attributes:
+        width: ''
+        height: ''
+      svg_render_as_image: true
+    weight: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_image_7: true
+  langcode: true
+  name: true
+  uid: true

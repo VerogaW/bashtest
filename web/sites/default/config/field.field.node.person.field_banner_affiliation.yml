@@ -1,0 +1,29 @@
+uuid: 9127ef5b-4b3b-4950-a3c5-fc24658ae67a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_affiliation
+    - node.type.person
+    - taxonomy.vocabulary.banner_affiliation
+id: node.person.field_banner_affiliation
+field_name: field_banner_affiliation
+entity_type: node
+bundle: person
+label: 'Banner affiliation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      banner_affiliation: banner_affiliation
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
