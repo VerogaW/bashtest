@@ -1,0 +1,17 @@
+***************
+*** 85,91 ****
+        $form['node_form_group_menu'] = [
+          '#type' => 'checkbox',
+          '#title' => t("Add group menus to node form"),
+-         '#default_value' => $configuration['node_form_group_menu'] ?: FALSE,
+        ];
+      }
+    }
+--- 85,91 ----
+        $form['node_form_group_menu'] = [
+          '#type' => 'checkbox',
+          '#title' => t("Add group menus to node form"),
++         '#default_value' => isset($configuration['node_form_group_menu']) ? $configuration['node_form_group_menu'] : FALSE,
+        ];
+      }
+    }

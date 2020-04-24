@@ -17,7 +17,8 @@ class FeedsItemImportedFormatterTest extends FeedsItemFormatterTestBase {
 
     // Set display mode for feeds_item to feeds_item_imported on article content
     // type.
-    entity_get_display('node', 'article', 'default')
+    $this->container->get('entity_display.repository')
+      ->getViewDisplay('node', 'article', 'default')
       ->setComponent('feeds_item', [
         'type' => 'feeds_item_imported',
         'weight' => 1,
@@ -35,7 +36,8 @@ class FeedsItemImportedFormatterTest extends FeedsItemFormatterTestBase {
     ];
     // Set display mode for feeds_item to feeds_item_imported on article content
     // type with custom date format.
-    entity_get_display('node', 'article', 'default')
+    $this->container->get('entity_display.repository')
+      ->getViewDisplay('node', 'article', 'default')
       ->setComponent('feeds_item', [
         'type' => 'feeds_item_imported',
         'settings' => $settings,
@@ -65,7 +67,8 @@ class FeedsItemImportedFormatterTest extends FeedsItemFormatterTestBase {
 
     // Display the article and test we are getting correct output for
     // 'imported'.
-    $display = entity_get_display($article->getEntityTypeId(), $article->bundle(), 'default');
+    $display = $this->container->get('entity_display.repository')
+      ->getViewDisplay($article->getEntityTypeId(), $article->bundle(), 'default');
     $content = $display->build($article);
     $rendered_content = $this->container->get('renderer')->renderRoot($content);
     $this->assertContains($expected, (string) $rendered_content);

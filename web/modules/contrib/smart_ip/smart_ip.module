@@ -223,8 +223,6 @@ function smart_ip_is_eu_gdpr_country($country_code, $eu_member_only = TRUE) {
       'SI' => 'Slovenia',
       'ES' => 'Spain',
       'SE' => 'Sweden',
-      'GB' => 'United Kingdom (Great Britain)',
-      'UK' => 'United Kingdom (Great Britain)',
     ];
     $additional_gdpr_list = [
       'GF' => 'French Guiana',

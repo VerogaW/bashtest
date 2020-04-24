@@ -2,8 +2,8 @@
 
 namespace Drupal\Tests\migrate_plus\Unit\process;
 
-use Drupal\Tests\migrate\Unit\process\MigrateProcessTestCase;
 use Drupal\migrate_plus\Plugin\migrate\process\SingleValue;
+use Drupal\Tests\migrate\Unit\process\MigrateProcessTestCase;
 
 /**
  * @coversDefaultClass \Drupal\migrate_plus\Plugin\migrate\process\SingleValue

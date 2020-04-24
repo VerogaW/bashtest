@@ -164,11 +164,14 @@ interface CoreInterface {
    *
    * @param string $entity_type
    *   The entity type for which to return the field types.
+   * @param array $base_fields
+   *   Optional. Define base fields that will be returned in addition to user-
+   *   defined fields.
    *
    * @return array
    *   An associative array of field types, keyed by field name.
    */
-  public function getEntityFieldTypes($entity_type);
+  public function getEntityFieldTypes($entity_type, array $base_fields = array());
 
   /**
    * Creates a language.
@@ -207,6 +210,19 @@ interface CoreInterface {
   public function configGet($name, $key = '');
 
   /**
+   * Returns the original configuration item.
+   *
+   * @param string $name
+   *   The name of the configuration object to retrieve.
+   * @param string $key
+   *   A string that maps to a key within the configuration data.
+   *
+   * @return mixed
+   *   The original data that was requested.
+   */
+  public function configGetOriginal($name, $key = '');
+
+  /**
    * Sets a value in a configuration object.
    *
    * @param string $name
@@ -235,5 +251,46 @@ interface CoreInterface {
    * Delete an entity.
    */
   public function entityDelete($entity_type, $entity);
+
+  /**
+   * Enable the test mail collector.
+   */
+  public function startCollectingMail();
+
+  /**
+   * Restore normal operation of outgoing mail.
+   */
+  public function stopCollectingMail();
+
+  /**
+   * Get any mail collected by the test mail collector.
+   *
+   * @return \stdClass[]
+   *   An array of collected emails, each formatted as a Drupal 8
+   *   \Drupal\Core\Mail\MailInterface::mail $message array.
+   */
+  public function getMail();
+
+  /**
+   * Empty the test mail collector store of any collected mail.
+   */
+  public function clearMail();
+
+  /**
+   * Send a mail.
+   *
+   * @param string $body
+   *   The body of the mail.
+   * @param string $subject
+   *   The subject of the mail.
+   * @param string $to
+   *   The recipient's email address, passing PHP email validation filter.
+   * @param string $langcode
+   *   The language used in subject and body.
+   *
+   * @return bool
+   *   Whether the email was sent successfully.
+   */
+  public function sendMail($body, $subject, $to, $langcode);
 
 }

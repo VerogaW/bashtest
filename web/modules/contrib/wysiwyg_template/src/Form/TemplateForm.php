@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\wysiwyg_template\Form\TemplateForm.
- */
-
 namespace Drupal\wysiwyg_template\Form;
 
 use Drupal\Core\Entity\EntityForm;
@@ -60,7 +55,7 @@ class TemplateForm extends EntityForm {
       '#required' => TRUE,
     ];
 
-    $node_types = array_map(function ($item) {
+    $node_types = array_map(static function ($item) {
       return $item->label();
     }, NodeType::loadMultiple());
 
@@ -86,13 +81,13 @@ class TemplateForm extends EntityForm {
 
     switch ($status) {
       case SAVED_NEW:
-        drupal_set_message($this->t('Created the %label template.', [
+        $this->messenger()->addStatus($this->t('Created the %label template.', [
           '%label' => $wysiwyg_template->label(),
         ]));
         break;
 
       default:
-        drupal_set_message($this->t('Saved the %label template.', [
+        $this->messenger()->addStatus($this->t('Saved the %label template.', [
           '%label' => $wysiwyg_template->label(),
         ]));
     }

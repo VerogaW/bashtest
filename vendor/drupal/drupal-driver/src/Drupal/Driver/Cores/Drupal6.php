@@ -432,7 +432,14 @@ class Drupal6 extends AbstractCore {
   /**
    * {@inheritdoc}
    */
-  public function getEntityFieldTypes($entity_type) {
+  protected function expandEntityFields($entity_type, \stdClass $entity, array $base_fields = array()) {
+    return parent::expandEntityFields($entity_type, $entity);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getEntityFieldTypes($entity_type, array $base_fields = array()) {
     $taxonomy_fields = array('taxonomy' => 'taxonomy');
     if (!module_exists('content')) {
       return $taxonomy_fields;
@@ -488,6 +495,13 @@ class Drupal6 extends AbstractCore {
   /**
    * {@inheritdoc}
    */
+  public function configGetOriginal($name, $key = '') {
+    throw new \Exception('Getting original config is not yet implemented for Drupal 6.');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function configSet($name, $key, $value) {
     throw new \Exception('Setting config is not yet implemented for Drupal 6.');
   }
@@ -511,6 +525,46 @@ class Drupal6 extends AbstractCore {
    */
   public function entityDelete($entity_type, $entity) {
     throw new \Exception('Drupal 6 does not have a generic Entity API, so deletion of entities is not possible in this way.');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function startCollectingMail() {
+    // @todo: create a D6 version of this function
+    throw new \Exception('Mail testing is not yet implemented for Drupal 6.');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function stopCollectingMail() {
+    // @todo: create a D6 version of this function
+    throw new \Exception('Mail testing is not yet implemented for Drupal 6.');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getMail() {
+    // @todo: create a D6 version of this function
+    throw new \Exception('Mail testing is not yet implemented for Drupal 6.');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function clearMail() {
+    // @todo: create a D6 version of this function
+    throw new \Exception('Mail testing is not yet implemented for Drupal 6.');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function sendMail($body, $subject = '', $to = '', $langcode = '') {
+    // @todo: create a D6 version of this function
+    throw new \Exception('Mail testing is not yet implemented for Drupal 6.');
   }
 
 }

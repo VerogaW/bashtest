@@ -92,7 +92,8 @@ abstract class FeedsItemFormatterTestBase extends FeedsBrowserTestBase {
       'label' => 'Witty one liner label',
     ]);
 
-    entity_get_display('feeds_feed', $feed_type_id, 'default')
+    $this->container->get('entity_display.repository')
+      ->getViewDisplay('feeds_feed', $feed_type_id, 'default')
       ->setComponent('oneliner', [
         'type' => 'text_default',
         'settings' => ['label' => 'Witty one liner'],

@@ -13,6 +13,7 @@ use Drupal\Core\Extension\ThemeHandlerInterface;
 use Drupal\Core\Lock\LockBackendInterface;
 use Drupal\Core\StringTranslation\TranslationInterface;
 use Drush\Commands\DrushCommands;
+use Drush\Drush;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
@@ -91,7 +92,7 @@ class ConfigPartialExportCommands extends DrushCommands {
    * @aliases cpex
    */
   public function configPartialExport($config = '', $label = '', $options = ['changelist' => '', 'show-destinations' => ['description']]) {
-    $changelist = drush_get_option('changelist', 0);
+    $changelist = $this->getConfig()->get('changelist', 0);
     if ($changelist) {
       $changes = $this->_config_partial_export_get_changes();
       if (!empty($changes)) {
@@ -109,11 +110,11 @@ class ConfigPartialExportCommands extends DrushCommands {
     $choices = drush_map_assoc(array_keys($config_directories));
     unset($choices[CONFIG_ACTIVE_DIRECTORY]);
     // Throw a warning if someone wants to show destinations but supplied one.
-    if (!empty($label) and drush_get_option('show-destinations')) {
+    if (!empty($label) and $this->getConfig()->get('show-destinations')) {
       $this->logger()->error('Error, supplied both a destination and the list. Using the supplied destination and ignoring the list');
     }
     // List out the destinations to select.
-    elseif (drush_get_option('show-destinations')) {
+    elseif ($this->getConfig()->get('show-destinations')) {
       $label = $this->_choice($choices, 'Choose a destination.');
       if (empty($label)) {
         return $this->_user_abort();
@@ -308,7 +309,7 @@ class ConfigPartialExportCommands extends DrushCommands {
     // If the user specified --choice, then make an
     // automatic selection.  Cancel if the choice is
     // not an available option.
-    if (($choice = drush_get_option('choice', FALSE)) !== FALSE) {
+    if (($choice = $this->getConfig()->get('choice', FALSE)) !== FALSE) {
       // First check to see if $choice is one of the symbolic options
       if (array_key_exists($choice, $options)) {
         return $choice;

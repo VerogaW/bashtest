@@ -17,7 +17,8 @@ class FeedsItemGuidFormatterTest extends FeedsItemFormatterTestBase {
 
     // Set display mode for feeds_item to feeds_item_guid on article content
     // type.
-    entity_get_display('node', 'article', 'default')
+    $this->container->get('entity_display.repository')
+      ->getViewDisplay('node', 'article', 'default')
       ->setComponent('feeds_item', [
         'type' => 'feeds_item_guid',
         'weight' => 1,
@@ -40,7 +41,9 @@ class FeedsItemGuidFormatterTest extends FeedsItemFormatterTestBase {
     $article->feeds_item->guid = $input;
 
     // Display the article and test we are getting correct output for guid.
-    $display = entity_get_display($article->getEntityTypeId(), $article->bundle(), 'default');
+    $display = $this->container->get('entity_display.repository')
+      ->getViewDisplay($article->getEntityTypeId(), $article->bundle(), 'default');
+
     $content = $display->build($article);
     $rendered_content = $this->container->get('renderer')->renderRoot($content);
     if ($expected) {

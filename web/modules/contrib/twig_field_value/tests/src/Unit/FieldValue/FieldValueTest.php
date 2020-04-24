@@ -18,18 +18,11 @@ class FieldValueTest extends UnitTestCase {
    */
   protected $extension;
 
+  /**
+   * {@inheritdoc}
+   */
   protected function setUp() {
     $this->extension = new FieldValueExtension();
-  }
-
-  /**
-   * Asserts the twig extension machine name.
-   *
-   * @covers ::getName
-   */
-  public function testExtensionName() {
-    $name = $this->extension->getName();
-    $this->assertEquals('twig_field_value', $name);
   }
 
   /**
@@ -84,16 +77,30 @@ class FieldValueTest extends UnitTestCase {
    */
   public function providerTestFieldValue() {
     return [
+      [NULL, NULL],
       [NULL, []],
       [NULL, ['#items' => 'foo']],
       [NULL, ['#theme' => 'item_list']],
       [NULL, ['#theme' => 'field']],
-      [[0 => 'this value'], ['#theme' => 'field', '#items' => [0 => 'dummy'], 0 => 'this value']],
-      [[
-          0 => 'zero',
-          1 => 'one',
-          2 => 'two',
-          3 => 'three',
+      [
+        [
+          0 => ['#markup' => 'this value'],
+        ],
+        [
+          '#theme' => 'field',
+          '#items' => [
+            0 => 'dummy',
+          ],
+          0 => [
+            '#markup' => 'this value',
+          ],
+        ],
+      ],
+      [
+        [
+          0 => ['#markup' => 'zero'],
+          2 => ['#markup' => 'two'],
+          3 => ['#markup' => 'three'],
         ],
         [
           '#theme' => 'field',
@@ -103,11 +110,12 @@ class FieldValueTest extends UnitTestCase {
             2 => 'dummy',
             3 => 'dummy',
           ],
-          0 => 'zero',
-          1 => 'one',
-          2 => 'two',
-          3 => 'three',
-      ]],
+          0 => ['#markup' => 'zero'],
+          2 => ['#markup' => 'two'],
+          3 => ['#markup' => 'three'],
+        ],
+      ],
     ];
   }
+
 }

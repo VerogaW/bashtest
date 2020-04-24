@@ -122,6 +122,9 @@ class GroupMenu extends GroupContentEnablerBase {
     $config = parent::defaultConfiguration();
     $config['entity_cardinality'] = 1;
     $config['node_form_group_menu'] = 1;
+    $config['auto_create_group_menu'] = FALSE;
+    $config['auto_create_home_link'] = FALSE;
+    $config['auto_create_home_link_title'] = 'Home';
     return $config;
   }
 
@@ -130,13 +133,44 @@ class GroupMenu extends GroupContentEnablerBase {
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildConfigurationForm($form, $form_state);
-
+    $configuration = $this->getConfiguration();
     // Disable the entity cardinality field as the functionality of this module
     // relies on a cardinality of 1. We don't just hide it, though, to keep a UI
     // that's consistent with other content enabler plugins.
     $info = $this->t("This field has been disabled by the plugin to guarantee the functionality that's expected of it.");
     $form['entity_cardinality']['#disabled'] = TRUE;
     $form['entity_cardinality']['#description'] .= '<br /><em>' . $info . '</em>';
+
+    $form['auto_create_group_menu'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Automatically create a menu when a group is created.'),
+      '#description' => $this->t('The menu will be added to the new group as a group menu. The menu will be deleted when group is deleted.'),
+      '#default_value' => $configuration['auto_create_group_menu'],
+    ];
+
+    $form['auto_create_home_link'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Automatically create a "Home" link for the menu.'),
+      '#description' => $this->t('The "Home" link will link to the canonical URL of the group.'),
+      '#default_value' => $configuration['auto_create_home_link'],
+      '#states' => [
+        'visible' => [
+          ':input[name="auto_create_group_menu"]' => ['checked' => TRUE],
+        ],
+      ],
+    ];
+
+    $form['auto_create_home_link_title'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Link title'),
+      '#default_value' => $configuration['auto_create_home_link_title'],
+      '#required' => TRUE,
+      '#states' => [
+        'visible' => [
+          ':input[name="auto_create_home_link"]' => ['checked' => TRUE],
+        ],
+      ],
+    ];
 
     return $form;
   }

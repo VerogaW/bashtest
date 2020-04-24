@@ -81,8 +81,8 @@ class TextTest extends FieldTargetTestBase {
     $container->set('entity_type.manager', $manager);
     \Drupal::setContainer($container);
 
-    $this->assertSame('Format: <em class="placeholder">Test filter</em>', (string) $this->target->getSummary());
-    $this->assertEquals('', (string) $this->target->getSummary());
+    $this->assertSame('Format: <em class="placeholder">Test filter</em>', (string) current($this->target->getSummary()));
+    $this->assertEquals([], $this->target->getSummary());
   }
 
 }

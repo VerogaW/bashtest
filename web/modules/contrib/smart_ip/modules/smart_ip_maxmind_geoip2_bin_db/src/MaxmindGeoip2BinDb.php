@@ -32,12 +32,12 @@ class MaxmindGeoip2BinDb {
   /**
    * MaxMind GeoIP2 licensed version download URL.
    */
-  const LINCENSED_DL_URL = 'http://download.maxmind.com/app/geoip_download';
+  const LINCENSED_DL_URL = 'https://download.maxmind.com/app/geoip_download';
 
   /**
    * MaxMind GeoIP2 lite or free version download URL.
    */
-  const LITE_DL_URL = 'http://geolite.maxmind.com/download/geoip/database';
+  const LITE_DL_URL = 'https://geolite.maxmind.com/download/geoip/database';
 
   /**
    * MaxMind GeoIP2 licensed version city edition binary database filename.

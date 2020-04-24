@@ -19,7 +19,8 @@ class FeedsItemUrlFormatterTest extends FeedsItemFormatterTestBase {
   public function testFeedsItemUrlFormatter($input, $expected) {
     // Set display mode for feeds_item to feeds_item_url on article content
     // type.
-    entity_get_display('node', 'article', 'default')
+    $this->container->get('entity_display.repository')
+      ->getViewDisplay('node', 'article', 'default')
       ->setComponent('feeds_item', [
         'type' => 'feeds_item_url',
         'settings' => ['url_plain' => FALSE],
@@ -34,7 +35,9 @@ class FeedsItemUrlFormatterTest extends FeedsItemFormatterTestBase {
     $article->feeds_item->url = $input;
 
     // Display the article and test we are getting correct output for url.
-    $display = entity_get_display($article->getEntityTypeId(), $article->bundle(), 'default');
+    $display = $this->container->get('entity_display.repository')
+      ->getViewDisplay($article->getEntityTypeId(), $article->bundle(), 'default');
+
     $content = $display->build($article);
     $rendered_content = $this->container->get('renderer')->renderRoot($content);
     if ($expected) {
@@ -70,7 +73,8 @@ class FeedsItemUrlFormatterTest extends FeedsItemFormatterTestBase {
 
     // Set display mode for feeds_item to feeds_item_url on article content
     // type with plain_text_url setting on.
-    entity_get_display('node', 'article', 'default')
+    $this->container->get('entity_display.repository')
+      ->getViewDisplay('node', 'article', 'default')
       ->setComponent('feeds_item', [
         'type' => 'feeds_item_url',
         'settings' => ['url_plain' => TRUE],
@@ -84,7 +88,9 @@ class FeedsItemUrlFormatterTest extends FeedsItemFormatterTestBase {
     $article = $this->createNodeWithFeedsItem($feed);
     $article->feeds_item->url = $input;
 
-    $display = entity_get_display($article->getEntityTypeId(), $article->bundle(), 'default');
+    $display = $this->container->get('entity_display.repository')
+      ->getViewDisplay($article->getEntityTypeId(), $article->bundle(), 'default');
+
     $content = $display->build($article);
     $rendered_content = $this->container->get('renderer')->renderRoot($content);
 

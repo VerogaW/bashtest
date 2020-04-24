@@ -102,7 +102,8 @@ EOD;
    * Tests that a missing path will throw an exception.
    */
   public function testMigrateExceptionPathMissing() {
-    $this->setExpectedException(\InvalidArgumentException::class, 'You must declare the "path" to the source CSV file in your source settings.');
+    $this->expectException(\InvalidArgumentException::class);
+    $this->expectExceptionMessage('You must declare the "path" to the source CSV file in your source settings.');
     new CSV([], $this->pluginId, $this->pluginDefinition, $this->migration);
   }
 
@@ -113,7 +114,8 @@ EOD;
     $configuration = [
       'path' => $this->standardCharsPath,
     ];
-    $this->setExpectedException(\InvalidArgumentException::class, 'You must declare "ids" as a unique array of fields in your source settings.');
+    $this->expectException(\InvalidArgumentException::class);
+    $this->expectExceptionMessage('You must declare "ids" as a unique array of fields in your source settings.');
     new CSV($configuration, $this->pluginId, $this->pluginDefinition, $this->migration);
   }
 
@@ -357,7 +359,8 @@ EOD;
     ];
 
     $csv = new CSV($configuration, $this->pluginId, $this->pluginDefinition, $this->migration);
-    $this->setExpectedException(Warning::class, 'fopen(non-existent-path): failed to open stream: No such file or directory');
+    $this->expectException(Warning::class);
+    $this->expectExceptionMessage('fopen(non-existent-path): failed to open stream: No such file or directory');
     $csv->initializeIterator();
   }
 

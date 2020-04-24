@@ -21,6 +21,7 @@ class GroupMenuListBuilder extends MenuListBuilder {
     }
 
     // Load all the group menu content to exclude.
+    /** @var \Drupal\group\Entity\GroupContentInterface[] $group_contents */
     $group_contents = \Drupal::entityTypeManager()
       ->getStorage('group_content')
       ->loadByProperties([
@@ -28,8 +29,11 @@ class GroupMenuListBuilder extends MenuListBuilder {
       ]);
     $menus = [];
     foreach ($group_contents as $group_content) {
-      /** @var \Drupal\group\Entity\GroupContentInterface $group_content */
-      $menu_name = $group_content->getEntity()->id();
+      $menu = $group_content->getEntity();
+      if (!$menu) {
+        continue;
+      }
+      $menu_name = $menu->id();
       if (!in_array($menu_name, $menus)) {
         $menus[] = $menu_name;
       }

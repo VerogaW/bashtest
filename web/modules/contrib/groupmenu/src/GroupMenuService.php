@@ -195,6 +195,11 @@ class GroupMenuService implements GroupMenuServiceInterface {
           ->loadByProperties(['type' => array_keys($group_content_types)]);
 
         foreach ($group_contents as $group_content) {
+          // Make sure the group and entity IDs are set in the group content
+          // entity.
+          if (!isset($group_content->gid->target_id) || !isset($group_content->entity_id->target_id)) {
+            continue;
+          }
           /** @var \Drupal\group\Entity\GroupContentInterface $group_content */
           $this->groupMenus[$group_content->gid->target_id][$group_content->entity_id->target_id] = $menus[$group_content->entity_id->target_id];
         }

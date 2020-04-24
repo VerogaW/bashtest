@@ -97,12 +97,14 @@ function ascii_art_captcha_captcha($op, $captcha_type = '') {
         // Build CAPTCHA array.
         $captcha = [];
         $captcha['solution'] = $solution;
-        $style = 'line-height:1.1;';
+        $style = 'line-height:1.2;';
         if ($config->get('ascii_art_captcha_font_size')) {
           $style .= 'font-size:' . $config->get('ascii_art_captcha_font_size') . 'pt;';
         }
         $captcha['form']['ascii'] = [
-          '#markup' => '<pre class="ascii_art_captcha" style="' . $style . '">' . implode('<br />', $ascii_lines) . '</pre>',
+          '#type' => 'inline_template',
+          '#template' => '<pre class="ascii_art_captcha" style="' . $style . '">' . implode('<br />', $ascii_lines) . '</pre>',
+          '#cache' => ['max-age' => 0],
         ];
         $captcha['form']['captcha_response'] = [
           '#type' => 'textfield',
@@ -111,7 +113,10 @@ function ascii_art_captcha_captcha($op, $captcha_type = '') {
           '#maxlength' => 10,
           '#required' => TRUE,
           '#description' => t('Enter the code depicted in ASCII art style.'),
+          '#cache' => ['max-age' => 0],
         ];
+        \Drupal::service('page_cache_kill_switch')->trigger();
+
         return $captcha;
       }
       break;

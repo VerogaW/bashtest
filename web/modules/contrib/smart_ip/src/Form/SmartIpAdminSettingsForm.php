@@ -59,7 +59,7 @@ class SmartIpAdminSettingsForm extends ConfigFormBase {
         // Container for update status and manual update.
         $form['smart_ip_bin_database_update'] = [
           '#type'        => 'fieldset',
-          '#title'       => t('Database Update Status'),
+          '#title'       => $this->t('Database Update Status'),
           '#collapsible' => FALSE,
           '#collapsed'   => FALSE,
           '#states'      => [
@@ -75,7 +75,7 @@ class SmartIpAdminSettingsForm extends ConfigFormBase {
         }
         $form['smart_ip_bin_database_update']['smart_ip_bin_update_database'] = [
           '#type'   => 'submit',
-          '#value'  => t('Update database now'),
+          '#value'  => $this->t('Update database now'),
           '#submit' => [[$thisClass, 'manualUpdate']],
           '#prefix' => $message,
         ];
@@ -94,7 +94,7 @@ class SmartIpAdminSettingsForm extends ConfigFormBase {
         '#title' => $this->t('IP address'),
         '#description' => $this->t(
           'An IP address may be looked up by entering the address above then 
-          pressing the %lookup button below.', ['%lookup' => t('Lookup')]),
+          pressing the %lookup button below.', ['%lookup' => $this->t('Lookup')]),
       ];
 
       $storage = $form_state->getStorage();
@@ -223,7 +223,7 @@ class SmartIpAdminSettingsForm extends ConfigFormBase {
     $geotimezoneExists = \Drupal::moduleHandler()->moduleExists('geotimezone');
     if (!$geotimezoneExists) {
       $tzFormatDesc = $this->t('Please install and enable @module.', [
-        '@module' => Link::fromTextAndUrl(t('Geo Time Zone'), Url::fromUri('https://www.drupal.org/project/geotimezone'))->toString(),
+        '@module' => Link::fromTextAndUrl($this->t('Geo Time Zone'), Url::fromUri('https://www.drupal.org/project/geotimezone'))->toString(),
       ]);
     }
     else {

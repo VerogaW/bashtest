@@ -22,7 +22,7 @@ class EntityLookupTest extends KernelTestBase {
   /**
    * {@inheritdoc}
    */
-  public static $modules = [
+  protected static $modules = [
     'migrate_plus',
     'migrate',
     'user',

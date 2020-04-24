@@ -109,10 +109,14 @@ trait FeedCreationTrait {
         'target' => 'feeds_item',
         'map' => ['guid' => 'guid'],
         'unique' => ['guid' => TRUE],
+        'settings' => [],
       ],
       [
         'target' => 'title',
         'map' => ['value' => 'title'],
+        'settings' => [
+          'language' => NULL,
+        ],
       ],
     ];
   }

@@ -24,7 +24,7 @@ class ConfigPartialExportController implements ContainerInjectionInterface {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      new FileDownloadController()
+      new FileDownloadController(\Drupal::service('stream_wrapper_manager'))
     );
   }
 

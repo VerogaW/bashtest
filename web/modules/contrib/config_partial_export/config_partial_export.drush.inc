@@ -1,5 +1,7 @@
 <?php
 use Drupal\Core\Config\FileStorage;
+use Drupal\Core\Site\Settings;
+use Drush\Drush;
 use Drush\Log\LogLevel;
 use Drupal\Core\Config\StorageInterface;
 use Drupal\Core\Config\StorageComparer;
@@ -50,7 +52,7 @@ function config_partial_export_drush_command() {
 *   Success of writing the partial config to the destination.
 */
 function drush_config_partial_export($config, $label = NULL) {
-  $changelist = drush_get_option('changelist', 0);
+  $changelist = Drush::config()->get('changelist', 0);
   if ($changelist) {
     $changes = _config_partial_export_get_changes();
     if (!empty($changes)) {
@@ -68,12 +70,12 @@ function drush_config_partial_export($config, $label = NULL) {
   $choices = drush_map_assoc(array_keys($config_directories));
   unset($choices[CONFIG_ACTIVE_DIRECTORY]);
   // Throw a warning if someone wants to show destinations but supplied one.
-  if (!empty($label) and drush_get_option('show-destinations')) {
+  if (!empty($label) and Drush::config()->get('show-destinations')) {
     drush_log('Error, supplied both a destination and the list. Using the supplied destination and ignoring the list',
     LogLevel::ERROR);
   }
   // List out the destinations to select.
-  elseif (drush_get_option('show-destinations')) {
+  elseif (Drush::config()->get('show-destinations')) {
     $label = drush_choice($choices, 'Choose a destination.');
     if (empty($label)) {
       return drush_user_abort();
@@ -92,7 +94,7 @@ function drush_config_partial_export($config, $label = NULL) {
     return drush_set_error('NO_CONFIG_DEST', $msg);
   }
 
-  $destination_dir = config_get_config_directory($label);
+  $destination_dir = Settings::get('CONFIG_ACTIVE_DIRECTORY')($label);
   $destination_storage = new FileStorage($destination_dir);
   $source_storage = \Drupal::service('config.storage');
 

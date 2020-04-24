@@ -210,18 +210,9 @@ EOT;
     $file = $file_blob->transform($value, $executable, $row, 'destination_property');
     $this->assertEquals('public://cat.jpeg', $file);
     $this->assertEquals($this->sha1sum, sha1_file($file));
-    // TODO: remove after 8.6 is no longer supported in
-    // https://www.drupal.org/project/migrate_plus/issues/3035587
-    if (version_compare(\Drupal::VERSION, '8.7', '>=')) {
-      $configuration = [
-        'reuse' => FileSystemInterface::EXISTS_ERROR,
-      ];
-    }
-    else {
-      $configuration = [
-        'reuse' => FILE_EXISTS_ERROR,
-      ];
-    }
+    $configuration = [
+      'reuse' => FileSystemInterface::EXISTS_ERROR,
+    ];
     /** @var \Drupal\migrate_plus\Plugin\migrate\process\FileBlob $file_blob */
     $file_blob = $this->pluginManager->createInstance('file_blob', $configuration);
     /** @var \Drupal\migrate\MigrateExecutableInterface $executable */

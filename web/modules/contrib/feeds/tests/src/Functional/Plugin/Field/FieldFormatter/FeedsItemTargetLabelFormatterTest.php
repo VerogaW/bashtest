@@ -17,7 +17,8 @@ class FeedsItemTargetLabelFormatterTest extends FeedsItemFormatterTestBase {
 
     // Set display mode for feeds_item to feeds_item_target_label on article
     // content type.
-    entity_get_display('node', 'article', 'default')
+    $display = $this->container->get('entity_display.repository')
+      ->getViewDisplay('node', 'article', 'default')
       ->setComponent('feeds_item', [
         'type' => 'feeds_item_target_label',
         'settings' => ['link' => FALSE],
@@ -39,7 +40,9 @@ class FeedsItemTargetLabelFormatterTest extends FeedsItemFormatterTestBase {
     $article = $this->createNodeWithFeedsItem($feed);
 
     // Display the article and test we are getting correct output for label.
-    $display = entity_get_display($article->getEntityTypeId(), $article->bundle(), 'default');
+    $display = $this->container->get('entity_display.repository')
+      ->getViewDisplay($article->getEntityTypeId(), $article->bundle(), 'default');
+
     $content = $display->build($article);
     $rendered_content = $this->container->get('renderer')->renderRoot($content);
     $this->htmlOutput($rendered_content);
@@ -61,7 +64,8 @@ class FeedsItemTargetLabelFormatterTest extends FeedsItemFormatterTestBase {
 
     // Set display mode for feeds_item to feeds_item_target_label on article
     // content type.
-    entity_get_display('node', 'article', 'default')
+    $display = $this->container->get('entity_display.repository')
+      ->getViewDisplay('node', 'article', 'default')
       ->setComponent('feeds_item', [
         'type' => 'feeds_item_target_label',
         'settings' => ['link' => TRUE],
@@ -89,7 +93,9 @@ class FeedsItemTargetLabelFormatterTest extends FeedsItemFormatterTestBase {
     $article = $this->createNodeWithFeedsItem($feed);
 
     // Display the article and test we are getting correct output for label.
-    $display = entity_get_display($article->getEntityTypeId(), $article->bundle(), 'default');
+    $display = $this->container->get('entity_display.repository')
+      ->getViewDisplay($article->getEntityTypeId(), $article->bundle(), 'default');
+
     $content = $display->build($article);
     $rendered_content = $renderer->renderRoot($content);
     $this->htmlOutput($rendered_content);

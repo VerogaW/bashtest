@@ -23,6 +23,11 @@ class EntityLocalActionTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
+  protected $defaultTheme = 'stark';
+
+  /**
+   * {@inheritdoc}
+   */
   protected function setUp() {
     parent::setUp();
 
@@ -37,7 +42,7 @@ class EntityLocalActionTest extends BrowserTestBase {
    */
   public function testCollectionLocalAction() {
     $this->drupalGet('/entity_test_enhanced');
-    $this->assertSession()->linkByHrefExists('/entity_test_enhanced/add');
+    $this->assertSession()->linkByHrefExists('/entity_test_enhanced/add?destination=/entity_test_enhanced');
     $this->assertSession()->linkExists('Add enhanced entity');
   }
 

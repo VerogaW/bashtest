@@ -15,24 +15,27 @@ class GroupMenuContentListBuilder extends GroupContentListBuilder {
    * {@inheritdoc}
    */
   protected function getEntityIds() {
-    $query = $this->getStorage()->getQuery();
-    $query->sort($this->entityType->getKey('id'));
-
-    // Only show group content for the group on the route.
-    $query->condition('gid', $this->group->id());
-
-    // Filter by group menu plugins.
     $plugin_id = 'group_menu:menu';
     $group_content_types = GroupContentType::loadByContentPluginId($plugin_id);
-    if (!empty($group_content_types)) {
-      $query->condition('type', array_keys($group_content_types), 'IN');
+
+    // If we don't have any group menu plugins, we don't have any group menu's.
+    if (empty($group_content_types)) {
+      return [];
     }
+
+    $query = $this->getStorage()->getQuery();
+
+    // Filter by group menu plugins.
+    $query->condition('type', array_keys($group_content_types), 'IN');
+    // Only show group content for the group on the route.
+    $query->condition('gid', $this->group->id());
 
     // Only add the pager if a limit is specified.
     if ($this->limit) {
       $query->pager($this->limit);
     }
 
+    $query->sort($this->entityType->getKey('id'));
     return $query->execute();
   }
 

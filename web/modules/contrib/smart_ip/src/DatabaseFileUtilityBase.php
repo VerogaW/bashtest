@@ -72,7 +72,7 @@ abstract class DatabaseFileUtilityBase implements DatabaseFileUtilityInterface {
       $timeNow = strtotime('midnight', \Drupal::time()->getRequestTime());
       $lastUpdateTime = strtotime('midnight', $lastUpdateTime);
       if ($frequency == self::DOWNLOAD_WEEKLY) {
-        $wednesday = strtotime('first Wednesday', $timeNow);
+        $wednesday = strtotime('Wednesday this week', $timeNow);
         if ($wednesday <= $timeNow && $wednesday > $lastUpdateTime) {
           return TRUE;
         }

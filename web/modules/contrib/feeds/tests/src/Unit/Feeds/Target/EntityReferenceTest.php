@@ -82,6 +82,7 @@ class EntityReferenceTest extends FieldTargetTestBase {
     // @see \Drupal\feeds\Feeds\Target\EntityReference::prepareTarget()
     $container = new ContainerBuilder();
     $container->set('entity_type.manager', $this->entityTypeManager->reveal());
+    $container->set('string_translation', $this->getStringTranslationStub());
     \Drupal::setContainer($container);
 
     $method = $this->getMethod('Drupal\feeds\Feeds\Target\EntityReference', 'prepareTarget')->getClosure();
@@ -143,7 +144,7 @@ class EntityReferenceTest extends FieldTargetTestBase {
   public function testPrepareValueEmptyFeed() {
     $method = $this->getProtectedClosure($this->targetPlugin, 'prepareValue');
     $values = ['target_id' => ''];
-    $this->setExpectedException(EmptyFeedException::class);
+    $this->expectException(EmptyFeedException::class);
     $method(0, $values);
   }
 
@@ -162,7 +163,7 @@ class EntityReferenceTest extends FieldTargetTestBase {
 
     $method = $this->getProtectedClosure($this->targetPlugin, 'prepareValue');
     $values = ['target_id' => 1];
-    $this->setExpectedException(ReferenceNotFoundException::class);
+    $this->expectException(ReferenceNotFoundException::class, "Referenced entity not found for field <em class=\"placeholder\">referenceable_entity_type label</em> with value <em class=\"placeholder\">1</em>.");
     $method(0, $values);
   }
 

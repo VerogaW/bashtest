@@ -17,7 +17,8 @@ class FeedsItemTargetEntityFormatterTest extends FeedsItemFormatterTestBase {
 
     // Set display mode for feeds_item to feeds_item_target_entity_view on
     // article content type.
-    entity_get_display('node', 'article', 'default')
+    $this->container->get('entity_display.repository')
+      ->getViewDisplay('node', 'article', 'default')
       ->setComponent('feeds_item', [
         'type' => 'feeds_item_target_entity_view',
         'weight' => 1,
@@ -47,7 +48,9 @@ class FeedsItemTargetEntityFormatterTest extends FeedsItemFormatterTestBase {
 
     // Display the article and test we are getting correct output for target
     // feed entity.
-    $display = entity_get_display($article->getEntityTypeId(), $article->bundle(), 'default');
+    $display = $this->container->get('entity_display.repository')
+      ->getViewDisplay($article->getEntityTypeId(), $article->bundle(), 'default');
+
     $content = $display->build($article);
     $rendered_content = $this->container->get('renderer')->renderRoot($content);
 

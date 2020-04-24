@@ -9,8 +9,9 @@
  * Implements hook_file_download().
  */
 function config_partial_export_file_download($uri) {
-  $scheme = \Drupal::service('file_system')->uriScheme($uri);
-  $target = file_uri_target($uri);
+  $stream_wrapper_manager = \Drupal::service('stream_wrapper_manager');
+  $scheme = $stream_wrapper_manager->getScheme($uri);
+  $target = $stream_wrapper_manager->getTarget($uri);
   if ($scheme == 'temporary' && $target == 'config_partial.tar.gz') {
     $request = \Drupal::request();
     $date = DateTime::createFromFormat('U', $request->server->get('REQUEST_TIME'));

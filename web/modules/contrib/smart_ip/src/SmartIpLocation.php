@@ -92,18 +92,18 @@ class SmartIpLocation implements SmartIpLocationInterface {
   private $zip;
 
   /**
-   * The longitute.
+   * The longitude.
    *
    * @var float
    */
-  private $longitute;
+  private $longitude;
 
   /**
-   * The latitute.
+   * The latitude.
    *
    * @var float
    */
-  private $latitute;
+  private $latitude;
 
   /**
    * EU country flag.

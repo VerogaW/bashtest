@@ -23,7 +23,7 @@ class DomStrReplaceTest extends MigrateProcessTestCase {
    */
   protected $exampleConfiguration = [
     'mode' => 'attribute',
-    'expression' => '//a',
+    'xpath' => '//a',
     'attribute_options' => [
       'name' => 'href',
     ],
@@ -39,7 +39,8 @@ class DomStrReplaceTest extends MigrateProcessTestCase {
   public function testConfigValidation(array $config_overrides, $message) {
     $configuration = $config_overrides + $this->exampleConfiguration;
     $value = '<p>A simple paragraph.</p>';
-    $this->setExpectedException(InvalidPluginDefinitionException::class, $message);
+    $this->expectException(InvalidPluginDefinitionException::class);
+    $this->expectExceptionMessage($message);
     (new DomStrReplace($configuration, 'dom_str_replace', []))
       ->transform($value, $this->migrateExecutable, $this->row, 'destinationproperty');
   }
@@ -49,9 +50,9 @@ class DomStrReplaceTest extends MigrateProcessTestCase {
    */
   public function providerTestConfigEmpty() {
     $cases = [
-      'expression-null' => [
-        ['expression' => NULL],
-        "Configuration option 'expression' is required.",
+      'xpath-null' => [
+        ['xpath' => NULL],
+        "Configuration option 'xpath' is required.",
       ],
       'mode-null' => [
         ['mode' => NULL],
@@ -83,7 +84,7 @@ class DomStrReplaceTest extends MigrateProcessTestCase {
    */
   public function testTransformInvalidInput() {
     $configuration = [
-      'expression' => '//a',
+      'xpath' => '//a',
       'mode' => 'attribute',
       'attribute_options' => [
         'name' => 'href',
@@ -92,7 +93,8 @@ class DomStrReplaceTest extends MigrateProcessTestCase {
       'replace' => 'bar',
     ];
     $value = 'string';
-    $this->setExpectedException(MigrateSkipRowException::class, 'The dom_str_replace plugin in the destinationproperty process pipeline requires a \DOMDocument object. You can use the dom plugin to convert a string to \DOMDocument.');
+    $this->expectException(MigrateSkipRowException::class);
+    $this->expectExceptionMessage('The dom_str_replace plugin in the destinationproperty process pipeline requires a \DOMDocument object. You can use the dom plugin to convert a string to \DOMDocument.');
     (new DomStrReplace($configuration, 'dom_str_replace', []))
       ->transform($value, $this->migrateExecutable, $this->row, 'destinationproperty');
   }

@@ -28,7 +28,7 @@ class EntityGenerateTest extends KernelTestBase implements MigrateMessageInterfa
   /**
    * {@inheritdoc}
    */
-  public static $modules = [
+  protected static $modules = [
     'migrate_plus',
     'migrate',
     'user',
@@ -87,7 +87,7 @@ class EntityGenerateTest extends KernelTestBase implements MigrateMessageInterfa
     $this->installEntitySchema('user');
     $this->installSchema('system', ['sequences']);
     $this->installSchema('user', 'users_data');
-    $this->installConfig($this->modules);
+    $this->installConfig(self::$modules);
 
     // Create a vocabulary.
     $vocabulary = Vocabulary::create([
@@ -149,7 +149,7 @@ class EntityGenerateTest extends KernelTestBase implements MigrateMessageInterfa
 
     /** @var \Drupal\migrate\Plugin\Migration $migration */
     $migration = $this->migrationPluginManager->createStubMigration($definition);
-    /** @var EntityStorageBase $storage */
+    /** @var \Drupal\Core\Entity\EntityStorageBase $storage */
     $storage = $this->readAttribute($migration->getDestinationPlugin(), 'storage');
     $migrationExecutable = (new MigrateExecutable($migration, $this));
     $migrationExecutable->import();
@@ -264,7 +264,7 @@ class EntityGenerateTest extends KernelTestBase implements MigrateMessageInterfa
     $migration = $this->migrationPluginManager->createStubMigration($definition);
     $migrationExecutable = (new MigrateExecutable($migration, $this));
     $migrationExecutable->import();
-    $this->assertEquals('Destination field type integer is not a recognized reference type.', $migration->getIdMap()->getMessageIterator()->fetch()->message);
+    $this->assertEquals('Destination field type integer is not a recognized reference type.', $migration->getIdMap()->getMessages()->fetch()->message);
     $this->assertSame(1, $migration->getIdMap()->messageCount());
 
     // Enough context is provided so this should work.
@@ -532,6 +532,96 @@ class EntityGenerateTest extends KernelTestBase implements MigrateMessageInterfa
               'tid' => 3,
               'name' => 'Bananas',
               'description' => 'BANANAS',
+            ],
+          ],
+          'row 3' => [
+            'id' => 3,
+            'title' => 'content item 3',
+            $this->fieldName => [
+              'tid' => 1,
+              'name' => 'Grapes',
+              'description' => NULL,
+            ],
+          ],
+        ],
+        'pre seed' => [
+          'taxonomy_term' => [
+            'name' => 'Grapes',
+            'vid' => $this->vocabulary,
+            'langcode' => LanguageInterface::LANGCODE_NOT_SPECIFIED,
+          ],
+        ],
+      ],
+      'provide multiple values' => [
+        'definition' => [
+          'source' => [
+            'plugin' => 'embedded_data',
+            'data_rows' => [
+              [
+                'id' => 1,
+                'title' => 'content item 1',
+                'term' => 'Apples',
+              ],
+              [
+                'id' => 2,
+                'title' => 'content item 2',
+                'term' => 'Bananas',
+              ],
+              [
+                'id' => 3,
+                'title' => 'content item 3',
+                'term' => 'Grapes',
+              ],
+            ],
+            'ids' => [
+              'id' => ['type' => 'integer'],
+            ],
+            'constants' => [
+              'foo' => 'bar',
+            ],
+          ],
+          'process' => [
+            'id' => 'id',
+            'type' => [
+              'plugin' => 'default_value',
+              'default_value' => $this->bundle,
+            ],
+            'title' => 'title',
+            'term_upper' => [
+              'plugin' => 'callback',
+              'source' => 'term',
+              'callable' => 'strtoupper',
+            ],
+            $this->fieldName => [
+              'plugin' => 'entity_generate',
+              'source' => 'term',
+              'values' => [
+                'name' => '@term_upper',
+                'description' => 'constants/foo',
+              ],
+            ],
+          ],
+          'destination' => [
+            'plugin' => 'entity:node',
+          ],
+        ],
+        'expected' => [
+          'row 1' => [
+            'id' => 1,
+            'title' => 'content item 1',
+            $this->fieldName => [
+              'tid' => 2,
+              'name' => 'APPLES',
+              'description' => 'bar',
+            ],
+          ],
+          'row 2' => [
+            'id' => 2,
+            'title' => 'content item 2',
+            $this->fieldName => [
+              'tid' => 3,
+              'name' => 'BANANAS',
+              'description' => 'bar',
             ],
           ],
           'row 3' => [

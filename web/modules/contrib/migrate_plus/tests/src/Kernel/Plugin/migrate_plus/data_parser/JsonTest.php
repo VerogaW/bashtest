@@ -11,6 +11,9 @@ use Drupal\KernelTests\KernelTestBase;
  */
 class JsonTest extends KernelTestBase {
 
+  /**
+   * {@inheritdoc}
+   */
   public static $modules = ['migrate', 'migrate_plus'];
 
   /**

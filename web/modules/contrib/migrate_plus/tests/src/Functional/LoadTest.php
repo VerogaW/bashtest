@@ -13,11 +13,9 @@ use Drupal\Tests\BrowserTestBase;
 class LoadTest extends BrowserTestBase {
 
   /**
-   * Modules to enable.
-   *
-   * @var array
+   * {@inheritdoc}
    */
-  public static $modules = [
+  protected static $modules = [
     'migrate_plus',
     'migrate_example',
     'migrate_example_setup',
@@ -32,6 +30,11 @@ class LoadTest extends BrowserTestBase {
    * @var \Drupal\user\UserInterface
    */
   protected $user;
+
+  /**
+   * {@inheritdoc}
+   */
+  protected $defaultTheme = 'stark';
 
   /**
    * {@inheritdoc}

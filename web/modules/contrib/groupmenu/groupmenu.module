@@ -192,10 +192,11 @@ function groupmenu_preprocess_menu(&$variables) {
   if (!isset($variables['menu_name'])) {
     // In rare cases (for unknown reasons) menu_name may not be set.
     // As fallback, we can fetch it from the first menu item.
+    $variables['menu_name'] = NULL;
     $first_link = reset($variables['items']);
-    /** @var Drupal\Core\Menu\MenuLinkDefault $original_link */
-    $original_link = $first_link['original_link'];
-    $variables['menu_name'] = $original_link->getMenuName();
+    if (isset($first_link['original_link'])) {
+      $variables['menu_name'] = $first_link['original_link']->getMenuName();
+    }
   }
   if ($variables['menu_name'] == 'admin') {
     // Get group types that enabled group menu's.
@@ -253,26 +254,71 @@ function _groupmenu_filter_admin_links(array &$items, array $group_content_types
 }
 
 /**
- * Implements hook_entity_insert().
+ * Implements hook_ENTITY_TYPE_insert().
  */
-function groupmenu_entity_insert(EntityInterface $entity) {
-  groupmenu_entity_update($entity);
+function groupmenu_group_content_insert(EntityInterface $entity) {
+  groupmenu_group_content_update($entity);
 }
 
 /**
- * Implements hook_entity_update().
+ * Implements hook_ENTITY_TYPE_update().
  */
-function groupmenu_entity_update(EntityInterface $entity) {
-  if ($entity instanceof GroupContentInterface && $entity->getContentPlugin()->getPluginId() === 'group_menu:menu') {
+function groupmenu_group_content_update(EntityInterface $entity) {
+  if ($entity->getContentPlugin()->getPluginId() === 'group_menu:menu') {
     \Drupal::service('cache.groupmenu')->invalidateAll();
   }
 }
 
 /**
- * Implements hook_entity_delete().
+ * Implements hook_ENTITY_TYPE_insert().
  */
-function groupmenu_entity_delete(EntityInterface $entity) {
-  if ($entity instanceof GroupContentInterface && $entity->getContentPlugin()->getPluginId() === 'group_menu:menu') {
+function groupmenu_group_insert(EntityInterface $entity) {
+  if (!$entity->getGroupType()->hasContentPlugin('group_menu:menu')) {
+    return;
+  }
+
+  $group_type_configuration = $entity->getGroupType()->getContentPlugin('group_menu:menu')->getConfiguration();
+  $auto_create_group_menu = $group_type_configuration['auto_create_group_menu'] ?? FALSE;
+  if (!$auto_create_group_menu) {
+    return;
+  }
+
+  $group_menu = \Drupal::entityTypeManager()->getStorage('menu')->create([
+    'id' => 'group-' . $entity->id() . '-menu',
+    'label' => $entity->label() . ' menu',
+    'description' => 'Menu for ' . $entity->label(),
+  ]);
+  $group_menu->save();
+
+  // Add menu link for group if enabled.
+  $auto_create_home_link = $group_type_configuration['auto_create_home_link'] ?? FALSE;
+  if ($auto_create_home_link) {
+    \Drupal::entityTypeManager()->getStorage('menu_link_content')->create([
+      'title' => $group_type_configuration['auto_create_home_link_title'] ?? t('Home'),
+      'link' => ['uri' => 'internal:/group/' . $entity->id()],
+      'menu_name' => $group_menu->id(),
+      'expanded' => TRUE,
+    ])->save();
+  }
+
+  $entity->addContent($group_menu, 'group_menu:menu');
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete().
+ */
+function groupmenu_group_content_delete(EntityInterface $entity) {
+  if ($entity->getContentPlugin()->getPluginId() === 'group_menu:menu') {
     \Drupal::service('cache.groupmenu')->invalidateAll();
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete().
+ */
+function groupmenu_group_delete(EntityInterface $entity) {
+  $autocreated_menu = \Drupal::entityTypeManager()->getStorage('menu')->load('group-' . $entity->id() . '-menu');
+  if ($autocreated_menu) {
+    $autocreated_menu->delete();
   }
 }

@@ -2,8 +2,8 @@
 
 namespace Drupal\Tests\migrate_plus\Kernel\Plugin\migrate_plus\data_parser;
 
-use Drupal\Migrate\MigrateException;
 use Drupal\KernelTests\KernelTestBase;
+use Drupal\migrate\MigrateException;
 
 /**
  * Test of the data_parser SimpleXml migrate_plus plugin.
@@ -130,11 +130,10 @@ class SimpleXmlTest extends KernelTestBase {
   public function testReadBrokenXmlMissingTag() {
     $url = $this->path . '/tests/data/simple_xml_broken_missing_tag.xml';
     $this->configuration['urls'][0] = $url;
-
-    $this->setExpectedException(MigrateException::class);
+    $this->expectException(MigrateException::class);
     $this->expectExceptionMessageRegExp('/^Fatal Error 73/');
     $parser = $this->pluginManager->createInstance('simple_xml', $this->configuration);
-    $this->assertResults($this->expected, $parser);
+    $parser->next();
   }
 
   /**
@@ -146,10 +145,11 @@ class SimpleXmlTest extends KernelTestBase {
     $url = $this->path . '/tests/data/simple_xml_broken_tag_mismatch.xml';
     $this->configuration['urls'][0] = $url;
 
-    $this->setExpectedException(MigrateException::class);
+    $this->expectException(MigrateException::class);
     $this->expectExceptionMessageRegExp('/^Fatal Error 76/');
+
     $parser = $this->pluginManager->createInstance('simple_xml', $this->configuration);
-    $this->assertResults($this->expected, $parser);
+    $parser->next();
   }
 
   /**
@@ -161,10 +161,10 @@ class SimpleXmlTest extends KernelTestBase {
     $url = $this->path . '/tests/data/simple_xml_non_xml.xml';
     $this->configuration['urls'][0] = $url;
 
-    $this->setExpectedException(MigrateException::class);
+    $this->expectException(MigrateException::class);
     $this->expectExceptionMessageRegExp('/^Fatal Error 46/');
     $parser = $this->pluginManager->createInstance('simple_xml', $this->configuration);
-    $this->assertResults($this->expected, $parser);
+    $parser->next();
   }
 
   /**
@@ -176,9 +176,10 @@ class SimpleXmlTest extends KernelTestBase {
     $url = $this->path . '/tests/data/simple_xml_non_existing.xml';
     $this->configuration['urls'][0] = $url;
 
-    $this->setExpectedException(MigrateException::class, 'file parser plugin: could not retrieve data from modules/migrate_plus/tests/data/simple_xml_non_existing.xml');
+    $this->expectException(MigrateException::class);
+    $this->expectExceptionMessage('file parser plugin: could not retrieve data from modules/contrib/migrate_plus/tests/data/simple_xml_non_existing.xml');
     $parser = $this->pluginManager->createInstance('simple_xml', $this->configuration);
-    $this->assertResults($this->expected, $parser);
+    $parser->next();
   }
 
   /**

@@ -325,7 +325,9 @@ class File extends EntityReference {
         break;
     }
 
-    return $summary . '<br>' . $this->t('Exsting files: %existing', ['%existing' => $message]);
+    $summary[] = $this->t('Existing files: %existing', ['%existing' => $message]);
+
+    return $summary;
   }
 
   /**

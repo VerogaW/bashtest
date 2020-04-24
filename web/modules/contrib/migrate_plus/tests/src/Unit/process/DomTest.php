@@ -21,7 +21,8 @@ class DomTest extends MigrateProcessTestCase {
   public function testConfigMethodEmpty() {
     $configuration = [];
     $value = '<p>A simple paragraph.</p>';
-    $this->setExpectedException(\InvalidArgumentException::class, 'The "method" must be set.');
+    $this->expectException(\InvalidArgumentException::class);
+    $this->expectExceptionMessage('The "method" must be set.');
     (new Dom($configuration, 'dom', []))
       ->transform($value, $this->migrateExecutable, $this->row, 'destinationproperty');
   }
@@ -32,7 +33,8 @@ class DomTest extends MigrateProcessTestCase {
   public function testConfigMethodInvalid() {
     $configuration['method'] = 'invalid';
     $value = '<p>A simple paragraph.</p>';
-    $this->setExpectedException(\InvalidArgumentException::class, 'The "method" must be "import" or "export".');
+    $this->expectException(\InvalidArgumentException::class);
+    $this->expectExceptionMessage('The "method" must be "import" or "export".');
     (new Dom($configuration, 'dom', []))
       ->transform($value, $this->migrateExecutable, $this->row, 'destinationproperty');
   }
@@ -54,7 +56,8 @@ class DomTest extends MigrateProcessTestCase {
   public function testImportNonRootInvalidInput() {
     $configuration['method'] = 'import';
     $value = [1, 1];
-    $this->setExpectedException(MigrateException::class, 'Cannot import a non-string value.');
+    $this->expectException(MigrateException::class);
+    $this->expectExceptionMessage('Cannot import a non-string value.');
     (new Dom($configuration, 'dom', []))
       ->transform($value, $this->migrateExecutable, $this->row, 'destinationproperty');
   }
@@ -76,7 +79,8 @@ class DomTest extends MigrateProcessTestCase {
    */
   public function testExportNonRootInvalidInput() {
     $configuration['method'] = 'export';
-    $this->setExpectedException(MigrateException::class, 'Cannot export a "string".');
+    $this->expectException(MigrateException::class);
+    $this->expectExceptionMessage('Cannot export a "string".');
     (new Dom($configuration, 'dom', []))
       ->transform('string is not DOMDocument', $this->migrateExecutable, $this->row, 'destinationproperty');
   }

@@ -1,0 +1,17 @@
+***************
+*** 17,23 ****
+      $plugin_id = 'group_menu:menu';
+      $group_content_types = GroupContentType::loadByContentPluginId($plugin_id);
+      if (empty($group_content_types)) {
+-       return [];
+      }
+  
+      // Load all the group menu content to exclude.
+--- 17,23 ----
+      $plugin_id = 'group_menu:menu';
+      $group_content_types = GroupContentType::loadByContentPluginId($plugin_id);
+      if (empty($group_content_types)) {
++       return parent::getEntityIds();
+      }
+  
+      // Load all the group menu content to exclude.

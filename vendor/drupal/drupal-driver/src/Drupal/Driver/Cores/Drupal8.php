@@ -3,12 +3,14 @@
 namespace Drupal\Driver\Cores;
 
 use Drupal\Core\DrupalKernel;
+use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Driver\Exception\BootstrapException;
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\language\Entity\ConfigurableLanguage;
+use Drupal\mailsystem\MailsystemManager;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
-use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\taxonomy\TermInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,6 +19,17 @@ use Symfony\Component\HttpFoundation\Request;
  * Drupal 8 core.
  */
 class Drupal8 extends AbstractCore {
+
+  /**
+   * Tracks original configuration values.
+   *
+   * This is necessary since configurations modified here are actually saved so
+   * that they persist values across bootstraps.
+   *
+   * @var array
+   *   An array of data, keyed by configuration name.
+   */
+  protected $originalConfiguration = [];
 
   /**
    * {@inheritdoc}
@@ -358,13 +371,28 @@ class Drupal8 extends AbstractCore {
   }
 
   /**
+   * Expands specified base fields on the entity object.
+   *
+   * @param string $entity_type
+   *   The entity type for which to return the field types.
+   * @param \stdClass $entity
+   *   Entity object.
+   * @param array $base_fields
+   *   Base fields to be expanded in addition to user defined fields.
+   */
+  public function expandEntityBaseFields($entity_type, \stdClass $entity, array $base_fields) {
+    $this->expandEntityFields($entity_type, $entity, $base_fields);
+  }
+
+  /**
    * {@inheritdoc}
    */
-  public function getEntityFieldTypes($entity_type) {
+  public function getEntityFieldTypes($entity_type, array $base_fields = array()) {
     $return = array();
     $fields = \Drupal::entityManager()->getFieldStorageDefinitions($entity_type);
     foreach ($fields as $field_name => $field) {
-      if ($this->isField($entity_type, $field_name)) {
+      if ($this->isField($entity_type, $field_name)
+        || (in_array($field_name, $base_fields) && $this->isBaseField($entity_type, $field_name))) {
         $return[$field_name] = $field->getType();
       }
     }
@@ -377,6 +405,14 @@ class Drupal8 extends AbstractCore {
   public function isField($entity_type, $field_name) {
     $fields = \Drupal::entityManager()->getFieldStorageDefinitions($entity_type);
     return (isset($fields[$field_name]) && $fields[$field_name] instanceof FieldStorageConfig);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function isBaseField($entity_type, $field_name) {
+    $fields = \Drupal::entityManager()->getFieldStorageDefinitions($entity_type);
+    return (isset($fields[$field_name]) && $fields[$field_name] instanceof BaseFieldDefinition);
   }
 
   /**
@@ -424,6 +460,13 @@ class Drupal8 extends AbstractCore {
   /**
    * {@inheritdoc}
    */
+  public function configGetOriginal($name, $key = '') {
+    return \Drupal::config($name)->getOriginal($key, FALSE);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function configSet($name, $key, $value) {
     \Drupal::configFactory()->getEditable($name)
       ->set($key, $value)
@@ -464,9 +507,131 @@ class Drupal8 extends AbstractCore {
    * {@inheritdoc}
    */
   public function entityDelete($entity_type, $entity) {
-    $entity = $entity instanceof ContentEntityInterface ? $entity : entity_load($entity_type, $entity->id);
-    if ($entity instanceof ContentEntityInterface) {
+    $entity = $entity instanceof EntityInterface ? $entity : entity_load($entity_type, $entity->id);
+    if ($entity instanceof EntityInterface) {
       $entity->delete();
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function startCollectingMail() {
+    $config = \Drupal::configFactory()->getEditable('system.mail');
+    $data = $config->getRawData();
+
+    // Save the values for restoration after.
+    $this->storeOriginalConfiguration('system.mail', $data);
+
+    // @todo Use a collector that supports html after D#2223967 lands.
+    $data['interface'] = ['default' => 'test_mail_collector'];
+    $config->setData($data)->save();
+    // Disable the mail system module's mail if enabled.
+    $this->startCollectingMailSystemMail();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function stopCollectingMail() {
+    $config = \Drupal::configFactory()->getEditable('system.mail');
+    $config->setData($this->originalConfiguration['system.mail'])->save();
+    // Re-enable the mailsystem module's mail if enabled.
+    $this->stopCollectingMailSystemMail();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getMail() {
+    \Drupal::state()->resetCache();
+    $mail = \Drupal::state()->get('system.test_mail_collector') ?: [];
+    // Discard cancelled mail.
+    $mail = array_values(array_filter($mail, function ($mailItem) {
+      return ($mailItem['send'] == TRUE);
+    }));
+    return $mail;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function clearMail() {
+    \Drupal::state()->set('system.test_mail_collector', []);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function sendMail($body = '', $subject = '', $to = '', $langcode = '') {
+    // Send the mail, via the system module's hook_mail.
+    $params['context']['message'] = $body;
+    $params['context']['subject'] = $subject;
+    $mailManager = \Drupal::service('plugin.manager.mail');
+    $result = $mailManager->mail('system', '', $to, $langcode, $params, NULL, TRUE);
+    return $result;
+  }
+
+  /**
+   * If the Mail System module is enabled, collect that mail too.
+   *
+   * @see MailsystemManager::getPluginInstance()
+   */
+  protected function startCollectingMailSystemMail() {
+    if (\Drupal::moduleHandler()->moduleExists('mailsystem')) {
+      $config = \Drupal::configFactory()->getEditable('mailsystem.settings');
+      $data = $config->getRawData();
+
+      // Track original data for restoration.
+      $this->storeOriginalConfiguration('mailsystem.settings', $data);
+
+      // Convert all of the 'senders' to the test collector.
+      $data = $this->findMailSystemSenders($data);
+      $config->setData($data)->save();
+    }
+  }
+
+  /**
+   * Find and replace all the mail system sender plugins with the test plugin.
+   *
+   * This method calls itself recursively.
+   */
+  protected function findMailSystemSenders(array $data) {
+    foreach ($data as $key => $values) {
+      if (is_array($values)) {
+        if (isset($values[MailsystemManager::MAILSYSTEM_TYPE_SENDING])) {
+          $data[$key][MailsystemManager::MAILSYSTEM_TYPE_SENDING] = 'test_mail_collector';
+        }
+        else {
+          $data[$key] = $this->findMailSystemSenders($values);
+        }
+      }
+    }
+    return $data;
+  }
+
+  /**
+   * If the Mail System module is enabled, stop collecting those mails.
+   */
+  protected function stopCollectingMailSystemMail() {
+    if (\Drupal::moduleHandler()->moduleExists('mailsystem')) {
+      \Drupal::configFactory()->getEditable('mailsystem.settings')->setData($this->originalConfiguration['mailsystem.settings'])->save();
+    }
+  }
+
+  /**
+   * Store the original value for a piece of configuration.
+   *
+   * If an original value has previously been stored, it is not updated.
+   *
+   * @param string $name
+   *   The name of the configuration.
+   * @param mixed $value
+   *   The original value of the configuration.
+   */
+  protected function storeOriginalConfiguration($name, $value) {
+    if (!isset($this->originalConfiguration[$name])) {
+      $this->originalConfiguration[$name] = $value;
     }
   }
 

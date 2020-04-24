@@ -94,7 +94,7 @@ class FeedExpireHandlerTest extends FeedsUnitTestCase {
       ->expects($this->once())
       ->method('clearStates');
 
-    $this->setExpectedException(Exception::class);
+    $this->expectException(Exception::class);
     $this->handler->expireItem($this->feed, 1);
   }
 

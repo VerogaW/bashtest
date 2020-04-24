@@ -232,7 +232,7 @@ class SmartIpEventSubscriber extends SmartIpEventSubscriberBase {
         TRUE  => t('Yes'),
         FALSE => t('No'),
       ],
-      '#default_value' => $autoUpdate,
+      '#default_value' => intval($autoUpdate),
       '#states' => [
         'visible' => [
           ':input[name="smart_ip_data_source"]' => ['value' => self::sourceId()],

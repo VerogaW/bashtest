@@ -2,9 +2,9 @@
 
 namespace Drupal\Tests\migrate_plus\Unit\process;
 
-use Drupal\Tests\migrate\Unit\process\MigrateProcessTestCase;
-use Drupal\migrate_plus\Plugin\migrate\process\ArrayPop;
 use Drupal\migrate\MigrateException;
+use Drupal\migrate_plus\Plugin\migrate\process\ArrayPop;
+use Drupal\Tests\migrate\Unit\process\MigrateProcessTestCase;
 
 /**
  * Tests the array pop process plugin.
@@ -64,7 +64,8 @@ class ArrayPopTest extends MigrateProcessTestCase {
    * Test invalid input.
    */
   public function testArrayPopFromString() {
-    $this->setExpectedException(MigrateException::class, 'Input should be an array.');
+    $this->expectException(MigrateException::class);
+    $this->expectExceptionMessage('Input should be an array.');
     $this->plugin->transform('foo', $this->migrateExecutable, $this->row, 'destinationproperty');
   }
 

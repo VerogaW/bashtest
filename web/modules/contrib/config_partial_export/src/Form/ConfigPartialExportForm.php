@@ -11,7 +11,7 @@ use Drupal\Core\Config\StorageComparer;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Archiver\ArchiveTar;
 use Drupal\Component\Serialization\Yaml;
-
+use Drupal\Core\State\StateInterface;
 
 /**
  * Construct the storage changes in a configuration synchronization form.
@@ -47,6 +47,13 @@ class ConfigPartialExportForm extends FormBase {
   protected $fileSystem;
 
   /**
+   * The state service.
+   *
+   * @var \Drupal\Core\State\StateInterface
+   */
+  protected $state;
+
+  /**
    * Constructs the object.
    *
    * @param \Drupal\Core\Config\StorageInterface $active_storage
@@ -57,16 +64,20 @@ class ConfigPartialExportForm extends FormBase {
    *   Configuration manager.
    * @param \Drupal\Core\File\FileSystemInterface $file_system
    *   The file system service.
+   * @param \Drupal\Core\State\StateInterface $state
+   *   The state object of the current site instance.
    */
   public function __construct(
       StorageInterface $active_storage,
       StorageInterface $snapshot_storage,
       ConfigManagerInterface $config_manager,
-      FileSystemInterface $file_system) {
+      FileSystemInterface $file_system,
+      StateInterface $state) {
         $this->activeStorage = $active_storage;
         $this->snapshotStorage = $snapshot_storage;
         $this->configManager = $config_manager;
         $this->fileSystem = $file_system;
+        $this->state = $state;
       }
 
   /**
@@ -77,7 +88,8 @@ class ConfigPartialExportForm extends FormBase {
       $container->get('config.storage'),
       $container->get('config.storage.snapshot'),
       $container->get('config.manager'),
-      $container->get('file_system')
+      $container->get('file_system'),
+      $container->get('state')
     );
   }
 
@@ -94,7 +106,8 @@ class ConfigPartialExportForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $snapshot_comparer = new StorageComparer($this->activeStorage, $this->snapshotStorage, $this->configManager);
     $change_list = [];
-    if (!$form_state->getUserInput() && $snapshot_comparer->createChangelist()->hasChanges()) {
+
+    if ($snapshot_comparer->createChangelist()->hasChanges()) {
       $this->messenger()->addWarning($this->t('Your current configuration has changed.'));
       foreach ($snapshot_comparer->getAllCollectionNames() as $collection) {
         foreach ($snapshot_comparer->getChangelist(NULL, $collection) as $config_names) {
@@ -129,7 +142,6 @@ class ConfigPartialExportForm extends FormBase {
     $form['addSystemSiteInfo'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Add system.site info'),
-      '#default_value' => FALSE,
     ];
 
     $form['actions'] = ['#type' => 'actions'];
@@ -137,6 +149,15 @@ class ConfigPartialExportForm extends FormBase {
       '#type' => 'submit',
       '#value' => $this->t('Export'),
     ];
+
+    $last_selection = $this->state->get('config_partial_export_form');
+    $current_user_id = $this->currentUser()->id();
+    if (!empty($last_selection[$current_user_id])) {
+      $current_user_last_selection = $last_selection[$current_user_id];
+      $form['change_list']['#default_value'] = $current_user_last_selection['status_checkboxes_all'];
+      $form['addSystemSiteInfo']['#default_value'] = $current_user_last_selection['status_checkbox_system'];
+    }
+
     return $form;
   }
 
@@ -145,7 +166,18 @@ class ConfigPartialExportForm extends FormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $user_input = $form_state->getUserInput();
-    return !empty($user_input['change_list']);
+    $count = 0;
+
+    if (!empty($user_input)) {
+      foreach ($user_input['change_list'] as $change_item) {
+        if ($change_item) {
+          $count++;
+        }
+      }
+    }
+    if ((empty($user_input['change_list']) || !$count) && empty($user_input['addSystemSiteInfo'])) {
+      $form_state->setErrorByName('', $this->t('No items selected.'));
+    }
   }
 
   /**
@@ -153,9 +185,22 @@ class ConfigPartialExportForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $user_input = $form_state->getUserInput();
-    $change_list = $user_input['change_list'];
+    $change_list = $user_input['change_list'] ?: [];
     $add_system_site_info = $user_input['addSystemSiteInfo'];
-    $this->createArchive($change_list, $add_system_site_info);
+
+    $change_list_booleans = [];
+    foreach ($change_list as $key => $value) {
+      if ($value) {
+        $change_list_booleans[$key] = TRUE;
+      }
+    }
+    $last_selection = $this->state->get('config_partial_export_form');
+    $last_selection[$this->currentUser()->id()] = [
+      'status_checkboxes_all' => $change_list_booleans,
+      'status_checkbox_system' => (bool) $add_system_site_info,
+    ];
+    $this->state->set('config_partial_export_form', $last_selection);
+    $this->createArchive(array_filter($change_list), $add_system_site_info);
     $form_state->setRedirect('config_partial.export_partial_download');
   }
 
@@ -171,8 +216,8 @@ class ConfigPartialExportForm extends FormBase {
    *   If TRUE the system.site.yml file will be added to change list.
    */
   public function createArchive(array $change_list, $add_system_site_info = FALSE) {
-    $this->fileSystem->delete(file_directory_temp() . '/config_partial.tar.gz');
-    $archiver = new ArchiveTar(file_directory_temp() . '/config_partial.tar.gz', 'gz');
+    $this->fileSystem->delete($this->fileSystem->getTempDirectory()  . '/config_partial.tar.gz');
+    $archiver = new ArchiveTar($this->fileSystem->getTempDirectory() . '/config_partial.tar.gz', 'gz');
     // Get raw configuration data without overrides.
     if ($add_system_site_info && !in_array('system.site', $change_list)) {
       $change_list[] = 'system.site';
