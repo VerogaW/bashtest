@@ -76,7 +76,7 @@
         "drupal/module_filter": "3.1",
         "drupal/name": "1.x-dev",
         "drupal/paragraphs": "1.6",
-        "drupal/pathauto": "1.6",
+        "drupal/pathauto": "1.7.0",
         "drupal/recaptcha": "2.5.0",
         "drupal/redirect": "1.5.0",
         "drupal/redis": "1.4.0",
