@@ -1,17 +1,11 @@
-***************
-*** 466,472 ****
-  
-            default:
-              // If this is not a date field, nothing more to do.
--             continue;
-          }
-  
-  //        $revision = in_array($base, array('node_revision')) ? FIELD_LOAD_REVISION : FIELD_LOAD_CURRENT;
---- 466,472 ----
-  
-            default:
-              // If this is not a date field, nothing more to do.
-+             break;
-          }
-  
-  //        $revision = in_array($base, array('node_revision')) ? FIELD_LOAD_REVISION : FIELD_LOAD_CURRENT;
+--- src/CalendarHelper.php
++++ src/CalendarHelper.php
+@@ -466,7 +466,7 @@ class CalendarHelper extends DateHelper {
+ 
+           default:
+             // If this is not a date field, nothing more to do.
+-            continue;
++            break;
+         }
+ 
+ //        $revision = in_array($base, array('node_revision')) ? FIELD_LOAD_REVISION : FIELD_LOAD_CURRENT;

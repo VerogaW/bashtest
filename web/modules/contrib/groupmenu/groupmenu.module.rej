@@ -1,17 +1,11 @@
-***************
-*** 85,91 ****
-        $form['node_form_group_menu'] = [
-          '#type' => 'checkbox',
-          '#title' => t("Add group menus to node form"),
--         '#default_value' => $configuration['node_form_group_menu'] ?: FALSE,
-        ];
-      }
-    }
---- 85,91 ----
-        $form['node_form_group_menu'] = [
-          '#type' => 'checkbox',
-          '#title' => t("Add group menus to node form"),
-+         '#default_value' => isset($configuration['node_form_group_menu']) ? $configuration['node_form_group_menu'] : FALSE,
-        ];
-      }
-    }
+--- groupmenu.module
++++ groupmenu.module
+@@ -85,7 +85,7 @@ function groupmenu_form_alter(&$form, FormStateInterface $form_state, $form_id)
+       $form['node_form_group_menu'] = [
+         '#type' => 'checkbox',
+         '#title' => t("Add group menus to node form"),
+-        '#default_value' => $configuration['node_form_group_menu'] ?: FALSE,
++        '#default_value' => isset($configuration['node_form_group_menu']) ? $configuration['node_form_group_menu'] : FALSE,
+       ];
+     }
+   }

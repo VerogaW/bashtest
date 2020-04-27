@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "56bd74a4ef9c87ed6bf5f1b3e80c4375",
+    "content-hash": "83aa43bb79a79c3cbbc1232a6795226f",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5725,26 +5725,26 @@
         },
         {
             "name": "drupal/google_cse",
-            "version": "3.0.0",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/google_cse.git",
-                "reference": "8.x-3.0"
+                "reference": "8.x-3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/google_cse-8.x-3.0.zip",
-                "reference": "8.x-3.0",
-                "shasum": "401400fa0d4271fb54e07041464c75e205a69ba5"
+                "url": "https://ftp.drupal.org/files/projects/google_cse-8.x-3.1.zip",
+                "reference": "8.x-3.1",
+                "shasum": "666e3b9c372b5f8817372d4e78012fff1a245f0a"
             },
             "require": {
-                "drupal/core": "*"
+                "drupal/core": "^8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-3.0",
-                    "datestamp": "1557331684",
+                    "version": "8.x-3.1",
+                    "datestamp": "1587667569",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
