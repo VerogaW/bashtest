@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28fd643d2d41e1faaf39b5aa3d61daa3",
+    "content-hash": "7014f71e52c88d6fb753cd1088a3e8ac",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2747,26 +2747,26 @@
         },
         {
             "name": "drupal/block_class",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/block_class.git",
-                "reference": "8.x-1.1"
+                "reference": "8.x-1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/block_class-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "2ea8f50fea22ce4ddaf1ff103039ad96cf928073"
+                "url": "https://ftp.drupal.org/files/projects/block_class-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "e16ad58dcaf694e460c2ad581c3eb3c8bd0a095b"
             },
             "require": {
-                "drupal/core": "*"
+                "drupal/core": "^8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1575060180",
+                    "version": "8.x-1.2",
+                    "datestamp": "1588263516",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2837,7 +2837,7 @@
             "description": "Allows assigning classes to Blocks.",
             "homepage": "https://www.drupal.org/project/block_class",
             "support": {
-                "source": "https://cgit.drupalcode.org/block_class",
+                "source": "https://git.drupalcode.org/project/block_class",
                 "issues": "https://www.drupal.org/project/issues/block_class",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             }
@@ -2908,7 +2908,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/calendar.git",
-                "reference": "cd1936c7c91afd435c1ee541f2048596d268244f"
+                "reference": "c172a6a063e53c665a0232fdb26e70cc9d686477"
             },
             "require": {
                 "drupal/calendar_datetime": "*",
