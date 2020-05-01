@@ -20,7 +20,7 @@
         "drupal/backup_migrate": "4.1.0",
         "drupal/better_exposed_filters": "4.0.0-beta1",
         "drupal/block_class": "1.2.0",
-        "drupal/block_field": "1.0-alpha8",
+        "drupal/block_field": "1.0.0-rc1",
         "drupal/calendar": "1.x-dev",
         "drupal/captcha": "1.0.0",
         "drupal/captcha_pack": "1.0.0-alpha2",
