@@ -5227,7 +5227,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/feeds_tamper.git",
-                "reference": "ecb78e6e3271bbb7b736158e2af1e2228205d9a2"
+                "reference": "c65f54c6132d62af89ba258cb5d6ad1c8452412b"
             },
             "require": {
                 "drupal/core": "^8.5.0",
@@ -5253,7 +5253,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
