@@ -5127,7 +5127,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/feeds.git",
-                "reference": "67cb99f31f7dd38b4161b96031ddc8e8a1adfba2"
+                "reference": "4607c3cc036a4d9f0bcd221f71ad4ffde32b1d6b"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -5139,7 +5139,7 @@
                 },
                 "drupal": {
                     "version": "8.x-3.x-dev",
-                    "datestamp": "1587038946",
+                    "datestamp": "1587319095",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -5151,7 +5151,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
