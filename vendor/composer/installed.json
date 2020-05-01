@@ -3054,27 +3054,27 @@
     },
     {
         "name": "drupal/block_class",
-        "version": "1.1.0",
-        "version_normalized": "1.1.0.0",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/block_class.git",
-            "reference": "8.x-1.1"
+            "reference": "8.x-1.2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/block_class-8.x-1.1.zip",
-            "reference": "8.x-1.1",
-            "shasum": "2ea8f50fea22ce4ddaf1ff103039ad96cf928073"
+            "url": "https://ftp.drupal.org/files/projects/block_class-8.x-1.2.zip",
+            "reference": "8.x-1.2",
+            "shasum": "e16ad58dcaf694e460c2ad581c3eb3c8bd0a095b"
         },
         "require": {
-            "drupal/core": "*"
+            "drupal/core": "^8 || ^9"
         },
         "type": "drupal-module",
         "extra": {
             "drupal": {
-                "version": "8.x-1.1",
-                "datestamp": "1575060180",
+                "version": "8.x-1.2",
+                "datestamp": "1588263516",
                 "security-coverage": {
                     "status": "covered",
                     "message": "Covered by Drupal's security advisory policy"
@@ -3146,34 +3146,34 @@
         "description": "Allows assigning classes to Blocks.",
         "homepage": "https://www.drupal.org/project/block_class",
         "support": {
-            "source": "https://cgit.drupalcode.org/block_class",
+            "source": "https://git.drupalcode.org/project/block_class",
             "issues": "https://www.drupal.org/project/issues/block_class",
             "irc": "irc://irc.freenode.org/drupal-contribute"
         }
     },
     {
         "name": "drupal/block_field",
-        "version": "1.0.0-alpha8",
-        "version_normalized": "1.0.0.0-alpha8",
+        "version": "1.0.0-rc1",
+        "version_normalized": "1.0.0.0-RC1",
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/block_field.git",
-            "reference": "8.x-1.0-alpha8"
+            "reference": "8.x-1.0-rc1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/block_field-8.x-1.0-alpha8.zip",
-            "reference": "8.x-1.0-alpha8",
-            "shasum": "faffdd869263c3103f5c6a7a8d71ac440df1115f"
+            "url": "https://ftp.drupal.org/files/projects/block_field-8.x-1.0-rc1.zip",
+            "reference": "8.x-1.0-rc1",
+            "shasum": "a366cb012ece9987404168a4570c79f701e7819a"
         },
         "require": {
-            "drupal/core": "~8.0"
+            "drupal/core": "^8.7.7 || ^9"
         },
         "type": "drupal-module",
         "extra": {
             "drupal": {
-                "version": "8.x-1.0-alpha8",
-                "datestamp": "1536732480",
+                "version": "8.x-1.0-rc1",
+                "datestamp": "1588279781",
                 "security-coverage": {
                     "status": "not-covered",
                     "message": "Project has not opted into security advisory coverage!"
@@ -3220,7 +3220,7 @@
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/calendar.git",
-            "reference": "cd1936c7c91afd435c1ee541f2048596d268244f"
+            "reference": "c172a6a063e53c665a0232fdb26e70cc9d686477"
         },
         "require": {
             "drupal/calendar_datetime": "*",
@@ -5502,7 +5502,7 @@
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/feeds.git",
-            "reference": "67cb99f31f7dd38b4161b96031ddc8e8a1adfba2"
+            "reference": "4607c3cc036a4d9f0bcd221f71ad4ffde32b1d6b"
         },
         "require": {
             "drupal/core": "^8.8 || ^9"
@@ -5514,7 +5514,7 @@
             },
             "drupal": {
                 "version": "8.x-3.x-dev",
-                "datestamp": "1587038946",
+                "datestamp": "1587319095",
                 "security-coverage": {
                     "status": "not-covered",
                     "message": "Project has not opted into security advisory coverage!"
@@ -5527,7 +5527,7 @@
         "installation-source": "source",
         "notification-url": "https://packages.drupal.org/8/downloads",
         "license": [
-            "GPL-2.0+"
+            "GPL-2.0-or-later"
         ],
         "authors": [
             {
@@ -5604,7 +5604,7 @@
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/feeds_tamper.git",
-            "reference": "ecb78e6e3271bbb7b736158e2af1e2228205d9a2"
+            "reference": "c65f54c6132d62af89ba258cb5d6ad1c8452412b"
         },
         "require": {
             "drupal/core": "^8.5.0",
@@ -5631,7 +5631,7 @@
         "installation-source": "source",
         "notification-url": "https://packages.drupal.org/8/downloads",
         "license": [
-            "GPL-2.0+"
+            "GPL-2.0-or-later"
         ],
         "authors": [
             {
@@ -5962,27 +5962,44 @@
     },
     {
         "name": "drupal/geolocation",
-        "version": "1.11.0",
-        "version_normalized": "1.11.0.0",
+        "version": "3.0.0",
+        "version_normalized": "3.0.0.0",
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/geolocation.git",
-            "reference": "8.x-1.11"
+            "reference": "8.x-3.0"
         },
         "dist": {
             "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/geolocation-8.x-1.11.zip",
-            "reference": "8.x-1.11",
-            "shasum": "a401d5c576a8c4886e84272f2ca2a3c524c46869"
+            "url": "https://ftp.drupal.org/files/projects/geolocation-8.x-3.0.zip",
+            "reference": "8.x-3.0",
+            "shasum": "9281694afcc03d2577858790626f49da672ffddc"
         },
         "require": {
-            "drupal/core": "*"
+            "drupal/core": "^8.7.7 || ^9",
+            "gasparesganga/php-shapefile": ">=2.4",
+            "sibyx/phpgpx": "^1.0"
+        },
+        "require-dev": {
+            "drupal/address": "*",
+            "drupal/geofield": "*",
+            "drupal/geolocation_demo": "*",
+            "drupal/geolocation_geometry": "*",
+            "drupal/geolocation_geometry_data": "*",
+            "drupal/geolocation_geometry_natural_earth_countries": "*",
+            "drupal/geolocation_google_maps": "*",
+            "drupal/geolocation_google_maps_demo": "*",
+            "drupal/geolocation_google_static_maps": "*",
+            "drupal/geolocation_leaflet": "*",
+            "drupal/search_api": "*",
+            "drupal/search_api_location": "*",
+            "drupal/search_api_location_views": "*"
         },
         "type": "drupal-module",
         "extra": {
             "drupal": {
-                "version": "8.x-1.11",
-                "datestamp": "1505687043",
+                "version": "8.x-3.0",
+                "datestamp": "1588146894",
                 "security-coverage": {
                     "status": "covered",
                     "message": "Covered by Drupal's security advisory policy"
@@ -5996,18 +6013,19 @@
         ],
         "authors": [
             {
-                "name": "ChristianAdamski",
-                "homepage": "https://www.drupal.org/user/867880"
+                "name": "derjochenmeyer",
+                "homepage": "https://www.drupal.org/u/derjochenmeyer"
             },
             {
-                "name": "derjochenmeyer",
-                "homepage": "https://www.drupal.org/user/106134"
+                "name": "cadamski",
+                "homepage": "https://www.drupal.org/u/cadamski"
             }
         ],
         "description": "Provides a simple geolocation Drupal field type to store and display location data (lat, lng).",
         "homepage": "https://www.drupal.org/project/geolocation",
         "support": {
-            "source": "https://git.drupalcode.org/project/geolocation"
+            "source": "http://git.drupal.org/project/geolocation.git",
+            "issues": "https://www.drupal.org/project/issues/geolocation"
         }
     },
     {
@@ -7007,21 +7025,22 @@
     },
     {
         "name": "drupal/migrate_plus",
-        "version": "5.0.0",
-        "version_normalized": "5.0.0.0",
+        "version": "5.1.0",
+        "version_normalized": "5.1.0.0",
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/migrate_plus.git",
-            "reference": "8.x-5.0"
+            "reference": "8.x-5.1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/migrate_plus-8.x-5.0.zip",
-            "reference": "8.x-5.0",
-            "shasum": "5509c76498e4c6141c29db626d20904e1e8593c6"
+            "url": "https://ftp.drupal.org/files/projects/migrate_plus-8.x-5.1.zip",
+            "reference": "8.x-5.1",
+            "shasum": "1257427ab0c64459c3c1e42bb2a98d3114b77163"
         },
         "require": {
-            "drupal/core": "^8 || ^9"
+            "drupal/core": "^8.8 || ^9",
+            "php": ">=7.1"
         },
         "require-dev": {
             "drupal/migrate_example_advanced_setup": "*",
@@ -7034,8 +7053,8 @@
         "type": "drupal-module",
         "extra": {
             "drupal": {
-                "version": "8.x-5.0",
-                "datestamp": "1586234154",
+                "version": "8.x-5.1",
+                "datestamp": "1588261060",
                 "security-coverage": {
                     "status": "covered",
                     "message": "Covered by Drupal's security advisory policy"
@@ -7045,7 +7064,7 @@
         "installation-source": "dist",
         "notification-url": "https://packages.drupal.org/8/downloads",
         "license": [
-            "GPL-2.0+"
+            "GPL-2.0-or-later"
         ],
         "authors": [
             {
@@ -7120,22 +7139,23 @@
     },
     {
         "name": "drupal/migrate_source_csv",
-        "version": "3.3.0",
-        "version_normalized": "3.3.0.0",
+        "version": "3.4.0",
+        "version_normalized": "3.4.0.0",
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/migrate_source_csv.git",
-            "reference": "8.x-3.3"
+            "reference": "8.x-3.4"
         },
         "dist": {
             "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/migrate_source_csv-8.x-3.3.zip",
-            "reference": "8.x-3.3",
-            "shasum": "5a2d1d091cfe5cd213c15a9648a6d25a2f49e886"
+            "url": "https://ftp.drupal.org/files/projects/migrate_source_csv-8.x-3.4.zip",
+            "reference": "8.x-3.4",
+            "shasum": "12990ad8c3b99e16c1b2a1be955aaa28581e5d1c"
         },
         "require": {
             "drupal/core": "^8.7 || ^9.0",
-            "league/csv": "^9.1"
+            "league/csv": "^9.1",
+            "php": ">=7.1"
         },
         "require-dev": {
             "drupal/migrate_plus": "5.x-dev"
@@ -7143,8 +7163,8 @@
         "type": "drupal-module",
         "extra": {
             "drupal": {
-                "version": "8.x-3.3",
-                "datestamp": "1586234328",
+                "version": "8.x-3.4",
+                "datestamp": "1588260186",
                 "security-coverage": {
                     "status": "covered",
                     "message": "Covered by Drupal's security advisory policy"
@@ -7177,36 +7197,37 @@
     },
     {
         "name": "drupal/migrate_tools",
-        "version": "4.5.0",
-        "version_normalized": "4.5.0.0",
+        "version": "5.0.0",
+        "version_normalized": "5.0.0.0",
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/migrate_tools.git",
-            "reference": "8.x-4.5"
+            "reference": "8.x-5.0"
         },
         "dist": {
             "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/migrate_tools-8.x-4.5.zip",
-            "reference": "8.x-4.5",
-            "shasum": "06390b359bf53c50a30f2d6dc4c7542bfb1fe7ca"
+            "url": "https://ftp.drupal.org/files/projects/migrate_tools-8.x-5.0.zip",
+            "reference": "8.x-5.0",
+            "shasum": "b7c91aa6f7de9d6d548f65f83c8736e47e5926a1"
         },
         "require": {
-            "drupal/core": "^8 || ^9",
-            "drupal/migrate_plus": "^4 || ^5"
+            "drupal/core": "^8.8 | ^9",
+            "drupal/migrate_plus": "^5",
+            "php": ">=7.1"
         },
         "require-dev": {
-            "drupal/migrate_plus": "4.x-dev",
-            "drupal/migrate_source_csv": "^2.2",
+            "drupal/migrate_plus": "^5",
+            "drupal/migrate_source_csv": "^3",
             "drush/drush": "^10"
+        },
+        "suggest": {
+            "drush/drush": "^9 || ^10"
         },
         "type": "drupal-module",
         "extra": {
-            "branch-alias": {
-                "dev-4.x": "4.x-dev"
-            },
             "drupal": {
-                "version": "8.x-4.5",
-                "datestamp": "1574693285",
+                "version": "8.x-5.0",
+                "datestamp": "1588260531",
                 "security-coverage": {
                     "status": "covered",
                     "message": "Covered by Drupal's security advisory policy"
@@ -7225,12 +7246,14 @@
         ],
         "authors": [
             {
-                "name": "heddn",
-                "homepage": "https://www.drupal.org/user/1463982"
+                "name": "Mike Ryan",
+                "homepage": "https://www.drupal.org/u/mikeryan",
+                "role": "Maintainer"
             },
             {
-                "name": "mikeryan",
-                "homepage": "https://www.drupal.org/user/4420"
+                "name": "Lucas Hedding",
+                "homepage": "https://www.drupal.org/u/heddn",
+                "role": "Maintainer"
             },
             {
                 "name": "moshe weitzman",
@@ -7240,9 +7263,9 @@
         "description": "Tools to assist in developing and running migrations.",
         "homepage": "http://drupal.org/project/migrate_tools",
         "support": {
-            "source": "http://cgit.drupalcode.org/migrate_tools",
-            "issues": "http://drupal.org/project/migrate_tools",
-            "irc": "irc://irc.freenode.org/drupal-migrate"
+            "source": "https://git.drupalcode.org/project/migrate_tools",
+            "issues": "https://www.drupal.org/project/issues/migrate_tools",
+            "slack": "#migrate"
         }
     },
     {
@@ -7448,18 +7471,18 @@
     },
     {
         "name": "drupal/pathauto",
-        "version": "1.7.0",
-        "version_normalized": "1.7.0.0",
+        "version": "1.8.0",
+        "version_normalized": "1.8.0.0",
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/pathauto.git",
-            "reference": "8.x-1.7"
+            "reference": "8.x-1.8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/pathauto-8.x-1.7.zip",
-            "reference": "8.x-1.7",
-            "shasum": "39078c9c3755431fb5e69e103909fd42f531ef3c"
+            "url": "https://ftp.drupal.org/files/projects/pathauto-8.x-1.8.zip",
+            "reference": "8.x-1.8",
+            "shasum": "ede3216abb9c4f77709338d9147334c595046329"
         },
         "require": {
             "drupal/core": "^8.8 || ^9",
@@ -7472,8 +7495,8 @@
         "type": "drupal-module",
         "extra": {
             "drupal": {
-                "version": "8.x-1.7",
-                "datestamp": "1587898105",
+                "version": "8.x-1.8",
+                "datestamp": "1588103046",
                 "security-coverage": {
                     "status": "covered",
                     "message": "Covered by Drupal's security advisory policy"
@@ -7488,7 +7511,7 @@
         "installation-source": "dist",
         "notification-url": "https://packages.drupal.org/8/downloads",
         "license": [
-            "GPL-2.0+"
+            "GPL-2.0-or-later"
         ],
         "authors": [
             {
@@ -9236,18 +9259,18 @@
     },
     {
         "name": "drupal/webform",
-        "version": "5.9.0",
-        "version_normalized": "5.9.0.0",
+        "version": "5.10.0",
+        "version_normalized": "5.10.0.0",
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/webform.git",
-            "reference": "8.x-5.9"
+            "reference": "8.x-5.10"
         },
         "dist": {
             "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.9.zip",
-            "reference": "8.x-5.9",
-            "shasum": "fb49b16dd0c421512834fc50c811fa2cd6c48121"
+            "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.10.zip",
+            "reference": "8.x-5.10",
+            "shasum": "266b83c841eceea94db27a3a0f7d5cfe95b7fa0e"
         },
         "require": {
             "drupal/core": "^8.7.7 || ^9"
@@ -9279,8 +9302,8 @@
         "type": "drupal-module",
         "extra": {
             "drupal": {
-                "version": "8.x-5.9",
-                "datestamp": "1584560013",
+                "version": "8.x-5.10",
+                "datestamp": "1588090448",
                 "security-coverage": {
                     "status": "covered",
                     "message": "Covered by Drupal's security advisory policy"
@@ -9295,7 +9318,7 @@
         "installation-source": "dist",
         "notification-url": "https://packages.drupal.org/8/downloads",
         "license": [
-            "GPL-2.0+"
+            "GPL-2.0-or-later"
         ],
         "authors": [
             {
@@ -9309,8 +9332,9 @@
                 "role": "Co-maintainer"
             },
             {
-                "name": "bucefal91",
-                "homepage": "https://www.drupal.org/user/504128"
+                "name": "Contributors",
+                "homepage": "https://www.drupal.org/node/7404/committers",
+                "role": "Contributor"
             },
             {
                 "name": "fenstrat",
@@ -10097,6 +10121,56 @@
             "grid",
             "send",
             "sendgrid"
+        ]
+    },
+    {
+        "name": "gasparesganga/php-shapefile",
+        "version": "v3.2.0",
+        "version_normalized": "3.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/gasparesganga/php-shapefile.git",
+            "reference": "5e3c342c7bf1377381f49be3b7331ac4df115f88"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/gasparesganga/php-shapefile/zipball/5e3c342c7bf1377381f49be3b7331ac4df115f88",
+            "reference": "5e3c342c7bf1377381f49be3b7331ac4df115f88",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2020-04-09T17:59:25+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Shapefile\\": "src/Shapefile/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Gaspare Sganga",
+                "email": "contact@gasparesganga.com",
+                "homepage": "https://gasparesganga.com/labs/php-shapefile/",
+                "role": "Developer"
+            }
+        ],
+        "description": "PHP library to read and write ESRI Shapefiles, compatible with WKT and GeoJSON",
+        "homepage": "https://gasparesganga.com/labs/php-shapefile/",
+        "keywords": [
+            "ESRI",
+            "Shapefile",
+            "dbf",
+            "geojson",
+            "shape",
+            "shp",
+            "wkt"
         ]
     },
     {
@@ -12996,6 +13070,50 @@
             "twilio",
             "xsmtp"
         ]
+    },
+    {
+        "name": "sibyx/phpgpx",
+        "version": "1.0-RC5",
+        "version_normalized": "1.0.0.0-RC5",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Sibyx/phpGPX.git",
+            "reference": "0bb616dda0b6ff3e78c72167087c8ffe8b1cbf2e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Sibyx/phpGPX/zipball/0bb616dda0b6ff3e78c72167087c8ffe8b1cbf2e",
+            "reference": "0bb616dda0b6ff3e78c72167087c8ffe8b1cbf2e",
+            "shasum": ""
+        },
+        "require": {
+            "lib-libxml": "*",
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "evert/phpdoc-md": "~0.2.0",
+            "phpunit/phpunit": "^6.5"
+        },
+        "time": "2018-01-25T12:25:51+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "phpGPX\\": "src/phpGPX/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jakub Dubec",
+                "email": "jakub.dubec@gmail.com",
+                "homepage": "https://jakubdubec.me"
+            }
+        ],
+        "description": "A simple PHP library for GPX import/export"
     },
     {
         "name": "solarium/solarium",
