@@ -72,7 +72,7 @@
         "drupal/migrate_plus": "5.1.0",
         "drupal/migrate_scheduler": "1.0-beta1",
         "drupal/migrate_source_csv": "3.4.0",
-        "drupal/migrate_tools": "4.5.0",
+        "drupal/migrate_tools": "5.0.0",
         "drupal/module_filter": "3.1",
         "drupal/name": "1.x-dev",
         "drupal/paragraphs": "1.6",
