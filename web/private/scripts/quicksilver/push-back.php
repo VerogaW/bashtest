@@ -79,8 +79,6 @@ if (isset($buildProviders['git'])) {
     }
 }
 
-// A comment to trigger git commit.
-
 $status = push_back($fullRepository, $workDir, $upstreamRepoWithCredentials, $buildMetadata, "build-metadata.json");
 
 // Throw out the working repository.
