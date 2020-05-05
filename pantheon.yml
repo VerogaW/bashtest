@@ -7,4 +7,4 @@ workflows:
     after:
       - type: webphp
         description: Push changes back to GitHub if needed
-        script: private/scripts/quicksilver/push-back.php
+        script: web/private/scripts/quicksilver/push-back.php
