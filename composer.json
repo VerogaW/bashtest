@@ -91,6 +91,7 @@
         "drupal/smart_ip": "3.7.0",
         "drupal/smtp": "1.0.0-rc4",
         "drupal/svg_image": "1.14.0",
+        "drupal/tamper": "1.0.0-alpha2",
         "drupal/tb_megamenu": "1.x-dev",
         "drupal/token": "1.7.0",
         "drupal/twig_field_value": "2.0.0",
