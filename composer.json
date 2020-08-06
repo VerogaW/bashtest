@@ -107,7 +107,7 @@
         "drupal/viewsreference": "2.0.0-beta1",
         "drupal/webform": "5.10.0",
         "drupal/wysiwyg_template": "2.3.0",
-        "drupal/xmlsitemap": "1.0.0-rc1",
+        "drupal/xmlsitemap": "1.0.0",
         "drush-ops/behat-drush-endpoint": "^9.3",
         "drush/drush": "^9.0",
         "enyo/dropzone": "^5.5",
