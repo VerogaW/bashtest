@@ -90,7 +90,7 @@
         "drupal/sendgrid_integration": "1.2",
         "drupal/smart_ip": "3.7.0",
         "drupal/smtp": "1.0.0-rc4",
-        "drupal/svg_image": "1.13.0",
+        "drupal/svg_image": "1.14.0",
         "drupal/tb_megamenu": "1.x-dev",
         "drupal/token": "1.7.0",
         "drupal/twig_field_value": "2.0.0",
