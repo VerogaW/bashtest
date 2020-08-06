@@ -1,15 +1,15 @@
 <?php
 
-namespace Drupal\file_browser\Tests;
+namespace Drupal\Tests\file_browser\Functional;
 
-use Drupal\simpletest\WebTestBase;
+use Drupal\Tests\BrowserTestBase;
 
 /**
  * Tests install/uninstall routines for File Browser.
  *
  * @group file_browser
  */
-class InstallTest extends WebTestBase {
+class InstallTest extends BrowserTestBase {
 
   /**
    * {@inheritdoc}
@@ -18,6 +18,11 @@ class InstallTest extends WebTestBase {
    * config settings which fail strict checks during install.
    */
   protected $strictConfigSchema = FALSE;
+
+  /**
+   * {@inheritdoc}
+   */
+  protected $defaultTheme = 'stable';
 
   /**
    * {@inheritdoc}
