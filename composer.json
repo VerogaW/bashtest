@@ -22,7 +22,7 @@
         "drupal/block_class": "1.2.0",
         "drupal/block_field": "1.0.0-rc1",
         "drupal/calendar": "1.x-dev",
-        "drupal/captcha": "1.0.0",
+        "drupal/captcha": "1.1.0",
         "drupal/captcha_pack": "1.0.0-alpha2",
         "drupal/ckeditor_media_embed": "1.9.0",
         "drupal/ckeditor_templates": "1.1.0",
