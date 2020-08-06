@@ -83,7 +83,7 @@
         "drupal/reroute_email": "^1.1",
         "drupal/restui": "1.18.0",
         "drupal/rules": "3.0-alpha5",
-        "drupal/scheduler": "1.1.0",
+        "drupal/scheduler": "1.3.0",
         "drupal/search_api": "1.13",
         "drupal/search_api_autocomplete": "1.3.0",
         "drupal/search_api_solr": "2.6",
